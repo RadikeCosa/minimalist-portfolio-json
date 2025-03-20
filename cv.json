@@ -202,28 +202,32 @@
       "isActive": true,
       "description": "Aplicación de tareas con CRUD y persistencia en localStorage.",
       "highlights": ["Responsive", "Funcionalidad básica"],
-      "url": "[Link a GitHub o deploy, si lo tenés]"
+      "url": "[Link a GitHub o deploy, si lo tenés]",
+      "github": "[Link a GitHub del proyecto, si tenés; si no, igual al url o vacío]"
     },
     {
       "name": "Consumo de API",
       "isActive": true,
       "description": "Interfaz que muestra datos dinámicos de una API pública.",
       "highlights": ["React", "Consumo de APIs"],
-      "url": "[Link a GitHub o deploy, si lo tenés]"
+      "url": "[Link a GitHub o deploy, si lo tenés]",
+      "github": "[Link a GitHub del proyecto, si tenés]"
     },
     {
       "name": "Mini E-commerce",
       "isActive": true,
       "description": "Prototipo Full Stack con frontend en React y backend en Node.js.",
       "highlights": ["MERN", "CRUD básico"],
-      "url": "[Link a GitHub o deploy, si lo tenés]"
+      "url": "[Link a GitHub o deploy, si lo tenés]",
+      "github": "[Link a GitHub del proyecto, si tenés]"
     },
     {
       "name": "Visualización Básica con D3.js",
       "isActive": false,
       "description": "Exploración de gráficos simples con D3.js para visualizar datos.",
       "highlights": ["Data Visualization", "En progreso"],
-      "url": "[Link a GitHub, si lo tenés]"
+      "url": "[Link a GitHub, si lo tenés]",
+      "github": "[Link a GitHub, si lo tenés]"
     }
   ]
 }
