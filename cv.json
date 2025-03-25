@@ -52,14 +52,14 @@
   "volunteer": [],
   "education": [
     {
-      "institution": "Universidad Nacional de Cordoba",
-      "url": "",
-      "area": "Kinesiología",
-      "studyType": "Licenciatura",
-      "startDate": "1998-01-01",
-      "endDate": "2003-12-01",
+      "institution": "Universidad de Helsinki",
+      "url": "https://www.helsinki.fi/en",
+      "area": "Full Stack Development",
+      "studyType": "Curso online",
+      "startDate": "2025-01-01",
+      "endDate": null,
       "score": "",
-      "courses": []
+      "courses": ["Usuarios, sesiones, permisos, JWT"]
     },
     {
       "institution": "UTN / Argentina Programa / Autodidacta",
@@ -77,14 +77,14 @@
       ]
     },
     {
-      "institution": "Universidad de Helsinki",
-      "url": "https://www.helsinki.fi/en",
-      "area": "Full Stack Development",
-      "studyType": "Curso online",
-      "startDate": "2025-01-01",
-      "endDate": null,
+      "institution": "Universidad Nacional de Cordoba",
+      "url": "",
+      "area": "Kinesiología",
+      "studyType": "Licenciatura",
+      "startDate": "1998-01-01",
+      "endDate": "2003-12-01",
       "score": "",
-      "courses": ["Usuarios, sesiones, permisos, JWT"]
+      "courses": []
     }
   ],
   "awards": [],
@@ -198,7 +198,7 @@
   "references": [],
   "projects": [
     {
-      "name": "To-Do List",
+      "name": "App de ",
       "isActive": true,
       "description": "Aplicación de tareas con CRUD y persistencia en localStorage.",
       "highlights": ["Responsive", "Funcionalidad básica"],
