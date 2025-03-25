@@ -198,12 +198,12 @@
   "references": [],
   "projects": [
     {
-      "name": "App de ",
+      "name": "App de Seguimiento de Actividad Física",
       "isActive": true,
-      "description": "Aplicación de tareas con CRUD y persistencia en localStorage.",
-      "highlights": ["Responsive", "Funcionalidad básica"],
-      "url": "[Link a GitHub o deploy, si lo tenés]",
-      "github": "[Link a GitHub del proyecto, si tenés; si no, igual al url o vacío]"
+      "description": "Una aplicación web interactiva para registrar y analizar actividad física diaria, con gráficos dinámicos.",
+      "highlights": ["React", "D3.js", "Vite", "CSS"],
+      "url": "https://fitness-study-app.vercel.app/",
+      "github": "https://github.com/RadikeCosa/fitness-study-app"
     },
     {
       "name": "Consumo de API",
