@@ -5,8 +5,8 @@
     "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
     "phone": "299 5217189",
-    "url": "[]",
-    "summary": "Profesional con más de 20 años en kinesiología y coordinación de servicios de salud, reinventado como desarrollador web desde 2020. Especializado en React, MERN y visualización de datos con D3.js. Autodidacta, con habilidades en storytelling y un enfoque disciplinado para resolver problemas y aprender tecnologías modernas.",
+    "url": "[https://ramirocosa.is-a.dev/]",
+    "summary": "Profesional con más de 20 años en kinesiología y coordinación de servicios de salud, reinventado como desarrollador web desde 2020. Especializado en React, MERN y visualización de datos con D3.js, con experiencia en testing manual y automatizado. Autodidacta y disciplinado, aplico un enfoque estructurado para la resolución de problemas, combinando pensamiento crítico con storytelling y visualización de datos. Actualmente, sigo profundizando mis conocimientos en Full Stack Open de la Universidad de Helsinki, con especial interés en testing y arquitectura de software.",
     "location": {
       "address": "Neuquen, Argentina",
       "postalCode": "8300",
@@ -79,7 +79,7 @@
     {
       "institution": "Universidad Nacional de Cordoba",
       "url": "",
-      "area": "Kinesiología",
+      "area": "Lic. en Kinesiología",
       "studyType": "Licenciatura",
       "startDate": "1998-01-01",
       "endDate": "2003-12-01",
