@@ -206,28 +206,18 @@
       "github": "https://github.com/RadikeCosa/fitness-study-app"
     },
     {
-      "name": "Consumo de API",
+      "name": "Quotes API",
       "isActive": true,
-      "description": "Interfaz que muestra datos dinámicos de una API pública.",
-      "highlights": ["React", "Consumo de APIs"],
-      "url": "[Link a GitHub o deploy, si lo tenés]",
-      "github": "[Link a GitHub del proyecto, si tenés]"
-    },
-    {
-      "name": "Mini E-commerce",
-      "isActive": true,
-      "description": "Prototipo Full Stack con frontend en React y backend en Node.js.",
-      "highlights": ["MERN", "CRUD básico"],
-      "url": "[Link a GitHub o deploy, si lo tenés]",
-      "github": "[Link a GitHub del proyecto, si tenés]"
-    },
-    {
-      "name": "Visualización Básica con D3.js",
-      "isActive": false,
-      "description": "Exploración de gráficos simples con D3.js para visualizar datos.",
-      "highlights": ["Data Visualization", "En progreso"],
-      "url": "[Link a GitHub, si lo tenés]",
-      "github": "[Link a GitHub, si lo tenés]"
+      "description": "Una API RESTful para gestionar citas inspiradoras, con documentación interactiva generada por Swagger.",
+      "highlights": [
+        "TypeScript",
+        "Express.js",
+        "MongoDB",
+        "Swagger",
+        "Vercel"
+      ],
+      "url": "https://quotes-api-psi.vercel.app/api-docs",
+      "github": "https://github.com/RadikeCosa/quotes-api"
     }
   ]
 }
