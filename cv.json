@@ -198,12 +198,12 @@
   "references": [],
   "projects": [
     {
-      "name": "App de Seguimiento de Actividad Física",
+      "name": "Repositorio Leet Code",
       "isActive": true,
-      "description": "Una aplicación web interactiva para registrar y analizar actividad física diaria, con gráficos dinámicos.",
-      "highlights": ["React", "D3.js", "Vite", "CSS"],
-      "url": "https://fitness-study-app.vercel.app/",
-      "github": "https://github.com/RadikeCosa/fitness-study-app"
+      "description": "Un repositorio para resolver problemas de LeetCode y mejorar habilidades de codificación.",
+      "highlights": ["TypeScript", "Vitest"],
+      "url": "https://github.com/RadikeCosa/leetCode",
+      "github": "https://github.com/RadikeCosa/leetCode"
     },
     {
       "name": "Quotes API",
