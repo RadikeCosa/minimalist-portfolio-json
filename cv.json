@@ -201,7 +201,7 @@
       "name": "Repositorio Leet Code",
       "isActive": true,
       "description": "Un repositorio para resolver problemas de LeetCode y mejorar habilidades de codificación.",
-      "highlights": ["TypeScript", "Vitest"],
+      "highlights": ["TypeScript", "Vitest", "Logica de programación"],
       "url": "https://github.com/RadikeCosa/leetCode",
       "github": "https://github.com/RadikeCosa/leetCode"
     },
@@ -218,6 +218,28 @@
       ],
       "url": "https://quotes-api-hvf9.onrender.com/api-docs/",
       "github": "https://github.com/RadikeCosa/quotes-api"
+    },
+    {
+      "name": "Domi Health",
+      "isActive": true,
+      "description": "App de gestión de servicios de salud domiciliaria, con funcionalidades para pacientes y profesionales.",
+      "highlights": [
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Supabase",
+        "Zod"
+      ],
+      "url": "https://domi-health.vercel.app",
+      "github": "https://github.com/RadikeCosa/domi-health"
+    },
+    {
+      "name": "Documentacion de Domi Health",
+      "isActive": true,
+      "description": "Documentación de la app de gestión de servicios de salud domiciliaria.",
+      "highlights": ["Astro.js", "Starlight", "Markdown"],
+      "url": "https://docs-domi-health.vercel.app/",
+      "github": "https://github.com/RadikeCosa/domi-health-docs"
     }
   ]
 }
