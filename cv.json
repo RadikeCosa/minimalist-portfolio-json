@@ -119,6 +119,12 @@
       "keywords": ["Frontend", "JavaScript Library", "UI"]
     },
     {
+      "name": "Next.js",
+      "level": "Intermedio",
+      "keywords": ["FullStack", "JavaScript Framework"]
+    },
+
+    {
       "name": "Angular",
       "level": "Básico",
       "keywords": ["Frontend", "JavaScript Framework"]
@@ -144,14 +150,19 @@
       "keywords": ["Bases de Datos", "NoSQL"]
     },
     {
-      "name": "Spring Boot",
-      "level": "Básico",
-      "keywords": ["Backend", "Java", "APIs"]
-    },
-    {
       "name": "SQL",
       "level": "Básico",
       "keywords": ["Bases de Datos", "Relacionales"]
+    },
+    {
+      "name": "Supabase",
+      "level": "Intermedio",
+      "keywords": ["Bases de Datos", "Relacionales"]
+    },
+    {
+      "name": "Spring Boot",
+      "level": "Básico",
+      "keywords": ["Backend", "Java", "APIs"]
     },
     {
       "name": "D3.js",
