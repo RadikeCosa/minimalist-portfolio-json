@@ -231,9 +231,9 @@
       "github": "https://github.com/RadikeCosa/quotes-api"
     },
     {
-      "name": "Domi Health",
+      "name": "Nest Care Hub",
       "isActive": true,
-      "description": "App de gestión de servicios de salud domiciliaria, con funcionalidades para pacientes y profesionales.",
+      "description": "App de utilidades para servicios de salud domiciliaria.",
       "highlights": [
         "TypeScript",
         "Next.js",
@@ -241,16 +241,16 @@
         "Supabase",
         "Zod"
       ],
-      "url": "https://domi-health.vercel.app",
-      "github": "https://github.com/RadikeCosa/domi-health"
+      "url": "https://nest-care-hub.vercel.app/patients",
+      "github": "https://github.com/RadikeCosa/nest-care-hub"
     },
     {
-      "name": "Documentacion de Domi Health",
+      "name": "Documentacion de Nest Care Hub",
       "isActive": true,
-      "description": "Documentación de la app de gestión de servicios de salud domiciliaria.",
+      "description": "Documentación de la app de utilidades para servicios de salud domiciliaria.",
       "highlights": ["Astro.js", "Starlight", "Markdown"],
-      "url": "https://docs-domi-health.vercel.app/",
-      "github": "https://github.com/RadikeCosa/domi-health-docs"
+      "url": "https://nest-care-docs.vercel.app/",
+      "github": "https://github.com/RadikeCosa/nest-care-docs"
     }
   ]
 }
