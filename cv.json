@@ -241,16 +241,16 @@
         "Supabase",
         "Zod"
       ],
-      "url": "https://nest-care-hub.vercel.app/patients",
-      "github": "https://github.com/RadikeCosa/nest-care-hub"
+      "url": "https://cuidapp-smoky.vercel.app/",
+      "github": "https://github.com/RadikeCosa/Cuidapp"
     },
     {
-      "name": "Documentacion de Nest Care Hub",
+      "name": "Documentacion de CuidApp",
       "isActive": true,
       "description": "Documentación de la app de utilidades para servicios de salud domiciliaria.",
       "highlights": ["Astro.js", "Starlight", "Markdown"],
-      "url": "https://nest-care-docs.vercel.app/",
-      "github": "https://github.com/RadikeCosa/nest-care-docs"
+      "url": "https://cuidapp-documentation.vercel.app/",
+      "github": "https://github.com/RadikeCosa/cuidapp-documentation"
     }
   ]
 }
