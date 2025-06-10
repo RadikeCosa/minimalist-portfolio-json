@@ -1,13 +1,13 @@
 ---
-import { basics } from "@cv"
+import { basics } from "@cv";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 
-const { image, summary, url } = basics
+const { image, summary, url } = basics;
 ---
 
 <!doctype html>
@@ -27,11 +27,21 @@ const { image, summary, url } = basics
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
+    <script is:inline>
+      (function () {
+        const theme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body>
     <slot />
@@ -39,6 +49,31 @@ const { image, summary, url } = basics
 </html>
 
 <style is:global>
+  :root {
+    /* Light theme */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-hover: #e9ecef;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --text-muted: #555555;
+    --border: #e0e0e0;
+    --border-light: #f2f2f2;
+    --accent: #0066cc;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-hover: #404040;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #aaaaaa;
+    --border: #404040;
+    --border-light: #333333;
+    --accent: #4d9fff;
+  }
+
   html {
     font-family:
       Menlo,
@@ -47,8 +82,12 @@ const { image, summary, url } = basics
       "Courier New",
       Courier,
       monospace;
-    background: #fff;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     letter-spacing: -0.025rem;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   body,
@@ -90,10 +129,11 @@ const { image, summary, url } = basics
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+    color: var(--text-primary);
   }
 
   p {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;
