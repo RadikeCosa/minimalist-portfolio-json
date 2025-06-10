@@ -1,0 +1,250 @@
+{
+  "basics": {
+    "name": "Ramiro Nicolas Cosa",
+    "label": "Junior Frontend Developer | React - Data Visualization",
+    "image": "/me.webp",
+    "email": "ramirocosa@gmail.com",
+    "phone": "299 5217189",
+    "url": "https://ramirocosa.is-a.dev/",
+    "summary": "Professional with over 20 years in kinesiology and home healthcare coordination, reinvented as a web developer since 2020. Specialized in React, MERN, and data visualization with D3.js, with experience in manual and automated testing. Self-taught and disciplined, I apply a structured problem-solving approach, combining critical thinking with storytelling and data visualization. Currently, I am deepening my knowledge in Full Stack Open from the University of Helsinki, with a special interest in testing and software architecture.",
+    "location": {
+      "address": "Neuquen, Argentina",
+      "postalCode": "8300",
+      "city": "Neuquen",
+      "countryCode": "AR",
+      "region": "Neuquen"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Ramiro Cosa",
+        "url": "https://www.linkedin.com/in/ramicosa/"
+      },
+      {
+        "network": "GitHub",
+        "username": "Ramiro Cosa",
+        "url": "https://github.com/RadikeCosa"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Alegra Salud",
+      "position": "Coordinator and Auditor of Home Care Services",
+      "url": "",
+      "startDate": "2013-01-01",
+      "endDate": "2024-12-01",
+      "summary": "Led the creation of a palliative care services area, designing innovative processes that expanded the company's offerings. Managed multidisciplinary teams, optimizing communication and operational problem-solving.",
+      "highlights": [
+        "Collaborated in the design of an area acquired after the company's sale"
+      ]
+    },
+    {
+      "name": "CIKAF - Private Clinics",
+      "position": "Kinesiologist - Specialization in High-Performance Sports",
+      "url": "",
+      "startDate": "2004-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Worked with a high-performance team (2012-2014), applying customized solutions under pressure. Developed analytical and adaptive skills in dynamic environments.",
+      "highlights": ["Pampas XV, Pablo Busin"]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "University of Helsinki",
+      "url": "https://www.helsinki.fi/en",
+      "area": "Full Stack Development",
+      "studyType": "Online Course",
+      "startDate": "2025-01-01",
+      "endDate": null,
+      "score": "",
+      "courses": ["Users, sessions, permissions, JWT"]
+    },
+    {
+      "institution": "UTN / Argentina Programa / Self-taught",
+      "url": "",
+      "area": "Full Stack Web Development",
+      "studyType": "Courses and self-taught training",
+      "startDate": "2020-01-01",
+      "endDate": "2023-12-01",
+      "score": "",
+      "courses": ["MERN", "MEAN", "Manual and Automated Testing", "Spring Boot"]
+    },
+    {
+      "institution": "National University of Cordoba",
+      "url": "",
+      "area": "Bachelor's in Kinesiology",
+      "studyType": "Bachelor's Degree",
+      "startDate": "1998-01-01",
+      "endDate": "2003-12-01",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Manual and Automated Testing",
+      "date": "2022-01-01",
+      "issuer": "Argentina Programa",
+      "url": ""
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Backend"]
+    },
+    {
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": ["Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Next.js",
+      "level": "Intermediate",
+      "keywords": ["FullStack", "JavaScript Framework"]
+    },
+    {
+      "name": "Angular",
+      "level": "Basic",
+      "keywords": ["Frontend", "JavaScript Framework"]
+    },
+    {
+      "name": "Astro",
+      "level": "Basic",
+      "keywords": ["Frontend", "Static Sites"]
+    },
+    {
+      "name": "Node.js",
+      "level": "Intermediate",
+      "keywords": ["Backend", "JavaScript", "Server"]
+    },
+    {
+      "name": "Express",
+      "level": "Intermediate",
+      "keywords": ["Backend", "REST APIs"]
+    },
+    {
+      "name": "MongoDB",
+      "level": "Intermediate",
+      "keywords": ["Databases", "NoSQL"]
+    },
+    {
+      "name": "SQL",
+      "level": "Basic",
+      "keywords": ["Databases", "Relational"]
+    },
+    {
+      "name": "Supabase",
+      "level": "Intermediate",
+      "keywords": ["Databases", "Relational"]
+    },
+    {
+      "name": "Spring Boot",
+      "level": "Basic",
+      "keywords": ["Backend", "Java", "APIs"]
+    },
+    {
+      "name": "D3.js",
+      "level": "Basic",
+      "keywords": ["Data Visualization", "Frontend"]
+    },
+    {
+      "name": "Python",
+      "level": "Basic",
+      "keywords": ["Data Visualization", "Spatial Analysis"]
+    },
+    {
+      "name": "Git",
+      "level": "Intermediate",
+      "keywords": ["Version Control", "Collaboration"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Intermediate",
+      "keywords": ["Version Control", "Portfolio"]
+    },
+    {
+      "name": "Storytelling",
+      "level": "Advanced",
+      "keywords": ["Communication", "Data Visualization"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Advanced"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": ["Data Visualization", "Web Development", "Commodore 64"]
+    }
+  ],
+  "references": [],
+  "projects": [
+    {
+      "name": "LeetCode Repository",
+      "isActive": true,
+      "description": "A repository for solving LeetCode problems and improving coding skills.",
+      "highlights": ["TypeScript", "Vitest", "Programming Logic"],
+      "url": "https://github.com/RadikeCosa/leetCode",
+      "github": "https://github.com/RadikeCosa/leetCode"
+    },
+    {
+      "name": "Quotes API",
+      "isActive": true,
+      "description": "A RESTful API for managing inspirational quotes, with interactive documentation generated by Swagger.",
+      "highlights": [
+        "TypeScript",
+        "Express.js",
+        "MongoDB",
+        "Swagger",
+        "Vercel"
+      ],
+      "url": "https://quotes-api-hvf9.onrender.com/api-docs/",
+      "github": "https://github.com/RadikeCosa/quotes-api"
+    },
+    {
+      "name": "CuidApp",
+      "isActive": true,
+      "description": "Utility app for home healthcare services.",
+      "highlights": [
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Supabase",
+        "Zod"
+      ],
+      "url": "https://cuidapp-smoky.vercel.app/",
+      "github": "https://github.com/RadikeCosa/Cuidapp"
+    },
+    {
+      "name": "CuidApp Documentation",
+      "isActive": true,
+      "description": "Documentation for the utility app for home healthcare services.",
+      "highlights": ["Astro.js", "Starlight", "Markdown"],
+      "url": "https://cuidapp-documentation.vercel.app/",
+      "github": "https://github.com/RadikeCosa/cuidapp-documentation"
+    }
+  ]
+}
