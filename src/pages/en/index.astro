@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import ThemeToggle from "@/components/ThemeToggle.astro";
 import LanguageToggle from "@/components/LanguageToggle.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
 
 import About from "@/components/sections/About.astro";
 import Education from "@/components/sections/Education.astro";
@@ -11,14 +11,13 @@ import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
 
-import { getCV } from "@/i18n/utils";
-
-const currentLang = "es";
-const cvData = await getCV(currentLang);
-const { name, label } = cvData.basics;
+const currentLang = "en";
 ---
 
-<Layout title={`Portafolio de ${name} - ${label}`} lang={currentLang}>
+<Layout
+  title="Ramiro Nicolas Cosa Portfolio - Junior Frontend Developer"
+  lang={currentLang}
+>
   <main>
     <Hero lang={currentLang} />
     <About lang={currentLang} />

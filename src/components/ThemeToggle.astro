@@ -2,7 +2,7 @@
 // ThemeToggle.astro
 ---
 
-<button id="theme-toggle" aria-label="Cambiar tema">
+<button id="theme-toggle" class="no-print" aria-label="Cambiar tema">
   <svg
     class="sun-icon"
     width="20"
@@ -60,20 +60,31 @@
 <style>
   #theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 1.5rem;
+    right: 1.5rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 8px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: var(--text-primary);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   #theme-toggle:hover {
     background: var(--bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  #theme-toggle:active {
+    transform: translateY(0);
   }
 
   .sun-icon {
@@ -90,5 +101,20 @@
 
   [data-theme="dark"] .moon-icon {
     display: none;
+  }
+
+  /* Responsive */
+  @media (width <= 700px) {
+    #theme-toggle {
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+    }
+
+    #theme-toggle svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 </style>

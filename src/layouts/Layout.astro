@@ -1,17 +1,24 @@
 ---
 import { basics } from "@cv";
+import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
 
 interface Props {
   title: string;
+  lang?: Language;
 }
 
-const { title } = Astro.props;
+const { title, lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 
-const { image, summary, url } = basics;
+// Obtener CV según el idioma
+const cvData = await getCV(currentLang);
+const { image, summary, url } = cvData.basics;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>

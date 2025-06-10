@@ -1,11 +1,20 @@
 ---
-import Section from "../Section.astro"
+import type { Language } from "@/i18n/types";
+import Section from "../Section.astro";
+import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
 
-import { basics } from "@cv"
-const { summary } = basics
+interface Props {
+  lang?: Language;
+}
+const { lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const cvData = await getCV(currentLang);
+
+const { summary } = cvData.basics;
 ---
 
-<Section title="Sobre mí">
+<Section title={t("section.about")}>
   <p>
     {summary}
   </p>

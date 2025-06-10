@@ -1,11 +1,23 @@
 ---
 import GitHub from "@/icons/GitHub.astro";
 import Section from "../Section.astro";
+import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
 
-import { projects } from "@cv";
+interface Props {
+  lang?: Language;
+}
+
+const { lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const cvData = await getCV(currentLang);
+
+// Usar los datos del CV según el idioma actual
+const { projects } = cvData;
 ---
 
-<Section title="Proyectos">
+<Section title={t("section.projects")}>
   <ul>
     {
       projects.map(

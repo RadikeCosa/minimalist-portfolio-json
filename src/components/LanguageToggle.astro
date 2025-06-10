@@ -1,37 +1,27 @@
 ---
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl, getAlternateUrl } from "@/i18n/utils";
+import { defaultLang } from "@/i18n/config";
 
 const currentLang = getLangFromUrl(Astro.url);
-const otherLang = currentLang === "es" ? "en" : "es";
-const langText = currentLang === "es" ? "EN" : "ES";
-
-// Construir la URL del idioma alternativo
-const currentPath = Astro.url.pathname;
-let newPath: string;
-
-if (currentLang === "es") {
-  // De español a inglés: agregar /en
-  newPath = currentPath === "/" ? "/en" : `/en${currentPath}`;
-} else {
-  // De inglés a español: quitar /en
-  newPath = currentPath.replace("/en", "") || "/";
-}
+const targetLang = currentLang === "en" ? "es" : "en";
+const newPath = getAlternateUrl(Astro.url, targetLang);
+const buttonText = currentLang === "en" ? "ES" : "EN";
 ---
 
 <div class="language-toggle no-print">
   <a
     href={newPath}
-    aria-label={`Cambiar a ${otherLang === "es" ? "Español" : "English"}`}
+    aria-label={`Switch to ${currentLang === "en" ? "Spanish" : "English"}`}
   >
-    {langText}
+    {buttonText}
   </a>
 </div>
 
 <style>
   .language-toggle {
     position: fixed;
-    top: 2rem;
-    left: 2rem;
+    top: 1.5rem;
+    right: 5.5rem; /* Espacio para el theme toggle */
     z-index: 1000;
   }
 
@@ -43,23 +33,32 @@ if (currentLang === "es") {
     height: 44px;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 50%;
     color: var(--text-primary);
     font-weight: 600;
     font-size: 0.8rem;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .language-toggle a:hover {
     background: var(--bg-hover);
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
+  /* Responsive */
   @media (width <= 700px) {
     .language-toggle {
       top: 1rem;
-      left: 1rem;
+      right: 4.5rem;
+    }
+
+    .language-toggle a {
+      width: 40px;
+      height: 40px;
+      font-size: 0.75rem;
     }
   }
 </style>

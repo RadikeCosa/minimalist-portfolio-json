@@ -1,16 +1,28 @@
 ---
 import Section from "../Section.astro";
+import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
 
-import { education } from "@cv";
+interface Props {
+  lang?: Language;
+}
+
+const { lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const cvData = await getCV(currentLang);
+
+// Usar los datos del CV según el idioma actual
+const { education } = cvData;
 ---
 
-<Section title="Educación">
+<Section title={t("section.education")}>
   <ul>
     {
       education.map(({ institution, startDate, endDate, area }) => {
         const startYear = new Date(startDate).getFullYear();
         const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Actual";
+          endDate != null ? new Date(endDate).getFullYear() : t("date.present");
         const years = `${startYear} - ${endYear}`;
 
         return (

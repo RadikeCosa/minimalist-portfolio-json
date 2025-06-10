@@ -1,13 +1,3 @@
-export const languages = {
-  es: "Español",
-  en: "English",
-};
-
-export const defaultLang = "es";
-
-export type Language = keyof typeof languages;
-
-// Textos de la interfaz
 export const ui = {
   es: {
     "nav.home": "Inicio",
@@ -23,6 +13,9 @@ export const ui = {
     "section.education": "Educación",
     "button.print": "Imprimir",
     "date.present": "Actualidad",
+    "contact.send": "Enviar email a",
+    "contact.call": "Llamar a",
+    "contact.visit": "Visitar perfil de",
   },
   en: {
     "nav.home": "Home",
@@ -38,5 +31,11 @@ export const ui = {
     "section.education": "Education",
     "button.print": "Print",
     "date.present": "Present",
+    "contact.send": "Send email to",
+    "contact.call": "Call",
+    "contact.visit": "Visit profile of",
   },
 } as const;
+
+// Añadir la exportación que falta
+export const defaultLang = "es";

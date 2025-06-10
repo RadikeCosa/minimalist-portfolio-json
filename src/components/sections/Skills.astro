@@ -11,11 +11,24 @@ import Git from "@/icons/git.astro";
 import GitHub from "@/icons/GitHub.astro";
 import Tailwind from "@/icons/tailwind.astro";
 import Next from "@/icons/next.astro";
-import { skills } from "@cv";
 import Swift from "@/icons/swift.astro";
 import SwiftUI from "@/icons/swiftui.astro";
 import Kotlin from "@/icons/kotlin.astro";
 import Flutter from "@/icons/flutter.astro";
+import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const cvData = await getCV(currentLang);
+
+// Usar los datos del CV según el idioma actual
+const { skills } = cvData;
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -36,7 +49,7 @@ const SKILLS_ICONS: Record<string, any> = {
 };
 ---
 
-<Section title="Habilidades">
+<Section title={t("section.skills")}>
   <ul>
     {
       skills.map(({ name }) => {

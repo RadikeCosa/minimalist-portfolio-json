@@ -1,0 +1,15 @@
+---
+// src/components/Debug.astro
+import { getLangFromUrl } from "@/i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+---
+
+<div
+  style="position: fixed; top: 100px; left: 10px; background: red; color: white; padding: 10px; z-index: 9999;"
+>
+  <p>Current Lang: {currentLang}</p>
+  <p>Current Path: {currentPath}</p>
+  <p>Full URL: {Astro.url.href}</p>
+</div>
