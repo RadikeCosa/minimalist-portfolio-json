@@ -1,0 +1,65 @@
+---
+import { getLangFromUrl } from "@/i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+const otherLang = currentLang === "es" ? "en" : "es";
+const langText = currentLang === "es" ? "EN" : "ES";
+
+// Construir la URL del idioma alternativo
+const currentPath = Astro.url.pathname;
+let newPath: string;
+
+if (currentLang === "es") {
+  // De español a inglés: agregar /en
+  newPath = currentPath === "/" ? "/en" : `/en${currentPath}`;
+} else {
+  // De inglés a español: quitar /en
+  newPath = currentPath.replace("/en", "") || "/";
+}
+---
+
+<div class="language-toggle no-print">
+  <a
+    href={newPath}
+    aria-label={`Cambiar a ${otherLang === "es" ? "Español" : "English"}`}
+  >
+    {langText}
+  </a>
+</div>
+
+<style>
+  .language-toggle {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1000;
+  }
+
+  .language-toggle a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .language-toggle a:hover {
+    background: var(--bg-hover);
+    transform: scale(1.05);
+  }
+
+  @media (width <= 700px) {
+    .language-toggle {
+      top: 1rem;
+      left: 1rem;
+    }
+  }
+</style>
