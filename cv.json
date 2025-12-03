@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ramiro Nicolas Cosa",
-    "label": "Desarrollador Frontend Junior | React - Data Visualization",
+    "label": "Frontend Developer | React | Next.js ",
     "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
     "phone": "299 5217189",
-    "url": "[https://ramirocosa.is-a.dev/]",
-    "summary": "Profesional con más de 20 años en kinesiología y coordinación de servicios de salud, reinventado como desarrollador web desde 2020. Especializado en React, MERN y visualización de datos con D3.js, con experiencia en testing manual y automatizado. Autodidacta y disciplinado, aplico un enfoque estructurado para la resolución de problemas, combinando pensamiento crítico con storytelling y visualización de datos. Actualmente, sigo profundizando mis conocimientos en Full Stack Open de la Universidad de Helsinki, con especial interés en testing y arquitectura de software.",
+    "url": "https://ramirocosa.is-a.dev/",
+    "summary": "Desarrollador web me destaco por mi capacidad autodidacta. Mi experiencia previa en la coordinación de equipos en salud me permitió desarrollar habilidades de comunicación, liderazgo y gestión de proyectos, que busco aplicar en entornos tecnológicos. Actualmente profundizo mis conocimientos y busco aportar valor en equipos de desarrollo con soluciones innovadoras y eficientes.",
     "location": {
       "address": "Neuquen, Argentina",
       "postalCode": "8300",
@@ -22,69 +22,61 @@
       },
       {
         "network": "GitHub",
-        "username": "Ramiro Cosa",
+        "username": "RadikeCosa",
         "url": "https://github.com/RadikeCosa"
       }
     ]
   },
   "work": [
     {
+      "name": "Proyectos Freelance y Personales",
+      "position": "Desarrollador Web Full Stack",
+      "url": "https://github.com/RadikeCosa",
+      "startDate": "2020-01-01",
+      "endDate": null,
+      "summary": "Desarrollo de aplicaciones web con React, Next.js, Node.js y visualización de datos con D3.js. Implementación de testing automatizado y manual, despliegue en Vercel.",
+      "highlights": [
+        "Blog personal con Astro y Markdown",
+        "Landing page para servicios de salud (Next.js, Tailwind CSS)",
+        "Tracker nutricional con React y Local Storage",
+        "Soluciones de algoritmos en LeetCode (TypeScript, Vitest)"
+      ]
+    },
+    {
       "name": "Alegra Salud",
       "position": "Coordinador y Auditor de Servicios de Internación Domiciliaria",
       "url": "",
       "startDate": "2013-01-01",
       "endDate": "2024-12-01",
-      "summary": "Lideré la creación de un área de servicios paliativos, diseñando procesos innovadores que ampliaron la oferta de la empresa. Gestioné equipos multidisciplinarios, optimizando comunicación y resolución de problemas operativos.",
-      "highlights": [
-        "Colaboré en el diseño de un área adquirida tras la venta de la empresa"
-      ]
-    },
-    {
-      "name": "CIKAF - Consultorios Particulares",
-      "position": "Kinesiólogo - Especialización en Alto Rendimiento Deportivo",
-      "url": "",
-      "startDate": "2004-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Trabajé con un equipo de alto rendimiento (2012-2014), aplicando soluciones personalizadas bajo presión. Desarrollé habilidades de análisis y adaptación en entornos dinámicos.",
-      "highlights": ["Pampas XV, Pablo Busin"]
+      "summary": "Lideré la creación de un área de servicios paliativos, diseñando procesos innovadores y gestionando equipos multidisciplinarios. Desarrollé habilidades de liderazgo, comunicación y resolución de problemas aplicables a equipos de desarrollo.",
+      "highlights": ["Diseño y gestión de procesos innovadores"]
     }
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "Universidad de Helsinki",
-      "url": "https://www.helsinki.fi/en",
-      "area": "Full Stack Development",
-      "studyType": "Curso online",
-      "startDate": "2025-01-01",
-      "endDate": null,
-      "score": "",
-      "courses": ["Usuarios, sesiones, permisos, JWT"]
-    },
-    {
-      "institution": "UTN / Argentina Programa / Autodidacta",
-      "url": "",
-      "area": "Desarrollo Web Full Stack",
-      "studyType": "Cursos y formación autodidacta",
-      "startDate": "2020-01-01",
-      "endDate": "2023-12-01",
-      "score": "",
+      "institution": "UTN",
+      "url": "https://sysgestion.frba.utn.edu.ar/alumnos/validar_certificado?codigo=CER-QGZFK5SQ-60023",
+      "area": "Full Stack Development (Codigo Certificado: CER-QGZFK5SQ-60023)",
+      "studyType": "Curso online (Full Stack Developer)",
+      "startDate": "2020-03-01",
+      "endDate": "2021-03-01",
       "courses": [
-        "MERN",
-        "MEAN",
-        "Testing Manual y Automatizado",
-        "Spring Boot"
+        "Usuarios, sesiones, permisos, JWT, Testing, Arquitectura de Software"
       ]
     },
     {
-      "institution": "Universidad Nacional de Cordoba",
-      "url": "",
-      "area": "Lic. en Kinesiología",
-      "studyType": "Licenciatura",
-      "startDate": "1998-01-01",
-      "endDate": "2003-12-01",
-      "score": "",
-      "courses": []
+      "institution": "Universidad De Helsinki / Argentina Programa / Autodidacta",
+      "area": "Desarrollo Web Full Stack",
+      "studyType": "Cursos y formación autodidacta",
+      "startDate": "2022-01-01",
+      "endDate": "2023-12-01",
+      "courses": [
+        "MERN Stack",
+        "MEAN Stack",
+        "Testing Manual y Automatizado",
+        "Spring Boot"
+      ]
     }
   ],
   "awards": [],
@@ -99,70 +91,45 @@
   "publications": [],
   "skills": [
     {
-      "name": "HTML",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend"]
-    },
-    {
-      "name": "CSS",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend"]
-    },
-    {
       "name": "React",
       "level": "Intermedio",
-      "keywords": ["Frontend", "JavaScript Library", "UI"]
+      "keywords": ["Frontend", "UI", "JavaScript"]
     },
     {
       "name": "Next.js",
       "level": "Intermedio",
-      "keywords": ["FullStack", "JavaScript Framework"]
-    },
-
-    {
-      "name": "Angular",
-      "level": "Básico",
-      "keywords": ["Frontend", "JavaScript Framework"]
-    },
-    {
-      "name": "Astro",
-      "level": "Básico",
-      "keywords": ["Frontend", "Static Sites"]
+      "keywords": ["FullStack", "SSR", "React"]
     },
     {
       "name": "Node.js",
       "level": "Intermedio",
-      "keywords": ["Backend", "JavaScript", "Servidor"]
+      "keywords": ["Backend", "APIs", "JavaScript"]
     },
     {
       "name": "Express",
       "level": "Intermedio",
-      "keywords": ["Backend", "APIs REST"]
+      "keywords": ["Backend", "REST APIs"]
     },
     {
       "name": "MongoDB",
       "level": "Intermedio",
-      "keywords": ["Bases de Datos", "NoSQL"]
+      "keywords": ["NoSQL", "Bases de Datos"]
     },
+    { "name": "HTML", "level": "Intermedio", "keywords": ["Frontend", "Web"] },
     {
-      "name": "SQL",
-      "level": "Básico",
-      "keywords": ["Bases de Datos", "Relacionales"]
-    },
-    {
-      "name": "Supabase",
+      "name": "CSS",
       "level": "Intermedio",
-      "keywords": ["Bases de Datos", "Relacionales"]
+      "keywords": ["Frontend", "Responsive Design"]
     },
     {
-      "name": "Spring Boot",
+      "name": "JavaScript",
+      "level": "Intermedio",
+      "keywords": ["Frontend", "Backend"]
+    },
+    {
+      "name": "Astro",
       "level": "Básico",
-      "keywords": ["Backend", "Java", "APIs"]
+      "keywords": ["Static Sites", "Frontend"]
     },
     {
       "name": "D3.js",
@@ -170,9 +137,9 @@
       "keywords": ["Data Visualization", "Frontend"]
     },
     {
-      "name": "Python",
-      "level": "Básico",
-      "keywords": ["Data Visualization", "Análisis Espacial"]
+      "name": "Testing",
+      "level": "Intermedio",
+      "keywords": ["Manual", "Automatizado", "Vitest"]
     },
     {
       "name": "Git",
@@ -182,7 +149,7 @@
     {
       "name": "GitHub",
       "level": "Intermedio",
-      "keywords": ["Control de Versiones", "Portafolio"]
+      "keywords": ["Portafolio", "Colaboración"]
     },
     {
       "name": "Storytelling",
@@ -209,48 +176,61 @@
   "references": [],
   "projects": [
     {
-      "name": "Repositorio Leet Code",
+      "name": "Ejercicios LeetCode",
       "isActive": true,
-      "description": "Un repositorio para resolver problemas de LeetCode y mejorar habilidades de codificación.",
-      "highlights": ["TypeScript", "Vitest", "Logica de programación"],
-      "url": "https://github.com/RadikeCosa/leetCode",
+      "description": "Repositorio de soluciones a problemas de Leet Code, enfocado en mejorar habilidades de programación y algoritmos.",
+      "highlights": [
+        "TypeScript",
+        "JavaScript",
+        "Vitest",
+        "Logica de programación"
+      ],
+      "url": "https://camboya.vercel.app/data-viz",
       "github": "https://github.com/RadikeCosa/leetCode"
     },
     {
-      "name": "Quotes API",
+      "name": "Home Care Services Landing Page",
       "isActive": true,
-      "description": "Una API RESTful para gestionar citas inspiradoras, con documentación interactiva generada por Swagger.",
+      "description": "Página en construccion de presentacion para servicios de atención domiciliaria, diseñada para atraer y convertir clientes potenciales.",
       "highlights": [
-        "TypeScript",
-        "Express.js",
-        "MongoDB",
-        "Swagger",
-        "Vercel"
-      ],
-      "url": "https://quotes-api-hvf9.onrender.com/api-docs/",
-      "github": "https://github.com/RadikeCosa/quotes-api"
-    },
-    {
-      "name": "CuidApp",
-      "isActive": true,
-      "description": "App de utilidades para servicios de salud domiciliaria.",
-      "highlights": [
-        "TypeScript",
         "Next.js",
+        "React",
         "Tailwind CSS",
-        "Supabase",
-        "Zod"
+        "Diseño Responsive",
+        "SEO"
       ],
-      "url": "https://cuidapp-smoky.vercel.app/",
-      "github": "https://github.com/RadikeCosa/Cuidapp"
+      "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
+      "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Documentacion de CuidApp",
+      "name": "Blog Personal - Ramiro Cosa",
       "isActive": true,
-      "description": "Documentación de la app de utilidades para servicios de salud domiciliaria.",
-      "highlights": ["Astro.js", "Starlight", "Markdown"],
-      "url": "https://cuidapp-documentation.vercel.app/",
-      "github": "https://github.com/RadikeCosa/cuidapp-documentation"
+      "description": "Blog de desarrollador donde comparto mis experiencias y aprendizajes en desarrollo web, visualización de datos y otros temas de interés en IT",
+      "highlights": [
+        "Astro",
+        "Markdown",
+        "Despliegue en Vercel",
+        "Mermaid",
+        "Katex"
+      ],
+      "github": "https://github.com/RadikeCosa/blog-astro",
+      "url": "https://blog-astro-rouge.vercel.app/"
+    },
+    {
+      "name": "Tracker Nutricional",
+      "isActive": true,
+      "description": "Aplicación web para seguimiento nutricional, permitiendo a los usuarios registrar y analizar su ingesta diaria de alimentos y nutrientes.",
+      "highlights": ["Next.js", "React", "Local Storage"],
+      "github": "https://github.com/RadikeCosa/nutrition-tracker",
+      "url": "https://nutrition-tracker-psi.vercel.app/form"
+    },
+    {
+      "name": "Sandbox de Side Projects",
+      "isActive": true,
+      "description": "Repositorio de proyectos secundarios y experimentos en desarrollo web, enfocados en aprender nuevas tecnologías y mejorar habilidades de programación.",
+      "highlights": ["JavaScript", "React", "Next.js", "Tailwind CSS", "MUI"],
+      "github": "https://github.com/RadikeCosa/camboya",
+      "url": "https://camboya.vercel.app/"
     }
   ]
 }
