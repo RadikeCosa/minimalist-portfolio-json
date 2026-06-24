@@ -16,6 +16,13 @@ export function useTranslations(lang: Language) {
   };
 }
 
+export function getYear(dateString?: string | null): string | null {
+  if (!dateString) return null;
+
+  const year = dateString.slice(0, 4);
+  return /^\d{4}$/.test(year) ? year : null;
+}
+
 export async function getCV(lang: Language) {
   try {
     if (lang === "en") {

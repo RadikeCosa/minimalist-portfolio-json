@@ -1,6 +1,5 @@
 ---
-import { basics } from "@cv";
-import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import { getLangFromUrl, getCV } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 
 interface Props {
@@ -10,11 +9,10 @@ interface Props {
 
 const { title, lang } = Astro.props;
 const currentLang = lang || getLangFromUrl(Astro.url);
-const t = useTranslations(currentLang);
 
 // Obtener CV según el idioma
 const cvData = await getCV(currentLang);
-const { image, summary, url } = cvData.basics;
+const { summary, url } = cvData.basics;
 ---
 
 <!doctype html>
@@ -25,7 +23,6 @@ const { image, summary, url } = cvData.basics;
     <meta name="description" content={summary} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href={image} />
 
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />

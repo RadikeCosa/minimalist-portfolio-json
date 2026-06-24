@@ -11,13 +11,14 @@ import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
 
+import { getCV } from "@/i18n/utils";
+
 const currentLang = "en";
+const cvData = await getCV(currentLang);
+const { name, label } = cvData.basics;
 ---
 
-<Layout
-  title="Ramiro Nicolas Cosa Portfolio - Junior Frontend Developer"
-  lang={currentLang}
->
+<Layout title={`${name} Portfolio - ${label}`} lang={currentLang}>
   <main>
     <Hero lang={currentLang} />
     <About lang={currentLang} />

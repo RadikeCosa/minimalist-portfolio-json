@@ -1,6 +1,6 @@
 ---
 import Section from "../Section.astro";
-import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations, getCV, getYear } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 
 interface Props {
@@ -21,11 +21,10 @@ const { work } = cvData;
     {
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear =
-            endDate != null
-              ? new Date(endDate).getFullYear()
-              : t("date.present");
+          const startYear = getYear(startDate) ?? "";
+          const endYear = endDate
+            ? getYear(endDate) ?? ""
+            : t("date.present");
 
           return (
             <li>

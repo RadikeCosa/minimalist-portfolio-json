@@ -20,7 +20,7 @@ const t = useTranslations(currentLang);
 const cvData = await getCV(currentLang);
 
 // Usar los datos del CV según el idioma actual
-const { name, label, image, location, profiles, phone, email } = cvData.basics;
+const { name, label, location, profiles, phone, email } = cvData.basics;
 const { city, region } = location;
 
 const SOCIAL_ICONS: SocialIcon = {
@@ -52,7 +52,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
           email && (
             <a
               href={`mailto:${email}`}
-              title={`${t("contact.send")} ${name} ${t("contact.send").toLowerCase()} ${email}`}
+              title={`${t("contact.send")} ${name}: ${email}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -79,7 +79,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
             return (
               <a
                 href={url}
-                title={`${t("contact.visit")} ${name} en ${network}`}
+                title={`${t("contact.visit")} ${name}: ${network}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -90,9 +90,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
         }
       </footer>
     </div>
-    <figure>
-      <!--  <img src={image} alt={name} /> -->
-    </figure>
+    <figure></figure>
   </div>
 </Section>
 

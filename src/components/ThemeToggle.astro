@@ -1,8 +1,11 @@
 ---
-// ThemeToggle.astro
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 ---
 
-<button id="theme-toggle" class="no-print" aria-label="Cambiar tema">
+<button id="theme-toggle" class="no-print" aria-label={t("button.theme")}>
   <svg
     class="sun-icon"
     width="20"
