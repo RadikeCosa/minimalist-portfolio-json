@@ -202,7 +202,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     }
   }
 
-  footer {
+  #normal-footer {
     background: var(--bg-primary);
     border-top: 1px solid var(--border);
     color: var(--text-secondary);
@@ -219,6 +219,18 @@ const profilesInfo = profiles.map(({ network, url }) => {
     animation: linear 0.3s fadeIn;
     animation-timeline: --revealing;
     animation-range: entry 100% cover 10%;
+  }
+
+  /* HotKeyPad ships with a separate ".dark" theme API.
+     Bridge it locally to the site's data-theme contract. */
+  :global([data-theme="dark"] #hotkeypad) {
+    --hotkeypad-bg-kbd: var(--bg-secondary);
+    --hotkeypad-bg-backdrop: rgba(0, 0, 0, 0.72);
+    --hotkeypad-bg-container: var(--bg-primary);
+    --hotkeypad-bg-item-hover: var(--bg-secondary);
+    --hotkeypad-border-container: var(--border);
+    --hotkeypad-border-container-hover: var(--text-muted);
+    --hotkeypad-fg-muted: var(--text-secondary);
   }
 
   kbd {
