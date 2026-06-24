@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ramiro Nicolas Cosa",
-    "label": "Frontend Developer | React | Next.js ",
+    "label": "HealthTech Web Developer | Implementación y procesos clínicos",
     "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
     "phone": "299 5217189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Desarrollador web me destaco por mi capacidad autodidacta. Mi experiencia previa en la coordinación de equipos en salud me permitió desarrollar habilidades de comunicación, liderazgo y gestión de proyectos, que busco aplicar en entornos tecnológicos. Actualmente profundizo mis conocimientos y busco aportar valor en equipos de desarrollo con soluciones innovadoras y eficientes.",
+    "summary": "Kinesiólogo con más de 20 años de experiencia en atención domiciliaria, coordinación de servicios y auditoría clínica. Desde 2020 desarrollo herramientas web para digitalizar procesos clínicos y operativos, combinando conocimiento real del dominio sanitario con Next.js, TypeScript, testing, documentación y FHIR. Busco integrarme a equipos HealthTech donde pueda aportar en implementación, análisis funcional y desarrollo aplicado a flujos reales de atención.",
     "location": {
       "address": "Neuquen, Argentina",
       "postalCode": "8300",
@@ -29,17 +29,16 @@
   },
   "work": [
     {
-      "name": "Proyectos Freelance y Personales",
-      "position": "Desarrollador Web Full Stack",
+      "name": "Desarrollo web aplicado a producto y operaciones",
+      "position": "HealthTech Web Developer",
       "url": "https://github.com/RadikeCosa",
       "startDate": "2020-01-01",
       "endDate": null,
-      "summary": "Desarrollo de aplicaciones web con React, Next.js, Node.js y visualización de datos con D3.js. Implementación de testing automatizado y manual, despliegue en Vercel.",
+      "summary": "Diseño y desarrollo productos web orientados a procesos reales, con foco en salud digital, reglas de negocio y UX operativa. Trabajo con Next.js y TypeScript, integrando testing, documentación, analytics, persistencia de datos y estándares FHIR según las necesidades de cada proyecto.",
       "highlights": [
-        "Blog personal con Astro y Markdown",
-        "Landing page para servicios de salud (Next.js, Tailwind CSS)",
-        "Tracker nutricional con React y Local Storage",
-        "Soluciones de algoritmos en LeetCode (TypeScript, Vitest)"
+        "Plataforma clínica para kinesiología domiciliaria con flujos FHIR",
+        "Aplicaciones con reglas de negocio, persistencia y estados temporales",
+        "Testing automatizado, documentación técnica y despliegues en Vercel"
       ]
     },
     {
@@ -48,35 +47,65 @@
       "url": "",
       "startDate": "2013-01-01",
       "endDate": "2024-12-01",
-      "summary": "Lideré la creación de un área de servicios paliativos, diseñando procesos innovadores y gestionando equipos multidisciplinarios. Desarrollé habilidades de liderazgo, comunicación y resolución de problemas aplicables a equipos de desarrollo.",
-      "highlights": ["Diseño y gestión de procesos innovadores"]
+      "summary": "Coordiné servicios de internación domiciliaria, audité prestaciones clínicas y articulé la comunicación entre pacientes, familias, profesionales y equipos internos. Participé en el diseño de procesos operativos y en la creación de un área de cuidados paliativos, gestionando necesidades asistenciales en contextos complejos.",
+      "highlights": [
+        "Coordinación de equipos multidisciplinarios y servicios domiciliarios",
+        "Auditoría clínica y seguimiento de prestaciones",
+        "Diseño de procesos y comunicación con familias y profesionales"
+      ]
+    },
+    {
+      "name": "CIKAF y práctica clínica privada",
+      "position": "Kinesiólogo",
+      "url": "",
+      "startDate": "2004-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Atendí pacientes en rehabilitación clínica y deportiva, incluyendo trabajo con equipos de alto rendimiento. Esta práctica consolidó mi capacidad para evaluar necesidades, documentar evolución y adaptar tratamientos en coordinación con pacientes y otros profesionales.",
+      "highlights": [
+        "Rehabilitación clínica y deportiva",
+        "Seguimiento de tratamientos y evolución de pacientes"
+      ]
     }
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "UTN",
-      "url": "https://sysgestion.frba.utn.edu.ar/alumnos/validar_certificado?codigo=CER-QGZFK5SQ-60023",
-      "area": "Full Stack Development (Codigo Certificado: CER-QGZFK5SQ-60023)",
-      "studyType": "Curso online (Full Stack Developer)",
-      "startDate": "2020-03-01",
-      "endDate": "2021-03-01",
+      "institution": "Universidad de Helsinki",
+      "url": "https://www.helsinki.fi/en",
+      "area": "Full Stack Open: desarrollo web, testing y arquitectura de software",
+      "studyType": "Curso online",
+      "startDate": "2025-01-01",
+      "endDate": null,
       "courses": [
-        "Usuarios, sesiones, permisos, JWT, Testing, Arquitectura de Software"
+        "React",
+        "Node.js",
+        "Testing",
+        "Usuarios, sesiones y permisos"
       ]
     },
     {
-      "institution": "Universidad De Helsinki / Argentina Programa / Autodidacta",
+      "institution": "Universidad Tecnológica Nacional",
+      "url": "https://sysgestion.frba.utn.edu.ar/alumnos/validar_certificado?codigo=CER-QGZFK5SQ-60023",
       "area": "Desarrollo Web Full Stack",
-      "studyType": "Cursos y formación autodidacta",
-      "startDate": "2022-01-01",
-      "endDate": "2023-12-01",
+      "studyType": "Diplomatura online",
+      "startDate": "2020-03-01",
+      "endDate": "2021-03-01",
       "courses": [
-        "MERN Stack",
-        "MEAN Stack",
-        "Testing Manual y Automatizado",
-        "Spring Boot"
+        "JavaScript",
+        "Backend",
+        "Autenticación",
+        "Testing",
+        "Arquitectura de software"
       ]
+    },
+    {
+      "institution": "Universidad Nacional de Córdoba",
+      "url": "https://www.unc.edu.ar/",
+      "area": "Licenciatura en Kinesiología y Fisioterapia",
+      "studyType": "Carrera de grado",
+      "startDate": "1998-01-01",
+      "endDate": "2003-12-01",
+      "courses": []
     }
   ],
   "awards": [],
@@ -91,35 +120,59 @@
   "publications": [],
   "skills": [
     {
-      "name": "React",
+      "name": "Flujos clínicos",
+      "level": "Avanzado",
+      "keywords": ["Atención domiciliaria", "Coordinación clínica", "Auditoría"]
+    },
+    {
+      "name": "Análisis funcional",
       "level": "Intermedio",
-      "keywords": ["Frontend", "UI", "JavaScript"]
+      "keywords": ["Relevamiento", "Reglas de negocio", "Producto"]
+    },
+    {
+      "name": "Diseño de procesos",
+      "level": "Avanzado",
+      "keywords": ["Operaciones", "Documentación", "Mejora continua"]
+    },
+    {
+      "name": "UX operativa",
+      "level": "Intermedio",
+      "keywords": ["Flujos de trabajo", "Usuarios internos", "Accesibilidad"]
+    },
+    {
+      "name": "FHIR",
+      "level": "Intermedio",
+      "keywords": ["HAPI FHIR", "Interoperabilidad", "HealthTech"]
+    },
+    {
+      "name": "Testing",
+      "level": "Intermedio",
+      "keywords": ["Vitest", "Testing manual", "Regresión"]
+    },
+    {
+      "name": "Documentación",
+      "level": "Avanzado",
+      "keywords": ["Decisiones técnicas", "Procesos", "Contratos"]
+    },
+    {
+      "name": "Analytics",
+      "level": "Intermedio",
+      "keywords": ["GA4", "Eventos", "Conversión"]
     },
     {
       "name": "Next.js",
       "level": "Intermedio",
-      "keywords": ["FullStack", "SSR", "React"]
+      "keywords": ["App Router", "Server Components", "Server Actions"]
     },
     {
-      "name": "Node.js",
+      "name": "React",
       "level": "Intermedio",
-      "keywords": ["Backend", "APIs", "JavaScript"]
+      "keywords": ["UI", "Componentes", "Estado"]
     },
     {
-      "name": "Express",
+      "name": "TypeScript",
       "level": "Intermedio",
-      "keywords": ["Backend", "REST APIs"]
-    },
-    {
-      "name": "MongoDB",
-      "level": "Intermedio",
-      "keywords": ["NoSQL", "Bases de Datos"]
-    },
-    { "name": "HTML", "level": "Intermedio", "keywords": ["Frontend", "Web"] },
-    {
-      "name": "CSS",
-      "level": "Intermedio",
-      "keywords": ["Frontend", "Responsive Design"]
+      "keywords": ["Tipado", "Modelado", "Frontend", "Backend"]
     },
     {
       "name": "JavaScript",
@@ -127,34 +180,34 @@
       "keywords": ["Frontend", "Backend"]
     },
     {
-      "name": "Astro",
-      "level": "Básico",
-      "keywords": ["Static Sites", "Frontend"]
-    },
-    {
-      "name": "D3.js",
-      "level": "Básico",
-      "keywords": ["Data Visualization", "Frontend"]
-    },
-    {
-      "name": "Testing",
+      "name": "Node.js",
       "level": "Intermedio",
-      "keywords": ["Manual", "Automatizado", "Vitest"]
+      "keywords": ["Backend", "APIs", "Herramientas"]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Intermedio",
+      "keywords": ["Datos relacionales", "Persistencia"]
+    },
+    {
+      "name": "Prisma",
+      "level": "Intermedio",
+      "keywords": ["ORM", "Migraciones", "Modelado de datos"]
+    },
+    {
+      "name": "Supabase",
+      "level": "Intermedio",
+      "keywords": ["PostgreSQL", "Realtime", "RLS"]
     },
     {
       "name": "Git",
       "level": "Intermedio",
-      "keywords": ["Control de Versiones", "Colaboración"]
+      "keywords": ["Control de versiones", "Colaboración"]
     },
     {
-      "name": "GitHub",
+      "name": "Vercel",
       "level": "Intermedio",
-      "keywords": ["Portafolio", "Colaboración"]
-    },
-    {
-      "name": "Storytelling",
-      "level": "Avanzado",
-      "keywords": ["Comunicación", "Data Visualization"]
+      "keywords": ["Despliegue", "Observabilidad", "Analytics"]
     }
   ],
   "languages": [
@@ -169,68 +222,74 @@
   ],
   "interests": [
     {
-      "name": "Tecnología",
-      "keywords": ["Data Visualization", "Desarrollo Web", "Commodore 64"]
+      "name": "Salud digital",
+      "keywords": ["HealthTech", "Interoperabilidad", "Procesos clínicos"]
     }
   ],
   "references": [],
   "projects": [
     {
-      "name": "Ejercicios LeetCode",
+      "name": "Kinesiología a Domicilio",
       "isActive": true,
-      "description": "Repositorio de soluciones a problemas de Leet Code, enfocado en mejorar habilidades de programación y algoritmos.",
-      "highlights": [
-        "TypeScript",
-        "JavaScript",
-        "Vitest",
-        "Logica de programación"
-      ],
-      "url": "https://camboya.vercel.app/data-viz",
-      "github": "https://github.com/RadikeCosa/leetCode"
-    },
-    {
-      "name": "Home Care Services Landing Page",
-      "isActive": true,
-      "description": "Página en construccion de presentacion para servicios de atención domiciliaria, diseñada para atraer y convertir clientes potenciales.",
+      "description": "Plataforma clínica liviana y landing de captación para un servicio de kinesiología domiciliaria. Digitaliza consultas, altas administrativas, ciclos de tratamiento, registro de visitas y comunicación operativa con familias.",
       "highlights": [
         "Next.js",
-        "React",
-        "Tailwind CSS",
-        "Diseño Responsive",
-        "SEO"
+        "TypeScript",
+        "FHIR",
+        "HAPI FHIR",
+        "Vitest",
+        "GA4",
+        "UX operativa",
+        "HealthTech"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Blog Personal - Ramiro Cosa",
+      "name": "Pronósticos Mundial 2026",
       "isActive": true,
-      "description": "Blog de desarrollador donde comparto mis experiencias y aprendizajes en desarrollo web, visualización de datos y otros temas de interés en IT",
+      "description": "Aplicación familiar de pronósticos que modela scoring, persistencia, autenticación simple y estados temporales. Bloquea y revela predicciones según el inicio de cada partido y recalcula posiciones desde resultados reales.",
       "highlights": [
-        "Astro",
-        "Markdown",
-        "Despliegue en Vercel",
-        "Mermaid",
-        "Katex"
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Vitest",
+        "Reglas de negocio"
       ],
-      "github": "https://github.com/RadikeCosa/blog-astro",
-      "url": "https://blog-astro-rouge.vercel.app/"
+      "github": "https://github.com/RadikeCosa/pronostico-mundial",
+      "url": "https://github.com/RadikeCosa/pronostico-mundial"
     },
     {
-      "name": "Tracker Nutricional",
+      "name": "Tutti Frutti Online",
       "isActive": true,
-      "description": "Aplicación web para seguimiento nutricional, permitiendo a los usuarios registrar y analizar su ingesta diaria de alimentos y nutrientes.",
-      "highlights": ["Next.js", "React", "Local Storage"],
-      "github": "https://github.com/RadikeCosa/nutrition-tracker",
-      "url": "https://nutrition-tracker-psi.vercel.app/form"
+      "description": "Juego multijugador por rondas con categorías configurables, validación en servidor y estado compartido en tiempo real. Los participantes ingresan por invitación y un organizador coordina letras, respuestas y puntuación.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Realtime",
+        "Server Actions",
+        "RLS"
+      ],
+      "github": "https://github.com/RadikeCosa/tutti-frutti",
+      "url": "https://github.com/RadikeCosa/tutti-frutti"
     },
     {
-      "name": "Sandbox de Side Projects",
+      "name": "Fira Estudio E-commerce",
       "isActive": true,
-      "description": "Repositorio de proyectos secundarios y experimentos en desarrollo web, enfocados en aprender nuevas tecnologías y mejorar habilidades de programación.",
-      "highlights": ["JavaScript", "React", "Next.js", "Tailwind CSS", "MUI"],
-      "github": "https://github.com/RadikeCosa/camboya",
-      "url": "https://camboya.vercel.app/"
+      "description": "E-commerce con catálogo, carrito, control de stock y checkout integrado con Mercado Pago. Incluye persistencia en Supabase, procesamiento de webhooks, emails transaccionales, analytics y estrategia de despliegue por ambientes.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Mercado Pago",
+        "Webhooks",
+        "GA4",
+        "Vitest"
+      ],
+      "github": "https://github.com/RadikeCosa/fira-estudio",
+      "url": "https://fira-estudio.vercel.app/"
     }
   ]
 }

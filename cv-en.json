@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ramiro Nicolas Cosa",
-    "label": "Junior Frontend Developer | React - Data Visualization",
+    "label": "HealthTech Web Developer | Clinical workflows, implementation and product",
     "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
     "phone": "299 5217189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Professional with over 20 years in kinesiology and home healthcare coordination, reinvented as a web developer since 2020. Specialized in React, MERN, and data visualization with D3.js, with experience in manual and automated testing. Self-taught and disciplined, I apply a structured problem-solving approach, combining critical thinking with storytelling and data visualization. Currently, I am deepening my knowledge in Full Stack Open from the University of Helsinki, with a special interest in testing and software architecture.",
+    "summary": "Kinesiologist with 20+ years of experience in home-based healthcare, clinical coordination and service auditing. Since 2020, I have been building web tools to digitize clinical and operational workflows, combining real healthcare domain knowledge with Next.js, TypeScript, testing, documentation and FHIR. I am looking for HealthTech roles where I can contribute to implementation, functional analysis and software development for real patient-care workflows.",
     "location": {
       "address": "Neuquen, Argentina",
       "postalCode": "8300",
@@ -22,31 +22,49 @@
       },
       {
         "network": "GitHub",
-        "username": "Ramiro Cosa",
+        "username": "RadikeCosa",
         "url": "https://github.com/RadikeCosa"
       }
     ]
   },
   "work": [
     {
-      "name": "Alegra Salud",
-      "position": "Coordinator and Auditor of Home Care Services",
-      "url": "",
-      "startDate": "2013-01-01",
-      "endDate": "2024-12-01",
-      "summary": "Led the creation of a palliative care services area, designing innovative processes that expanded the company's offerings. Managed multidisciplinary teams, optimizing communication and operational problem-solving.",
+      "name": "Web development for products and operations",
+      "position": "HealthTech Web Developer",
+      "url": "https://github.com/RadikeCosa",
+      "startDate": "2020-01-01",
+      "endDate": null,
+      "summary": "I design and build web products around real operational workflows, focusing on digital health, business rules and operational UX. I work with Next.js and TypeScript, integrating testing, documentation, analytics, data persistence and FHIR standards according to each project's needs.",
       "highlights": [
-        "Collaborated in the design of an area acquired after the company's sale"
+        "Clinical platform for home-based kinesiology with FHIR workflows",
+        "Applications with business rules, persistence and time-based states",
+        "Automated testing, technical documentation and Vercel deployments"
       ]
     },
     {
-      "name": "CIKAF - Private Clinics",
-      "position": "Kinesiologist - Specialization in High-Performance Sports",
+      "name": "Alegra Salud",
+      "position": "Home Care Services Coordinator and Clinical Auditor",
+      "url": "",
+      "startDate": "2013-01-01",
+      "endDate": "2024-12-01",
+      "summary": "I coordinated home care services, audited clinical delivery and connected patients, families, healthcare professionals and internal teams. I contributed to operational process design and the creation of a palliative care service, managing complex care needs across multidisciplinary teams.",
+      "highlights": [
+        "Coordination of multidisciplinary teams and home care services",
+        "Clinical auditing and service follow-up",
+        "Process design and communication with families and professionals"
+      ]
+    },
+    {
+      "name": "CIKAF and private clinical practice",
+      "position": "Kinesiologist",
       "url": "",
       "startDate": "2004-01-01",
       "endDate": "2013-01-01",
-      "summary": "Worked with a high-performance team (2012-2014), applying customized solutions under pressure. Developed analytical and adaptive skills in dynamic environments.",
-      "highlights": ["Pampas XV, Pablo Busin"]
+      "summary": "I treated patients in clinical and sports rehabilitation, including work with high-performance teams. This practice strengthened my ability to assess needs, document progress and adapt treatments in coordination with patients and other professionals.",
+      "highlights": [
+        "Clinical and sports rehabilitation",
+        "Treatment follow-up and patient progress documentation"
+      ]
     }
   ],
   "volunteer": [],
@@ -54,31 +72,39 @@
     {
       "institution": "University of Helsinki",
       "url": "https://www.helsinki.fi/en",
-      "area": "Full Stack Development",
-      "studyType": "Online Course",
+      "area": "Full Stack Open: web development, testing and software architecture",
+      "studyType": "Online course",
       "startDate": "2025-01-01",
       "endDate": null,
-      "score": "",
-      "courses": ["Users, sessions, permissions, JWT"]
+      "courses": [
+        "React",
+        "Node.js",
+        "Testing",
+        "Users, sessions and permissions"
+      ]
     },
     {
-      "institution": "UTN / Argentina Programa / Self-taught",
-      "url": "",
+      "institution": "National Technological University (UTN)",
+      "url": "https://sysgestion.frba.utn.edu.ar/alumnos/validar_certificado?codigo=CER-QGZFK5SQ-60023",
       "area": "Full Stack Web Development",
-      "studyType": "Courses and self-taught training",
-      "startDate": "2020-01-01",
-      "endDate": "2023-12-01",
-      "score": "",
-      "courses": ["MERN", "MEAN", "Manual and Automated Testing", "Spring Boot"]
+      "studyType": "Online diploma program",
+      "startDate": "2020-03-01",
+      "endDate": "2021-03-01",
+      "courses": [
+        "JavaScript",
+        "Backend development",
+        "Authentication",
+        "Testing",
+        "Software architecture"
+      ]
     },
     {
       "institution": "National University of Cordoba",
-      "url": "",
-      "area": "Bachelor's in Kinesiology",
-      "studyType": "Bachelor's Degree",
+      "url": "https://www.unc.edu.ar/",
+      "area": "Bachelor's Degree in Kinesiology and Physiotherapy",
+      "studyType": "Bachelor's degree",
       "startDate": "1998-01-01",
       "endDate": "2003-12-01",
-      "score": "",
       "courses": []
     }
   ],
@@ -94,94 +120,94 @@
   "publications": [],
   "skills": [
     {
-      "name": "HTML",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend"]
+      "name": "Clinical workflows",
+      "level": "Advanced",
+      "keywords": ["Home care", "Clinical coordination", "Auditing"]
     },
     {
-      "name": "CSS",
+      "name": "Functional analysis",
       "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+      "keywords": ["Discovery", "Business rules", "Product"]
     },
     {
-      "name": "JavaScript",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "Backend"]
+      "name": "Process design",
+      "level": "Advanced",
+      "keywords": ["Operations", "Documentation", "Continuous improvement"]
     },
     {
-      "name": "React",
+      "name": "Operational UX",
       "level": "Intermediate",
-      "keywords": ["Frontend", "JavaScript Library", "UI"]
+      "keywords": ["Workflows", "Internal users", "Accessibility"]
+    },
+    {
+      "name": "FHIR",
+      "level": "Intermediate",
+      "keywords": ["HAPI FHIR", "Interoperability", "HealthTech"]
+    },
+    {
+      "name": "Testing",
+      "level": "Intermediate",
+      "keywords": ["Vitest", "Manual testing", "Regression"]
+    },
+    {
+      "name": "Documentation",
+      "level": "Advanced",
+      "keywords": ["Technical decisions", "Processes", "Contracts"]
+    },
+    {
+      "name": "Analytics",
+      "level": "Intermediate",
+      "keywords": ["GA4", "Events", "Conversion"]
     },
     {
       "name": "Next.js",
       "level": "Intermediate",
-      "keywords": ["FullStack", "JavaScript Framework"]
+      "keywords": ["App Router", "Server Components", "Server Actions"]
     },
     {
-      "name": "Angular",
-      "level": "Basic",
-      "keywords": ["Frontend", "JavaScript Framework"]
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": ["UI", "Components", "State"]
     },
     {
-      "name": "Astro",
-      "level": "Basic",
-      "keywords": ["Frontend", "Static Sites"]
+      "name": "TypeScript",
+      "level": "Intermediate",
+      "keywords": ["Type safety", "Modeling", "Frontend", "Backend"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "keywords": ["Frontend", "Backend"]
     },
     {
       "name": "Node.js",
       "level": "Intermediate",
-      "keywords": ["Backend", "JavaScript", "Server"]
+      "keywords": ["Backend", "APIs", "Tooling"]
     },
     {
-      "name": "Express",
+      "name": "PostgreSQL",
       "level": "Intermediate",
-      "keywords": ["Backend", "REST APIs"]
+      "keywords": ["Relational data", "Persistence"]
     },
     {
-      "name": "MongoDB",
+      "name": "Prisma",
       "level": "Intermediate",
-      "keywords": ["Databases", "NoSQL"]
-    },
-    {
-      "name": "SQL",
-      "level": "Basic",
-      "keywords": ["Databases", "Relational"]
+      "keywords": ["ORM", "Migrations", "Data modeling"]
     },
     {
       "name": "Supabase",
       "level": "Intermediate",
-      "keywords": ["Databases", "Relational"]
-    },
-    {
-      "name": "Spring Boot",
-      "level": "Basic",
-      "keywords": ["Backend", "Java", "APIs"]
-    },
-    {
-      "name": "D3.js",
-      "level": "Basic",
-      "keywords": ["Data Visualization", "Frontend"]
-    },
-    {
-      "name": "Python",
-      "level": "Basic",
-      "keywords": ["Data Visualization", "Spatial Analysis"]
+      "keywords": ["PostgreSQL", "Realtime", "RLS"]
     },
     {
       "name": "Git",
       "level": "Intermediate",
-      "keywords": ["Version Control", "Collaboration"]
+      "keywords": ["Version control", "Collaboration"]
     },
     {
-      "name": "GitHub",
+      "name": "Vercel",
       "level": "Intermediate",
-      "keywords": ["Version Control", "Portfolio"]
-    },
-    {
-      "name": "Storytelling",
-      "level": "Advanced",
-      "keywords": ["Communication", "Data Visualization"]
+      "keywords": ["Deployment", "Observability", "Analytics"]
     }
   ],
   "languages": [
@@ -196,55 +222,74 @@
   ],
   "interests": [
     {
-      "name": "Technology",
-      "keywords": ["Data Visualization", "Web Development", "Commodore 64"]
+      "name": "Digital health",
+      "keywords": ["HealthTech", "Interoperability", "Clinical workflows"]
     }
   ],
   "references": [],
   "projects": [
     {
-      "name": "LeetCode Repository",
+      "name": "Kinesiologia a Domicilio",
       "isActive": true,
-      "description": "A repository for solving LeetCode problems and improving coding skills.",
-      "highlights": ["TypeScript", "Vitest", "Programming Logic"],
-      "url": "https://github.com/RadikeCosa/leetCode",
-      "github": "https://github.com/RadikeCosa/leetCode"
-    },
-    {
-      "name": "Quotes API",
-      "isActive": true,
-      "description": "A RESTful API for managing inspirational quotes, with interactive documentation generated by Swagger.",
+      "description": "A lightweight clinical platform and lead-generation website for a home-based kinesiology service. It digitizes inquiries, administrative intake, treatment cycles, visit records and operational communication with families.",
       "highlights": [
-        "TypeScript",
-        "Express.js",
-        "MongoDB",
-        "Swagger",
-        "Vercel"
-      ],
-      "url": "https://quotes-api-hvf9.onrender.com/api-docs/",
-      "github": "https://github.com/RadikeCosa/quotes-api"
-    },
-    {
-      "name": "CuidApp",
-      "isActive": true,
-      "description": "Utility app for home healthcare services.",
-      "highlights": [
-        "TypeScript",
         "Next.js",
-        "Tailwind CSS",
-        "Supabase",
-        "Zod"
+        "TypeScript",
+        "FHIR",
+        "HAPI FHIR",
+        "Vitest",
+        "GA4",
+        "Operational UX",
+        "HealthTech"
       ],
-      "url": "https://cuidapp-smoky.vercel.app/",
-      "github": "https://github.com/RadikeCosa/Cuidapp"
+      "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
+      "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "CuidApp Documentation",
+      "name": "World Cup 2026 Predictions",
       "isActive": true,
-      "description": "Documentation for the utility app for home healthcare services.",
-      "highlights": ["Astro.js", "Starlight", "Markdown"],
-      "url": "https://cuidapp-documentation.vercel.app/",
-      "github": "https://github.com/RadikeCosa/cuidapp-documentation"
+      "description": "A family prediction app modeling scoring, persistence, simple authentication and time-based states. It locks and reveals predictions at kickoff and recalculates standings from recorded match results.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Vitest",
+        "Business rules"
+      ],
+      "github": "https://github.com/RadikeCosa/pronostico-mundial",
+      "url": "https://github.com/RadikeCosa/pronostico-mundial"
+    },
+    {
+      "name": "Tutti Frutti Online",
+      "isActive": true,
+      "description": "A round-based multiplayer word game with configurable categories, server-side validation and shared real-time state. Players join through an invitation while a host manages letters, answers and scoring.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Realtime",
+        "Server Actions",
+        "RLS"
+      ],
+      "github": "https://github.com/RadikeCosa/tutti-frutti",
+      "url": "https://github.com/RadikeCosa/tutti-frutti"
+    },
+    {
+      "name": "Fira Estudio E-commerce",
+      "isActive": true,
+      "description": "An e-commerce product with catalog, cart, stock-aware checkout and Mercado Pago integration. It includes Supabase persistence, webhook processing, transactional emails, analytics and environment-based deployment workflows.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "Mercado Pago",
+        "Webhooks",
+        "GA4",
+        "Vitest"
+      ],
+      "github": "https://github.com/RadikeCosa/fira-estudio",
+      "url": "https://fira-estudio.vercel.app/"
     }
   ]
 }
