@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ramiro Nicolas Cosa",
-    "label": "HealthTech Web Developer | Clinical workflows, implementation and product",
+    "label": "HealthTech Web Developer | Clinical Workflows & Implementation",
     "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
     "phone": "299 5217189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Kinesiologist with 20+ years of experience in home-based healthcare, clinical coordination and service auditing. Since 2020, I have been building web tools to digitize clinical and operational workflows, combining real healthcare domain knowledge with Next.js, TypeScript, testing, documentation and FHIR. I am looking for HealthTech roles where I can contribute to implementation, functional analysis and software development for real patient-care workflows.",
+    "summary": "Kinesiologist with 20+ years of experience in home-based healthcare, clinical coordination and service auditing. Since 2020, I have been building web tools to digitize clinical and operational workflows, combining real healthcare domain knowledge with Next.js, TypeScript, testing, documentation and FHIR. I focus on HealthTech projects where implementation, functional analysis and software development need to connect with real patient-care workflows.",
     "location": {
       "address": "Neuquen, Argentina",
       "postalCode": "8300",
@@ -30,7 +30,7 @@
   "work": [
     {
       "name": "Web development for products and operations",
-      "position": "HealthTech Web Developer",
+      "position": "Web Developer focused on HealthTech and operations",
       "url": "https://github.com/RadikeCosa",
       "startDate": "2020-01-01",
       "endDate": null,
@@ -217,7 +217,7 @@
     },
     {
       "language": "English",
-      "fluency": "Advanced"
+      "fluency": "C1 Advanced"
     }
   ],
   "interests": [
@@ -231,7 +231,7 @@
     {
       "name": "Kinesiologia a Domicilio",
       "isActive": true,
-      "description": "A lightweight clinical platform and lead-generation website for a home-based kinesiology service. It digitizes inquiries, administrative intake, treatment cycles, visit records and operational communication with families.",
+      "description": "A lightweight clinical platform and lead-generation website for a home-based kinesiology service. It digitizes inquiries, administrative intake, treatment cycles, visit records and care-related communication with families.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -244,36 +244,6 @@
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
-    },
-    {
-      "name": "World Cup 2026 Predictions",
-      "isActive": true,
-      "description": "A family prediction app modeling scoring, persistence, simple authentication and time-based states. It locks and reveals predictions at kickoff and recalculates standings from recorded match results.",
-      "highlights": [
-        "Next.js",
-        "TypeScript",
-        "Prisma",
-        "PostgreSQL",
-        "Vitest",
-        "Business rules"
-      ],
-      "github": "https://github.com/RadikeCosa/pronostico-mundial",
-      "url": "https://github.com/RadikeCosa/pronostico-mundial"
-    },
-    {
-      "name": "Tutti Frutti Online",
-      "isActive": true,
-      "description": "A round-based multiplayer word game with configurable categories, server-side validation and shared real-time state. Players join through an invitation while a host manages letters, answers and scoring.",
-      "highlights": [
-        "Next.js",
-        "TypeScript",
-        "Supabase",
-        "Realtime",
-        "Server Actions",
-        "RLS"
-      ],
-      "github": "https://github.com/RadikeCosa/tutti-frutti",
-      "url": "https://github.com/RadikeCosa/tutti-frutti"
     },
     {
       "name": "Fira Estudio E-commerce",

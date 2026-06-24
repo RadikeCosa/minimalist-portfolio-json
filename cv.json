@@ -6,7 +6,7 @@
     "email": "ramirocosa@gmail.com",
     "phone": "299 5217189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Kinesiólogo con más de 20 años de experiencia en atención domiciliaria, coordinación de servicios y auditoría clínica. Desde 2020 desarrollo herramientas web para digitalizar procesos clínicos y operativos, combinando conocimiento real del dominio sanitario con Next.js, TypeScript, testing, documentación y FHIR. Busco integrarme a equipos HealthTech donde pueda aportar en implementación, análisis funcional y desarrollo aplicado a flujos reales de atención.",
+    "summary": "Kinesiólogo con más de 20 años de experiencia en atención domiciliaria, coordinación de servicios y auditoría clínica. Desde 2020 desarrollo herramientas web para digitalizar procesos clínicos y operativos, combinando conocimiento real del dominio sanitario con Next.js, TypeScript, testing, documentación y FHIR. Me enfoco en proyectos HealthTech donde implementación, análisis funcional y desarrollo necesitan conectarse con flujos reales de atención.",
     "location": {
       "address": "Neuquen, Argentina",
       "postalCode": "8300",
@@ -30,7 +30,7 @@
   "work": [
     {
       "name": "Desarrollo web aplicado a producto y operaciones",
-      "position": "HealthTech Web Developer",
+      "position": "Desarrollador web orientado a HealthTech y operaciones",
       "url": "https://github.com/RadikeCosa",
       "startDate": "2020-01-01",
       "endDate": null,
@@ -217,7 +217,7 @@
     },
     {
       "language": "Inglés",
-      "fluency": "Avanzado"
+      "fluency": "C1 Advanced"
     }
   ],
   "interests": [
@@ -231,7 +231,7 @@
     {
       "name": "Kinesiología a Domicilio",
       "isActive": true,
-      "description": "Plataforma clínica liviana y landing de captación para un servicio de kinesiología domiciliaria. Digitaliza consultas, altas administrativas, ciclos de tratamiento, registro de visitas y comunicación operativa con familias.",
+      "description": "Plataforma clínica liviana y landing de captación para un servicio de kinesiología domiciliaria. Digitaliza consultas, altas administrativas, ciclos de tratamiento, registro de visitas y comunicación de seguimiento con familias.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -244,36 +244,6 @@
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
-    },
-    {
-      "name": "Pronósticos Mundial 2026",
-      "isActive": true,
-      "description": "Aplicación familiar de pronósticos que modela scoring, persistencia, autenticación simple y estados temporales. Bloquea y revela predicciones según el inicio de cada partido y recalcula posiciones desde resultados reales.",
-      "highlights": [
-        "Next.js",
-        "TypeScript",
-        "Prisma",
-        "PostgreSQL",
-        "Vitest",
-        "Reglas de negocio"
-      ],
-      "github": "https://github.com/RadikeCosa/pronostico-mundial",
-      "url": "https://github.com/RadikeCosa/pronostico-mundial"
-    },
-    {
-      "name": "Tutti Frutti Online",
-      "isActive": true,
-      "description": "Juego multijugador por rondas con categorías configurables, validación en servidor y estado compartido en tiempo real. Los participantes ingresan por invitación y un organizador coordina letras, respuestas y puntuación.",
-      "highlights": [
-        "Next.js",
-        "TypeScript",
-        "Supabase",
-        "Realtime",
-        "Server Actions",
-        "RLS"
-      ],
-      "github": "https://github.com/RadikeCosa/tutti-frutti",
-      "url": "https://github.com/RadikeCosa/tutti-frutti"
     },
     {
       "name": "Fira Estudio E-commerce",
