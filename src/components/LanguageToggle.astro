@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl, getAlternateUrl } from "@/i18n/utils";
-import { defaultLang } from "@/i18n/config";
 
 const currentLang = getLangFromUrl(Astro.url);
 const targetLang = currentLang === "en" ? "es" : "en";

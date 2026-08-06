@@ -17,7 +17,7 @@ const cvData = await getCV(currentLang);
 const { projects } = cvData;
 ---
 
-<Section title={t("section.projects")}>
+<Section id="healthtech-project" title={t("section.projects")}>
   <ul>
     {
       projects.map(

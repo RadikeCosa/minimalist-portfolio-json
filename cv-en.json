@@ -2,17 +2,16 @@
   "basics": {
     "name": "Ramiro Nicolas Cosa",
     "label": "HealthTech Web Developer | Clinical Workflows & Implementation",
-    "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
-    "phone": "299 5217189",
+    "phone": "+54 9 299 521-7189",
     "url": "https://ramirocosa.is-a.dev/",
     "summary": "Kinesiologist with 20+ years of experience in home-based healthcare, clinical coordination and service auditing. Since 2020, I have been building web tools to digitize clinical and operational workflows, combining real healthcare domain knowledge with Next.js, TypeScript, testing, documentation and FHIR. I focus on HealthTech projects where implementation, functional analysis and software development need to connect with real patient-care workflows.",
     "location": {
-      "address": "Neuquen, Argentina",
+      "address": "Neuquén, Argentina",
       "postalCode": "8300",
-      "city": "Neuquen",
+      "city": "Neuquén",
       "countryCode": "AR",
-      "region": "Neuquen"
+      "region": "Argentina"
     },
     "profiles": [
       {

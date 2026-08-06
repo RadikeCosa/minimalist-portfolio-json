@@ -2,17 +2,16 @@
   "basics": {
     "name": "Ramiro Nicolas Cosa",
     "label": "HealthTech Web Developer | Implementación y procesos clínicos",
-    "image": "/me.webp",
     "email": "ramirocosa@gmail.com",
-    "phone": "299 5217189",
+    "phone": "+54 9 299 521-7189",
     "url": "https://ramirocosa.is-a.dev/",
     "summary": "Kinesiólogo con más de 20 años de experiencia en atención domiciliaria, coordinación de servicios y auditoría clínica. Desde 2020 desarrollo herramientas web para digitalizar procesos clínicos y operativos, combinando conocimiento real del dominio sanitario con Next.js, TypeScript, testing, documentación y FHIR. Me enfoco en proyectos HealthTech donde implementación, análisis funcional y desarrollo necesitan conectarse con flujos reales de atención.",
     "location": {
-      "address": "Neuquen, Argentina",
+      "address": "Neuquén, Argentina",
       "postalCode": "8300",
-      "city": "Neuquen",
+      "city": "Neuquén",
       "countryCode": "AR",
-      "region": "Neuquen"
+      "region": "Argentina"
     },
     "profiles": [
       {
