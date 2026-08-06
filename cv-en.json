@@ -28,7 +28,7 @@
   },
   "work": [
     {
-      "stageTitle": "HealthTech Product Development",
+      "stageTitle": "Digital Product Development",
       "context": "",
       "periods": [
         {
@@ -36,16 +36,16 @@
           "endDate": null
         }
       ],
-      "summary": "I design and build web products for clinical and operational workflows.",
+      "summary": "Since 2020, I have been designing and building web products, with a particular focus on HealthTech solutions for clinical and operational workflows.",
       "highlights": [
-        "Development with Next.js, TypeScript, and FHIR.",
-        "Translation of clinical and operational needs into workflows, requirements, and product features.",
-        "Main project: a digital platform for home rehabilitation operations."
+        "I work with Next.js, TypeScript, and FHIR.",
+        "I turn clinical and operational needs into workflows, business rules, and product features.",
+        "I am developing a platform for managing inquiries, patients, treatments, visits, and clinical documentation."
       ]
     },
     {
       "stageTitle": "Healthcare Service Coordination, Review, and Processes",
-      "context": "Alegra Salud",
+      "context": "Alegra Salud and other home care services",
       "periods": [
         {
           "startDate": "2013-01-01",
@@ -61,18 +61,14 @@
     },
     {
       "stageTitle": "Clinical Practice and Rehabilitation",
-      "context": "CIKAF and independent practice",
+      "context": "Independent Practice",
       "periods": [
         {
           "startDate": "2004-01-01",
-          "endDate": "2013-01-01"
-        },
-        {
-          "startDate": "2023-01-01",
           "endDate": null
         }
       ],
-      "summary": "Experience in clinical rehabilitation, private practice, and sports, including high-performance settings.",
+      "summary": "Experience in clinical and sports rehabilitation, both in private practice and with youth and high-performance teams.",
       "highlights": [
         "Functional assessment, treatment planning, and follow-up.",
         "Progress documentation and coordination with patients and other professionals."
@@ -80,55 +76,79 @@
     }
   ],
   "volunteer": [],
-  "education": [
+  "educationGroups": [
     {
-      "institution": "University of Helsinki",
-      "url": "https://www.helsinki.fi/en",
-      "area": "Full Stack Open: web development, testing and software architecture",
-      "studyType": "Online course",
-      "startDate": "2025-01-01",
-      "endDate": null,
-      "courses": [
-        "React",
-        "Node.js",
-        "Testing",
-        "Users, sessions and permissions"
-      ]
+      "title": "Academic and Clinical Training",
+      "items": [
+        {
+          "title": "Bachelor’s Degree in Kinesiology",
+          "institution": "National University of Córdoba",
+          "startDate": "1998-01-01",
+          "endDate": "2003-12-01",
+          "description": "",
+          "details": []
+        },
+        {
+          "title": "Training in Sports Kinesiology",
+          "institution": "Universidad Abierta Interamericana",
+          "startDate": "2007-01-01",
+          "endDate": "2007-12-01",
+          "description": "",
+          "details": []
+        },
+        {
+          "title": "Training in Palliative Care",
+          "institution": "Instituto Pallium / Universidad del Salvador",
+          "startDate": "2016-01-01",
+          "endDate": "2017-12-01",
+          "description": "Introductory and advanced levels.",
+          "details": []
+        }
+      ],
+      "closingNote": ""
     },
     {
-      "institution": "National Technological University (UTN)",
-      "url": "https://sysgestion.frba.utn.edu.ar/alumnos/validar_certificado?codigo=CER-QGZFK5SQ-60023",
-      "area": "Full Stack Web Development",
-      "studyType": "Online diploma program",
-      "startDate": "2020-03-01",
-      "endDate": "2021-03-01",
-      "courses": [
-        "JavaScript",
-        "Backend development",
-        "Authentication",
-        "Testing",
-        "Software architecture"
-      ]
-    },
-    {
-      "institution": "National University of Cordoba",
-      "url": "https://www.unc.edu.ar/",
-      "area": "Bachelor's Degree in Kinesiology and Physiotherapy",
-      "studyType": "Bachelor's degree",
-      "startDate": "1998-01-01",
-      "endDate": "2003-12-01",
-      "courses": []
+      "title": "Technical Development and Applied Learning",
+      "items": [
+        {
+          "title": "Full Stack Open",
+          "institution": "University of Helsinki",
+          "startDate": "2025-01-01",
+          "endDate": null,
+          "description": "Full stack development, testing, and web application architecture.",
+          "details": []
+        },
+        {
+          "title": "Web and Full Stack Development Training",
+          "institution": "National Technological University · Egg / Argentina Programa",
+          "startDate": "2021-01-01",
+          "endDate": "2022-12-01",
+          "description": "",
+          "details": [
+            "Introductory Web Programming / Frontend Development.",
+            "Full Stack Web Development Diploma.",
+            "Full Stack Development."
+          ]
+        },
+        {
+          "title": "Software Testing and QA Training",
+          "institution": "Egg / Argentina Programa",
+          "startDate": "2023-01-01",
+          "endDate": "2023-12-01",
+          "description": "",
+          "details": [
+            "Introduction to Quality Assurance.",
+            "Manual testing.",
+            "Test automation.",
+            "Performance testing."
+          ]
+        }
+      ],
+      "closingNote": "Since 2020, I have complemented structured training with self-directed study, official documentation, and continuous development of personal web products."
     }
   ],
   "awards": [],
-  "certificates": [
-    {
-      "name": "Manual and Automated Testing",
-      "date": "2022-01-01",
-      "issuer": "Argentina Programa",
-      "url": ""
-    }
-  ],
+  "certificates": [],
   "publications": [],
   "skills": [
     {

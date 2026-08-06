@@ -28,7 +28,7 @@
   },
   "work": [
     {
-      "stageTitle": "Desarrollo de productos HealthTech",
+      "stageTitle": "Desarrollo de productos digitales",
       "context": "",
       "periods": [
         {
@@ -36,16 +36,16 @@
           "endDate": null
         }
       ],
-      "summary": "Diseño y desarrollo productos web aplicados a procesos clínicos y operativos.",
+      "summary": "Desde 2020 diseño y desarrollo productos web, con especial foco en soluciones HealthTech aplicadas a procesos clínicos y operativos.",
       "highlights": [
-        "Desarrollo con Next.js, TypeScript y FHIR.",
-        "Traducción de necesidades clínicas y operativas en flujos, requerimientos y funcionalidades.",
-        "Proyecto principal: plataforma digital para operaciones de rehabilitación domiciliaria."
+        "Trabajo con Next.js, TypeScript y FHIR.",
+        "Convierto necesidades clínicas y operativas en flujos, reglas de negocio y funcionalidades.",
+        "Desarrollo una plataforma para gestionar consultas, pacientes, tratamientos, visitas y documentación clínica."
       ]
     },
     {
       "stageTitle": "Coordinación, auditoría y procesos de salud",
-      "context": "Alegra Salud",
+      "context": "Alegra Salud y otros servicios de internación domiciliaria",
       "periods": [
         {
           "startDate": "2013-01-01",
@@ -61,74 +61,94 @@
     },
     {
       "stageTitle": "Práctica clínica y rehabilitación",
-      "context": "CIKAF y práctica independiente",
+      "context": "Práctica independiente",
       "periods": [
         {
           "startDate": "2004-01-01",
-          "endDate": "2013-01-01"
-        },
-        {
-          "startDate": "2023-01-01",
           "endDate": null
         }
       ],
-      "summary": "Experiencia en rehabilitación clínica, práctica privada y deporte, incluyendo contextos de alto rendimiento.",
+      "summary": "Experiencia en rehabilitación clínica y deportiva, tanto en consultorio como con equipos juveniles y de alto rendimiento.",
       "highlights": [
         "Evaluación funcional, planificación y seguimiento de tratamientos.",
-        "Documentación de evolución y coordinación con pacientes y otros profesionales."
+        "Registro de evolución y coordinación con pacientes y otros profesionales."
       ]
     }
   ],
   "volunteer": [],
-  "education": [
+  "educationGroups": [
     {
-      "institution": "Universidad de Helsinki",
-      "url": "https://www.helsinki.fi/en",
-      "area": "Full Stack Open: desarrollo web, testing y arquitectura de software",
-      "studyType": "Curso online",
-      "startDate": "2025-01-01",
-      "endDate": null,
-      "courses": [
-        "React",
-        "Node.js",
-        "Testing",
-        "Usuarios, sesiones y permisos"
-      ]
+      "title": "Formación académica y clínica",
+      "items": [
+        {
+          "title": "Licenciatura en Kinesiología",
+          "institution": "Universidad Nacional de Córdoba",
+          "startDate": "1998-01-01",
+          "endDate": "2003-12-01",
+          "description": "",
+          "details": []
+        },
+        {
+          "title": "Formación en Kinesiología Deportiva",
+          "institution": "Universidad Abierta Interamericana",
+          "startDate": "2007-01-01",
+          "endDate": "2007-12-01",
+          "description": "",
+          "details": []
+        },
+        {
+          "title": "Formación en Cuidados Paliativos",
+          "institution": "Instituto Pallium / Universidad del Salvador",
+          "startDate": "2016-01-01",
+          "endDate": "2017-12-01",
+          "description": "Niveles introductorio y avanzado.",
+          "details": []
+        }
+      ],
+      "closingNote": ""
     },
     {
-      "institution": "Universidad Tecnológica Nacional",
-      "url": "https://sysgestion.frba.utn.edu.ar/alumnos/validar_certificado?codigo=CER-QGZFK5SQ-60023",
-      "area": "Desarrollo Web Full Stack",
-      "studyType": "Diplomatura online",
-      "startDate": "2020-03-01",
-      "endDate": "2021-03-01",
-      "courses": [
-        "JavaScript",
-        "Backend",
-        "Autenticación",
-        "Testing",
-        "Arquitectura de software"
-      ]
-    },
-    {
-      "institution": "Universidad Nacional de Córdoba",
-      "url": "https://www.unc.edu.ar/",
-      "area": "Licenciatura en Kinesiología y Fisioterapia",
-      "studyType": "Carrera de grado",
-      "startDate": "1998-01-01",
-      "endDate": "2003-12-01",
-      "courses": []
+      "title": "Desarrollo técnico y aprendizaje aplicado",
+      "items": [
+        {
+          "title": "Full Stack Open",
+          "institution": "Universidad de Helsinki",
+          "startDate": "2025-01-01",
+          "endDate": null,
+          "description": "Desarrollo full stack, testing y arquitectura de aplicaciones web.",
+          "details": []
+        },
+        {
+          "title": "Formación en desarrollo web y full stack",
+          "institution": "Universidad Tecnológica Nacional · Egg / Argentina Programa",
+          "startDate": "2021-01-01",
+          "endDate": "2022-12-01",
+          "description": "",
+          "details": [
+            "Programador Web Inicial / Frontend Developer.",
+            "Diplomatura en Programación Web Full Stack.",
+            "Programación Full Stack."
+          ]
+        },
+        {
+          "title": "Formación en testing y QA",
+          "institution": "Egg / Argentina Programa",
+          "startDate": "2023-01-01",
+          "endDate": "2023-12-01",
+          "description": "",
+          "details": [
+            "Introducción a Quality Assurance.",
+            "Testing manual.",
+            "Automatización de pruebas.",
+            "Testing de performance."
+          ]
+        }
+      ],
+      "closingNote": "Desde 2020 complemento la formación estructurada con estudio autodirigido, documentación oficial y desarrollo sostenido de productos web propios."
     }
   ],
   "awards": [],
-  "certificates": [
-    {
-      "name": "Testing Manual y Automatizado",
-      "date": "2022-01-01",
-      "issuer": "Argentina Programa",
-      "url": ""
-    }
-  ],
+  "certificates": [],
   "publications": [],
   "skills": [
     {

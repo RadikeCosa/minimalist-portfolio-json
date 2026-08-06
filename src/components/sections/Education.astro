@@ -13,75 +13,186 @@ const t = useTranslations(currentLang);
 const cvData = await getCV(currentLang);
 
 // Usar los datos del CV según el idioma actual
-const { education } = cvData;
+const { educationGroups } = cvData;
+
+const formatDateRange = (startDate: string, endDate: string | null) => {
+  const startYear = getYear(startDate) ?? "";
+  const endYear = endDate ? getYear(endDate) ?? "" : t("date.present");
+
+  return {
+    startYear,
+    endYear,
+    isSingleYear: endDate !== null && startYear === endYear,
+  };
+};
 ---
 
 <Section title={t("section.education")}>
-  <ul>
+  <div class="education-groups">
     {
-      education.map(({ institution, startDate, endDate, area, url }) => {
-        const startYear = getYear(startDate) ?? "";
-        const endYear = endDate
-          ? getYear(endDate) ?? ""
-          : t("date.present");
-        const years = `${startYear} - ${endYear}`;
+      educationGroups.map(({ title, items, closingNote }, groupIndex) => (
+        <section class="education-group" aria-labelledby={`education-group-${groupIndex}`}>
+          <h3 id={`education-group-${groupIndex}`}>{title}</h3>
 
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <h3>
-                    {url && url !== "" ? (
-                      <a href={url} target="_blank" rel="noopener noreferrer">{institution}</a>
-                    ) : (
-                      institution
-                    )}
-                  </h3>
-                </div>
+          <ul class="education-list">
+            {items.map(
+              ({ title, institution, startDate, endDate, description, details }) => {
+                const { startYear, endYear, isSingleYear } = formatDateRange(
+                  startDate,
+                  endDate
+                );
 
-                <time>{years}</time>
-              </header>
+                return (
+                  <li>
+                    <article>
+                      <header>
+                        <h4>{title}</h4>
+                        <p class="education-meta">
+                          <span>{institution}</span>
+                          <span aria-hidden="true"> · </span>
+                          <span class="period">
+                            <time datetime={startDate}>{startYear}</time>
+                            {!isSingleYear && (
+                              <>
+                                {" — "}
+                                {endDate ? (
+                                  <time datetime={endDate}>{endYear}</time>
+                                ) : (
+                                  <span>{endYear}</span>
+                                )}
+                              </>
+                            )}
+                          </span>
+                        </p>
+                      </header>
 
-              <footer>
-                <p>{area}</p>
-              </footer>
-            </article>
-          </li>
-        );
-      })
+                      {description && <p class="education-description">{description}</p>}
+
+                      {details.length > 0 && (
+                        <ul class="details-list">
+                          {details.map((detail) => (
+                            <li>{detail}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </article>
+                  </li>
+                );
+              }
+            )}
+          </ul>
+
+          {closingNote && <p class="closing-note">{closingNote}</p>}
+        </section>
+      ))
     }
-  </ul>
+  </div>
 </Section>
 
 <style>
-  ul {
+  .education-groups {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 40px;
   }
 
-  article h3 {
-    font-weight: 500;
+  .education-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .education-group h3 {
     color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  article {
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
+    flex-direction: column;
+    gap: 3px;
   }
 
-  time {
-    color: #555;
-    font-size: 0.85rem;
-    min-width: 102px;
+  article h4 {
+    color: var(--text-primary);
+    font-size: 0.96rem;
+    font-weight: 560;
+    line-height: 1.35;
+  }
+
+  .education-list > li:first-child article h4 {
+    font-weight: 650;
+  }
+
+  .education-meta {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  .period {
+    display: inline-block;
+  }
+
+  .education-description,
+  .closing-note {
+    color: var(--text-secondary);
+  }
+
+  .details-list {
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.86rem;
+    gap: 4px;
+    line-height: 1.45;
+    padding-left: 16px;
+    list-style: disc;
+  }
+
+  .closing-note {
+    margin-top: 2px;
   }
 
   @media (width <= 700px) {
-    time {
-      text-align: right;
+    .education-groups {
+      gap: 36px;
+    }
+
+    .education-group {
+      gap: 16px;
+    }
+
+    .education-list {
+      gap: 20px;
+    }
+
+    .education-group h3 {
+      font-size: 1rem;
+    }
+
+    .education-meta {
+      font-size: 0.76rem;
+    }
+
+    .details-list {
+      padding-left: 14px;
     }
   }
 </style>

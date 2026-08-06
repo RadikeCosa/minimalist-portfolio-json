@@ -2,7 +2,7 @@ export interface CV {
   basics: Basics
   work: Array<Work>
   volunteer: Array<Volunteer>
-  education: Array<Education>
+  educationGroups: Array<EducationGroup>
   awards: Array<Awards>
   certificates: Array<Certificates>
   publications: Array<Publications>
@@ -92,15 +92,19 @@ interface Publications {
   summary: string
 }
 
-interface Education {
+interface EducationGroup {
+  title: string
+  items: Array<EducationItem>
+  closingNote: string
+}
+
+interface EducationItem {
+  title: string
   institution: string
-  url: string
-  area: string
-  studyType: string
   startDate: DateStr
-  endDate: DateStr
-  score: string
-  courses: Array<string>
+  endDate: DateStr | null
+  description: string
+  details: Array<string>
 }
 
 interface Languages {

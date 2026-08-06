@@ -9,7 +9,7 @@ export const ui = {
     "section.about": "Acerca de",
     "section.experience": "Experiencia profesional",
     "section.experienceIntro":
-      "Mi experiencia se construyó en tres capas que se superponen: práctica clínica, coordinación de servicios y desarrollo de productos HealthTech.",
+      "Mi recorrido integra práctica clínica, coordinación de servicios y desarrollo de productos digitales, con HealthTech como principal área de aplicación.",
     "section.projects": "Proyectos",
     "section.skills": "Habilidades",
     "section.education": "Educación",
@@ -38,7 +38,7 @@ export const ui = {
     "section.about": "About",
     "section.experience": "Professional Experience",
     "section.experienceIntro":
-      "My experience has developed across three overlapping layers: clinical practice, healthcare service coordination, and HealthTech product development.",
+      "My background combines clinical practice, healthcare service coordination, and digital product development, with HealthTech as the main area of application.",
     "section.projects": "Projects",
     "section.skills": "Skills",
     "section.education": "Education",
