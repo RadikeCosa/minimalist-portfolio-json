@@ -7,7 +7,9 @@ export const ui = {
     "nav.skills": "Habilidades",
     "nav.education": "Educación",
     "section.about": "Acerca de",
-    "section.experience": "Experiencia laboral",
+    "section.experience": "Experiencia profesional",
+    "section.experienceIntro":
+      "Mi experiencia se construyó en tres capas que se superponen: práctica clínica, coordinación de servicios y desarrollo de productos HealthTech.",
     "section.projects": "Proyectos",
     "section.skills": "Habilidades",
     "section.education": "Educación",
@@ -34,7 +36,9 @@ export const ui = {
     "nav.skills": "Skills",
     "nav.education": "Education",
     "section.about": "About",
-    "section.experience": "Work Experience",
+    "section.experience": "Professional Experience",
+    "section.experienceIntro":
+      "My experience has developed across three overlapping layers: clinical practice, healthcare service coordination, and HealthTech product development.",
     "section.projects": "Projects",
     "section.skills": "Skills",
     "section.education": "Education",

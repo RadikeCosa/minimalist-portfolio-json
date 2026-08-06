@@ -40,13 +40,16 @@ interface Profiles {
 }
 
 interface Work {
-  name: string
-  position: string
-  url: string
-  startDate: DateStr
-  endDate: DateStr | null
+  stageTitle: string
+  context: string
+  periods: Array<WorkPeriod>
   summary: string
   highlights: Highlight
+}
+
+interface WorkPeriod {
+  startDate: DateStr
+  endDate: DateStr | null
 }
 
 type DateStr = `${string}-${string}-${string}`

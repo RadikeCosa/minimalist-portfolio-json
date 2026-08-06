@@ -14,160 +14,155 @@ const cvData = await getCV(currentLang);
 
 // Usar los datos del CV según el idioma actual
 const { work } = cvData;
+
+const formatPeriod = (period: { startDate: string; endDate: string | null }) => {
+  const startYear = getYear(period.startDate) ?? "";
+  const endYear = period.endDate
+    ? getYear(period.endDate) ?? ""
+    : t("date.present");
+
+  return { startYear, endYear };
+};
 ---
 
 <Section title={t("section.experience")}>
+  <p class="experience-intro">{t("section.experienceIntro")}</p>
+
   <ul class="experience-list">
     {
-      work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = getYear(startDate) ?? "";
-          const endYear = endDate
-            ? getYear(endDate) ?? ""
-            : t("date.present");
-          const workUrl = url?.trim();
+      work.map(({ stageTitle, context, periods, summary, highlights }) => (
+        <li>
+          <article>
+            <header>
+              <p class="stage-meta">
+                {context && <span>{context}</span>}
+                {context && <span aria-hidden="true"> · </span>}
+                {periods.map((period, index) => {
+                  const { startYear, endYear } = formatPeriod(period);
 
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>
-                      {workUrl ? (
-                        <a
-                          href={workUrl}
-                          title={`${t("contact.visit")} ${name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {name}
-                        </a>
-                      ) : (
-                        name
-                      )}
-                    </h3>
-                    <h4>{position}</h4>
-                  </div>
+                  return (
+                    <>
+                      {index > 0 && <span class="period-separator"> / </span>}
+                      <span class="period">
+                        <time datetime={period.startDate}>{startYear}</time>
+                        {" — "}
+                        {period.endDate ? (
+                          <time datetime={period.endDate}>{endYear}</time>
+                        ) : (
+                          <span>{endYear}</span>
+                        )}
+                      </span>
+                    </>
+                  );
+                })}
+              </p>
 
-                  <div>
-                    <time datetime={startDate} data-title={startDate}>
-                      {startYear}
-                    </time>
-                    {" - "}
-                    <time datetime={endDate} data-title={endDate}>
-                      {endYear}
-                    </time>
-                  </div>
-                </header>
+              <h3>{stageTitle}</h3>
+            </header>
 
-                <footer>
-                  <p>{summary}</p>
-                  {
-                    highlights?.length > 0 && (
-                      <ul class="highlights-list">
-                        {highlights.map((highlight) => (
-                          <li>{highlight}</li>
-                        ))}
-                      </ul>
-                    )
-                  }
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
+            <p class="stage-summary">{summary}</p>
+
+            {
+              highlights?.length > 0 && (
+                <ul class="highlights-list">
+                  {highlights.map((highlight) => (
+                    <li>{highlight}</li>
+                  ))}
+                </ul>
+              )
+            }
+          </article>
+        </li>
+      ))
     }
   </ul>
 </Section>
 
 <style>
+  .experience-intro {
+    margin-bottom: 28px;
+  }
+
   .experience-list {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 42px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    break-inside: avoid;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stage-meta {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  .period {
+    display: inline-block;
+  }
+
+  .period-separator {
+    color: var(--text-muted);
+  }
+
+  article h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .stage-summary {
+    color: var(--text-secondary);
   }
 
   .highlights-list {
     color: var(--text-secondary);
     display: flex;
     flex-direction: column;
-    font-size: 0.8rem;
-    gap: 3px;
-    line-height: 1.35;
-    margin-top: 8px;
-    padding-left: 18px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: var(--text-primary);
-  }
-
-  article a {
-    color: var(--text-primary);
-  }
-
-  article a:hover {
-    text-decoration: underline;
-  }
-
-  article h4 {
-    color: var(--text-secondary);
-    font-weight: 400;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
+    font-size: 0.86rem;
+    gap: 6px;
+    line-height: 1.45;
+    margin-top: 2px;
+    padding-left: 16px;
+    list-style: disc;
   }
 
   time {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    min-width: 102px;
     cursor: default;
   }
 
-  [data-title]:hover:after {
-    opacity: 1;
-    transition: all 0.1s ease-in-out 0.5s;
-    visibility: visible;
-  }
-
-  [data-title]:after {
-    content: attr(data-title);
-    background-color: #333;
-    color: #fff;
-    font-size: 0.75rem;
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      "Courier New",
-      monospace;
-    position: absolute;
-    padding: 0.2rem 0.5rem;
-    bottom: -1.4rem;
-    left: 50%;
-    white-space: nowrap;
-    box-shadow: 1px 1px 1px #222222;
-    opacity: 0;
-    border: 1px solid #111111;
-    z-index: 99999;
-    visibility: hidden;
-    border-radius: 6px;
-  }
-
-  [data-title] {
-    position: relative;
-  }
-
   @media (width <= 700px) {
-    time {
-      text-align: right;
+    .experience-intro {
+      margin-bottom: 24px;
+    }
+
+    .experience-list {
+      gap: 36px;
+    }
+
+    article h3 {
+      font-size: 1rem;
+    }
+
+    .stage-meta {
+      font-size: 0.76rem;
+    }
+
+    .highlights-list {
+      padding-left: 14px;
     }
   }
 </style>

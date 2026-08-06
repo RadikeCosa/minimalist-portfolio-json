@@ -5,7 +5,7 @@
     "email": "ramirocosa@gmail.com",
     "phone": "+54 9 299 521-7189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Kinesiologist with 20+ years of experience in home-based healthcare, clinical coordination and service auditing. Since 2020, I have been building web tools to digitize clinical and operational workflows, combining real healthcare domain knowledge with Next.js, TypeScript, testing, documentation and FHIR. I focus on HealthTech projects where implementation, functional analysis and software development need to connect with real patient-care workflows.",
+    "summary": "I work at the intersection of healthcare and technology, connecting functional analysis, implementation, and software development with real processes and concrete operational needs. I bring over 20 years of experience in health services, including service coordination, clinical review, and process analysis. Since 2020, I have been designing and building web products with Next.js, TypeScript, and FHIR for real-world HealthTech use cases.",
     "location": {
       "address": "Neuquén, Argentina",
       "postalCode": "8300",
@@ -28,41 +28,54 @@
   },
   "work": [
     {
-      "name": "Web development for products and operations",
-      "position": "Web Developer focused on HealthTech and operations",
-      "url": "https://github.com/RadikeCosa",
-      "startDate": "2020-01-01",
-      "endDate": null,
-      "summary": "I design and build web products around real operational workflows, focusing on digital health, business rules and operational UX. I work with Next.js and TypeScript, integrating testing, documentation, analytics, data persistence and FHIR standards according to each project's needs.",
+      "stageTitle": "HealthTech Product Development",
+      "context": "",
+      "periods": [
+        {
+          "startDate": "2020-01-01",
+          "endDate": null
+        }
+      ],
+      "summary": "I design and build web products for clinical and operational workflows.",
       "highlights": [
-        "Clinical platform for home-based kinesiology with FHIR workflows",
-        "Applications with business rules, persistence and time-based states",
-        "Automated testing, technical documentation and Vercel deployments"
+        "Development with Next.js, TypeScript, and FHIR.",
+        "Translation of clinical and operational needs into workflows, requirements, and product features.",
+        "Main project: a digital platform for home rehabilitation operations."
       ]
     },
     {
-      "name": "Alegra Salud",
-      "position": "Home Care Services Coordinator and Clinical Auditor",
-      "url": "",
-      "startDate": "2013-01-01",
-      "endDate": "2024-12-01",
-      "summary": "I coordinated home care services, audited clinical delivery and connected patients, families, healthcare professionals and internal teams. I contributed to operational process design and the creation of a palliative care service, managing complex care needs across multidisciplinary teams.",
+      "stageTitle": "Healthcare Service Coordination, Review, and Processes",
+      "context": "Alegra Salud",
+      "periods": [
+        {
+          "startDate": "2013-01-01",
+          "endDate": "2024-12-01"
+        }
+      ],
+      "summary": "I coordinated home care services and worked on processes connecting clinical, operational, and administrative needs.",
       "highlights": [
-        "Coordination of multidisciplinary teams and home care services",
-        "Clinical auditing and service follow-up",
-        "Process design and communication with families and professionals"
+        "Coordination across patients, families, clinicians, and internal teams.",
+        "Review of service delivery and identification of operational and documentation needs.",
+        "Contribution to process definition and the creation of a palliative care service area."
       ]
     },
     {
-      "name": "CIKAF and private clinical practice",
-      "position": "Kinesiologist",
-      "url": "",
-      "startDate": "2004-01-01",
-      "endDate": "2013-01-01",
-      "summary": "I treated patients in clinical and sports rehabilitation, including work with high-performance teams. This practice strengthened my ability to assess needs, document progress and adapt treatments in coordination with patients and other professionals.",
+      "stageTitle": "Clinical Practice and Rehabilitation",
+      "context": "CIKAF and independent practice",
+      "periods": [
+        {
+          "startDate": "2004-01-01",
+          "endDate": "2013-01-01"
+        },
+        {
+          "startDate": "2023-01-01",
+          "endDate": null
+        }
+      ],
+      "summary": "Experience in clinical rehabilitation, private practice, and sports, including high-performance settings.",
       "highlights": [
-        "Clinical and sports rehabilitation",
-        "Treatment follow-up and patient progress documentation"
+        "Functional assessment, treatment planning, and follow-up.",
+        "Progress documentation and coordination with patients and other professionals."
       ]
     }
   ],

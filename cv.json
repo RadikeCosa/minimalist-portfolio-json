@@ -5,7 +5,7 @@
     "email": "ramirocosa@gmail.com",
     "phone": "+54 9 299 521-7189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Kinesiólogo con más de 20 años de experiencia en atención domiciliaria, coordinación de servicios y auditoría clínica. Desde 2020 desarrollo herramientas web para digitalizar procesos clínicos y operativos, combinando conocimiento real del dominio sanitario con Next.js, TypeScript, testing, documentación y FHIR. Me enfoco en proyectos HealthTech donde implementación, análisis funcional y desarrollo necesitan conectarse con flujos reales de atención.",
+    "summary": "Trabajo en la intersección entre salud y tecnología, conectando análisis funcional, implementación y desarrollo de software con procesos reales y necesidades operativas concretas. Cuento con más de 20 años de experiencia en el ámbito sanitario, incluyendo coordinación de servicios, auditoría clínica y análisis de procesos. Desde 2020 diseño y desarrollo productos web con Next.js, TypeScript y FHIR, aplicados a soluciones HealthTech en contextos reales.",
     "location": {
       "address": "Neuquén, Argentina",
       "postalCode": "8300",
@@ -28,41 +28,54 @@
   },
   "work": [
     {
-      "name": "Desarrollo web aplicado a producto y operaciones",
-      "position": "Desarrollador web orientado a HealthTech y operaciones",
-      "url": "https://github.com/RadikeCosa",
-      "startDate": "2020-01-01",
-      "endDate": null,
-      "summary": "Diseño y desarrollo productos web orientados a procesos reales, con foco en salud digital, reglas de negocio y UX operativa. Trabajo con Next.js y TypeScript, integrando testing, documentación, analytics, persistencia de datos y estándares FHIR según las necesidades de cada proyecto.",
+      "stageTitle": "Desarrollo de productos HealthTech",
+      "context": "",
+      "periods": [
+        {
+          "startDate": "2020-01-01",
+          "endDate": null
+        }
+      ],
+      "summary": "Diseño y desarrollo productos web aplicados a procesos clínicos y operativos.",
       "highlights": [
-        "Plataforma clínica para kinesiología domiciliaria con flujos FHIR",
-        "Aplicaciones con reglas de negocio, persistencia y estados temporales",
-        "Testing automatizado, documentación técnica y despliegues en Vercel"
+        "Desarrollo con Next.js, TypeScript y FHIR.",
+        "Traducción de necesidades clínicas y operativas en flujos, requerimientos y funcionalidades.",
+        "Proyecto principal: plataforma digital para operaciones de rehabilitación domiciliaria."
       ]
     },
     {
-      "name": "Alegra Salud",
-      "position": "Coordinador y Auditor de Servicios de Internación Domiciliaria",
-      "url": "",
-      "startDate": "2013-01-01",
-      "endDate": "2024-12-01",
-      "summary": "Coordiné servicios de internación domiciliaria, audité prestaciones clínicas y articulé la comunicación entre pacientes, familias, profesionales y equipos internos. Participé en el diseño de procesos operativos y en la creación de un área de cuidados paliativos, gestionando necesidades asistenciales en contextos complejos.",
+      "stageTitle": "Coordinación, auditoría y procesos de salud",
+      "context": "Alegra Salud",
+      "periods": [
+        {
+          "startDate": "2013-01-01",
+          "endDate": "2024-12-01"
+        }
+      ],
+      "summary": "Coordiné servicios de internación domiciliaria y trabajé sobre procesos que conectaban necesidades clínicas, operativas y administrativas.",
       "highlights": [
-        "Coordinación de equipos multidisciplinarios y servicios domiciliarios",
-        "Auditoría clínica y seguimiento de prestaciones",
-        "Diseño de procesos y comunicación con familias y profesionales"
+        "Articulación entre pacientes, familias, profesionales y equipos internos.",
+        "Revisión de prestaciones y detección de necesidades operativas y documentales.",
+        "Participación en la definición de procesos y en la creación de un área de cuidados paliativos."
       ]
     },
     {
-      "name": "CIKAF y práctica clínica privada",
-      "position": "Kinesiólogo",
-      "url": "",
-      "startDate": "2004-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Atendí pacientes en rehabilitación clínica y deportiva, incluyendo trabajo con equipos de alto rendimiento. Esta práctica consolidó mi capacidad para evaluar necesidades, documentar evolución y adaptar tratamientos en coordinación con pacientes y otros profesionales.",
+      "stageTitle": "Práctica clínica y rehabilitación",
+      "context": "CIKAF y práctica independiente",
+      "periods": [
+        {
+          "startDate": "2004-01-01",
+          "endDate": "2013-01-01"
+        },
+        {
+          "startDate": "2023-01-01",
+          "endDate": null
+        }
+      ],
+      "summary": "Experiencia en rehabilitación clínica, práctica privada y deporte, incluyendo contextos de alto rendimiento.",
       "highlights": [
-        "Rehabilitación clínica y deportiva",
-        "Seguimiento de tratamientos y evolución de pacientes"
+        "Evaluación funcional, planificación y seguimiento de tratamientos.",
+        "Documentación de evolución y coordinación con pacientes y otros profesionales."
       ]
     }
   ],
