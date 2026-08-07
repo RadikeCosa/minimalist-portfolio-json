@@ -261,34 +261,28 @@
   "references": [],
   "projects": [
     {
-      "name": "Kinesiología a Domicilio",
-      "isActive": true,
-      "description": "Plataforma clínica liviana y landing de captación para un servicio de kinesiología domiciliaria. Digitaliza consultas, altas administrativas, ciclos de tratamiento, registro de visitas y comunicación de seguimiento con familias.",
+      "name": "Plataforma clínica para rehabilitación domiciliaria",
+      "featured": true,
+      "badge": "Proyecto principal",
+      "description": "Producto web que combina captación pública y gestión clínica privada para organizar el seguimiento de pacientes y tratamientos en rehabilitación domiciliaria.",
       "highlights": [
         "Next.js",
         "TypeScript",
         "FHIR",
-        "HAPI FHIR",
-        "Vitest",
-        "GA4",
-        "UX operativa",
-        "HealthTech"
+        "Vitest"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
       "name": "Fira Estudio E-commerce",
-      "isActive": true,
-      "description": "E-commerce con catálogo, carrito, control de stock y checkout integrado con Mercado Pago. Incluye persistencia en Supabase, procesamiento de webhooks, emails transaccionales, analytics y estrategia de despliegue por ambientes.",
+      "featured": false,
+      "description": "E-commerce con catálogo, carrito, control de stock y checkout con Mercado Pago, integrado con Supabase y webhooks.",
       "highlights": [
         "Next.js",
         "TypeScript",
         "Supabase",
-        "Mercado Pago",
-        "Webhooks",
-        "GA4",
-        "Vitest"
+        "Mercado Pago"
       ],
       "github": "https://github.com/RadikeCosa/fira-estudio",
       "url": "https://fira-estudio.vercel.app/"

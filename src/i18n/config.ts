@@ -26,7 +26,10 @@ export const ui = {
     "contact.call": "Llamar a",
     "contact.visit": "Visitar perfil de",
     "project.source": "Ver código fuente del proyecto",
+    "project.sourceLabel": "Código",
+    "project.stackLabel": "Tecnologías",
     "project.visit": "Ver el proyecto",
+    "project.visitLabel": "Sitio",
   },
   en: {
     "nav.home": "Home",
@@ -55,7 +58,10 @@ export const ui = {
     "contact.call": "Call",
     "contact.visit": "Visit profile of",
     "project.source": "View source code for",
+    "project.sourceLabel": "Source",
+    "project.stackLabel": "Technologies",
     "project.visit": "View project",
+    "project.visitLabel": "Live site",
   },
 } as const;
 

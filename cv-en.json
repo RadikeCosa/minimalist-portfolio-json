@@ -261,34 +261,28 @@
   "references": [],
   "projects": [
     {
-      "name": "Kinesiologia a Domicilio",
-      "isActive": true,
-      "description": "A lightweight clinical platform and lead-generation website for a home-based kinesiology service. It digitizes inquiries, administrative intake, treatment cycles, visit records and care-related communication with families.",
+      "name": "Clinical Platform for Home Rehabilitation",
+      "featured": true,
+      "badge": "Featured project",
+      "description": "A web product combining public acquisition and private clinical management to support patient and treatment workflows in home rehabilitation.",
       "highlights": [
         "Next.js",
         "TypeScript",
         "FHIR",
-        "HAPI FHIR",
-        "Vitest",
-        "GA4",
-        "Operational UX",
-        "HealthTech"
+        "Vitest"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
       "name": "Fira Estudio E-commerce",
-      "isActive": true,
-      "description": "An e-commerce product with catalog, cart, stock-aware checkout and Mercado Pago integration. It includes Supabase persistence, webhook processing, transactional emails, analytics and environment-based deployment workflows.",
+      "featured": false,
+      "description": "An e-commerce product with catalog, cart, stock management, and Mercado Pago checkout, integrated with Supabase and webhooks.",
       "highlights": [
         "Next.js",
         "TypeScript",
         "Supabase",
-        "Mercado Pago",
-        "Webhooks",
-        "GA4",
-        "Vitest"
+        "Mercado Pago"
       ],
       "github": "https://github.com/RadikeCosa/fira-estudio",
       "url": "https://fira-estudio.vercel.app/"

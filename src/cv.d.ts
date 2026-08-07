@@ -132,7 +132,8 @@ type Language =
 
 interface Projects {
   name: string
-  isActive: boolean
+  featured: boolean
+  badge?: string
   description: string
   highlights: Highlight
   url: string
