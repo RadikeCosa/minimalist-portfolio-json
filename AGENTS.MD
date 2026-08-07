@@ -29,6 +29,14 @@ Do not reposition the profile as a generic junior frontend developer.
 - Validate changes in Spanish and English, desktop and mobile, light and dark themes.
 - Do not redesign multiple sections in the same patch unless explicitly requested.
 
+## Project Case Pages
+
+Project cards on the home page should remain brief and scannable. Extended evidence belongs in dedicated bilingual case pages.
+
+Case pages should reuse the portfolio identity, layout, typography, theme behavior, and minimalist visual language. Prefer a small reusable layout and simple content files over complex infrastructure unless several cases justify it.
+
+Use only demo or fully fictional data in screenshots. Do not show real patient data, DNI, phone numbers, addresses, identifiable clinical notes, secrets, or private endpoints. Present FHIR as pragmatic local modeling unless external interoperability is actually implemented.
+
 ## Workflow
 
 For editorial or information-architecture tasks:

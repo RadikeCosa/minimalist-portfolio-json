@@ -42,6 +42,20 @@ export async function getCV(lang: Language) {
 // Función para obtener la URL alternativa
 export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
   const currentLang = getLangFromUrl(currentUrl);
+  const currentPath = currentUrl.pathname.replace(/\/$/, "") || "/";
+  const routeAlternates: Record<string, Partial<Record<Language, string>>> = {
+    "/proyectos/plataforma-clinica": {
+      en: "/en/projects/clinical-platform",
+    },
+    "/en/projects/clinical-platform": {
+      es: "/proyectos/plataforma-clinica",
+    },
+  };
+  const mappedPath = routeAlternates[currentPath]?.[targetLang];
+
+  if (mappedPath) {
+    return mappedPath;
+  }
 
   if (targetLang === defaultLang) {
     // Si el idioma objetivo es el por defecto, remover el prefijo de idioma

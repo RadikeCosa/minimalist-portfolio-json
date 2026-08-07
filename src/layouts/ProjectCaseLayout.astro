@@ -1,0 +1,265 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LanguageToggle from "@/components/LanguageToggle.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
+
+interface ProjectCaseFrontmatter {
+  title: string;
+  description?: string;
+  locale?: Language;
+  alternateUrl?: string;
+  role?: string;
+  period?: string;
+  stack?: string[];
+  website?: string;
+  repository?: string;
+}
+
+const frontmatter = (Astro.props.frontmatter ?? Astro.props) as ProjectCaseFrontmatter;
+const currentLang = frontmatter.locale || getLangFromUrl(Astro.url);
+const isEnglish = currentLang === "en";
+const pageTitle = isEnglish
+  ? `${frontmatter.title} | Ramiro Cosa`
+  : `${frontmatter.title} | Ramiro Cosa`;
+const backHref = isEnglish ? "/en/#healthtech-project" : "/#healthtech-project";
+const backLabel = isEnglish ? "← Back to projects" : "← Volver a proyectos";
+const metaItems = [frontmatter.role, frontmatter.period].filter(Boolean);
+const externalLinks = [
+  frontmatter.website && {
+    href: frontmatter.website,
+    label: isEnglish ? "Live site" : "Sitio",
+  },
+  frontmatter.repository && {
+    href: frontmatter.repository,
+    label: isEnglish ? "Source" : "Código",
+  },
+].filter(Boolean) as Array<{ href: string; label: string }>;
+---
+
+<Layout
+  title={pageTitle}
+  description={frontmatter.description}
+  lang={currentLang}
+  alternateUrl={frontmatter.alternateUrl}
+>
+  <main class="case-page">
+    <nav class="case-back no-print" aria-label={isEnglish ? "Project navigation" : "Navegación de proyecto"}>
+      <a href={backHref}>{backLabel}</a>
+    </nav>
+
+    <article class="case-article">
+      <header class="case-header">
+        <h1>{frontmatter.title}</h1>
+        {frontmatter.description && <p class="case-description">{frontmatter.description}</p>}
+
+        {
+          (metaItems.length > 0 || frontmatter.stack?.length || externalLinks.length > 0) && (
+            <div class="case-meta" aria-label={isEnglish ? "Project details" : "Detalles del proyecto"}>
+              {metaItems.length > 0 && (
+                <p>
+                  {metaItems.map((item, index) => (
+                    <>
+                      {index > 0 && <span aria-hidden="true"> · </span>}
+                      <span>{item}</span>
+                    </>
+                  ))}
+                </p>
+              )}
+
+              {frontmatter.stack && frontmatter.stack.length > 0 && (
+                <ul class="case-stack" aria-label={isEnglish ? "Technologies" : "Tecnologías"}>
+                  {frontmatter.stack.map((item) => <li>{item}</li>)}
+                </ul>
+              )}
+
+              {externalLinks.length > 0 && (
+                <nav class="case-links" aria-label={isEnglish ? "Project links" : "Links del proyecto"}>
+                  {externalLinks.map((link) => (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
+                </nav>
+              )}
+            </div>
+          )
+        }
+      </header>
+
+      <div class="case-content">
+        <slot />
+      </div>
+    </article>
+  </main>
+
+  <LanguageToggle />
+  <ThemeToggle />
+</Layout>
+
+<style>
+  .case-page {
+    margin: auto;
+    padding: 4rem;
+    width: 100%;
+  }
+
+  .case-back,
+  .case-article {
+    margin-inline: auto;
+    max-width: 700px;
+  }
+
+  .case-back {
+    margin-bottom: 2.25rem;
+  }
+
+  .case-back a,
+  .case-links a,
+  .case-content :global(a) {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .case-back a:hover,
+  .case-links a:hover,
+  .case-content :global(a:hover) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .case-back a:focus-visible,
+  .case-links a:focus-visible,
+  .case-content :global(a:focus-visible) {
+    border-radius: 4px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .case-article {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .case-header {
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .case-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .case-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .case-meta p {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  .case-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .case-stack li {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 0.24rem 0.62rem;
+  }
+
+  .case-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.75rem;
+  }
+
+  .case-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .case-content :global(h2),
+  .case-content :global(h3) {
+    line-height: 1.3;
+    margin-top: 1rem;
+  }
+
+  .case-content :global(p),
+  .case-content :global(li) {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .case-content :global(ul),
+  .case-content :global(ol) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    list-style: disc;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .case-content :global(ol) {
+    list-style: decimal;
+  }
+
+  .case-content :global(code) {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 0.85em;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .case-content :global(figure),
+  .case-content :global(.wide) {
+    margin: 1.5rem calc((700px - min(900px, 100vw - 2rem)) / 2);
+    max-width: 900px;
+  }
+
+  @media (width <= 700px) {
+    .case-page {
+      padding: 2rem;
+    }
+
+    .case-back {
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  @media print {
+    .case-page {
+      padding: 0;
+    }
+
+    .case-header {
+      border-bottom-color: var(--border);
+    }
+  }
+</style>
