@@ -600,3 +600,16 @@ Validación:
 - `astro check`: 56 archivos, 0 errores, 0 warnings, 0 hints;
 - `astro build`: doce rutas estáticas generadas correctamente;
 - `git diff --check` limpio.
+
+#### Refinamiento editorial posterior
+
+- Servicios adopta frases más breves, categorías concretas y un tono afirmativo;
+- `En qué puedo ayudar` se reemplaza por `Áreas de trabajo`;
+- el principio central pasa a ser `Criterio antes que herramienta`: no se parte de un entregable predeterminado, sino del problema, las personas y el contexto;
+- presencia digital, operación, productos a medida y evolución funcionan como áreas de trabajo, no como paquetes cerrados;
+- se incorpora la comunicación como capacidad profesional derivada de la experiencia en salud y cuidados paliativos: escucha, prioridades e información difícil comunicada con precisión;
+- About documenta la participación en la creación conjunta de un área de cuidados paliativos y conecta ese recorrido con capacidades transferibles;
+- la explicación sobre IA se reduce a su uso concreto en investigación, contraste, implementación y revisión;
+- los resúmenes de Fira y la solución de kinesiología se compactan; los case studies conservan el detalle;
+- el trabajo con el taller de luthería sigue fuera del contenido público: su aprendizaje se expresa como criterio general, sin identificar ni describir al cliente;
+- se corrige el orden efectivo de codificación en desarrollo para evitar mojibake en títulos con acentos bajo `localhost`.

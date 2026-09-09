@@ -16,7 +16,7 @@ const { lang, title, description, alternateUrl } = Astro.props;
 const content = getServicesContent(lang);
 const homeHref = lang === "en" ? "/en/" : "/";
 const aboutHref = lang === "en" ? "/en/about/" : "/sobre-mi/";
-const emailSubject = lang === "en" ? "Project inquiry" : "Consulta sobre un proyecto";
+const emailSubject = lang === "en" ? "Discuss a need" : "Planteo de una necesidad";
 ---
 
 <Layout title={title} description={description} lang={lang} alternateUrl={alternateUrl}>
@@ -48,7 +48,16 @@ const emailSubject = lang === "en" ? "Project inquiry" : "Consulta sobre un proy
 
       <section>
         <h2>{content.scopeTitle}</h2>
-        <div class="copy"><p>{content.scope}</p></div>
+        <div class="copy">
+          {content.scope.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section>
+        <h2>{content.communicationTitle}</h2>
+        <div class="copy">
+          {content.communication.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
       </section>
 
       <section>
