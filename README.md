@@ -1,33 +1,43 @@
-# Minimalist Portfolio (JSON-Based)
+# Ramiro Nicolás Cosa — Professional Portfolio
 
-## Live on
+Bilingual professional portfolio focused on functional analysis, implementation, and digital product development.
 
-[Porfolio de Ramiro](https://ramirocosa.is-a.dev/)
+Live site: [ramirocosa.is-a.dev](https://ramirocosa.is-a.dev/)
 
-### Description
+## Public content
 
-This project is a **personal web portfolio** built using a template designed for simplicity and adaptability. It has been customized to showcase my skills, projects, and professional background. The goal is to demonstrate my ability to adapt existing frameworks, personalize designs, and implement effective solutions for web-based applications.
+- professional profile, experience, and capabilities in Spanish and English;
+- case studies for a clinical platform, Juegos Familiares — Impostor, and Fira Estudio;
+- coordinated general CV downloads in Spanish and English;
+- light and dark themes with responsive layouts.
 
-By using this repository, I aim to highlight my skills in **frontend development**, **dynamic content handling**, and modern web technologies.
+## Stack
 
----
+- Astro;
+- TypeScript;
+- JSON-backed professional content;
+- static deployment on Vercel.
 
-### Inspiration and Template
+## Local development
 
-This project is based on the [Midudev´s minimalist-portfolio-json](https://github.com/midudev/minimalist-portfolio-json).  
-The original template provided the foundational structure, which I have customized to include:
+```sh
+npm install
+npm run dev
+```
 
-- **My Personal Branding:** Custom sections for my projects, skills, and experience.
-- **Dynamic Content Integration:** Modified the template to allow for easy updates via JSON files.
-- **Styling Adjustments:** Tailored the design for a minimalist look and mobile responsiveness.
+Production validation:
 
----
+```sh
+npm run build
+```
 
-### Features
+## Content principles
 
-- **JSON-Driven Content:** Manage portfolio data (projects, skills, contact information) dynamically through JSON files.
-- **Responsive Design:** Fully mobile-friendly and optimized for different screen sizes.
-- **Lightweight Frameworks:** Leveraging modern, minimalistic technologies for speed and simplicity.
-- **Custom Modifications:** Personalized to reflect my skills and career goals.
+- HealthTech is an area of specialization, not a limit on the profile.
+- Healthcare experience is presented as current domain knowledge.
+- Project claims remain factual and linked to public evidence.
+- Public screenshots use fictional data and exclude identifiable clinical information.
 
----
+## Origin
+
+The project started from [midudev/minimalist-portfolio-json](https://github.com/midudev/minimalist-portfolio-json) and has since been restructured around bilingual case studies, functional analysis, product implementation, and a coordinated CV system.

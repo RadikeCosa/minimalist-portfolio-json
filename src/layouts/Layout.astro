@@ -7,30 +7,74 @@ interface Props {
   description?: string;
   lang?: Language;
   alternateUrl?: string;
+  isHome?: boolean;
 }
 
-const { title, description, lang, alternateUrl } = Astro.props;
+const { title, description, lang, alternateUrl, isHome = false } = Astro.props;
 const currentLang = lang || getLangFromUrl(Astro.url);
 
 // Obtener CV según el idioma
 const cvData = await getCV(currentLang);
-const { summary, url } = cvData.basics;
+const { name, summary, url, profiles, location } = cvData.basics;
 const pageDescription = description || summary;
-const canonicalUrl = new URL(Astro.url.pathname, url).toString();
-const alternateHref = alternateUrl ? new URL(alternateUrl, url).toString() : null;
+const baseUrl = Astro.site || new URL(url);
+const siteUrl = new URL("/", baseUrl).toString();
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl).toString();
+const alternateHref = alternateUrl ? new URL(alternateUrl, baseUrl).toString() : null;
 const alternateLang = currentLang === "en" ? "es" : "en";
 const defaultHref = currentLang === "es" ? canonicalUrl : alternateHref;
 const socialImage = "";
 const hasSocialImage = socialImage.trim().length > 0;
+const structuredData = isHome
+  ? {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${siteUrl}#website`,
+          url: siteUrl,
+          name,
+          alternateName: [`Portfolio de ${name}`, `${name} Portfolio`],
+          inLanguage: ["es", "en"],
+          publisher: { "@id": `${siteUrl}#person` },
+        },
+        {
+          "@type": "Person",
+          "@id": `${siteUrl}#person`,
+          name,
+          url: siteUrl,
+          jobTitle:
+            currentLang === "en"
+              ? "Functional analysis, implementation, and digital products"
+              : "Análisis funcional, implementación y producto digital",
+          description: pageDescription,
+          sameAs: profiles.map(({ url }) => url),
+          knowsAbout:
+            currentLang === "en"
+              ? ["Functional analysis", "Digital products", "Web development", "Healthcare operations", "HealthTech"]
+              : ["Análisis funcional", "Productos digitales", "Desarrollo web", "Operaciones de salud", "HealthTech"],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: location.city,
+            addressRegion: location.region,
+            addressCountry: location.countryCode,
+          },
+        },
+      ],
+    }
+  : null;
+const structuredDataJson = structuredData
+  ? JSON.stringify(structuredData).replace(/</g, "\\u003c")
+  : null;
 ---
 
 <!doctype html>
 <html lang={currentLang}>
-  <meta charset="UTF-8" />
   <head>
+    <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="description" content={pageDescription} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
     {
@@ -45,6 +89,9 @@ const hasSocialImage = socialImage.trim().length > 0;
 
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={name} />
+    <meta property="og:locale" content={currentLang === "en" ? "en_US" : "es_AR"} />
+    <meta property="og:locale:alternate" content={currentLang === "en" ? "es_AR" : "en_US"} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={pageDescription} />
     {hasSocialImage && <meta property="og:image" content={socialImage} />}
@@ -55,6 +102,7 @@ const hasSocialImage = socialImage.trim().length > 0;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={pageDescription} />
     {hasSocialImage && <meta name="twitter:image" content={socialImage} />}
+    {structuredDataJson && <script type="application/ld+json" set:html={structuredDataJson} />}
     <script is:inline>
       (function () {
         const theme =
@@ -65,11 +113,7 @@ const hasSocialImage = socialImage.trim().length > 0;
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
-  </head>
-  <body>
-    <slot />
-  </body>
-  <style is:global>
+    <style is:global is:inline>
     :root {
       /* Light theme */
       --bg-primary: #ffffff;
@@ -182,5 +226,9 @@ const hasSocialImage = socialImage.trim().length > 0;
         break-inside: avoid;
       }
     }
-  </style>
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>

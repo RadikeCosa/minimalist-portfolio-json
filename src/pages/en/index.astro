@@ -14,10 +14,16 @@ import { getCV } from "@/i18n/utils";
 
 const currentLang = "en";
 const cvData = await getCV(currentLang);
-const { name, label } = cvData.basics;
+const { name } = cvData.basics;
 ---
 
-<Layout title={`${name} Portfolio - ${label}`} lang={currentLang}>
+<Layout
+  title={`${name} | Analysis, implementation, and product`}
+  description="Ramiro Nicolás Cosa's portfolio: functional analysis, implementation, and digital product development, with experience in healthcare and operations."
+  lang={currentLang}
+  alternateUrl="/"
+  isHome
+>
   <main>
     <Hero lang={currentLang} />
     <Differential lang={currentLang} />

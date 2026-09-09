@@ -556,3 +556,13 @@ Validación:
 - los enlaces de proyectos apuntan a los case studies en inglés;
 - `/` descarga el CV en español y `/en/` descarga el CV en inglés;
 - ambas versiones funcionan como CV generales canónicos para futuras adaptaciones por postulación.
+
+### 2026-09-09 — Incremento A: base SEO técnica
+
+- URL productiva configurada como `site` de Astro;
+- sitemap generado por una ruta estática y `robots.txt` incorporados;
+- homes ES/EN conectadas mediante canonical, `hreflang` y `x-default`;
+- títulos y descripciones de home compactados con el posicionamiento aprobado;
+- metadatos sociales ampliados con sitio e idioma;
+- entidades `WebSite` y `Person` incorporadas como JSON-LD en las homes;
+- README actualizado para eliminar el posicionamiento y los proyectos anteriores.
