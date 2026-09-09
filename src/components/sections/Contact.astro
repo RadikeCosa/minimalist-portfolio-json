@@ -12,13 +12,16 @@ const { basics } = await getCV(currentLang);
 const linkedin = basics.profiles.find(({ network }) => network === "LinkedIn");
 const github = basics.profiles.find(({ network }) => network === "GitHub");
 const phoneHref = basics.phone.replace(/[^\d+]/g, "");
+const cvHref = currentLang === "en"
+  ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf"
+  : "/cv/CV_Ramiro_Nicolas_Cosa.pdf";
 ---
 
 <Section id="contact" title={contact.title}>
   <div class="contact-copy"><p>{contact.description}</p></div>
   <address>
     <a class="primary" href={`mailto:${basics.email}`}>{contact.emailAction}</a>
-    <a href="/cv/CV_Ramiro_Nicolas_Cosa.pdf" download>{contact.cvAction}</a>
+    <a href={cvHref} download>{contact.cvAction}</a>
     <a href={`tel:${phoneHref}`}>{basics.phone}</a>
     {linkedin && <a href={linkedin.url} target="_blank" rel="noopener noreferrer">{contact.linkedinAction}</a>}
     {github && <a href={github.url} target="_blank" rel="noopener noreferrer">{contact.githubAction}</a>}

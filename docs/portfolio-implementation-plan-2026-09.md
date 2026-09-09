@@ -549,3 +549,10 @@ Validación:
 - una futura versión inglesa o variantes por búsqueda deben derivarse del CV general, sin reemplazarlo;
 - revisión responsive a 390 px en ES/EN y temas claro/oscuro, sin overflow horizontal;
 - PDF servido con `application/pdf` y verificado como idéntico al artefacto aprobado.
+
+### 2026-09-09 — CV general en inglés
+
+- traducción inglesa aprobada con la misma estructura visual y narrativa del CV general;
+- los enlaces de proyectos apuntan a los case studies en inglés;
+- `/` descarga el CV en español y `/en/` descarga el CV en inglés;
+- ambas versiones funcionan como CV generales canónicos para futuras adaptaciones por postulación.

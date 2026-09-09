@@ -43,7 +43,7 @@ const content = {
       description: "I analyze processes, define workflows and business rules, and build web solutions.",
       context: "Healthcare experience since 2004 · Digital products since 2020",
       primaryAction: "View projects",
-      cvAction: "Résumé (Spanish PDF)",
+      cvAction: "Download CV",
       secondaryAction: "Contact",
     },
     differential: {
@@ -67,7 +67,7 @@ const content = {
       title: "Contact",
       description: "I am looking for opportunities in functional analysis, implementation, and digital products.",
       emailAction: "Email me",
-      cvAction: "Résumé (Spanish PDF)",
+      cvAction: "Download CV",
       linkedinAction: "LinkedIn",
       githubAction: "GitHub",
     },
