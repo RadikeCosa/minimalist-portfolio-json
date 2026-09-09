@@ -8,6 +8,8 @@ const content = {
         "Analizo procesos, defino flujos y reglas de negocio, y desarrollo soluciones web.",
       context: "Experiencia en salud desde 2004 · Productos digitales desde 2020",
       primaryAction: "Ver proyectos",
+      aboutAction: "Sobre mí",
+      servicesAction: "Servicios",
       cvAction: "Descargar CV",
       secondaryAction: "Contacto",
     },
@@ -22,7 +24,7 @@ const content = {
     capabilities: {
       title: "Capacidades",
       groups: [
-        { title: "Procesos y operaciones", items: ["Procesos complejos", "Operaciones de salud", "Coordinación", "Auditoría"] },
+        { title: "Procesos y operaciones", items: ["Procesos complejos", "Operaciones de salud", "Coordinación", "Comunicación y prioridades"] },
         { title: "Análisis y producto", items: ["Análisis funcional", "Flujos y estados", "Reglas de negocio", "UX operativa"] },
         { title: "Ingeniería y datos", items: ["Next.js", "React", "TypeScript", "PostgreSQL", "Supabase", "FHIR R4", "Formación full stack"] },
         { title: "Calidad", items: ["Testing unitario y E2E", "RLS y autorización", "Documentación", "Mantenimiento"] },
@@ -43,6 +45,8 @@ const content = {
       description: "I analyze processes, define workflows and business rules, and build web solutions.",
       context: "Healthcare experience since 2004 · Digital products since 2020",
       primaryAction: "View projects",
+      aboutAction: "About",
+      servicesAction: "Services",
       cvAction: "Download CV",
       secondaryAction: "Contact",
     },
@@ -57,7 +61,7 @@ const content = {
     capabilities: {
       title: "Capabilities",
       groups: [
-        { title: "Processes and operations", items: ["Complex workflows", "Healthcare operations", "Coordination", "Service review"] },
+        { title: "Processes and operations", items: ["Complex workflows", "Healthcare operations", "Coordination", "Communication and priorities"] },
         { title: "Analysis and product", items: ["Functional analysis", "Flows and states", "Business rules", "Operational UX"] },
         { title: "Engineering and data", items: ["Next.js", "React", "TypeScript", "PostgreSQL", "Supabase", "FHIR R4", "Full-stack training"] },
         { title: "Quality", items: ["Unit and E2E testing", "RLS and authorization", "Documentation", "Maintenance"] },

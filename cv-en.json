@@ -56,7 +56,7 @@
       "highlights": [
         "Coordination across patients, families, clinicians, and internal teams.",
         "Review of service delivery and identification of operational and documentation needs.",
-        "Contribution to process definition and the joint creation of a palliative care service area."
+        "Precise communication, priority assessment, and contribution to the joint creation of a palliative care service area."
       ]
     },
     {
@@ -264,8 +264,8 @@
     {
       "name": "Clinical Platform for Home Rehabilitation",
       "featured": true,
-      "badge": "Featured project",
-      "description": "A platform for managing requests, patients, treatment cycles, visits, and home-rehabilitation documentation.",
+      "badge": "Tailored product · HealthTech",
+      "description": "Structured inquiries and clinical management of patients, treatment cycles, visits, and home-rehabilitation documentation.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -295,7 +295,7 @@
       "name": "Fira Estudio",
       "featured": false,
       "badge": "Independent work",
-      "description": "A web catalog for a textile business, with product pages, reference pricing, and availability inquiries.",
+      "description": "E-commerce with Mercado Pago, adapted into a catalog when demand exceeded production capacity.",
       "highlights": [
         "Next.js",
         "TypeScript",

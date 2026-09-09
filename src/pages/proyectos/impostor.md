@@ -61,7 +61,7 @@ La aplicación gestiona preparación, revelación, votación y resultados. La co
 
 Impostor fue usado en más de 100 partidas con grupos familiares. Esas sesiones permitieron corregir textos, recorridos y comportamientos multi-dispositivo.
 
-La evidencia describe uso real y evaluación positiva dentro de ese contexto. No implica adopción comercial, product-market fit, ausencia de defectos ni validación masiva.
+El uso documentado es familiar y no se presenta como validación comercial.
 
 ## Calidad y límites
 

@@ -8,6 +8,8 @@ const t = useTranslations(currentLang);
 <button id="theme-toggle" class="no-print" aria-label={t("button.theme")}>
   <svg
     class="sun-icon"
+    aria-hidden="true"
+    focusable="false"
     width="20"
     height="20"
     viewBox="0 0 24 24"
@@ -27,6 +29,8 @@ const t = useTranslations(currentLang);
   </svg>
   <svg
     class="moon-icon"
+    aria-hidden="true"
+    focusable="false"
     width="20"
     height="20"
     viewBox="0 0 24 24"
@@ -88,6 +92,11 @@ const t = useTranslations(currentLang);
 
   #theme-toggle:active {
     transform: translateY(0);
+  }
+
+  #theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 
   .sun-icon {

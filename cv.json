@@ -56,7 +56,7 @@
       "highlights": [
         "Articulación entre pacientes, familias, profesionales y equipos internos.",
         "Revisión de prestaciones y detección de necesidades operativas y documentales.",
-        "Participación en la definición de procesos y en la creación conjunta de un área de cuidados paliativos."
+        "Comunicación precisa, detección de prioridades y participación en la creación conjunta de un área de cuidados paliativos."
       ]
     },
     {
@@ -264,8 +264,8 @@
     {
       "name": "Plataforma clínica para rehabilitación domiciliaria",
       "featured": true,
-      "badge": "Proyecto principal",
-      "description": "Plataforma para gestionar solicitudes, pacientes, tratamientos, visitas y documentación de rehabilitación domiciliaria.",
+      "badge": "Producto a medida · HealthTech",
+      "description": "Recepción estructurada de consultas y gestión clínica de pacientes, tratamientos, visitas y documentación de rehabilitación domiciliaria.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -295,7 +295,7 @@
       "name": "Fira Estudio",
       "featured": false,
       "badge": "Trabajo independiente",
-      "description": "Catálogo web para un emprendimiento textil, con fichas de producto, precios de referencia y consultas de disponibilidad.",
+      "description": "E-commerce con Mercado Pago, adaptado a catálogo cuando la demanda superó la capacidad de producción.",
       "highlights": [
         "Next.js",
         "TypeScript",

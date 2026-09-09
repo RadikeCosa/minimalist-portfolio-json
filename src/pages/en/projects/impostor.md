@@ -61,7 +61,7 @@ The application handles setup, private reveal, voting, and results. Conversation
 
 Impostor has been used in more than 100 games with family groups. Those sessions informed changes to wording, flows, and multi-device behavior.
 
-This evidence describes real use and positive evaluation within that context. It does not imply commercial adoption, product-market fit, defect-free operation, or mass validation.
+The documented use is within family groups and is not presented as commercial validation.
 
 ## Quality and boundaries
 

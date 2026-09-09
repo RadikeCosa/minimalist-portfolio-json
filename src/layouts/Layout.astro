@@ -9,9 +9,20 @@ interface Props {
   alternateUrl?: string;
   isHome?: boolean;
   isProfile?: boolean;
+  isService?: boolean;
+  isProject?: boolean;
 }
 
-const { title, description, lang, alternateUrl, isHome = false, isProfile = false } = Astro.props;
+const {
+  title,
+  description,
+  lang,
+  alternateUrl,
+  isHome = false,
+  isProfile = false,
+  isService = false,
+  isProject = false,
+} = Astro.props;
 const currentLang = lang || getLangFromUrl(Astro.url);
 
 // Obtener CV según el idioma
@@ -24,8 +35,10 @@ const canonicalUrl = new URL(Astro.url.pathname, baseUrl).toString();
 const alternateHref = alternateUrl ? new URL(alternateUrl, baseUrl).toString() : null;
 const alternateLang = currentLang === "en" ? "es" : "en";
 const defaultHref = currentLang === "es" ? canonicalUrl : alternateHref;
-const socialImage = "";
-const hasSocialImage = socialImage.trim().length > 0;
+const socialImage = new URL(
+  currentLang === "en" ? "/og/portfolio-en.png" : "/og/portfolio-es.png",
+  baseUrl,
+).toString();
 const personEntity = {
   "@type": "Person",
   "@id": `${siteUrl}#person`,
@@ -48,6 +61,27 @@ const personEntity = {
     addressCountry: location.countryCode,
   },
 };
+const pageEntity = isService
+  ? {
+      "@type": "Service",
+      "@id": `${canonicalUrl}#service`,
+      name: title,
+      description: pageDescription,
+      url: canonicalUrl,
+      inLanguage: currentLang,
+      provider: { "@id": `${siteUrl}#person` },
+    }
+  : isProject
+    ? {
+        "@type": "CreativeWork",
+        "@id": `${canonicalUrl}#project`,
+        name: title,
+        description: pageDescription,
+        url: canonicalUrl,
+        inLanguage: currentLang,
+        creator: { "@id": `${siteUrl}#person` },
+      }
+    : null;
 const structuredData = isHome
   ? {
       "@context": "https://schema.org",
@@ -81,7 +115,12 @@ const structuredData = isHome
           personEntity,
         ],
       }
-    : null;
+    : pageEntity
+      ? {
+          "@context": "https://schema.org",
+          "@graph": [pageEntity, personEntity],
+        }
+      : null;
 const structuredDataJson = structuredData
   ? JSON.stringify(structuredData).replace(/</g, "\\u003c")
   : null;
@@ -113,14 +152,18 @@ const structuredDataJson = structuredData
     <meta property="og:locale:alternate" content={currentLang === "en" ? "es_AR" : "en_US"} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={pageDescription} />
-    {hasSocialImage && <meta property="og:image" content={socialImage} />}
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={currentLang === "en" ? `${name} professional portfolio` : `Portfolio profesional de ${name}`} />
 
-    <meta name="twitter:card" content={hasSocialImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={new URL(url).hostname} />
     <meta property="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={pageDescription} />
-    {hasSocialImage && <meta name="twitter:image" content={socialImage} />}
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={currentLang === "en" ? `${name} professional portfolio` : `Portfolio profesional de ${name}`} />
     {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson} />}
     <script is:inline>
       (function () {
@@ -196,6 +239,27 @@ const structuredDataJson = structuredData
       box-sizing: border-box;
     }
 
+    .skip-link {
+      background: var(--bg-primary);
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      left: 1rem;
+      padding: 0.65rem 0.8rem;
+      position: fixed;
+      top: 1rem;
+      transform: translateY(-200%);
+      transition: transform 0.15s ease;
+      z-index: 2000;
+    }
+
+    .skip-link:focus {
+      outline: none;
+      transform: translateY(0);
+    }
+
     h1,
     h2,
     h3,
@@ -245,9 +309,23 @@ const structuredDataJson = structuredData
         break-inside: avoid;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
     </style>
   </head>
   <body>
+    <a class="skip-link no-print" href="#main-content">
+      {currentLang === "en" ? "Skip to main content" : "Saltar al contenido principal"}
+    </a>
     <slot />
   </body>
 </html>

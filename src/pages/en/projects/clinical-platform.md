@@ -25,11 +25,11 @@ Home rehabilitation combines administrative data, treatments, visits, and docume
 
 The public site presents services and structures the information needed before initial contact. It does not seek to maximize inquiries: it aims to receive the volume the professional can handle and reduce the initial back-and-forth.
 
-The private/local area organizes requests, patients, treatment cycles, visits, and reports. It is not a public SaaS or a multi-user platform.
+The private/local area organizes requests, patients, treatment cycles, visits, and reports.
 
 <figure class="case-figure wide">
   <img
-    src="/case-studies/clinical-platform/admin-dashboard.png"
+    src="/case-studies/clinical-platform/admin-dashboard.webp"
     alt="Private local dashboard showing operational priorities, active patients, and pending actions."
     width="1440"
     height="1800"
@@ -43,7 +43,7 @@ The private/local area organizes requests, patients, treatment cycles, visits, a
 
 An inquiry does not automatically become treatment. Intake creates a minimal patient record and a `ServiceRequest` under review. Only a valid, accepted, unused request can start a treatment cycle.
 
-<div class="case-flow" aria-label="Main operational workflow">
+<section class="case-flow" aria-label="Main operational workflow">
   <ol class="case-flow__steps">
     <li><span>Request</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
     <li><span>Patient</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
@@ -51,14 +51,14 @@ An inquiry does not automatically become treatment. Intake creates a minimal pat
     <li><span>Visit</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
     <li><span>Follow-up</span></li>
   </ol>
-</div>
+</section>
 
 Treatment opens an `EpisodeOfCare`; visits are recorded as `Encounter` resources inside it. Dates are validated against the episode start and closure. The patient view shows the next action for the current state.
 
 <figure class="case-figure case-figure--crop wide">
   <div class="case-figure__media">
     <img
-      src="/case-studies/clinical-platform/admin-encounters.png"
+      src="/case-studies/clinical-platform/admin-encounters.webp"
       alt="Clinical follow-up view with functional measures, summaries, and recorded visits using fictional data."
       width="1440"
       height="2200"
@@ -77,23 +77,23 @@ I defined the functional workflow, business rules, and screen responsibilities. 
 
 ### Inquiries aligned with capacity
 
-The public page prioritizes relevant inquiries and structured initial information over volume. It is not a mass lead-generation campaign and does not guarantee availability.
+The public page prioritizes relevant inquiries and structured initial information, aligned with the professional's capacity.
 
 ### Request before treatment
 
-A request can remain under review, be accepted, or close without generating visits. This adds one explicit step before treatment begins.
+A request can remain under review, be accepted, or close without generating visits. It adds a step, but prevents an inquiry from becoming an active case.
 
 ### Distinct but connected areas
 
-The interface separates administrative data, clinical context, and treatment, and connects them from the patient view. Some actions require navigating between areas.
+The interface separates administrative data, clinical context, and treatment. The patient view connects these areas, although some actions require moving between them.
 
 ### Visits inside an active episode
 
-Visits require an active `EpisodeOfCare` and dates inside its treatment cycle. The current scope does not solve multiple simultaneous active episodes.
+Visits require an active `EpisodeOfCare` and dates inside its treatment cycle. Multiple simultaneous active episodes remain outside the current scope.
 
 ### FHIR isolated from the UI
 
-An intermediate layer translates FHIR resources into interface concepts such as request, active treatment, and next action. Contract changes require coordinated updates across those layers.
+An intermediate layer translates FHIR resources into interface concepts. Contract changes require coordinated updates across both layers.
 
 ## FHIR and possible future interoperability
 
@@ -103,6 +103,6 @@ FHIR R4 serves as the local clinical model. The core uses `Patient`, `ServiceReq
 
 ## Quality, privacy, and boundaries
 
-The project includes typed contracts, domain validations, automated tests, and workflow documentation. Public screenshots use fictional, sanitized data.
+The project includes typed contracts, domain validations, automated tests, and workflow documentation. The screenshots use fictional data.
 
-The admin is local/private, marked as `noindex`, and excluded from public analytics. The current scope does not include production authentication, multi-user operation, validated integration or compatibility with ANDES, a patient portal, or a complete electronic health record.
+The admin is local/private, marked as `noindex`, and excluded from public analytics. The current scope does not include production authentication, multi-user operation, validated compatibility with ANDES, a patient portal, or a complete electronic health record.

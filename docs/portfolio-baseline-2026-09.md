@@ -1,5 +1,7 @@
 # Portfolio Baseline Report — September 2026
 
+> Estado histórico de Stage 0. Este diagnóstico quedó superado por la implementación posterior. La baseline vigente se documenta en `portfolio-baseline-v1-2026-09.md`.
+
 Fecha de auditoría: 2026-09-09
 Repositorio: `minimalist-portfolio-json`
 Deploy revisado: `https://ramirocosa.is-a.dev/`

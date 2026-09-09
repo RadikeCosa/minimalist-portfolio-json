@@ -43,8 +43,9 @@ const externalLinks = [
   description={frontmatter.description}
   lang={currentLang}
   alternateUrl={frontmatter.alternateUrl}
+  isProject
 >
-  <main class="case-page">
+  <main id="main-content" class="case-page">
     <nav class="case-back no-print" aria-label={isEnglish ? "Project navigation" : "Navegación de proyecto"}>
       <a href={backHref}>{backLabel}</a>
     </nav>
@@ -56,7 +57,7 @@ const externalLinks = [
 
         {
           (metaItems.length > 0 || frontmatter.stack?.length || externalLinks.length > 0) && (
-            <div class="case-meta" aria-label={isEnglish ? "Project details" : "Detalles del proyecto"}>
+            <div class="case-meta" role="group" aria-label={isEnglish ? "Project details" : "Detalles del proyecto"}>
               {metaItems.length > 0 && (
                 <p>
                   {metaItems.map((item, index) => (

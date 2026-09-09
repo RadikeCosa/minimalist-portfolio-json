@@ -19,8 +19,8 @@ const aboutHref = lang === "en" ? "/en/about/" : "/sobre-mi/";
 const emailSubject = lang === "en" ? "Discuss a need" : "Planteo de una necesidad";
 ---
 
-<Layout title={title} description={description} lang={lang} alternateUrl={alternateUrl}>
-  <main class="services-page">
+<Layout title={title} description={description} lang={lang} alternateUrl={alternateUrl} isService>
+  <main id="main-content" class="services-page">
     <nav class="back no-print" aria-label={lang === "en" ? "Portfolio navigation" : "Navegación del portfolio"}>
       <a href={homeHref}>{content.back}</a>
     </nav>

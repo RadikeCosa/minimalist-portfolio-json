@@ -615,3 +615,17 @@ Validación:
 - se corrige el orden efectivo de codificación en desarrollo para evitar mojibake en títulos con acentos bajo `localhost`.
 - la apertura de Servicios evita la jerga `entregable`: parte del objetivo que la persona necesita alcanzar, explica la recomendación y deja claro por qué y cómo funcionaría;
 - la experiencia más reciente de desarrollo de productos digitales incorpora un enlace secundario a Servicios y trabajo independiente.
+
+### 2026-09-09 — Consolidación previa al congelamiento v1
+
+- coherencia editorial cerrada entre portada, casos, Servicios, About y CV: la plataforma clínica se identifica como producto a medida y Fira incluye su evolución de e-commerce a catálogo;
+- los CV ES/EN se reequilibran en dos páginas A4, conservan 13 enlaces, declaran el idioma del documento y suman comunicación y prioridades como capacidad transferible;
+- navegación por teclado reforzada con salto al contenido, foco visible en controles flotantes e iconos decorativos fuera del árbol accesible;
+- `aria-label` corregidos mediante regiones y grupos semánticos válidos en los casos;
+- imágenes sociales ES/EN de 1200 × 630, Open Graph/Twitter completo y datos estructurados para Servicios y proyectos;
+- capturas clínicas convertidas de PNG a WebP, con una reducción aproximada del 51 % del peso conjunto;
+- Astro actualizado de 4.16.19 a 7.3.2, TypeScript a 6.0.3 y auditoría de dependencias sin vulnerabilidades conocidas;
+- un único gestor de paquetes documentado; dependencia, componentes, tipos e iconos sin uso eliminados;
+- validación automática incorporada para doce rutas, un `h1` por página, canonical, alternancia ES/EN, codificación, datos estructurados y recursos sociales;
+- workflow de integración continua agregado y cabeceras de seguridad/caché configuradas para Vercel.
+- navegación del hero reorganizada en destinos del portfolio (`Proyectos`, `Sobre mí`, `Servicios`) y acciones (`Descargar CV`, `Contacto`), manteniendo los enlaces contextuales como refuerzo.

@@ -25,11 +25,11 @@ La rehabilitación domiciliaria reúne datos administrativos, tratamientos, visi
 
 El sitio público presenta servicios y estructura la información necesaria antes del contacto. No busca maximizar consultas: procura recibir las que el profesional puede atender y reducir el intercambio inicial.
 
-El área privada/local organiza solicitudes, pacientes, tratamientos, visitas y reportes. No es un SaaS público ni una plataforma multiusuario.
+El área privada/local organiza solicitudes, pacientes, tratamientos, visitas y reportes.
 
 <figure class="case-figure wide">
   <img
-    src="/case-studies/clinical-platform/admin-dashboard.png"
+    src="/case-studies/clinical-platform/admin-dashboard.webp"
     alt="Panel administrativo privado con prioridades operativas, pacientes activos y pendientes."
     width="1440"
     height="1800"
@@ -43,7 +43,7 @@ El área privada/local organiza solicitudes, pacientes, tratamientos, visitas y 
 
 Una consulta no equivale a un tratamiento. El alta inicial crea un paciente mínimo y una `ServiceRequest` en revisión. Solo una solicitud aceptada, válida y no utilizada puede iniciar un ciclo.
 
-<div class="case-flow" aria-label="Flujo operativo principal">
+<section class="case-flow" aria-label="Flujo operativo principal">
   <ol class="case-flow__steps">
     <li>
       <span>Solicitud</span>
@@ -65,14 +65,14 @@ Una consulta no equivale a un tratamiento. El alta inicial crea un paciente mín
       <span>Seguimiento</span>
     </li>
   </ol>
-</div>
+</section>
 
 El tratamiento abre un `EpisodeOfCare`; las visitas se registran como `Encounter` dentro de ese episodio. Las fechas se validan contra su inicio y cierre. La ficha del paciente muestra la próxima acción según el estado actual.
 
 <figure class="case-figure case-figure--crop wide">
   <div class="case-figure__media">
     <img
-      src="/case-studies/clinical-platform/admin-encounters.png"
+      src="/case-studies/clinical-platform/admin-encounters.webp"
       alt="Vista de seguimiento clínico con métricas funcionales, estadísticas y visitas registradas."
       width="1440"
       height="2200"
@@ -89,37 +89,25 @@ Definí el flujo funcional, las reglas de negocio y las responsabilidades de cad
 
 ## Decisiones
 
-<section class="case-decisions" aria-label="Decisiones destacadas">
-  <article class="case-decision">
-    <h3>Consultas ajustadas a la capacidad</h3>
-    <p>La página pública prioriza consultas pertinentes e información inicial estructurada por sobre el volumen.</p>
-    <p><strong>Límite:</strong> no funciona como campaña de captación masiva ni garantiza disponibilidad.</p>
-  </article>
+### Consultas ajustadas a la capacidad
 
-  <article class="case-decision">
-    <h3>Solicitud antes de tratamiento</h3>
-    <p>La solicitud puede revisarse, aceptarse o cerrarse sin crear visitas. Así, un contacto inicial no se registra como caso activo.</p>
-    <p><strong>Límite:</strong> agrega un paso antes del inicio.</p>
-  </article>
+La página pública prioriza consultas pertinentes e información inicial estructurada, de acuerdo con la capacidad del profesional.
 
-  <article class="case-decision">
-    <h3>Áreas diferenciadas pero conectadas</h3>
-    <p>La interfaz separa datos administrativos, contexto clínico y tratamiento, y los conecta desde la ficha del paciente.</p>
-    <p><strong>Límite:</strong> algunas acciones requieren navegar entre áreas.</p>
-  </article>
+### Solicitud antes de tratamiento
 
-  <article class="case-decision">
-    <h3>Visitas dentro de un episodio activo</h3>
-    <p>Las visitas requieren un <code>EpisodeOfCare</code> activo y fechas comprendidas dentro del ciclo.</p>
-    <p><strong>Límite:</strong> no cubre escenarios complejos con múltiples episodios activos simultáneos; si aparecen inconsistencias, el sistema las detecta pero no las corrige automáticamente.</p>
-  </article>
+La solicitud puede revisarse, aceptarse o cerrarse sin crear visitas. Agrega un paso, pero evita registrar un contacto como caso activo.
 
-  <article class="case-decision">
-    <h3>FHIR aislado de la UI</h3>
-    <p>Una capa intermedia traduce los recursos FHIR a conceptos de interfaz como solicitud, tratamiento activo y próxima acción.</p>
-    <p><strong>Límite:</strong> cada cambio de contrato exige alinear varias capas.</p>
-  </article>
-</section>
+### Áreas diferenciadas pero conectadas
+
+La interfaz separa datos administrativos, contexto clínico y tratamiento. La ficha del paciente conecta las áreas, aunque algunas acciones requieren navegar entre ellas.
+
+### Visitas dentro de un episodio activo
+
+Las visitas requieren un `EpisodeOfCare` activo y fechas comprendidas dentro del ciclo. Los episodios activos simultáneos quedan fuera del alcance actual.
+
+### FHIR aislado de la UI
+
+Una capa intermedia traduce los recursos FHIR a conceptos de interfaz. Cada cambio de contrato exige alinear ambas capas.
 
 ## FHIR y una posible interoperabilidad futura
 
@@ -131,4 +119,4 @@ FHIR R4 funciona como modelo clínico local. El núcleo utiliza `Patient`, `Serv
 
 El proyecto incluye tipado, validaciones de dominio, pruebas automatizadas y documentación del flujo y del modelo.
 
-Las capturas y ejemplos públicos utilizan datos ficticios, sin información clínica identificable. El área administrativa es privada/local, está marcada como `noindex` y queda fuera del tracking público. El alcance actual no incluye multiusuario, autenticación productiva, integración o compatibilidad validada con ANDES, portal de pacientes ni una historia clínica completa.
+Las capturas utilizan datos ficticios. El área administrativa es privada/local, está marcada como `noindex` y queda fuera del tracking público. El alcance actual no incluye multiusuario, autenticación productiva, compatibilidad validada con ANDES, portal de pacientes ni una historia clínica completa.

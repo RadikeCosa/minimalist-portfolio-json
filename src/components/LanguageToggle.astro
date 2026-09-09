@@ -10,7 +10,7 @@ const buttonText = currentLang === "en" ? "ES" : "EN";
 <div class="language-toggle no-print">
   <a
     href={newPath}
-    aria-label={`Switch to ${currentLang === "en" ? "Spanish" : "English"}`}
+    aria-label={currentLang === "en" ? "Switch to Spanish" : "Cambiar a inglés"}
   >
     {buttonText}
   </a>
@@ -45,6 +45,11 @@ const buttonText = currentLang === "en" ? "ES" : "EN";
     background: var(--bg-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .language-toggle a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 
   /* Responsive */
