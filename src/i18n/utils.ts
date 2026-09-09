@@ -44,6 +44,12 @@ export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
   const currentLang = getLangFromUrl(currentUrl);
   const currentPath = currentUrl.pathname.replace(/\/$/, "") || "/";
   const routeAlternates: Record<string, Partial<Record<Language, string>>> = {
+    "/sobre-mi": {
+      en: "/en/about/",
+    },
+    "/en/about": {
+      es: "/sobre-mi/",
+    },
     "/proyectos/plataforma-clinica": {
       en: "/en/projects/clinical-platform/",
     },

@@ -566,3 +566,18 @@ Validación:
 - metadatos sociales ampliados con sitio e idioma;
 - entidades `WebSite` y `Person` incorporadas como JSON-LD en las homes;
 - README actualizado para eliminar el posicionamiento y los proyectos anteriores.
+
+### 2026-09-09 — Incremento B: About bilingüe
+
+- nuevas rutas `/sobre-mi/` y `/en/about/`;
+- recorrido presentado como acumulativo: práctica profesional, coordinación de servicios y productos digitales;
+- HealthTech mencionado como especialización transferible, no como límite sectorial;
+- formación full stack incorporada como parte secundaria del recorrido;
+- acceso discreto desde la sección Experiencia de ambas portadas, sin ampliar las acciones principales del hero;
+- enlaces a proyectos, CV y contacto en el cierre de la página;
+- idiomas incorporados con la línea editorial aprobada para el portfolio;
+- canonical, `hreflang`, `x-default`, Open Graph tipo `profile` y JSON-LD `ProfilePage` + `Person`;
+- sitemap ampliado de ocho a diez rutas;
+- revisión ES/EN, tema claro/oscuro y viewport móvil de 390 px, sin overflow horizontal;
+- `astro check`: 52 archivos, 0 errores, 0 warnings, 0 hints;
+- `astro build`: diez rutas estáticas generadas correctamente.

@@ -76,6 +76,12 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
       ))
     }
   </ul>
+
+  <p class="about-link">
+    <a href={currentLang === "en" ? "/en/about/" : "/sobre-mi/"}>
+      {currentLang === "en" ? "More about my background" : "Más sobre mi recorrido"}
+    </a>
+  </p>
 </Section>
 
 <style>
@@ -142,6 +148,27 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 
   time {
     cursor: default;
+  }
+
+  .about-link {
+    margin-top: 24px;
+  }
+
+  .about-link a {
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+
+  .about-link a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .about-link a:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 
   @media (width <= 700px) {

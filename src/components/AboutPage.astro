@@ -1,0 +1,202 @@
+---
+import LanguageToggle from "@/components/LanguageToggle.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { getAboutContent } from "@/content/about";
+import type { Language } from "@/i18n/types";
+import Layout from "@/layouts/Layout.astro";
+
+interface Props {
+  lang: Language;
+  title: string;
+  description: string;
+  alternateUrl: string;
+}
+
+const { lang, title, description, alternateUrl } = Astro.props;
+const content = getAboutContent(lang);
+const homeHref = lang === "en" ? "/en/" : "/";
+const projectsHref = `${homeHref}#projects`;
+const contactHref = `${homeHref}#contact`;
+const cvHref = lang === "en"
+  ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf"
+  : "/cv/CV_Ramiro_Nicolas_Cosa.pdf";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  alternateUrl={alternateUrl}
+  isProfile
+>
+  <main class="about-page">
+    <nav class="back no-print" aria-label={lang === "en" ? "Portfolio navigation" : "Navegación del portfolio"}>
+      <a href={homeHref}>{content.back}</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>{content.title}</h1>
+        <div class="copy intro">
+          {content.intro.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </header>
+
+      <section>
+        <h2>{content.methodTitle}</h2>
+        <div class="copy"><p>{content.method}</p></div>
+      </section>
+
+      <section>
+        <h2>{content.backgroundTitle}</h2>
+        <div class="copy">
+          {content.background.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section>
+        <h2>{content.languagesTitle}</h2>
+        <p class="languages">{content.languages}</p>
+      </section>
+
+      <nav class="actions no-print" aria-label={content.actionsLabel}>
+        <a class="primary" href={projectsHref}>{content.projects}</a>
+        <a href={cvHref} download>{content.cv}</a>
+        <a href={contactHref}>{content.contact}</a>
+      </nav>
+    </article>
+  </main>
+
+  <LanguageToggle />
+  <ThemeToggle />
+</Layout>
+
+<style>
+  .about-page {
+    margin: auto;
+    padding: 4rem;
+    width: 100%;
+  }
+
+  .back,
+  article {
+    margin-inline: auto;
+    max-width: 700px;
+  }
+
+  .back {
+    margin-bottom: 2.25rem;
+  }
+
+  .back a,
+  .actions a {
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+
+  .back a:hover,
+  .actions a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .back a:focus-visible,
+  .actions a:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .copy p,
+  .languages {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .intro p:first-child {
+    color: var(--text-primary);
+    font-size: 1rem;
+  }
+
+  .languages {
+    overflow-wrap: anywhere;
+  }
+
+  .actions {
+    align-items: center;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    padding-top: 1.5rem;
+  }
+
+  .actions .primary {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 9px 12px;
+  }
+
+  .actions .primary:hover {
+    background: var(--bg-secondary);
+    text-decoration: none;
+  }
+
+  @media (width <= 700px) {
+    .about-page {
+      padding: 2rem 1.25rem;
+    }
+
+    .back {
+      margin-bottom: 1.75rem;
+      padding-right: 7rem;
+    }
+
+    article {
+      gap: 2rem;
+    }
+
+    .copy p,
+    .languages {
+      font-size: 0.9rem;
+    }
+  }
+</style>

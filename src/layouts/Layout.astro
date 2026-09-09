@@ -8,9 +8,10 @@ interface Props {
   lang?: Language;
   alternateUrl?: string;
   isHome?: boolean;
+  isProfile?: boolean;
 }
 
-const { title, description, lang, alternateUrl, isHome = false } = Astro.props;
+const { title, description, lang, alternateUrl, isHome = false, isProfile = false } = Astro.props;
 const currentLang = lang || getLangFromUrl(Astro.url);
 
 // Obtener CV según el idioma
@@ -25,6 +26,28 @@ const alternateLang = currentLang === "en" ? "es" : "en";
 const defaultHref = currentLang === "es" ? canonicalUrl : alternateHref;
 const socialImage = "";
 const hasSocialImage = socialImage.trim().length > 0;
+const personEntity = {
+  "@type": "Person",
+  "@id": `${siteUrl}#person`,
+  name,
+  url: siteUrl,
+  jobTitle:
+    currentLang === "en"
+      ? "Functional analysis, implementation, and digital products"
+      : "Análisis funcional, implementación y producto digital",
+  description: pageDescription,
+  sameAs: profiles.map(({ url }) => url),
+  knowsAbout:
+    currentLang === "en"
+      ? ["Functional analysis", "Digital products", "Web development", "Healthcare operations", "HealthTech"]
+      : ["Análisis funcional", "Productos digitales", "Desarrollo web", "Operaciones de salud", "HealthTech"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: location.city,
+    addressRegion: location.region,
+    addressCountry: location.countryCode,
+  },
+};
 const structuredData = isHome
   ? {
       "@context": "https://schema.org",
@@ -38,31 +61,27 @@ const structuredData = isHome
           inLanguage: ["es", "en"],
           publisher: { "@id": `${siteUrl}#person` },
         },
-        {
-          "@type": "Person",
-          "@id": `${siteUrl}#person`,
-          name,
-          url: siteUrl,
-          jobTitle:
-            currentLang === "en"
-              ? "Functional analysis, implementation, and digital products"
-              : "Análisis funcional, implementación y producto digital",
-          description: pageDescription,
-          sameAs: profiles.map(({ url }) => url),
-          knowsAbout:
-            currentLang === "en"
-              ? ["Functional analysis", "Digital products", "Web development", "Healthcare operations", "HealthTech"]
-              : ["Análisis funcional", "Productos digitales", "Desarrollo web", "Operaciones de salud", "HealthTech"],
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: location.city,
-            addressRegion: location.region,
-            addressCountry: location.countryCode,
-          },
-        },
+        personEntity,
       ],
     }
-  : null;
+  : isProfile
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": `${canonicalUrl}#profile-page`,
+            url: canonicalUrl,
+            name: title,
+            description: pageDescription,
+            inLanguage: currentLang,
+            isPartOf: { "@id": `${siteUrl}#website` },
+            mainEntity: { "@id": `${siteUrl}#person` },
+          },
+          personEntity,
+        ],
+      }
+    : null;
 const structuredDataJson = structuredData
   ? JSON.stringify(structuredData).replace(/</g, "\\u003c")
   : null;
@@ -88,7 +107,7 @@ const structuredDataJson = structuredData
     }
 
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={isProfile ? "profile" : "website"} />
     <meta property="og:site_name" content={name} />
     <meta property="og:locale" content={currentLang === "en" ? "en_US" : "es_AR"} />
     <meta property="og:locale:alternate" content={currentLang === "en" ? "es_AR" : "en_US"} />

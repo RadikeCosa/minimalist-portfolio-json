@@ -3,6 +3,8 @@ import type { APIRoute } from "astro";
 const routes = [
   "/",
   "/en/",
+  "/sobre-mi/",
+  "/en/about/",
   "/proyectos/plataforma-clinica/",
   "/en/projects/clinical-platform/",
   "/proyectos/impostor/",
