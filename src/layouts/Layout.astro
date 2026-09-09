@@ -102,7 +102,7 @@ const structuredDataJson = structuredData
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={pageDescription} />
     {hasSocialImage && <meta name="twitter:image" content={socialImage} />}
-    {structuredDataJson && <script type="application/ld+json" set:html={structuredDataJson} />}
+    {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson} />}
     <script is:inline>
       (function () {
         const theme =
@@ -113,7 +113,7 @@ const structuredDataJson = structuredData
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
-    <style is:global is:inline>
+    <style is:global>
     :root {
       /* Light theme */
       --bg-primary: #ffffff;
