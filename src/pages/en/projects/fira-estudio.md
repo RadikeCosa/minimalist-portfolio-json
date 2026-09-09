@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
 title: "Fira Estudio"
-description: "A web catalog for a textile business."
+description: "A web product for a textile business, adapted from e-commerce to a catalog as its operational capacity changed."
 locale: "en"
 alternateUrl: "/proyectos/fira-estudio/"
 role: "Independent work · Product and implementation"
@@ -16,24 +16,32 @@ repository: "https://github.com/RadikeCosa/fira-estudio"
 
 ## Need
 
-Fira Estudio needed to present its textiles, organize the catalog, and support mobile inquiries without implementing e-commerce.
+Fira Estudio needed to present and sell its textiles online through a product aligned with the way the business operates.
 
-## Scope
+## First version
 
-The site includes a home page, categories, catalog, product pages, variants, materials, care information, reference pricing, and WhatsApp contact.
+The first version included a home page, categories, catalog, product pages, variants, a cart, checkout, and a certified Mercado Pago integration.
 
-It does not include a cart, checkout, payments, or online orders. Prices and availability support a manual inquiry.
+The solution covered payments, orders, webhooks, and transactional emails. It was not a demo or a pending integration: the e-commerce flow was implemented.
+
+## Operational change
+
+Demand exceeded the business's production capacity. Keeping automated purchases would have allowed orders that could later prove difficult to fulfill.
+
+We reframed the product as a digital showcase. The current site retains the catalog, variants, materials, care information, and reference pricing, while orders are discussed and confirmed by phone according to availability.
 
 ## My contribution
 
-I designed and implemented the experience, catalog structure, responsive navigation, accessibility, metadata, SEO, and unit and E2E tests.
+I designed and implemented the experience, catalog structure, original purchasing flow, payment integration, responsive navigation, accessibility, metadata, SEO, and unit and E2E tests.
 
 ## Decision
 
-The repository previously contained e-commerce infrastructure. The current product removed cart, checkout, Mercado Pago, webhooks, orders, and transactional emails because they no longer matched the scope.
+We removed the cart, checkout, Mercado Pago, webhooks, orders, and transactional emails when they stopped matching the real operational capacity.
 
-The reduction limits dependencies and avoids presenting an operation the business does not provide.
+This decision was not caused by a technical limitation. It adapted an implemented solution to a new business constraint and prevented the interface from accepting operations that required prior confirmation.
 
 ## Quality and boundaries
 
-The site includes responsive navigation, metadata, sitemap, robots, and basic SEO structure. Catalog data comes from Supabase. It is not presented as active e-commerce or a pending payment integration.
+The site includes responsive navigation, metadata, sitemap, robots, and basic SEO structure. Catalog data comes from Supabase.
+
+The current version does not include online purchases or payments. Pricing supports the initial inquiry, and availability is confirmed before each order is accepted.

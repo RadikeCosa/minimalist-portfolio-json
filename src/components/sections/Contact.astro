@@ -18,7 +18,16 @@ const cvHref = currentLang === "en"
 ---
 
 <Section id="contact" title={contact.title}>
-  <div class="contact-copy"><p>{contact.description}</p></div>
+  <div class="contact-copy">
+    <p>{contact.description}</p>
+    <p class="services-link">
+      <a href={currentLang === "en" ? "/en/services/" : "/servicios/"}>
+        {currentLang === "en"
+          ? "Services for small businesses and professionals"
+          : "Servicios para pymes y profesionales"}
+      </a>
+    </p>
+  </div>
   <address>
     <a class="primary" href={`mailto:${basics.email}`}>{contact.emailAction}</a>
     <a href={cvHref} download>{contact.cvAction}</a>
@@ -30,6 +39,7 @@ const cvHref = currentLang === "en"
 
 <style>
   .contact-copy { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; max-width: 64ch; }
+  .services-link { margin-top: 4px; }
   address { align-items: center; display: flex; flex-wrap: wrap; font-style: normal; gap: 10px 18px; }
   a { color: var(--text-primary); font-size: 0.78rem; font-weight: 650; text-decoration: none; }
   a:hover { text-decoration: underline; text-underline-offset: 3px; }

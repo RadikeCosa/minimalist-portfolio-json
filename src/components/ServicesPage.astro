@@ -1,0 +1,301 @@
+---
+import LanguageToggle from "@/components/LanguageToggle.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { getServicesContent } from "@/content/services";
+import type { Language } from "@/i18n/types";
+import Layout from "@/layouts/Layout.astro";
+
+interface Props {
+  lang: Language;
+  title: string;
+  description: string;
+  alternateUrl: string;
+}
+
+const { lang, title, description, alternateUrl } = Astro.props;
+const content = getServicesContent(lang);
+const homeHref = lang === "en" ? "/en/" : "/";
+const aboutHref = lang === "en" ? "/en/about/" : "/sobre-mi/";
+const emailSubject = lang === "en" ? "Project inquiry" : "Consulta sobre un proyecto";
+---
+
+<Layout title={title} description={description} lang={lang} alternateUrl={alternateUrl}>
+  <main class="services-page">
+    <nav class="back no-print" aria-label={lang === "en" ? "Portfolio navigation" : "Navegación del portfolio"}>
+      <a href={homeHref}>{content.back}</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>{content.title}</h1>
+        <p class="lead">{content.lead}</p>
+        <div class="copy intro">
+          {content.intro.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </header>
+
+      <section>
+        <h2>{content.helpTitle}</h2>
+        <div class="help-grid">
+          {content.help.map((item) => (
+            <article class="help-item">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>{content.scopeTitle}</h2>
+        <div class="copy"><p>{content.scope}</p></div>
+      </section>
+
+      <section>
+        <h2>{content.processTitle}</h2>
+        <ol class="process-list">
+          {content.process.map((step) => (
+            <li>
+              <strong>{step.title}.</strong>
+              <span>{step.description}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section>
+        <h2>{content.toolsTitle}</h2>
+        <div class="copy">
+          {content.tools.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section>
+        <h2>{content.workTitle}</h2>
+        <div class="project-list">
+          {content.projects.map((project) => (
+            <article class="project-item">
+              <p class="badge">{project.badge}</p>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <nav aria-label={content.actionsLabel}>
+                <a href={project.caseHref}>{project.caseLabel}</a>
+                <a href={project.siteHref} target="_blank" rel="noopener noreferrer">{project.siteLabel}</a>
+              </nav>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>{content.backgroundTitle}</h2>
+        <div class="copy">
+          <p>{content.background}</p>
+          <p class="text-link"><a href={aboutHref}>{content.backgroundAction}</a></p>
+        </div>
+      </section>
+
+      <section class="contact">
+        <h2>{content.contactTitle}</h2>
+        <div class="copy"><p>{content.contact}</p></div>
+        <a class="primary no-print" href={`mailto:ramirocosa@gmail.com?subject=${encodeURIComponent(emailSubject)}`}>
+          {content.contactAction}
+        </a>
+      </section>
+    </article>
+  </main>
+
+  <LanguageToggle />
+  <ThemeToggle />
+</Layout>
+
+<style>
+  .services-page {
+    margin: auto;
+    padding: 4rem;
+    width: 100%;
+  }
+
+  .back,
+  .services-page > article {
+    margin-inline: auto;
+    max-width: 700px;
+  }
+
+  .back {
+    margin-bottom: 2.25rem;
+  }
+
+  .back a,
+  .project-item a,
+  .text-link a,
+  .contact > a {
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+
+  .back a:hover,
+  .project-item a:hover,
+  .text-link a:hover,
+  .contact > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .back a:focus-visible,
+  .project-item a:focus-visible,
+  .text-link a:focus-visible,
+  .contact > a:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .services-page > article {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-bottom: 1.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  .lead {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1.55;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .copy,
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .copy p,
+  .intro p,
+  .help-item p,
+  .project-item > p,
+  .process-list li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .help-grid,
+  .project-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .help-item,
+  .project-item {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1rem;
+  }
+
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+
+  .process-list li {
+    color: var(--text-secondary);
+    padding-left: 0.2rem;
+  }
+
+  .process-list strong {
+    color: var(--text-primary);
+    margin-right: 0.35rem;
+  }
+
+  .badge {
+    color: var(--text-muted);
+    font-size: 0.7rem !important;
+    font-weight: 650;
+    line-height: 1.35 !important;
+  }
+
+  .project-item nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: auto;
+    padding-top: 0.35rem;
+  }
+
+  .contact {
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+  }
+
+  .primary {
+    align-self: flex-start;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-top: 0.35rem;
+    padding: 9px 12px;
+  }
+
+  .primary:hover {
+    background: var(--bg-secondary);
+    text-decoration: none !important;
+  }
+
+  @media (width <= 700px) {
+    .services-page {
+      padding: 2rem 1.25rem;
+    }
+
+    .back {
+      margin-bottom: 1.75rem;
+      padding-right: 7rem;
+    }
+
+    .services-page > article {
+      gap: 2.1rem;
+    }
+
+    .help-grid,
+    .project-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

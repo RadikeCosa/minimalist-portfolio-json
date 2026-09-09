@@ -50,6 +50,12 @@ export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
     "/en/about": {
       es: "/sobre-mi/",
     },
+    "/servicios": {
+      en: "/en/services/",
+    },
+    "/en/services": {
+      es: "/servicios/",
+    },
     "/proyectos/plataforma-clinica": {
       en: "/en/projects/clinical-platform/",
     },

@@ -10,6 +10,8 @@ const aboutContent = {
     methodTitle: "Cómo trabajo",
     method:
       "Primero entiendo el problema y su contexto. Después ordeno actores, datos, estados y restricciones. Trabajo por etapas, valido con uso real y documento lo necesario para que la solución pueda mantenerse.",
+    methodAi:
+      "Integro herramientas de IA como parte habitual de ese proceso y de mi aprendizaje continuo. Me ayudan a investigar, explorar alternativas y acceder a información específica que después verifico; el contexto, las decisiones y la validación siguen siendo mi responsabilidad.",
     backgroundTitle: "Recorrido",
     background: [
       "Soy Licenciado en Kinesiología y Fisioterapia. Mantengo práctica independiente desde 2004; trabajé en consultorios hasta 2013 y luego continué fuera de ese ámbito. Entre 2013 y 2024 coordiné y audité servicios de internación domiciliaria, articulando pacientes, familias, profesionales y equipos internos.",
@@ -20,6 +22,7 @@ const aboutContent = {
       "Español — nativo · English — C1 · Português — em progresso · Français — débutant · Русский — начинающий",
     back: "← Volver al portfolio",
     projects: "Ver proyectos",
+    services: "Servicios",
     cv: "Descargar CV",
     contact: "Contacto",
     actionsLabel: "Acciones",
@@ -33,6 +36,8 @@ const aboutContent = {
     methodTitle: "How I work",
     method:
       "I start by understanding the problem and its context. Then I organize stakeholders, data, states, and constraints. I work in stages, validate through real use, and document what is needed to keep the solution maintainable.",
+    methodAi:
+      "I use AI tools as a regular part of that process and of my ongoing learning. They help me research, explore alternatives, and access specific information that I then verify; context, decisions, and validation remain my responsibility.",
     backgroundTitle: "Background",
     background: [
       "I hold a Bachelor's Degree in Kinesiology and Physiotherapy. I have maintained an independent practice since 2004; I worked in clinic settings through 2013 and later continued outside them. From 2013 to 2024, I coordinated and reviewed home care services, working across patients, families, professionals, and internal teams.",
@@ -43,6 +48,7 @@ const aboutContent = {
       "Español — nativo · English — C1 · Português — em progresso · Français — débutant · Русский — начинающий",
     back: "← Back to portfolio",
     projects: "View projects",
+    services: "Services",
     cv: "Download CV",
     contact: "Contact",
     actionsLabel: "Actions",

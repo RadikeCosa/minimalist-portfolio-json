@@ -581,3 +581,22 @@ Validación:
 - revisión ES/EN, tema claro/oscuro y viewport móvil de 390 px, sin overflow horizontal;
 - `astro check`: 52 archivos, 0 errores, 0 warnings, 0 hints;
 - `astro build`: diez rutas estáticas generadas correctamente.
+
+### 2026-09-09 — Incremento C: Servicios, About y casos de proyecto
+
+- nuevas rutas `/servicios/` y `/en/services/`, orientadas a pymes, profesionales y equipos pequeños;
+- propuesta basada en comprender una necesidad concreta y elegir la respuesta adecuada: ordenar un proceso, configurar herramientas existentes o desarrollar una solución a medida;
+- servicios organizados en presencia y canales digitales, organización del trabajo, productos web a medida y evolución de soluciones;
+- enfoque de trabajo resumido en entender, elegir y definir, implementar, validar y ajustar;
+- IA incorporada en Servicios y About como herramienta transversal de análisis, aprendizaje e implementación; el contexto, las decisiones y la validación permanecen como responsabilidad profesional;
+- About enlaza Servicios y Contacto incorpora un acceso secundario para consultas de pymes y profesionales;
+- Fira actualizado para documentar el e-commerce original con carrito, checkout e integración certificada con Mercado Pago, y su posterior adaptación conjunta a catálogo con confirmación telefónica cuando la demanda superó la capacidad productiva;
+- la solución para kinesiología domiciliaria se presenta como dos superficies conectadas: recepción estructurada de consultas pertinentes y gestión clínica de registros;
+- la posible relación futura con ANDES se expresa como una línea de interoperabilidad a investigar por compartir la familia de estándares HL7/FHIR, sin afirmar compatibilidad ni integración ya validadas;
+- el trabajo con el taller de luthería informa el enfoque de servicios, pero continúa completamente fuera del contenido público;
+- sitemap ampliado de diez a doce rutas y alternancia ES/EN incorporada para Servicios;
+- revisión local de Servicios ES/EN, tema claro/oscuro y viewport móvil de 390 px, sin overflow horizontal;
+- About, Fira y la solución clínica verificados en viewport móvil;
+- `astro check`: 56 archivos, 0 errores, 0 warnings, 0 hints;
+- `astro build`: doce rutas estáticas generadas correctamente;
+- `git diff --check` limpio.

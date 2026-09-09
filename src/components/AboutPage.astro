@@ -44,7 +44,10 @@ const cvHref = lang === "en"
 
       <section>
         <h2>{content.methodTitle}</h2>
-        <div class="copy"><p>{content.method}</p></div>
+        <div class="copy">
+          <p>{content.method}</p>
+          <p>{content.methodAi}</p>
+        </div>
       </section>
 
       <section>
@@ -61,6 +64,7 @@ const cvHref = lang === "en"
 
       <nav class="actions no-print" aria-label={content.actionsLabel}>
         <a class="primary" href={projectsHref}>{content.projects}</a>
+        <a href={lang === "en" ? "/en/services/" : "/servicios/"}>{content.services}</a>
         <a href={cvHref} download>{content.cv}</a>
         <a href={contactHref}>{content.contact}</a>
       </nav>
