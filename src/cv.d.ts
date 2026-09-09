@@ -137,6 +137,7 @@ interface Projects {
   description: string
   highlights: Highlight
   url: string
+  caseStudyUrl?: string
   github?: string
 }
 

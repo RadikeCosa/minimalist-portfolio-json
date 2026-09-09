@@ -21,9 +21,9 @@ const frontmatter = (Astro.props.frontmatter ?? Astro.props) as ProjectCaseFront
 const currentLang = frontmatter.locale || getLangFromUrl(Astro.url);
 const isEnglish = currentLang === "en";
 const pageTitle = isEnglish
-  ? `${frontmatter.title} | Ramiro Cosa`
-  : `${frontmatter.title} | Ramiro Cosa`;
-const backHref = isEnglish ? "/en/#healthtech-project" : "/#healthtech-project";
+  ? `${frontmatter.title} | Ramiro Nicolás Cosa`
+  : `${frontmatter.title} | Ramiro Nicolás Cosa`;
+const backHref = isEnglish ? "/en/#projects" : "/#projects";
 const backLabel = isEnglish ? "← Back to projects" : "← Volver a proyectos";
 const metaItems = [frontmatter.role, frontmatter.period].filter(Boolean);
 const externalLinks = [
@@ -237,10 +237,115 @@ const externalLinks = [
     padding: 0.1rem 0.3rem;
   }
 
+  .case-content :global(.case-flow) {
+    border-bottom: 1px solid var(--border-light);
+    border-top: 1px solid var(--border-light);
+    margin: 0.5rem 0 1rem;
+    padding: 1rem 0;
+    break-inside: avoid;
+  }
+
+  .case-content :global(.case-flow__steps) {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+
+  .case-content :global(.case-flow__steps li) {
+    align-items: center;
+    color: var(--text-secondary);
+    display: flex;
+    flex: 1 1 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    gap: 0.75rem;
+    justify-content: space-between;
+    line-height: 1.35;
+    min-width: 0;
+  }
+
+  .case-content :global(.case-flow__steps li > span:first-child) {
+    overflow-wrap: anywhere;
+  }
+
+  .case-content :global(.case-flow__connector) {
+    color: var(--text-muted);
+    flex: 0 0 auto;
+    font-weight: 500;
+  }
+
+  .case-content :global(.case-decisions) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .case-content :global(.case-decision) {
+    border-left: 1px solid var(--border);
+    padding-left: 1rem;
+    break-inside: avoid;
+  }
+
+  .case-content :global(.case-decision h3) {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.35;
+    margin: 0 0 0.45rem;
+  }
+
+  .case-content :global(.case-decision p) {
+    margin: 0;
+  }
+
+  .case-content :global(.case-decision p + p) {
+    margin-top: 0.45rem;
+  }
+
+  .case-content :global(.case-decision strong) {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
   .case-content :global(figure),
   .case-content :global(.wide) {
     margin: 1.5rem calc((700px - min(900px, 100vw - 2rem)) / 2);
     max-width: 900px;
+  }
+
+  .case-content :global(.case-figure) {
+    break-inside: avoid;
+  }
+
+  .case-content :global(.case-figure img) {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .case-content :global(.case-figure figcaption) {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-top: 0.55rem;
+  }
+
+  .case-content :global(.case-figure__media) {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    max-height: 820px;
+    overflow: hidden;
+  }
+
+  .case-content :global(.case-figure__media img) {
+    border: 0;
+    border-radius: 0;
   }
 
   @media (width <= 700px) {
@@ -251,6 +356,31 @@ const externalLinks = [
     .case-back {
       margin-bottom: 1.75rem;
     }
+
+    .case-content :global(.case-flow__steps) {
+      align-items: stretch;
+      gap: 0.35rem;
+    }
+
+    .case-content :global(.case-flow__steps),
+    .case-content :global(.case-flow__steps li) {
+      flex-direction: column;
+    }
+
+    .case-content :global(.case-flow__steps li) {
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+
+    .case-content :global(.case-flow__connector) {
+      padding-left: 0.2rem;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+
+    .case-content :global(.case-figure__media) {
+      max-height: 560px;
+    }
   }
 
   @media print {
@@ -260,6 +390,10 @@ const externalLinks = [
 
     .case-header {
       border-bottom-color: var(--border);
+    }
+
+    .case-content :global(.case-figure__media) {
+      max-height: 720px;
     }
   }
 </style>

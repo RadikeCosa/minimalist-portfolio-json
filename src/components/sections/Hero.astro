@@ -1,14 +1,9 @@
 ---
-import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import { getLangFromUrl, getCV } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 import Section from "@/components/Section.astro";
-import Mail from "@/icons/Mail.astro";
-import Phone from "@/icons/Phone.astro";
-import X from "@/icons/X.astro";
-import LinkedIn from "@/icons/LinkedIn.astro";
-import GitHub from "@/icons/GitHub.astro";
 import WorldMap from "@/icons/WorldMap.astro";
-import type { SocialIcon } from "@/types";
+import { getHomeContent } from "@/content/home";
 
 interface Props {
   lang?: Language;
@@ -16,221 +11,123 @@ interface Props {
 
 const { lang } = Astro.props;
 const currentLang = lang || getLangFromUrl(Astro.url);
-const t = useTranslations(currentLang);
-const cvData = await getCV(currentLang);
-
-// Usar los datos del CV según el idioma actual
-const { name, label, location, profiles, phone, email } = cvData.basics;
-const { city, region } = location;
-
-const SOCIAL_ICONS: SocialIcon = {
-  GitHub,
-  LinkedIn,
-  X,
-};
-
-const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
-const linkedUrl = linkedInfo?.url;
-const phoneHref = phone.replace(/[^\d+]/g, "");
-const healthtechProjectLabel =
-  currentLang === "en" ? "View HealthTech project →" : "Ver proyecto HealthTech →";
-
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
+const { basics } = await getCV(currentLang);
+const { hero } = getHomeContent(currentLang);
 ---
 
-<Section>
-  <div class="container">
-    <div class="info">
-      <h1>{name}</h1>
-      <h2>{label}</h2>
-      <span>
-        <WorldMap />
-        {city}, {region}
-      </span>
-      <footer class="print">
-        {printInfo}
-      </footer>
-      <footer class="social-actions no-print">
-        {
-          email && (
-            <a
-              href={`mailto:${email}`}
-              title={`${t("contact.send")} ${name}: ${email}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Mail />
-            </a>
-          )
-        }
-        {
-          phone && (
-            <a
-              href={`tel:${phoneHref}`}
-              title={`${t("contact.call")} ${name} ${phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Phone />
-            </a>
-          )
-        }
-        {
-          profiles.map(({ network, url }) => {
-            const Icon = SOCIAL_ICONS[network];
+<Section id="top">
+  <header class="hero">
+    <p class="name">{basics.name}</p>
+    <h1>{hero.title}</h1>
+    <p class="description">{hero.description}</p>
 
-            return (
-              <a
-                href={url}
-                title={`${t("contact.visit")} ${name}: ${network}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon />
-              </a>
-            );
-          })
-        }
-        <a class="healthtech-link" href="#healthtech-project">
-          {healthtechProjectLabel}
-        </a>
-      </footer>
+    <div class="context">
+      <p>{hero.context}</p>
+      <p class="location">
+        <WorldMap />
+        <span>{basics.location.city}, {basics.location.region}</span>
+      </p>
     </div>
-    <figure></figure>
-  </div>
+
+    <nav class="actions" aria-label={currentLang === "en" ? "Main actions" : "Acciones principales"}>
+      <a class="primary" href="#projects">{hero.primaryAction}</a>
+      <a href="#contact">{hero.secondaryAction}</a>
+    </nav>
+
+    <p class="print">{basics.email} · {basics.phone} · {basics.url}</p>
+  </header>
 </Section>
 
 <style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .info {
+  .hero {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding-right: 32px;
+    gap: 12px;
+    padding-block: 22px 10px;
+  }
+
+  .name {
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-weight: 700;
   }
 
   h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    color: var(--text-secondary);
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    max-width: 20ch;
     text-wrap: balance;
   }
 
-  img {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 128px;
-    border-radius: 16px;
+  .description {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 62ch;
   }
 
-  span {
-    color: var(--text-muted);
+  .context {
     display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.85rem;
-    letter-spacing: -0.05rem;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 4px;
   }
 
-  footer {
+  .context p {
     color: var(--text-muted);
-    font-size: 0.65rem;
+    font-size: 0.76rem;
+  }
+
+  .location {
+    align-items: flex-start;
     display: flex;
-    gap: 4px;
-    margin-top: 8px;
+    gap: 6px;
   }
 
-  footer a {
-    background: var(--bg-primary);
-    color: var(--text-muted);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    padding: 4px;
-    height: 32px;
-    width: 32px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+  .location :global(svg) {
+    flex: 0 0 auto;
+    margin-top: 2px;
   }
 
-  .social-actions {
+  .actions {
     align-items: center;
+    display: flex;
     flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-top: 10px;
   }
 
-  .social-actions .healthtech-link {
-    background: transparent;
-    border-color: transparent;
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-    font-weight: 600;
-    height: 32px;
-    margin-left: 4px;
-    padding-inline: 6px;
-    width: auto;
-  }
-
-  footer a:hover {
-    background: var(--bg-hover);
-    border: 1px solid var(--border);
-  }
-
-  .social-actions .healthtech-link:hover {
-    background: transparent;
-    border-color: transparent;
+  .actions a {
     color: var(--text-primary);
-    text-decoration: underline;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
   }
 
-  footer a:focus-visible {
+  .actions a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .actions a:focus-visible {
+    border-radius: 4px;
     outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    outline-offset: 3px;
+  }
+
+  .actions .primary {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 9px 12px;
+  }
+
+  .actions .primary:hover {
+    background: var(--bg-secondary);
+    text-decoration: none;
   }
 
   @media (width <= 700px) {
-    .container {
-      flex-direction: column-reverse;
-    }
-
-    .info {
-      justify-content: center;
-      align-items: center;
-      padding-right: 0;
-      text-align: center;
-    }
-
-    .social-actions {
-      justify-content: center;
-    }
-
-    .social-actions .healthtech-link {
-      margin-left: 0;
-    }
-
-    figure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h2 {
-      text-wrap: balance;
-    }
-
-    figure {
-      margin: 0 auto;
-    }
+    .hero { padding-top: 6px; }
+    h1 { font-size: clamp(1.9rem, 10vw, 2.65rem); }
   }
 </style>

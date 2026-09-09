@@ -1,5 +1,4 @@
 ---
-import 'hotkeypad/reset.css'
 import 'hotkeypad/index.css'
 import { type SocialIcon } from "@/types"
 import { getCV, getLangFromUrl, useTranslations } from "@/i18n/utils"
@@ -108,6 +107,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
   import HotKeyPad from "hotkeypad"
 
   const hotkeypad = new HotKeyPad()
+  hotkeypad.instance.dataset.state = "closed"
+  window.addEventListener("hotkeypad:open", () => {
+    hotkeypad.instance.dataset.state = "open"
+  })
+  window.addEventListener("hotkeypad:close", () => {
+    hotkeypad.instance.dataset.state = "closed"
+  })
+
   const info = hotkeypad.instance.getAttribute("data-info") ?? "[]"
   const printTitle = hotkeypad.instance.getAttribute("data-print-title") ?? "Print"
   const actionsSection = hotkeypad.instance.getAttribute("data-actions-section") ?? "Actions"
@@ -219,6 +226,14 @@ const profilesInfo = profiles.map(({ network, url }) => {
     animation: linear 0.3s fadeIn;
     animation-timeline: --revealing;
     animation-range: entry 100% cover 10%;
+  }
+
+  :global(#hotkeypad:not([data-state="open"])) {
+    display: none;
+  }
+
+  :global(#hotkeypad[data-state="open"]) {
+    display: block;
   }
 
   /* HotKeyPad ships with a separate ".dark" theme API.

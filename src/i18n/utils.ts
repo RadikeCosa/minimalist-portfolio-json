@@ -45,10 +45,22 @@ export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
   const currentPath = currentUrl.pathname.replace(/\/$/, "") || "/";
   const routeAlternates: Record<string, Partial<Record<Language, string>>> = {
     "/proyectos/plataforma-clinica": {
-      en: "/en/projects/clinical-platform",
+      en: "/en/projects/clinical-platform/",
     },
     "/en/projects/clinical-platform": {
-      es: "/proyectos/plataforma-clinica",
+      es: "/proyectos/plataforma-clinica/",
+    },
+    "/proyectos/impostor": {
+      en: "/en/projects/impostor/",
+    },
+    "/en/projects/impostor": {
+      es: "/proyectos/impostor/",
+    },
+    "/proyectos/fira-estudio": {
+      en: "/en/projects/fira-estudio/",
+    },
+    "/en/projects/fira-estudio": {
+      es: "/proyectos/fira-estudio/",
     },
   };
   const mappedPath = routeAlternates[currentPath]?.[targetLang];

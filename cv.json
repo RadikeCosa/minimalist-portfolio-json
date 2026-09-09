@@ -1,11 +1,11 @@
 {
   "basics": {
-    "name": "Ramiro Nicolas Cosa",
-    "label": "HealthTech Web Developer | Implementación y procesos clínicos",
+    "name": "Ramiro Nicolás Cosa",
+    "label": "Análisis funcional | Implementación | Producto digital",
     "email": "ramirocosa@gmail.com",
     "phone": "+54 9 299 521-7189",
     "url": "https://ramirocosa.is-a.dev/",
-    "summary": "Trabajo en la intersección entre salud y tecnología, conectando análisis funcional, implementación y desarrollo de software con procesos reales y necesidades operativas concretas. Cuento con más de 20 años de experiencia en el ámbito sanitario, incluyendo coordinación de servicios, auditoría clínica y análisis de procesos. Desde 2020 diseño y desarrollo productos web con Next.js, TypeScript y FHIR, aplicados a soluciones HealthTech en contextos reales.",
+    "summary": "Trabajo en análisis funcional, implementación y desarrollo de productos digitales para procesos y necesidades operativas reales. Cuento con más de 20 años de experiencia en salud, incluyendo práctica profesional, coordinación, auditoría y análisis de procesos. Desde 2020 diseño y desarrollo productos web, con HealthTech como área de especialización y capacidades transferibles a otros sectores.",
     "location": {
       "address": "Neuquén, Argentina",
       "postalCode": "8300",
@@ -29,18 +29,18 @@
   "work": [
     {
       "stageTitle": "Desarrollo de productos digitales",
-      "context": "",
+      "context": "Proyectos propios y trabajo independiente",
       "periods": [
         {
           "startDate": "2020-01-01",
           "endDate": null
         }
       ],
-      "summary": "Desde 2020 diseño y desarrollo productos web, con especial foco en soluciones HealthTech aplicadas a procesos clínicos y operativos.",
+      "summary": "Desde 2020 diseño y desarrollo productos web para necesidades reales, con foco en procesos, reglas de negocio, datos, experiencia de uso, testing y documentación.",
       "highlights": [
-        "Trabajo con Next.js, TypeScript y FHIR.",
         "Convierto necesidades clínicas y operativas en flujos, reglas de negocio y funcionalidades.",
-        "Desarrollo una plataforma para gestionar consultas, pacientes, tratamientos, visitas y documentación clínica."
+        "Desarrollo productos propios y trabajos independientes para usuarios y clientes reales.",
+        "Implemento soluciones con Next.js, TypeScript, PostgreSQL/Supabase y FHIR según el contexto."
       ]
     },
     {
@@ -56,7 +56,7 @@
       "highlights": [
         "Articulación entre pacientes, familias, profesionales y equipos internos.",
         "Revisión de prestaciones y detección de necesidades operativas y documentales.",
-        "Participación en la definición de procesos y en la creación de un área de cuidados paliativos."
+        "Participación en la definición de procesos y en la creación conjunta de un área de cuidados paliativos."
       ]
     },
     {
@@ -68,10 +68,11 @@
           "endDate": null
         }
       ],
-      "summary": "Experiencia en rehabilitación clínica y deportiva, tanto en consultorio como con equipos juveniles y de alto rendimiento.",
+      "summary": "Práctica clínica independiente continua desde 2004; trabajo en consultorios hasta 2013 y continuidad posterior fuera de consultorios.",
       "highlights": [
         "Evaluación funcional, planificación y seguimiento de tratamientos.",
-        "Registro de evolución y coordinación con pacientes y otros profesionales."
+        "Registro de evolución y coordinación con pacientes y otros profesionales.",
+        "Trabajo con distintos equipos y deportistas de alto rendimiento en recuperación y planificación anual."
       ]
     }
   ],
@@ -81,7 +82,7 @@
       "title": "Formación académica y clínica",
       "items": [
         {
-          "title": "Licenciatura en Kinesiología",
+          "title": "Licenciatura en Kinesiología y Fisioterapia",
           "institution": "Universidad Nacional de Córdoba",
           "startDate": "1998-01-01",
           "endDate": "2003-12-01",
@@ -264,7 +265,7 @@
       "name": "Plataforma clínica para rehabilitación domiciliaria",
       "featured": true,
       "badge": "Proyecto principal",
-      "description": "Producto web que combina captación pública y gestión clínica privada para organizar el seguimiento de pacientes y tratamientos en rehabilitación domiciliaria.",
+      "description": "Plataforma para gestionar solicitudes, pacientes, tratamientos, visitas y documentación de rehabilitación domiciliaria.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -272,20 +273,38 @@
         "Vitest"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
+      "caseStudyUrl": "/proyectos/plataforma-clinica/",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Fira Estudio E-commerce",
-      "featured": false,
-      "description": "E-commerce con catálogo, carrito, control de stock y checkout con Mercado Pago, integrado con Supabase y webhooks.",
+      "name": "Juegos Familiares — Impostor",
+      "featured": true,
+      "badge": "Producto en uso · 100+ partidas",
+      "description": "Juego social mobile-first con salas multi-dispositivo, roles privados, votación y puntuación.",
       "highlights": [
         "Next.js",
         "TypeScript",
         "Supabase",
-        "Mercado Pago"
+        "PostgreSQL"
+      ],
+      "github": "https://github.com/RadikeCosa/juegos-familiares",
+      "caseStudyUrl": "/proyectos/impostor/",
+      "url": "https://juegos-familiares.vercel.app/"
+    },
+    {
+      "name": "Fira Estudio",
+      "featured": false,
+      "badge": "Trabajo independiente",
+      "description": "Catálogo web para un emprendimiento textil, con fichas de producto, precios de referencia y consultas de disponibilidad.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "Accesibilidad",
+        "SEO"
       ],
       "github": "https://github.com/RadikeCosa/fira-estudio",
-      "url": "https://fira-estudio.vercel.app/"
+      "caseStudyUrl": "/proyectos/fira-estudio/",
+      "url": "https://fira-estudio-cyan.vercel.app/"
     }
   ]
 }

@@ -1,22 +1,8 @@
 ---
 import Section from "../Section.astro";
-import HTML from "@/icons/html.astro";
-import CSS from "@/icons/css.astro";
-import JavaScript from "@/icons/javascript.astro";
-import TypeScript from "@/icons/type.astro";
-import React from "@/icons/react.astro";
-import Node from "@/icons/node.astro";
-import MySQL from "@/icons/sql.astro";
-import Git from "@/icons/git.astro";
-import GitHub from "@/icons/GitHub.astro";
-import Tailwind from "@/icons/tailwind.astro";
-import Next from "@/icons/next.astro";
-import Swift from "@/icons/swift.astro";
-import SwiftUI from "@/icons/swiftui.astro";
-import Kotlin from "@/icons/kotlin.astro";
-import Flutter from "@/icons/flutter.astro";
-import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import { getLangFromUrl } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
+import { getHomeContent } from "@/content/home";
 
 interface Props {
   lang?: Language;
@@ -24,63 +10,36 @@ interface Props {
 
 const { lang } = Astro.props;
 const currentLang = lang || getLangFromUrl(Astro.url);
-const t = useTranslations(currentLang);
-const cvData = await getCV(currentLang);
-
-// Usar los datos del CV según el idioma actual
-const { skills } = cvData;
-
-const SKILLS_ICONS: Record<string, any> = {
-  HTML,
-  CSS,
-  JavaScript,
-  TypeScript,
-  React,
-  Node,
-  MySQL,
-  Git,
-  GitHub,
-  Next,
-  Tailwind,
-  Swift,
-  SwiftUI,
-  Kotlin,
-  Flutter,
-};
+const { capabilities } = getHomeContent(currentLang);
 ---
 
-<Section title={t("section.skills")}>
-  <ul>
-    {
-      skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name;
-        const Icon = SKILLS_ICONS[iconName];
-
-        return (
-          <li>
-            {Icon && <Icon />} <span>{name}</span>
-          </li>
-        );
-      })
-    }
-  </ul>
+<Section id="capabilities" title={capabilities.title}>
+  <div class="groups">
+    {capabilities.groups.map((group) => (
+      <section class="group">
+        <h3>{group.title}</h3>
+        <ul>{group.items.map((item) => <li>{item}</li>)}</ul>
+      </section>
+    ))}
+  </div>
 </Section>
 
 <style>
+  .groups { display: grid; gap: 24px 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .group { border-top: 1px solid var(--border); padding-top: 12px; }
+  h3 { font-size: 0.92rem; margin-bottom: 10px; }
   ul {
-    display: inline-flex;
-    gap: 8px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 6px;
   }
   li {
-    align-items: center;
     background: var(--bg-secondary);
     border-radius: 6px;
-    color: var(--text-primary);
-    display: flex;
-    font-size: 0.8rem;
-    font-weight: 500;
-    gap: 4px;
-    padding: 0.2rem 0.6rem;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 550;
+    padding: 0.28rem 0.58rem;
   }
+  @media (width <= 560px) { .groups { grid-template-columns: 1fr; } }
 </style>

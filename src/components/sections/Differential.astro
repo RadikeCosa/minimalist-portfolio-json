@@ -1,0 +1,27 @@
+---
+import Section from "../Section.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
+import { getHomeContent } from "@/content/home";
+
+interface Props { lang?: Language; }
+const { lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const { differential } = getHomeContent(currentLang);
+---
+
+<Section id="differential" title={differential.title}>
+  <ul>
+    {differential.items.map((item) => (
+      <li><h3>{item.title}</h3><p>{item.description}</p></li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  ul { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  li { border-top: 1px solid var(--border); padding-top: 14px; }
+  h3 { font-size: 0.95rem; line-height: 1.35; margin-bottom: 8px; }
+  li p { font-size: 0.78rem; line-height: 1.55; }
+  @media (width <= 700px) { ul { grid-template-columns: 1fr; } }
+</style>

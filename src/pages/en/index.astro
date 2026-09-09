@@ -3,13 +3,12 @@ import Layout from "@/layouts/Layout.astro";
 import LanguageToggle from "@/components/LanguageToggle.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 
-import About from "@/components/sections/About.astro";
-import Education from "@/components/sections/Education.astro";
+import Differential from "@/components/sections/Differential.astro";
 import Experience from "@/components/sections/Experience.astro";
 import Hero from "@/components/sections/Hero.astro";
 import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
-import KeyboardManager from "@/components/KeyboardManager.astro";
+import Contact from "@/components/sections/Contact.astro";
 
 import { getCV } from "@/i18n/utils";
 
@@ -21,16 +20,15 @@ const { name, label } = cvData.basics;
 <Layout title={`${name} Portfolio - ${label}`} lang={currentLang}>
   <main>
     <Hero lang={currentLang} />
-    <About lang={currentLang} />
-    <Experience lang={currentLang} />
-    <Education lang={currentLang} />
+    <Differential lang={currentLang} />
     <Projects lang={currentLang} />
+    <Experience lang={currentLang} />
     <Skills lang={currentLang} />
+    <Contact lang={currentLang} />
   </main>
 
   <LanguageToggle />
   <ThemeToggle />
-  <KeyboardManager />
 </Layout>
 
 <style>
@@ -42,7 +40,7 @@ const { name, label } = cvData.basics;
 
   @media (width <= 700px) {
     main {
-      padding: 2rem;
+      padding: 2rem 1.25rem;
     }
   }
 </style>

@@ -1,0 +1,35 @@
+---
+import Section from "../Section.astro";
+import { getLangFromUrl, getCV } from "@/i18n/utils";
+import type { Language } from "@/i18n/types";
+import { getHomeContent } from "@/content/home";
+
+interface Props { lang?: Language; }
+const { lang } = Astro.props;
+const currentLang = lang || getLangFromUrl(Astro.url);
+const { contact } = getHomeContent(currentLang);
+const { basics } = await getCV(currentLang);
+const linkedin = basics.profiles.find(({ network }) => network === "LinkedIn");
+const github = basics.profiles.find(({ network }) => network === "GitHub");
+const phoneHref = basics.phone.replace(/[^\d+]/g, "");
+---
+
+<Section id="contact" title={contact.title}>
+  <div class="contact-copy"><p>{contact.description}</p></div>
+  <address>
+    <a class="primary" href={`mailto:${basics.email}`}>{contact.emailAction}</a>
+    <a href={`tel:${phoneHref}`}>{basics.phone}</a>
+    {linkedin && <a href={linkedin.url} target="_blank" rel="noopener noreferrer">{contact.linkedinAction}</a>}
+    {github && <a href={github.url} target="_blank" rel="noopener noreferrer">{contact.githubAction}</a>}
+  </address>
+</Section>
+
+<style>
+  .contact-copy { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; max-width: 64ch; }
+  address { align-items: center; display: flex; flex-wrap: wrap; font-style: normal; gap: 10px 18px; }
+  a { color: var(--text-primary); font-size: 0.78rem; font-weight: 650; text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { border-radius: 4px; outline: 2px solid var(--accent); outline-offset: 3px; }
+  .primary { border: 1px solid var(--border); border-radius: 6px; padding: 9px 12px; }
+  .primary:hover { background: var(--bg-secondary); text-decoration: none; }
+</style>
