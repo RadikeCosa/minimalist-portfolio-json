@@ -31,6 +31,7 @@ const { hero } = getHomeContent(currentLang);
 
     <nav class="actions" aria-label={currentLang === "en" ? "Main actions" : "Acciones principales"}>
       <a class="primary" href="#projects">{hero.primaryAction}</a>
+      <a href="/cv/CV_Ramiro_Nicolas_Cosa.pdf" download>{hero.cvAction}</a>
       <a href="#contact">{hero.secondaryAction}</a>
     </nav>
 

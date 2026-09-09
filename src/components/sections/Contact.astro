@@ -18,6 +18,7 @@ const phoneHref = basics.phone.replace(/[^\d+]/g, "");
   <div class="contact-copy"><p>{contact.description}</p></div>
   <address>
     <a class="primary" href={`mailto:${basics.email}`}>{contact.emailAction}</a>
+    <a href="/cv/CV_Ramiro_Nicolas_Cosa.pdf" download>{contact.cvAction}</a>
     <a href={`tel:${phoneHref}`}>{basics.phone}</a>
     {linkedin && <a href={linkedin.url} target="_blank" rel="noopener noreferrer">{contact.linkedinAction}</a>}
     {github && <a href={github.url} target="_blank" rel="noopener noreferrer">{contact.githubAction}</a>}

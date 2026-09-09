@@ -539,3 +539,13 @@ Validación:
 - `astro check`: 47 archivos, 0 errores, 0 warnings, 0 hints;
 - `astro build`: ocho rutas estáticas generadas correctamente;
 - `git diff --check` limpio.
+
+### 2026-09-09 — Incremento 6: CV general coordinado
+
+- CV general en español aprobado e incorporado como PDF público estable;
+- descarga disponible desde el hero y desde Contacto;
+- la versión inglesa identifica explícitamente que el PDF está en español;
+- portfolio y CV comparten posicionamiento, jerarquía de proyectos y lenguaje visual;
+- una futura versión inglesa o variantes por búsqueda deben derivarse del CV general, sin reemplazarlo;
+- revisión responsive a 390 px en ES/EN y temas claro/oscuro, sin overflow horizontal;
+- PDF servido con `application/pdf` y verificado como idéntico al artefacto aprobado.
