@@ -30,7 +30,7 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 
   <ul class="experience-list">
     {
-      work.map(({ stageTitle, context, periods, summary, highlights }) => (
+      work.map(({ stageTitle, context, periods, summary, highlights }, index) => (
         <li>
           <article>
             <header>
@@ -69,6 +69,18 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
                     <li>{highlight}</li>
                   ))}
                 </ul>
+              )
+            }
+
+            {
+              index === 0 && (
+                <p class="services-link no-print">
+                  <a href={currentLang === "en" ? "/en/services/" : "/servicios/"}>
+                    {currentLang === "en"
+                      ? "Services and independent work →"
+                      : "Servicios y trabajo independiente →"}
+                  </a>
+                </p>
               )
             }
           </article>
@@ -154,17 +166,24 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
     margin-top: 24px;
   }
 
+  .services-link {
+    margin-top: 4px;
+  }
+
+  .services-link a,
   .about-link a {
     color: var(--text-primary);
     font-size: 0.78rem;
     font-weight: 650;
   }
 
+  .services-link a:hover,
   .about-link a:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
+  .services-link a:focus-visible,
   .about-link a:focus-visible {
     border-radius: 4px;
     outline: 2px solid var(--accent);

@@ -613,3 +613,5 @@ Validación:
 - los resúmenes de Fira y la solución de kinesiología se compactan; los case studies conservan el detalle;
 - el trabajo con el taller de luthería sigue fuera del contenido público: su aprendizaje se expresa como criterio general, sin identificar ni describir al cliente;
 - se corrige el orden efectivo de codificación en desarrollo para evitar mojibake en títulos con acentos bajo `localhost`.
+- la apertura de Servicios evita la jerga `entregable`: parte del objetivo que la persona necesita alcanzar, explica la recomendación y deja claro por qué y cómo funcionaría;
+- la experiencia más reciente de desarrollo de productos digitales incorpora un enlace secundario a Servicios y trabajo independiente.

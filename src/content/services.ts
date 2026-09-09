@@ -5,8 +5,8 @@ const servicesContent = {
     title: "Servicios",
     lead: "Análisis, implementación y producto para pymes y profesionales.",
     intro: [
-      "No parto de un entregable. Una necesidad puede resolverse con un sitio, una herramienta existente, un cambio de proceso o una combinación.",
-      "El objetivo es hacer más simple el trabajo, no sumar tecnología.",
+      "No hace falta llegar con la solución definida. Primero entiendo qué necesitás lograr y después propongo la respuesta adecuada: un sitio, una herramienta existente, un cambio de proceso o una combinación.",
+      "Cada recomendación debe responder a un objetivo concreto. Te explico qué conviene hacer, por qué y cómo funcionaría.",
     ],
     helpTitle: "Áreas de trabajo",
     help: [
@@ -83,8 +83,8 @@ const servicesContent = {
     title: "Services",
     lead: "Analysis, implementation, and product for small businesses and independent professionals.",
     intro: [
-      "I do not start with a predetermined deliverable. A need may be addressed through a website, an existing tool, a process change, or a combination.",
-      "The goal is to make work simpler, not to add technology.",
+      "You do not need to have the solution figured out beforehand. I first understand what you need to achieve, then propose the right response: a website, an existing tool, a process change, or a combination.",
+      "Every recommendation must serve a concrete objective. I explain what makes sense, why, and how it would work.",
     ],
     helpTitle: "Areas of work",
     help: [
