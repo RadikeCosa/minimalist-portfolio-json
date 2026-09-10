@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "generate:cv": "python3 scripts/generate-cv-es.py && python3 scripts/generate-cv-en.py",
     "preview": "astro preview",
     "verify": "npm run build && node scripts/verify-built-site.mjs",
     "astro": "astro"

@@ -32,6 +32,15 @@ Production validation:
 npm run verify
 ```
 
+Regenerate the coordinated Spanish and English CV downloads:
+
+```sh
+python3 -m pip install -r requirements-cv.txt
+npm run generate:cv
+```
+
+Both PDFs are written to `public/cv/`.
+
 This checks all twelve public routes, language alternates, canonical URLs, heading hierarchy, structured data, text encoding, and social images.
 
 ## Content principles
