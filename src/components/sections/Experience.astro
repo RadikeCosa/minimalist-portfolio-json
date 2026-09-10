@@ -2,6 +2,7 @@
 import Section from "../Section.astro";
 import { getLangFromUrl, useTranslations, getCV, getYear } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
+import ActionIcon from "@/components/ActionIcon.astro";
 
 interface Props {
   lang?: Language;
@@ -76,9 +77,10 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
               index === 0 && (
                 <p class="services-link no-print">
                   <a href={currentLang === "en" ? "/en/services/" : "/servicios/"}>
+                    <ActionIcon name="services" />
                     {currentLang === "en"
-                      ? "Services and independent work →"
-                      : "Servicios y trabajo independiente →"}
+                      ? "Services and independent work"
+                      : "Servicios y trabajo independiente"}
                   </a>
                 </p>
               )
@@ -91,6 +93,7 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 
   <p class="about-link">
     <a href={currentLang === "en" ? "/en/about/" : "/sobre-mi/"}>
+      <ActionIcon name="about" />
       {currentLang === "en" ? "More about my background" : "Más sobre mi recorrido"}
     </a>
   </p>
@@ -99,12 +102,41 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 <style>
   .experience-intro {
     margin-bottom: 28px;
+    max-width: 64ch;
   }
 
   .experience-list {
     display: flex;
     flex-direction: column;
-    gap: 42px;
+    gap: 34px;
+    position: relative;
+  }
+
+  .experience-list::before {
+    background: var(--border);
+    bottom: 0;
+    content: "";
+    left: 3px;
+    position: absolute;
+    top: 7px;
+    width: 1px;
+  }
+
+  .experience-list > li {
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .experience-list > li::before {
+    background: var(--accent);
+    border-radius: 999px;
+    box-shadow: 0 0 0 4px var(--bg-primary);
+    content: "";
+    height: 7px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 7px;
   }
 
   article {
@@ -172,9 +204,14 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 
   .services-link a,
   .about-link a {
+    align-items: center;
     color: var(--text-primary);
+    display: inline-flex;
+    flex-direction: row;
     font-size: 0.78rem;
     font-weight: 650;
+    gap: 6px;
+    white-space: nowrap;
   }
 
   .services-link a:hover,
@@ -196,7 +233,11 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
     }
 
     .experience-list {
-      gap: 36px;
+      gap: 30px;
+    }
+
+    .experience-list > li {
+      padding-left: 20px;
     }
 
     article h3 {

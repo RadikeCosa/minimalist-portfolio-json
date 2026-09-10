@@ -4,6 +4,7 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
 import { getAboutContent } from "@/content/about";
 import type { Language } from "@/i18n/types";
 import Layout from "@/layouts/Layout.astro";
+import ActionIcon from "@/components/ActionIcon.astro";
 
 interface Props {
   lang: Language;
@@ -20,6 +21,7 @@ const contactHref = `${homeHref}#contact`;
 const cvHref = lang === "en"
   ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf"
   : "/cv/CV_Ramiro_Nicolas_Cosa.pdf";
+const languages = content.languages.split(" · ");
 ---
 
 <Layout
@@ -59,14 +61,16 @@ const cvHref = lang === "en"
 
       <section>
         <h2>{content.languagesTitle}</h2>
-        <p class="languages">{content.languages}</p>
+        <ul class="languages" aria-label={content.languagesTitle}>
+          {languages.map((language) => <li>{language}</li>)}
+        </ul>
       </section>
 
       <nav class="actions no-print" aria-label={content.actionsLabel}>
-        <a class="primary" href={projectsHref}>{content.projects}</a>
-        <a href={lang === "en" ? "/en/services/" : "/servicios/"}>{content.services}</a>
-        <a href={cvHref} download>{content.cv}</a>
-        <a href={contactHref}>{content.contact}</a>
+        <a href={projectsHref}><ActionIcon name="projects" />{content.projects}</a>
+        <a href={lang === "en" ? "/en/services/" : "/servicios/"}><ActionIcon name="services" />{content.services}</a>
+        <a href={cvHref} download><ActionIcon name="download" />{content.cv}</a>
+        <a href={contactHref}><ActionIcon name="email" />{content.contact}</a>
       </nav>
     </article>
   </main>
@@ -138,9 +142,26 @@ const cvHref = lang === "en"
     gap: 0.65rem;
   }
 
+  section + section {
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+  }
+
   h2 {
+    align-items: center;
+    display: flex;
     font-size: 1.2rem;
+    gap: 8px;
     line-height: 1.35;
+  }
+
+  h2::before {
+    background: var(--accent);
+    border-radius: 999px;
+    content: "";
+    flex: 0 0 auto;
+    height: 5px;
+    width: 5px;
   }
 
   .copy {
@@ -161,7 +182,20 @@ const cvHref = lang === "en"
   }
 
   .languages {
-    overflow-wrap: anywhere;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .languages li {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    font-weight: 550;
+    line-height: 1.3;
+    padding: 0.3rem 0.62rem;
   }
 
   .actions {
@@ -173,15 +207,13 @@ const cvHref = lang === "en"
     padding-top: 1.5rem;
   }
 
-  .actions .primary {
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 9px 12px;
-  }
-
-  .actions .primary:hover {
-    background: var(--bg-secondary);
-    text-decoration: none;
+  .actions a {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 6px;
+    white-space: nowrap;
   }
 
   @media (width <= 700px) {
@@ -198,8 +230,7 @@ const cvHref = lang === "en"
       gap: 2rem;
     }
 
-    .copy p,
-    .languages {
+    .copy p {
       font-size: 0.9rem;
     }
   }

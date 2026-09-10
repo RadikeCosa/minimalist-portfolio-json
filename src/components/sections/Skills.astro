@@ -27,7 +27,21 @@ const { capabilities } = getHomeContent(currentLang);
 <style>
   .groups { display: grid; gap: 24px 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .group { border-top: 1px solid var(--border); padding-top: 12px; }
-  h3 { font-size: 0.92rem; margin-bottom: 10px; }
+  h3 {
+    align-items: center;
+    display: flex;
+    font-size: 0.92rem;
+    gap: 7px;
+    margin-bottom: 10px;
+  }
+  h3::before {
+    background: var(--accent);
+    border-radius: 999px;
+    content: "";
+    flex: 0 0 auto;
+    height: 5px;
+    width: 5px;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;

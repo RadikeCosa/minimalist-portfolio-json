@@ -4,6 +4,7 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
 import { getServicesContent } from "@/content/services";
 import type { Language } from "@/i18n/types";
 import Layout from "@/layouts/Layout.astro";
+import ActionIcon from "@/components/ActionIcon.astro";
 
 interface Props {
   lang: Language;
@@ -88,8 +89,8 @@ const emailSubject = lang === "en" ? "Discuss a project" : "Conversar sobre un p
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <nav aria-label={content.actionsLabel}>
-                <a href={project.caseHref}>{project.caseLabel}</a>
-                <a href={project.siteHref} target="_blank" rel="noopener noreferrer">{project.siteLabel}</a>
+                <a href={project.caseHref}><ActionIcon name="projects" size={14} />{project.caseLabel}</a>
+                <a href={project.siteHref} target="_blank" rel="noopener noreferrer"><ActionIcon name="external" size={14} />{project.siteLabel}</a>
               </nav>
             </article>
           ))}
@@ -100,14 +101,15 @@ const emailSubject = lang === "en" ? "Discuss a project" : "Conversar sobre un p
         <h2>{content.backgroundTitle}</h2>
         <div class="copy">
           <p>{content.background}</p>
-          <p class="text-link"><a href={aboutHref}>{content.backgroundAction}</a></p>
+          <p class="text-link"><a href={aboutHref}><ActionIcon name="about" />{content.backgroundAction}</a></p>
         </div>
       </section>
 
       <section class="contact">
         <h2>{content.contactTitle}</h2>
         <div class="copy"><p>{content.contact}</p></div>
-        <a class="primary no-print" href={`mailto:ramirocosa@gmail.com?subject=${encodeURIComponent(emailSubject)}`}>
+        <a class="contact-action no-print" href={`mailto:ramirocosa@gmail.com?subject=${encodeURIComponent(emailSubject)}`}>
+          <ActionIcon name="email" />
           {content.contactAction}
         </a>
       </section>
@@ -194,9 +196,26 @@ const emailSubject = lang === "en" ? "Discuss a project" : "Conversar sobre un p
     gap: 0.75rem;
   }
 
+  section + section {
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.4rem;
+  }
+
   h2 {
+    align-items: center;
+    display: flex;
     font-size: 1.2rem;
+    gap: 8px;
     line-height: 1.35;
+  }
+
+  h2::before {
+    background: var(--accent);
+    border-radius: 999px;
+    content: "";
+    flex: 0 0 auto;
+    height: 5px;
+    width: 5px;
   }
 
   h3 {
@@ -270,22 +289,23 @@ const emailSubject = lang === "en" ? "Discuss a project" : "Conversar sobre un p
     padding-top: 0.35rem;
   }
 
+  .project-item nav a,
+  .text-link a,
+  .contact-action {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
   .contact {
-    border-top: 1px solid var(--border-light);
-    padding-top: 1.5rem;
+    padding-top: 1.4rem;
   }
 
-  .primary {
+  .contact-action {
     align-self: flex-start;
-    border: 1px solid var(--border);
-    border-radius: 6px;
     margin-top: 0.35rem;
-    padding: 9px 12px;
-  }
-
-  .primary:hover {
-    background: var(--bg-secondary);
-    text-decoration: none !important;
   }
 
   @media (width <= 700px) {

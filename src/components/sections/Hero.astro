@@ -3,6 +3,7 @@ import { getLangFromUrl, getCV } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 import Section from "@/components/Section.astro";
 import WorldMap from "@/icons/WorldMap.astro";
+import ActionIcon from "@/components/ActionIcon.astro";
 import { getHomeContent } from "@/content/home";
 
 interface Props {
@@ -36,13 +37,13 @@ const servicesHref = currentLang === "en" ? "/en/services/" : "/servicios/";
 
     <nav class="hero-nav" aria-label={currentLang === "en" ? "Portfolio navigation" : "Navegación del portfolio"}>
       <div class="destinations">
-        <a class="primary" href="#projects">{hero.primaryAction}</a>
-        <a href={aboutHref}>{hero.aboutAction}</a>
-        <a href={servicesHref}>{hero.servicesAction}</a>
+        <a href="#projects"><ActionIcon name="projects" />{hero.primaryAction}</a>
+        <a href={aboutHref}><ActionIcon name="about" />{hero.aboutAction}</a>
+        <a href={servicesHref}><ActionIcon name="services" />{hero.servicesAction}</a>
       </div>
       <div class="utilities">
-        <a href={cvHref} download>{hero.cvAction}</a>
-        <a href="#contact">{hero.secondaryAction}</a>
+        <a href={cvHref} download><ActionIcon name="download" />{hero.cvAction}</a>
+        <a href="#contact"><ActionIcon name="email" />{hero.secondaryAction}</a>
       </div>
     </nav>
 
@@ -125,10 +126,16 @@ const servicesHref = currentLang === "en" ? "/en/services/" : "/servicios/";
   }
 
   .hero-nav a {
+    align-items: center;
     color: var(--text-primary);
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: row;
     font-size: 0.78rem;
     font-weight: 700;
+    gap: 6px;
     text-decoration: none;
+    white-space: nowrap;
   }
 
   .hero-nav a:hover {
@@ -140,17 +147,6 @@ const servicesHref = currentLang === "en" ? "/en/services/" : "/servicios/";
     border-radius: 4px;
     outline: 2px solid var(--accent);
     outline-offset: 3px;
-  }
-
-  .hero-nav .primary {
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 9px 12px;
-  }
-
-  .hero-nav .primary:hover {
-    background: var(--bg-secondary);
-    text-decoration: none;
   }
 
   @media (width <= 700px) {

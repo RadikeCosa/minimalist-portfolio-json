@@ -4,6 +4,7 @@ import LanguageToggle from "@/components/LanguageToggle.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
+import ActionIcon from "@/components/ActionIcon.astro";
 
 interface ProjectCaseFrontmatter {
   title: string;
@@ -31,12 +32,14 @@ const externalLinks = [
   frontmatter.website && {
     href: frontmatter.website,
     label: frontmatter.websiteLabel || (isEnglish ? "Live site" : "Sitio"),
+    icon: "external" as const,
   },
   frontmatter.repository && {
     href: frontmatter.repository,
     label: isEnglish ? "Source" : "Código",
+    icon: "github" as const,
   },
-].filter(Boolean) as Array<{ href: string; label: string }>;
+].filter(Boolean) as Array<{ href: string; label: string; icon: "external" | "github" }>;
 ---
 
 <Layout
@@ -80,6 +83,7 @@ const externalLinks = [
                 <nav class="case-links" aria-label={isEnglish ? "Project links" : "Links del proyecto"}>
                   {externalLinks.map((link) => (
                     <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      <ActionIcon name={link.icon} size={14} />
                       {link.label}
                     </a>
                   ))}
@@ -204,6 +208,14 @@ const externalLinks = [
     flex-wrap: wrap;
     gap: 14px;
     font-size: 0.8rem;
+  }
+
+  .case-links a {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 5px;
+    white-space: nowrap;
   }
 
   .case-content {
