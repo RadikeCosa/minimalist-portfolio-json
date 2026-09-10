@@ -30,6 +30,18 @@ La demanda superó la capacidad de producción del emprendimiento. Mantener comp
 
 Replanteamos el producto como una vidriera digital. El sitio vigente conserva catálogo, variantes, materiales, cuidados y precios de referencia, pero los pedidos se consultan y confirman por teléfono según disponibilidad.
 
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/fira/catalog-production.webp"
+    alt="Catálogo productivo de Fira Estudio con categorías y productos textiles destacados."
+    width="1200"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Catálogo productivo: categorías y presentación de productos, con disponibilidad gestionada mediante consulta.</figcaption>
+</figure>
+
 ## Mi aporte
 
 Diseñé e implementé la experiencia, la estructura del catálogo, el flujo de compra original, la integración de pagos, la navegación responsive, accesibilidad, metadata, SEO y pruebas unitarias y E2E.

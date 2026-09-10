@@ -30,6 +30,18 @@ Demand exceeded the business's production capacity. Keeping automated purchases 
 
 We reframed the product as a digital showcase. The current site retains the catalog, variants, materials, care information, and reference pricing, while orders are discussed and confirmed by phone according to availability.
 
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/fira/catalog-production.webp"
+    alt="Fira Estudio's production catalog showing categories and featured textile products."
+    width="1200"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Production catalog: categories and product presentation, with availability handled through inquiry.</figcaption>
+</figure>
+
 ## My contribution
 
 I designed and implemented the experience, catalog structure, original purchasing flow, payment integration, responsive navigation, accessibility, metadata, SEO, and unit and E2E tests.

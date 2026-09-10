@@ -18,6 +18,18 @@ repository: "https://github.com/RadikeCosa/juegos-familiares"
 
 Impostor es un juego para grupos reunidos físicamente. Cada participante usa su teléfono para recibir un rol privado, votar y ver resultados; la conversación ocurre cara a cara.
 
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/impostor/product-entry-production.webp"
+    alt="Pantalla productiva de Impostor con la presentación del juego presencial y la acción para unirse a un grupo."
+    width="900"
+    height="900"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Entrada productiva a Impostor: acceso al grupo y una interfaz que deja la conversación fuera de la pantalla.</figcaption>
+</figure>
+
 ## Sesiones y partidas
 
 Juegos Familiares mantiene una identidad liviana, un jugador, su grupo y un banco privado de palabras. Cada persona ve sus propios aportes y la cantidad disponible, pero no el banco completo.
