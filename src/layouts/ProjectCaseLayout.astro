@@ -26,7 +26,7 @@ const pageTitle = isEnglish
   ? `${frontmatter.title} | Ramiro Nicolás Cosa`
   : `${frontmatter.title} | Ramiro Nicolás Cosa`;
 const backHref = isEnglish ? "/en/#projects" : "/#projects";
-const backLabel = isEnglish ? "← Back to projects" : "← Volver a proyectos";
+const backLabel = isEnglish ? "Back to projects" : "Volver a proyectos";
 const metaItems = [frontmatter.role, frontmatter.period].filter(Boolean);
 const externalLinks = [
   frontmatter.website && {
@@ -51,7 +51,7 @@ const externalLinks = [
 >
   <main id="main-content" class="case-page">
     <nav class="case-back no-print" aria-label={isEnglish ? "Project navigation" : "Navegación de proyecto"}>
-      <a href={backHref}>{backLabel}</a>
+      <a href={backHref}><ActionIcon name="back" />{backLabel}</a>
     </nav>
 
     <article class="case-article">
@@ -100,9 +100,9 @@ const externalLinks = [
 
       <footer class="case-footer no-print">
         <nav aria-label={isEnglish ? "Next steps" : "Siguientes pasos"}>
-          <a href={isEnglish ? "/en/services/" : "/servicios/"}>{isEnglish ? "Services" : "Servicios"}</a>
-          <a href={isEnglish ? "/en/#contact" : "/#contact"}>{isEnglish ? "Contact" : "Contacto"}</a>
-          <a href={backHref}>{isEnglish ? "Back to projects" : "Volver a proyectos"}</a>
+          <a href={isEnglish ? "/en/services/" : "/servicios/"}><ActionIcon name="services" />{isEnglish ? "Services" : "Servicios"}</a>
+          <a href={isEnglish ? "/en/#contact" : "/#contact"}><ActionIcon name="email" />{isEnglish ? "Contact" : "Contacto"}</a>
+          <a href={backHref}><ActionIcon name="back" />{isEnglish ? "Back to projects" : "Volver a proyectos"}</a>
         </nav>
       </footer>
     </article>
@@ -131,6 +131,7 @@ const externalLinks = [
 
   .case-back a,
   .case-links a,
+  .case-footer a,
   .case-content :global(a) {
     color: var(--text-primary);
     font-weight: 600;
@@ -139,6 +140,7 @@ const externalLinks = [
 
   .case-back a:hover,
   .case-links a:hover,
+  .case-footer a:hover,
   .case-content :global(a:hover) {
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -146,6 +148,7 @@ const externalLinks = [
 
   .case-back a:focus-visible,
   .case-links a:focus-visible,
+  .case-footer a:focus-visible,
   .case-content :global(a:focus-visible) {
     border-radius: 4px;
     outline: 2px solid var(--accent);
@@ -168,6 +171,7 @@ const externalLinks = [
 
   h1 {
     font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.04em;
     line-height: 1.1;
   }
 
@@ -183,8 +187,20 @@ const externalLinks = [
   }
 
   .case-meta p {
+    align-items: center;
     color: var(--text-muted);
+    display: flex;
     font-size: 0.8rem;
+    gap: 7px;
+  }
+
+  .case-meta p::before {
+    background: var(--accent);
+    border-radius: 999px;
+    content: "";
+    flex: 0 0 auto;
+    height: 5px;
+    width: 5px;
   }
 
   .case-stack {
@@ -218,6 +234,15 @@ const externalLinks = [
     white-space: nowrap;
   }
 
+  .case-back a,
+  .case-footer a {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
   .case-content {
     display: flex;
     flex-direction: column;
@@ -228,6 +253,29 @@ const externalLinks = [
   .case-content :global(h3) {
     line-height: 1.3;
     margin-top: 1rem;
+  }
+
+  .case-content :global(h2) {
+    align-items: center;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    gap: 8px;
+    padding-top: 1.5rem;
+  }
+
+  .case-content :global(h2)::before {
+    background: var(--accent);
+    border-radius: 999px;
+    content: "";
+    flex: 0 0 auto;
+    height: 5px;
+    width: 5px;
+  }
+
+  .case-content :global(h2:first-child) {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .case-content :global(p),
@@ -249,6 +297,10 @@ const externalLinks = [
 
   .case-content :global(ol) {
     list-style: decimal;
+  }
+
+  .case-content :global(li)::marker {
+    color: var(--accent);
   }
 
   .case-content :global(code) {
@@ -295,7 +347,7 @@ const externalLinks = [
   }
 
   .case-content :global(.case-flow__connector) {
-    color: var(--text-muted);
+    color: var(--accent);
     flex: 0 0 auto;
     font-weight: 500;
   }
@@ -308,7 +360,7 @@ const externalLinks = [
   }
 
   .case-content :global(.case-decision) {
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--accent);
     padding-left: 1rem;
     break-inside: avoid;
   }
@@ -384,25 +436,12 @@ const externalLinks = [
   }
 
   .case-footer a {
-    color: var(--text-primary);
     font-size: 0.8rem;
-    font-weight: 650;
-  }
-
-  .case-footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  .case-footer a:focus-visible {
-    border-radius: 4px;
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
   }
 
   @media (width <= 700px) {
     .case-page {
-      padding: 2rem;
+      padding: 2rem 1.25rem;
     }
 
     .case-back {
