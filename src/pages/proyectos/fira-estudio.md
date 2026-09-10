@@ -22,7 +22,7 @@ Fira Estudio necesitaba presentar y vender sus textiles online mediante un produ
 
 La primera versión incluyó home, categorías, catálogo, fichas de producto, variantes, carrito, checkout e integración certificada con Mercado Pago.
 
-La solución contemplaba pagos, pedidos, webhooks y emails transaccionales. No era una demostración ni una integración pendiente: el flujo de e-commerce estaba implementado.
+El flujo incluía pagos, pedidos, webhooks y emails transaccionales.
 
 ## Cambio de operación
 
@@ -38,7 +38,7 @@ Diseñé e implementé la experiencia, la estructura del catálogo, el flujo de 
 
 Retiramos carrito, checkout, Mercado Pago, webhooks, pedidos y emails transaccionales cuando dejaron de responder a la capacidad operativa real.
 
-La decisión no respondió a una limitación técnica. Adaptó una solución ya implementada a una nueva restricción del negocio y evitó que la interfaz aceptara operaciones que requerían confirmación previa.
+Así, el sitio pasó a acompañar una consulta y confirmación previa, en lugar de aceptar pedidos que el negocio necesitaba revisar antes.
 
 ## Calidad y límites
 

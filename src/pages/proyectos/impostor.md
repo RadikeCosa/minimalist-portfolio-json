@@ -57,11 +57,9 @@ La palabra, el rol y los votos se entregan solo a quien corresponde. Las lectura
 
 La aplicación gestiona preparación, revelación, votación y resultados. La conversación permanece fuera de la pantalla.
 
-## Uso real e iteración
+## Uso e iteración
 
 Impostor fue usado en más de 100 partidas con grupos familiares. Esas sesiones permitieron corregir textos, recorridos y comportamientos multi-dispositivo.
-
-El uso documentado es familiar y no se presenta como validación comercial.
 
 ## Calidad y límites
 

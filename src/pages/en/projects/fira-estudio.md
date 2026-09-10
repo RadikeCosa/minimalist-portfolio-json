@@ -22,7 +22,7 @@ Fira Estudio needed to present and sell its textiles online through a product al
 
 The first version included a home page, categories, catalog, product pages, variants, a cart, checkout, and a certified Mercado Pago integration.
 
-The solution covered payments, orders, webhooks, and transactional emails. It was not a demo or a pending integration: the e-commerce flow was implemented.
+The flow included payments, orders, webhooks, and transactional emails.
 
 ## Operational change
 
@@ -38,7 +38,7 @@ I designed and implemented the experience, catalog structure, original purchasin
 
 We removed the cart, checkout, Mercado Pago, webhooks, orders, and transactional emails when they stopped matching the real operational capacity.
 
-This decision was not caused by a technical limitation. It adapted an implemented solution to a new business constraint and prevented the interface from accepting operations that required prior confirmation.
+The site then supported inquiry and prior confirmation instead of accepting orders the business needed to review first.
 
 ## Quality and boundaries
 

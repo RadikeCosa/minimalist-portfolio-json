@@ -12,12 +12,13 @@ stack:
   - "FHIR"
   - "Vitest"
 website: "https://kinesiologiaadomicilio.vercel.app/"
+websiteLabel: "Sitio público"
 repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 ---
 
 ## Problema
 
-Un kinesiólogo independiente necesitaba dos superficies conectadas: una vía pública para recibir un volumen acotado de consultas pertinentes y una herramienta clínica para registrar y organizar la atención.
+Un kinesiólogo independiente necesitaba dos herramientas conectadas: un sitio público para recibir un volumen acotado de consultas pertinentes y una herramienta clínica local para registrar y organizar la atención.
 
 La rehabilitación domiciliaria reúne datos administrativos, tratamientos, visitas y documentación. El sistema debía ordenar ese recorrido sin confundir una consulta con un tratamiento activo ni registrar visitas fuera de contexto.
 
@@ -25,7 +26,7 @@ La rehabilitación domiciliaria reúne datos administrativos, tratamientos, visi
 
 El sitio público presenta servicios y estructura la información necesaria antes del contacto. No busca maximizar consultas: procura recibir las que el profesional puede atender y reducir el intercambio inicial.
 
-El área privada/local organiza solicitudes, pacientes, tratamientos, visitas y reportes.
+La herramienta clínica local organiza solicitudes, pacientes, tratamientos, visitas y reportes.
 
 <figure class="case-figure wide">
   <img
@@ -36,12 +37,12 @@ El área privada/local organiza solicitudes, pacientes, tratamientos, visitas y 
     loading="lazy"
     decoding="async"
   />
-  <figcaption>La consola prioriza estados, pendientes y próximas acciones para orientar el trabajo diario.</figcaption>
+  <figcaption>Consola local con datos ficticios: prioriza estados, pendientes y próximas acciones para orientar el trabajo diario.</figcaption>
 </figure>
 
 ## Flujo principal
 
-Una consulta no equivale a un tratamiento. El alta inicial crea un paciente mínimo y una `ServiceRequest` en revisión. Solo una solicitud aceptada, válida y no utilizada puede iniciar un ciclo.
+Una consulta no equivale a un tratamiento. El alta inicial crea un registro mínimo del paciente y una `ServiceRequest` en revisión. Solo una solicitud aceptada, válida y no utilizada puede iniciar un ciclo.
 
 <section class="case-flow" aria-label="Flujo operativo principal">
   <ol class="case-flow__steps">
@@ -80,7 +81,7 @@ El tratamiento abre un `EpisodeOfCare`; las visitas se registran como `Encounter
       decoding="async"
     />
   </div>
-  <figcaption>El seguimiento reúne visitas, métricas funcionales y evolución dentro del ciclo de tratamiento.</figcaption>
+  <figcaption>Datos ficticios de seguimiento: visitas, métricas funcionales y evolución dentro del ciclo de tratamiento.</figcaption>
 </figure>
 
 ## Mi aporte
@@ -109,7 +110,7 @@ Las visitas requieren un `EpisodeOfCare` activo y fechas comprendidas dentro del
 
 Una capa intermedia traduce los recursos FHIR a conceptos de interfaz. Cada cambio de contrato exige alinear ambas capas.
 
-## FHIR y una posible interoperabilidad futura
+## FHIR y evolución futura
 
 FHIR R4 funciona como modelo clínico local. El núcleo utiliza `Patient`, `ServiceRequest`, `EpisodeOfCare`, `Encounter` y `Observation`; otros recursos agregan contexto cuando el flujo lo requiere.
 

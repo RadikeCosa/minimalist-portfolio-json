@@ -48,7 +48,7 @@ const personEntity = {
     currentLang === "en"
       ? "Functional analysis, implementation, and digital products"
       : "Análisis funcional, implementación y producto digital",
-  description: pageDescription,
+  description: summary,
   sameAs: profiles.map(({ url }) => url),
   knowsAbout:
     currentLang === "en"
@@ -57,7 +57,7 @@ const personEntity = {
   address: {
     "@type": "PostalAddress",
     addressLocality: location.city,
-    addressRegion: location.region,
+    addressRegion: location.city,
     addressCountry: location.countryCode,
   },
 };

@@ -12,12 +12,13 @@ stack:
   - "FHIR"
   - "Vitest"
 website: "https://kinesiologiaadomicilio.vercel.app/"
+websiteLabel: "Public site"
 repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 ---
 
 ## Problem
 
-An independent physiotherapist needed two connected surfaces: a public channel for receiving a limited volume of relevant inquiries and a clinical tool for maintaining records and organizing care.
+An independent physiotherapist needed two connected tools: a public site for receiving a limited volume of relevant inquiries and a local clinical tool for maintaining records and organizing care.
 
 Home rehabilitation combines administrative data, treatments, visits, and documentation. The system needed to organize that process without treating every inquiry as active care or recording visits outside its treatment context.
 
@@ -25,7 +26,7 @@ Home rehabilitation combines administrative data, treatments, visits, and docume
 
 The public site presents services and structures the information needed before initial contact. It does not seek to maximize inquiries: it aims to receive the volume the professional can handle and reduce the initial back-and-forth.
 
-The private/local area organizes requests, patients, treatment cycles, visits, and reports.
+The local clinical tool organizes requests, patients, treatment cycles, visits, and reports.
 
 <figure class="case-figure wide">
   <img
@@ -36,12 +37,12 @@ The private/local area organizes requests, patients, treatment cycles, visits, a
     loading="lazy"
     decoding="async"
   />
-  <figcaption>The dashboard prioritizes states, pending work, and next actions for daily use.</figcaption>
+  <figcaption>Local dashboard with fictional data: it prioritizes states, pending work, and next actions for daily use.</figcaption>
 </figure>
 
 ## Main workflow
 
-An inquiry does not automatically become treatment. Intake creates a minimal patient record and a `ServiceRequest` under review. Only a valid, accepted, unused request can start a treatment cycle.
+An inquiry does not automatically become treatment. Intake creates a basic patient record and a `ServiceRequest` under review. Only a valid, accepted, unused request can start a treatment cycle.
 
 <section class="case-flow" aria-label="Main operational workflow">
   <ol class="case-flow__steps">
@@ -66,7 +67,7 @@ Treatment opens an `EpisodeOfCare`; visits are recorded as `Encounter` resources
       decoding="async"
     />
   </div>
-  <figcaption>Follow-up brings visits, functional measures, and progress together inside the treatment cycle.</figcaption>
+  <figcaption>Fictional follow-up data: visits, functional measures, and progress inside the treatment cycle.</figcaption>
 </figure>
 
 ## My contribution
@@ -95,7 +96,7 @@ Visits require an active `EpisodeOfCare` and dates inside its treatment cycle. M
 
 An intermediate layer translates FHIR resources into interface concepts. Contract changes require coordinated updates across both layers.
 
-## FHIR and possible future interoperability
+## FHIR and future evolution
 
 FHIR R4 serves as the local clinical model. The core uses `Patient`, `ServiceRequest`, `EpisodeOfCare`, `Encounter`, and `Observation`; supporting resources add context when needed.
 

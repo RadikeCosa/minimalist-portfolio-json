@@ -265,7 +265,7 @@
       "name": "Plataforma clínica para rehabilitación domiciliaria",
       "featured": true,
       "badge": "Producto a medida · HealthTech",
-      "description": "Recepción estructurada de consultas y gestión clínica de pacientes, tratamientos, visitas y documentación de rehabilitación domiciliaria.",
+      "description": "Sitio público para recibir consultas y herramienta local para gestionar pacientes, tratamientos, visitas y documentación de rehabilitación domiciliaria.",
       "highlights": [
         "Next.js",
         "TypeScript",

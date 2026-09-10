@@ -265,7 +265,7 @@
       "name": "Clinical Platform for Home Rehabilitation",
       "featured": true,
       "badge": "Tailored product · HealthTech",
-      "description": "Structured inquiries and clinical management of patients, treatment cycles, visits, and home-rehabilitation documentation.",
+      "description": "A public site for structured inquiries and a local tool for managing patients, treatment cycles, visits, and home-rehabilitation records.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -279,7 +279,7 @@
     {
       "name": "Juegos Familiares — Impostor",
       "featured": true,
-      "badge": "In active use · 100+ sessions",
+      "badge": "In active use · 100+ games",
       "description": "A mobile-first social game with multi-device rooms, private roles, voting, and scoring.",
       "highlights": [
         "Next.js",

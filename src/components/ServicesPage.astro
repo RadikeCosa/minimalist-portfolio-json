@@ -16,7 +16,7 @@ const { lang, title, description, alternateUrl } = Astro.props;
 const content = getServicesContent(lang);
 const homeHref = lang === "en" ? "/en/" : "/";
 const aboutHref = lang === "en" ? "/en/about/" : "/sobre-mi/";
-const emailSubject = lang === "en" ? "Discuss a need" : "Planteo de una necesidad";
+const emailSubject = lang === "en" ? "Discuss a project" : "Conversar sobre un proyecto";
 ---
 
 <Layout title={title} description={description} lang={lang} alternateUrl={alternateUrl} isService>

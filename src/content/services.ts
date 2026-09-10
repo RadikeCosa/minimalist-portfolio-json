@@ -3,10 +3,10 @@ import type { Language } from "@/i18n/types";
 const servicesContent = {
   es: {
     title: "Servicios",
-    lead: "Análisis, implementación y producto para pymes y profesionales.",
+    lead: "Soluciones digitales para pymes y profesionales.",
     intro: [
-      "No hace falta llegar con la solución definida. Primero entiendo qué necesitás lograr y después propongo la respuesta adecuada: un sitio, una herramienta existente, un cambio de proceso o una combinación.",
-      "Cada recomendación debe responder a un objetivo concreto. Te explico qué conviene hacer, por qué y cómo funcionaría.",
+      "El problema primero. La solución depende del contexto.",
+      "Después propongo e implemento lo que mejor encaja: ordenar un proceso, configurar una herramienta, integrar servicios o desarrollar un producto a medida.",
     ],
     helpTitle: "Áreas de trabajo",
     help: [
@@ -15,7 +15,7 @@ const servicesContent = {
         description: "Perfiles, sitios, catálogos, contenido y canales de consulta.",
       },
       {
-        title: "Operación",
+        title: "Organización del trabajo",
         description: "Agenda, consultas, información, tareas y herramientas de trabajo.",
       },
       {
@@ -23,14 +23,14 @@ const servicesContent = {
         description: "Aplicaciones web, herramientas internas y sistemas de gestión.",
       },
       {
-        title: "Evolución",
-        description: "Simplificación, integración o adaptación de soluciones existentes.",
+        title: "Mejoras e integraciones",
+        description: "Simplificación, conexión o adaptación de soluciones existentes.",
       },
     ],
     scopeTitle: "Criterio antes que herramienta",
     scope: [
-      "Combino experiencia en salud, coordinación de servicios y desarrollo de software. Ese recorrido me permite entender personas, procesos y restricciones antes de elegir una solución.",
-      "Configurar, integrar, automatizar o desarrollar son medios. La decisión depende del contexto.",
+      "Combino experiencia en salud, coordinación de servicios y desarrollo de software. Eso me ayuda a entender personas, procesos y restricciones antes de decidir qué conviene hacer.",
+      "Una página, una automatización o una aplicación pueden ser parte de la respuesta. La elección depende del objetivo y del contexto.",
     ],
     communicationTitle: "Comunicación",
     communication: [
@@ -46,7 +46,7 @@ const servicesContent = {
     ],
     toolsTitle: "Tecnología e IA",
     tools: [
-      "Integro herramientas de IA para investigar, contrastar alternativas, implementar y revisar.",
+      "Uso herramientas de IA para investigar, contrastar alternativas, implementar y revisar.",
       "Amplían el alcance y aceleran el trabajo. El criterio y la validación siguen formando parte del proceso.",
     ],
     workTitle: "Casos relacionados",
@@ -74,17 +74,17 @@ const servicesContent = {
     background: "Salud, coordinación de servicios y desarrollo de software. Un recorrido diverso aplicado a problemas concretos.",
     backgroundAction: "Más sobre mí",
     contactTitle: "Contacto",
-    contact: "Contame el problema, quién lo usa y cómo se resuelve hoy.",
-    contactAction: "Plantear una necesidad",
+    contact: "Hablemos de un problema concreto.",
+    contactAction: "Conversar sobre un proyecto",
     back: "← Volver al portfolio",
     actionsLabel: "Enlaces del proyecto",
   },
   en: {
     title: "Services",
-    lead: "Analysis, implementation, and product for small businesses and independent professionals.",
+    lead: "Digital solutions for small businesses and independent professionals.",
     intro: [
-      "You do not need to have the solution figured out beforehand. I first understand what you need to achieve, then propose the right response: a website, an existing tool, a process change, or a combination.",
-      "Every recommendation must serve a concrete objective. I explain what makes sense, why, and how it would work.",
+      "The problem comes first. The solution depends on the context.",
+      "Then I propose and implement the best fit: organizing a process, configuring a tool, integrating services, or building a tailored product.",
     ],
     helpTitle: "Areas of work",
     help: [
@@ -93,7 +93,7 @@ const servicesContent = {
         description: "Profiles, websites, catalogs, content, and inquiry channels.",
       },
       {
-        title: "Operations",
+        title: "Work organization",
         description: "Scheduling, inquiries, information, tasks, and work tools.",
       },
       {
@@ -101,14 +101,14 @@ const servicesContent = {
         description: "Web applications, internal tools, and management systems.",
       },
       {
-        title: "Evolution",
-        description: "Simplification, integration, or adaptation of existing solutions.",
+        title: "Improvements and integrations",
+        description: "Simplification, connection, or adaptation of existing solutions.",
       },
     ],
-    scopeTitle: "Judgment before tools",
+    scopeTitle: "Choosing the right approach",
     scope: [
-      "I combine experience in healthcare, service coordination, and software development. That background helps me understand people, processes, and constraints before choosing a solution.",
-      "Configuring, integrating, automating, or building are means. The decision depends on context.",
+      "I combine experience in healthcare, service coordination, and software development. That helps me understand people, processes, and constraints before deciding what makes sense.",
+      "A website, an automation, or an application can all be part of the answer. The choice depends on the objective and context.",
     ],
     communicationTitle: "Communication",
     communication: [
@@ -152,8 +152,8 @@ const servicesContent = {
     background: "Healthcare, service coordination, and software development. A diverse background applied to concrete problems.",
     backgroundAction: "More about me",
     contactTitle: "Contact",
-    contact: "Tell me about the problem, who uses it, and how it is handled today.",
-    contactAction: "Discuss a need",
+    contact: "Let's discuss a specific problem.",
+    contactAction: "Discuss a project",
     back: "← Back to portfolio",
     actionsLabel: "Project links",
   },

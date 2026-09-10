@@ -57,11 +57,9 @@ The word, role, and votes are delivered only to the appropriate participant. Rea
 
 The application handles setup, private reveal, voting, and results. Conversation remains off-screen.
 
-## Real-world use and iteration
+## Use and iteration
 
 Impostor has been used in more than 100 games with family groups. Those sessions informed changes to wording, flows, and multi-device behavior.
-
-The documented use is within family groups and is not presented as commercial validation.
 
 ## Quality and boundaries
 
