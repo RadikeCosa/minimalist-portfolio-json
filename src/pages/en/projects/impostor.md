@@ -18,18 +18,6 @@ repository: "https://github.com/RadikeCosa/juegos-familiares"
 
 Impostor is a game for groups gathered in the same place. Each participant uses a phone to receive a private role, vote, and see results; conversation happens face to face.
 
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/impostor/product-entry-production.webp"
-    alt="Impostor's production entry screen presenting the in-person game and the action to join a group."
-    width="900"
-    height="900"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Impostor in production: group access and an interface designed to keep conversation off-screen.</figcaption>
-</figure>
-
 ## Sessions and games
 
 Juegos Familiares maintains lightweight identity, a player, their group, and a private word bank. Each person sees their own contributions and the available count, but not the complete bank.
@@ -46,6 +34,28 @@ The complete loop includes:
 6. giving a discovered impostor a final guess;
 7. displaying results and scores;
 8. starting another round or ending the session.
+
+<figure class="case-figure case-state-pair wide">
+  <div class="case-state-pair__grid">
+    <img
+      src="/case-studies/impostor/private-role-local.webp"
+      alt="Private Impostor round screen showing the assigned word and the control used to hide it."
+      width="395"
+      height="581"
+      loading="lazy"
+      decoding="async"
+    />
+    <img
+      src="/case-studies/impostor/voting-local.webp"
+      alt="Impostor voting screen in a local session with test participants."
+      width="395"
+      height="581"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption>A local round across separate browsers: each participant receives private information and votes from their own session.</figcaption>
+</figure>
 
 ## My contribution
 

@@ -18,18 +18,6 @@ repository: "https://github.com/RadikeCosa/juegos-familiares"
 
 Impostor es un juego para grupos reunidos físicamente. Cada participante usa su teléfono para recibir un rol privado, votar y ver resultados; la conversación ocurre cara a cara.
 
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/impostor/product-entry-production.webp"
-    alt="Pantalla productiva de Impostor con la presentación del juego presencial y la acción para unirse a un grupo."
-    width="900"
-    height="900"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Entrada productiva a Impostor: acceso al grupo y una interfaz que deja la conversación fuera de la pantalla.</figcaption>
-</figure>
-
 ## Sesiones y partidas
 
 Juegos Familiares mantiene una identidad liviana, un jugador, su grupo y un banco privado de palabras. Cada persona ve sus propios aportes y la cantidad disponible, pero no el banco completo.
@@ -46,6 +34,28 @@ El ciclo completo incluye:
 6. permitir el intento final del impostor descubierto;
 7. mostrar resultado y puntuación;
 8. iniciar otra ronda o cerrar la sesión.
+
+<figure class="case-figure case-state-pair wide">
+  <div class="case-state-pair__grid">
+    <img
+      src="/case-studies/impostor/private-role-local.webp"
+      alt="Pantalla privada de una ronda de Impostor mostrando la palabra asignada y el control para ocultarla."
+      width="395"
+      height="581"
+      loading="lazy"
+      decoding="async"
+    />
+    <img
+      src="/case-studies/impostor/voting-local.webp"
+      alt="Pantalla de votación de Impostor en una sesión local con participantes de prueba."
+      width="395"
+      height="581"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption>Una ronda local en navegadores separados: cada participante recibe información privada y vota desde su propia sesión.</figcaption>
+</figure>
 
 ## Mi aporte
 
