@@ -59,8 +59,14 @@ export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
     "/proyectos/plataforma-clinica": {
       en: "/en/projects/clinical-platform/",
     },
+    "/proyectos/landing-kinesiologia": {
+      en: "/en/projects/home-rehabilitation-landing/",
+    },
     "/en/projects/clinical-platform": {
       es: "/proyectos/plataforma-clinica/",
+    },
+    "/en/projects/home-rehabilitation-landing": {
+      es: "/proyectos/landing-kinesiologia/",
     },
     "/proyectos/impostor": {
       en: "/en/projects/impostor/",

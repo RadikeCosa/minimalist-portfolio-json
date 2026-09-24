@@ -262,23 +262,37 @@
   "references": [],
   "projects": [
     {
-      "name": "Clinical Platform for Home Rehabilitation",
+      "name": "Home Rehabilitation Landing Page",
       "featured": true,
-      "badge": "Tailored product · HealthTech",
-      "description": "A public site for structured inquiries and a local tool for managing patients, treatment cycles, visits, and home-rehabilitation records.",
+      "badge": "Public site · Live",
+      "description": "A landing page to guide inquiries for a home-rehabilitation service in Neuquén, with a guided orientation flow and WhatsApp contact.",
       "highlights": [
-        "Next.js",
+        "Next.js 15",
         "TypeScript",
-        "FHIR",
-        "Vitest"
+        "Tailwind CSS",
+        "SEO"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
-      "caseStudyUrl": "/en/projects/clinical-platform/",
+      "caseStudyUrl": "/en/projects/home-rehabilitation-landing/",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Juegos Familiares — Impostor",
+      "name": "Clinical App for Home Rehabilitation",
       "featured": true,
+      "badge": "Private application · Local pilot",
+      "description": "A private tool for organizing patients, treatment, and visits. The pilot uses fictional data and has no public demo.",
+      "highlights": [
+        "Next.js 16",
+        "TypeScript",
+        "FHIR R4",
+        "Vitest",
+        "Playwright"
+      ],
+      "caseStudyUrl": "/en/projects/clinical-platform/"
+    },
+    {
+      "name": "Juegos Familiares — Impostor",
+      "featured": false,
       "badge": "In active use · 100+ games",
       "description": "A mobile-first social game with multi-device rooms, private roles, voting, and scoring.",
       "highlights": [

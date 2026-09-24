@@ -1,123 +1,74 @@
 ---
 layout: "../../layouts/ProjectCaseLayout.astro"
-title: "Plataforma clínica para rehabilitación domiciliaria"
-description: "Solución web para recibir consultas y gestionar registros de rehabilitación domiciliaria."
+title: "Aplicación clínica para kinesiología domiciliaria"
+description: "Aplicación privada para organizar pacientes, tratamientos y visitas domiciliarias mediante flujos clínicos basados en FHIR."
 locale: "es"
 alternateUrl: "/en/projects/clinical-platform/"
-role: "Producto a medida · Análisis funcional e implementación"
-period: "2020 — Actualidad"
+role: "Producto HealthTech · Análisis funcional e implementación"
 stack:
-  - "Next.js"
+  - "Next.js 16"
   - "TypeScript"
-  - "FHIR"
+  - "FHIR R4"
   - "Vitest"
-website: "https://kinesiologiaadomicilio.vercel.app/"
-websiteLabel: "Sitio público"
-repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
+  - "Playwright"
 ---
 
 ## Problema
 
-Un kinesiólogo independiente necesitaba dos herramientas conectadas: un sitio público para recibir un volumen acotado de consultas pertinentes y una herramienta clínica local para registrar y organizar la atención.
+En la atención domiciliaria, la agenda, los datos de cada paciente y el registro de las visitas pueden quedar repartidos entre mensajes, notas y memoria. La aplicación explora cómo ordenar ese trabajo para que el profesional pueda registrar una atención y retomar su seguimiento desde el teléfono.
 
-La rehabilitación domiciliaria reúne datos administrativos, tratamientos, visitas y documentación. El sistema debía ordenar ese recorrido sin confundir una consulta con un tratamiento activo ni registrar visitas fuera de contexto.
+## Aplicación privada
 
-## El producto
-
-El sitio público presenta servicios y estructura la información necesaria antes del contacto. No busca maximizar consultas: procura recibir las que el profesional puede atender y reducir el intercambio inicial.
-
-La herramienta clínica local organiza solicitudes, pacientes, tratamientos, visitas y reportes.
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/clinical-platform/admin-dashboard.webp"
-    alt="Panel administrativo privado con prioridades operativas, pacientes activos y pendientes."
-    width="1440"
-    height="1800"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Consola local con datos ficticios: prioriza estados, pendientes y próximas acciones para orientar el trabajo diario.</figcaption>
-</figure>
-
-## Flujo principal
-
-Una consulta no equivale a un tratamiento. El alta inicial crea un registro mínimo del paciente y una `ServiceRequest` en revisión. Solo una solicitud aceptada, válida y no utilizada puede iniciar un ciclo.
-
-<section class="case-flow" aria-label="Flujo operativo principal">
-  <ol class="case-flow__steps">
-    <li>
-      <span>Solicitud</span>
-      <span class="case-flow__connector" aria-hidden="true">→</span>
-    </li>
-    <li>
-      <span>Paciente</span>
-      <span class="case-flow__connector" aria-hidden="true">→</span>
-    </li>
-    <li>
-      <span>Tratamiento</span>
-      <span class="case-flow__connector" aria-hidden="true">→</span>
-    </li>
-    <li>
-      <span>Visita</span>
-      <span class="case-flow__connector" aria-hidden="true">→</span>
-    </li>
-    <li>
-      <span>Seguimiento</span>
-    </li>
-  </ol>
-</section>
-
-El tratamiento abre un `EpisodeOfCare`; las visitas se registran como `Encounter` dentro de ese episodio. Las fechas se validan contra su inicio y cierre. La ficha del paciente muestra la próxima acción según el estado actual.
+La pantalla de inicio reúne **Hoy**, **Agenda** y **Pacientes**. Desde allí se organizan tratamientos, citas y visitas; cada visita admite registro en vivo o diferido, evolución breve, intervención, próximo paso y evaluaciones opcionales.
 
 <figure class="case-figure case-figure--crop wide">
   <div class="case-figure__media">
     <img
-      src="/case-studies/clinical-platform/admin-encounters.webp"
-      alt="Vista de seguimiento clínico con métricas funcionales, estadísticas y visitas registradas."
-      width="1440"
-      height="2200"
+      src="/case-studies/clinical-app/today-fictional.png"
+      alt="Vista Hoy de la aplicación clínica con agenda y visitas de demostración ficticias."
+      width="750"
+      height="2726"
       loading="lazy"
       decoding="async"
     />
   </div>
-  <figcaption>Datos ficticios de seguimiento: visitas, métricas funcionales y evolución dentro del ciclo de tratamiento.</figcaption>
+  <figcaption>Piloto local con datos ficticios: la vista Hoy ayuda a priorizar visitas pendientes y previstas.</figcaption>
 </figure>
 
 ## Mi aporte
 
-Definí el flujo funcional, las reglas de negocio y las responsabilidades de cada pantalla. También implementé el producto, el modelado FHIR, las pruebas y la documentación.
+Traduzco procesos de atención domiciliaria a flujos, reglas y modelos de información. Participo en el análisis funcional, la arquitectura y la implementación, con documentación y pruebas para sostener las decisiones del producto.
 
 ## Decisiones
 
-### Consultas ajustadas a la capacidad
+### Organizar el día alrededor de las visitas
 
-La página pública prioriza consultas pertinentes e información inicial estructurada, de acuerdo con la capacidad del profesional.
+Hoy reúne visitas en curso, pendientes y previstas; Agenda permite revisar fechas, y Pacientes ofrece acceso a la ficha y al tratamiento. Las citas y las atenciones son conceptos distintos, por lo que una cita puede reprogramarse o cancelarse sin crear un registro clínico.
 
-### Solicitud antes de tratamiento
+### Mantener la atención breve y revisable
 
-La solicitud puede revisarse, aceptarse o cerrarse sin crear visitas. Agrega un paso, pero evita registrar un contacto como caso activo.
+El registro habitual prioriza estado y respuesta e intervención realizada. Próximo paso, evaluaciones y procedimientos se agregan cuando aportan información al seguimiento. Una visita confirmada puede corregirse con motivo o anularse de forma justificada.
 
-### Áreas diferenciadas pero conectadas
+### Aislar FHIR de la interfaz
 
-La interfaz separa datos administrativos, contexto clínico y tratamiento. La ficha del paciente conecta las áreas, aunque algunas acciones requieren navegar entre ellas.
+FHIR R4 modela los datos clínicos en el servidor. La interfaz trabaja con conceptos del producto; el adaptador traduce entre el modelo clínico y los flujos de la aplicación. Esto mantiene las dependencias y reglas de dominio fuera de las pantallas.
 
-### Visitas dentro de un episodio activo
+<figure class="case-figure case-figure--crop wide">
+  <div class="case-figure__media">
+    <img
+      src="/case-studies/clinical-app/visit-fictional.png"
+      alt="Formulario móvil para registrar una visita en el piloto local con datos ficticios."
+      width="750"
+      height="3778"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption>Registro de una visita de demostración. Las capturas utilizan exclusivamente pacientes y datos inventados.</figcaption>
+</figure>
 
-Las visitas requieren un `EpisodeOfCare` activo y fechas comprendidas dentro del ciclo. Los episodios activos simultáneos quedan fuera del alcance actual.
+## Estado, privacidad y límites
 
-### FHIR aislado de la UI
+El piloto clínico online solo se habilita localmente contra un servidor HAPI FHIR descartable con datos ficticios. Las rutas y escrituras clínicas están bloqueadas en Vercel, y no existe una demo pública. El acceso con passkeys está implementado para una cuenta profesional provisionada; la validación completa en móvil, recuperación y revocación sigue pendiente.
 
-Una capa intermedia traduce los recursos FHIR a conceptos de interfaz. Cada cambio de contrato exige alinear ambas capas.
-
-## FHIR y evolución futura
-
-FHIR R4 funciona como modelo clínico local. El núcleo utiliza `Patient`, `ServiceRequest`, `EpisodeOfCare`, `Encounter` y `Observation`; otros recursos agregan contexto cuando el flujo lo requiere.
-
-[ANDES](https://docs.andes.gob.ar/) basa su capa de interoperabilidad en estándares HL7/FHIR. Usar la misma familia de estándares evita cerrar de entrada una futura línea de integración, pero no garantiza compatibilidad: sería necesario alinear perfiles, contratos, terminologías y seguridad.
-
-## Calidad, privacidad y límites
-
-El proyecto incluye tipado, validaciones de dominio, pruebas automatizadas y documentación del flujo y del modelo.
-
-Las capturas utilizan datos ficticios. El área administrativa es privada/local, está marcada como `noindex` y queda fuera del tracking público. El alcance actual no incluye multiusuario, autenticación productiva, compatibilidad validada con ANDES, portal de pacientes ni una historia clínica completa.
+La aplicación no está lista para datos clínicos reales. PWA, trabajo offline, sincronización posterior e informes exportables todavía no están implementados. Las capturas de esta página son del entorno local ficticio y no incluyen datos de pacientes reales.

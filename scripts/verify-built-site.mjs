@@ -10,6 +10,8 @@ const pages = [
   "en/services/index.html",
   "proyectos/plataforma-clinica/index.html",
   "en/projects/clinical-platform/index.html",
+  "proyectos/landing-kinesiologia/index.html",
+  "en/projects/home-rehabilitation-landing/index.html",
   "proyectos/impostor/index.html",
   "en/projects/impostor/index.html",
   "proyectos/fira-estudio/index.html",

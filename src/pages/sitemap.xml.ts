@@ -9,6 +9,8 @@ const routes = [
   "/en/services/",
   "/proyectos/plataforma-clinica/",
   "/en/projects/clinical-platform/",
+  "/proyectos/landing-kinesiologia/",
+  "/en/projects/home-rehabilitation-landing/",
   "/proyectos/impostor/",
   "/en/projects/impostor/",
   "/proyectos/fira-estudio/",

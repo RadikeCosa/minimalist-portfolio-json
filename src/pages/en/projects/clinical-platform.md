@@ -1,109 +1,74 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
-title: "Clinical Platform for Home Rehabilitation"
-description: "A web solution for receiving inquiries and managing home-rehabilitation records."
+title: "Clinical App for Home Rehabilitation"
+description: "A private application for organizing home-care patients, treatment, and visits through FHIR-based clinical workflows."
 locale: "en"
 alternateUrl: "/proyectos/plataforma-clinica/"
-role: "Tailored product · Functional analysis and implementation"
-period: "2020 — Present"
+role: "HealthTech product · Functional analysis and implementation"
 stack:
-  - "Next.js"
+  - "Next.js 16"
   - "TypeScript"
-  - "FHIR"
+  - "FHIR R4"
   - "Vitest"
-website: "https://kinesiologiaadomicilio.vercel.app/"
-websiteLabel: "Public site"
-repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
+  - "Playwright"
 ---
 
 ## Problem
 
-An independent physiotherapist needed two connected tools: a public site for receiving a limited volume of relevant inquiries and a local clinical tool for maintaining records and organizing care.
+In home care, schedules, patient information, and visit records can be scattered across messages, notes, and memory. This application explores how to organize that work so a professional can record a visit and continue follow-up from a phone.
 
-Home rehabilitation combines administrative data, treatments, visits, and documentation. The system needed to organize that process without treating every inquiry as active care or recording visits outside its treatment context.
+## Private application
 
-## The product
-
-The public site presents services and structures the information needed before initial contact. It does not seek to maximize inquiries: it aims to receive the volume the professional can handle and reduce the initial back-and-forth.
-
-The local clinical tool organizes requests, patients, treatment cycles, visits, and reports.
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/clinical-platform/admin-dashboard.webp"
-    alt="Private local dashboard showing operational priorities, active patients, and pending actions."
-    width="1440"
-    height="1800"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Local dashboard with fictional data: it prioritizes states, pending work, and next actions for daily use.</figcaption>
-</figure>
-
-## Main workflow
-
-An inquiry does not automatically become treatment. Intake creates a basic patient record and a `ServiceRequest` under review. Only a valid, accepted, unused request can start a treatment cycle.
-
-<section class="case-flow" aria-label="Main operational workflow">
-  <ol class="case-flow__steps">
-    <li><span>Request</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
-    <li><span>Patient</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
-    <li><span>Treatment</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
-    <li><span>Visit</span><span class="case-flow__connector" aria-hidden="true">→</span></li>
-    <li><span>Follow-up</span></li>
-  </ol>
-</section>
-
-Treatment opens an `EpisodeOfCare`; visits are recorded as `Encounter` resources inside it. Dates are validated against the episode start and closure. The patient view shows the next action for the current state.
+The home screen brings together **Today**, **Schedule**, and **Patients**. From there, the professional organizes treatment, appointments, and visits. Visits can be recorded live or later, with a brief clinical note, intervention, next step, and optional assessments.
 
 <figure class="case-figure case-figure--crop wide">
   <div class="case-figure__media">
     <img
-      src="/case-studies/clinical-platform/admin-encounters.webp"
-      alt="Clinical follow-up view with functional measures, summaries, and recorded visits using fictional data."
-      width="1440"
-      height="2200"
+      src="/case-studies/clinical-app/today-fictional.png"
+      alt="Today view in the clinical application with fictional demo appointments and visits."
+      width="750"
+      height="2726"
       loading="lazy"
       decoding="async"
     />
   </div>
-  <figcaption>Fictional follow-up data: visits, functional measures, and progress inside the treatment cycle.</figcaption>
+  <figcaption>Local pilot with fictional data: the Today view helps prioritize pending and scheduled visits.</figcaption>
 </figure>
 
 ## My contribution
 
-I defined the functional workflow, business rules, and screen responsibilities. I also implemented the product, FHIR model, tests, and documentation.
+I translate home-care processes into workflows, rules, and information models. I contribute to functional analysis, architecture, and implementation, supported by documentation and tests.
 
 ## Decisions
 
-### Inquiries aligned with capacity
+### Organize the day around visits
 
-The public page prioritizes relevant inquiries and structured initial information, aligned with the professional's capacity.
+Today brings together ongoing, pending, and scheduled visits; Schedule supports date-based planning, and Patients provides access to each record and treatment. Appointments and clinical visits are distinct concepts, so an appointment can be rescheduled or cancelled without creating a clinical record.
 
-### Request before treatment
+### Keep visit records brief and reviewable
 
-A request can remain under review, be accepted, or close without generating visits. It adds a step, but prevents an inquiry from becoming an active case.
+The usual record prioritizes patient status and response, and the intervention performed. A next step, assessment, or procedure can be added when it supports follow-up. A confirmed visit can be corrected with a reason or voided with justification.
 
-### Distinct but connected areas
+### Keep FHIR out of the interface
 
-The interface separates administrative data, clinical context, and treatment. The patient view connects these areas, although some actions require moving between them.
+FHIR R4 models clinical data on the server. The interface works with product concepts, while an adapter translates between the clinical model and application workflows. This keeps domain rules and dependencies out of the screens.
 
-### Visits inside an active episode
+<figure class="case-figure case-figure--crop wide">
+  <div class="case-figure__media">
+    <img
+      src="/case-studies/clinical-app/visit-fictional.png"
+      alt="Mobile visit-recording form in the local pilot, using fictional data."
+      width="750"
+      height="3778"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption>Recording a demonstration visit. These screenshots use fictional patients and data only.</figcaption>
+</figure>
 
-Visits require an active `EpisodeOfCare` and dates inside its treatment cycle. Multiple simultaneous active episodes remain outside the current scope.
+## Status, privacy, and boundaries
 
-### FHIR isolated from the UI
+The online clinical pilot is enabled only locally against a disposable HAPI FHIR server with fictional data. Clinical routes and writes are blocked on Vercel, and there is no public demo. Passkey access is implemented for one provisioned professional account; full mobile validation, recovery, and revocation still need validation.
 
-An intermediate layer translates FHIR resources into interface concepts. Contract changes require coordinated updates across both layers.
-
-## FHIR and future evolution
-
-FHIR R4 serves as the local clinical model. The core uses `Patient`, `ServiceRequest`, `EpisodeOfCare`, `Encounter`, and `Observation`; supporting resources add context when needed.
-
-[ANDES](https://docs.andes.gob.ar/) bases its interoperability layer on HL7/FHIR standards. Using the same family of standards avoids ruling out a future integration path, but it does not guarantee compatibility: profiles, contracts, terminology, and security would still need to be aligned.
-
-## Quality, privacy, and boundaries
-
-The project includes typed contracts, domain validations, automated tests, and workflow documentation. The screenshots use fictional data.
-
-The admin is local/private, marked as `noindex`, and excluded from public analytics. The current scope does not include production authentication, multi-user operation, validated compatibility with ANDES, a patient portal, or a complete electronic health record.
+The application is not ready for real clinical data. PWA, offline work, later synchronization, and exportable reports are not implemented yet. Screenshots on this page come from the local fictional-data environment and contain no real patient information.

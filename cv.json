@@ -262,23 +262,37 @@
   "references": [],
   "projects": [
     {
-      "name": "Plataforma clínica para rehabilitación domiciliaria",
+      "name": "Landing para kinesiología domiciliaria",
       "featured": true,
-      "badge": "Producto a medida · HealthTech",
-      "description": "Sitio público para recibir consultas y herramienta local para gestionar pacientes, tratamientos, visitas y documentación de rehabilitación domiciliaria.",
+      "badge": "Sitio público · En producción",
+      "description": "Landing para orientar consultas sobre un servicio de rehabilitación domiciliaria en Neuquén, con evaluación guiada y contacto por WhatsApp.",
       "highlights": [
-        "Next.js",
+        "Next.js 15",
         "TypeScript",
-        "FHIR",
-        "Vitest"
+        "Tailwind CSS",
+        "SEO"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
-      "caseStudyUrl": "/proyectos/plataforma-clinica/",
+      "caseStudyUrl": "/proyectos/landing-kinesiologia/",
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Juegos Familiares — Impostor",
+      "name": "Aplicación clínica para kinesiología domiciliaria",
       "featured": true,
+      "badge": "Aplicación privada · Piloto local",
+      "description": "Herramienta privada para organizar pacientes, tratamientos y visitas. El piloto usa datos ficticios y no tiene demo pública.",
+      "highlights": [
+        "Next.js 16",
+        "TypeScript",
+        "FHIR R4",
+        "Vitest",
+        "Playwright"
+      ],
+      "caseStudyUrl": "/proyectos/plataforma-clinica/"
+    },
+    {
+      "name": "Juegos Familiares — Impostor",
+      "featured": false,
       "badge": "Producto en uso · 100+ partidas",
       "description": "Juego social mobile-first con salas multi-dispositivo, roles privados, votación y puntuación.",
       "highlights": [

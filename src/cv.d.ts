@@ -136,7 +136,7 @@ interface Projects {
   badge?: string
   description: string
   highlights: Highlight
-  url: string
+  url?: string
   caseStudyUrl?: string
   github?: string
 }

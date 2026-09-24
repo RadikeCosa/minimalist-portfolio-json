@@ -46,16 +46,18 @@ const { projects } = cvData;
                         {t("project.caseStudy")}
                       </a>
                     )}
-                    <div class="project-links">
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`${t("project.visit")} ${name}`}
-                      >
-                        <ActionIcon name="external" size={13} />
-                        {t("project.visitLabel")}
-                      </a>
+                    {(url || github) && <div class="project-links">
+                      {url && (
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`${t("project.visit")} ${name}`}
+                        >
+                          <ActionIcon name="external" size={13} />
+                          {t("project.visitLabel")}
+                        </a>
+                      )}
                       {github && (
                         <a
                           href={github}
@@ -67,7 +69,7 @@ const { projects } = cvData;
                           {t("project.sourceLabel")}
                         </a>
                       )}
-                    </div>
+                    </div>}
                   </nav>
                 </footer>
               </article>
