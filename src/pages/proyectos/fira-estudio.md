@@ -5,6 +5,10 @@ description: "Producto web para un emprendimiento textil, adaptado de e-commerce
 locale: "es"
 alternateUrl: "/en/projects/fira-estudio/"
 role: "Trabajo independiente · Producto e implementación"
+status: "Catálogo web · Sitio público"
+problem: "Presentar los productos textiles de acuerdo con la capacidad operativa del emprendimiento."
+contribution: "Desarrollo del producto web y su implementación."
+decision: "Pasar de e-commerce a catálogo cuando la operación no podía sostener las ventas online."
 stack:
   - "Next.js"
   - "TypeScript"

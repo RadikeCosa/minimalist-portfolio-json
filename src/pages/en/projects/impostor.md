@@ -1,10 +1,14 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
 title: "Juegos Familiares — Impostor"
-description: "A multi-device social game with private roles, synchronization, and real-world use."
+description: "A multi-device social game with private roles, synchronization, and more than 100 family games played."
 locale: "en"
 alternateUrl: "/proyectos/impostor/"
 role: "Product, architecture, and full-stack implementation"
+status: "In use · More than 100 family games"
+problem: "Support in-person games where each participant privately receives a role on their own phone."
+contribution: "Product development, architecture, and multi-device experience."
+decision: "Use observed games to refine copy, flows, and synchronization."
 stack:
   - "Next.js"
   - "TypeScript"

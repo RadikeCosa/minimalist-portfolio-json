@@ -27,11 +27,9 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 ---
 
 <Section title={t("section.experience")}>
-  <p class="experience-intro">{t("section.experienceIntro")}</p>
-
   <ul class="experience-list">
     {
-      work.map(({ stageTitle, context, periods, summary, highlights }, index) => (
+      work.map(({ stageTitle, context, periods, summary, highlights }) => (
         <li>
           <article>
             <header>
@@ -66,25 +64,13 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
             {
               highlights?.length > 0 && (
                 <ul class="highlights-list">
-                  {highlights.map((highlight) => (
+                  {highlights.slice(0, 2).map((highlight) => (
                     <li>{highlight}</li>
                   ))}
                 </ul>
               )
             }
 
-            {
-              index === 0 && (
-                <p class="services-link no-print">
-                  <a href={currentLang === "en" ? "/en/services/" : "/servicios/"}>
-                    <ActionIcon name="services" />
-                    {currentLang === "en"
-                      ? "Services and independent work"
-                      : "Servicios y trabajo independiente"}
-                  </a>
-                </p>
-              )
-            }
           </article>
         </li>
       ))
@@ -100,11 +86,6 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 </Section>
 
 <style>
-  .experience-intro {
-    margin-bottom: 28px;
-    max-width: 64ch;
-  }
-
   .experience-list {
     display: flex;
     flex-direction: column;
@@ -154,7 +135,7 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
 
   .stage-meta {
     color: var(--text-muted);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     line-height: 1.45;
     text-wrap: pretty;
   }
@@ -182,7 +163,7 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
     color: var(--text-secondary);
     display: flex;
     flex-direction: column;
-    font-size: 0.86rem;
+    font-size: 0.96rem;
     gap: 6px;
     line-height: 1.45;
     margin-top: 2px;
@@ -198,11 +179,6 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
     margin-top: 24px;
   }
 
-  .services-link {
-    margin-top: 4px;
-  }
-
-  .services-link a,
   .about-link a {
     align-items: center;
     color: var(--text-primary);
@@ -211,16 +187,16 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
     font-size: 0.78rem;
     font-weight: 650;
     gap: 6px;
+    min-height: 44px;
+    padding-block: 8px;
     white-space: nowrap;
   }
 
-  .services-link a:hover,
   .about-link a:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .services-link a:focus-visible,
   .about-link a:focus-visible {
     border-radius: 4px;
     outline: 2px solid var(--accent);
@@ -228,10 +204,6 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
   }
 
   @media (width <= 700px) {
-    .experience-intro {
-      margin-bottom: 24px;
-    }
-
     .experience-list {
       gap: 30px;
     }
@@ -245,7 +217,7 @@ const formatPeriod = (period: { startDate: string; endDate: string | null }) => 
     }
 
     .stage-meta {
-      font-size: 0.76rem;
+      font-size: 0.8rem;
     }
 
     .highlights-list {

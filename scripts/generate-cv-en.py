@@ -14,7 +14,7 @@ OUTPUT = "public/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf"
 # Keep PDF metadata and document IDs stable between equivalent generations.
 rl_config.invariant = 1
 
-BLUE = colors.HexColor("#0066CC")
+BLUE = colors.HexColor("#136B5C")
 INK = colors.HexColor("#111111")
 SECONDARY = colors.HexColor("#555555")
 MUTED = colors.HexColor("#707070")
@@ -46,7 +46,7 @@ def section_title(text):
 def item(title, meta_text, bullets):
     parts = [
         Paragraph(title, entry_title),
-        Paragraph(f'<font color="#0066CC">●</font> {meta_text}', meta),
+        Paragraph(f'<font color="#136B5C">●</font> {meta_text}', meta),
     ]
     parts.extend(Paragraph(text, bullet, bulletText="•") for text in bullets)
     return KeepTogether(parts)
@@ -74,18 +74,18 @@ doc = SimpleDocTemplate(
     bottomMargin=17 * mm,
     title="General résumé - Ramiro Nicolás Cosa",
     author="Ramiro Nicolás Cosa",
-    subject="Analysis, implementation, and product",
+    subject="HealthTech, clinical systems, and implementation",
 )
 
 story = [
     Paragraph("Ramiro Nicolás Cosa", name),
-    Paragraph("Analysis, implementation, and product", headline),
+    Paragraph("HealthTech · Clinical Systems &amp; Implementation", headline),
     Paragraph(
         'Neuquén, Argentina  |  +54 9 299 521-7189  |  '
-        '<link href="mailto:ramirocosa@gmail.com" color="#0066CC">Email</link>  |  '
-        '<link href="https://www.linkedin.com/in/ramicosa/" color="#0066CC">LinkedIn</link>  |  '
-        '<link href="https://github.com/RadikeCosa" color="#0066CC">GitHub</link>  |  '
-        '<link href="https://ramirocosa.is-a.dev/en/" color="#0066CC">ramirocosa.is-a.dev</link>',
+        '<link href="mailto:ramirocosa@gmail.com" color="#136B5C">Email</link>  |  '
+        '<link href="https://www.linkedin.com/in/ramicosa/" color="#136B5C">LinkedIn</link>  |  '
+        '<link href="https://github.com/RadikeCosa" color="#136B5C">GitHub</link>  |  '
+        '<link href="https://ramirocosa.is-a.dev/en/" color="#136B5C">ramirocosa.is-a.dev</link>',
         contact,
     ),
     *section_title("Profile"),
@@ -104,9 +104,19 @@ story = [
         [
             "Structured inquiry intake and definition of the patient - treatment - visit workflow.",
             "Private/local clinical management with FHIR, business rules, validation, testing, and documentation.",
-            '<link href="https://ramirocosa.is-a.dev/en/projects/clinical-platform/" color="#0066CC">Case study</link>  |  '
-            '<link href="https://kinesiologiaadomicilio.vercel.app/" color="#0066CC">Live site</link>  |  '
-            '<link href="https://github.com/RadikeCosa/kinesiologiaadomicilio" color="#0066CC">Code</link>',
+            '<link href="https://ramirocosa.is-a.dev/en/projects/clinical-platform/" color="#136B5C">Case study</link>  |  '
+            '<link href="https://github.com/RadikeCosa/kinesiologiaadomicilio" color="#136B5C">Code</link>',
+        ],
+    ),
+    Spacer(1, 2),
+    item(
+        "Home rehabilitation landing page",
+        "Public site · Analysis and implementation | Next.js, TypeScript, Tailwind CSS",
+        [
+            "A public website guiding inquiries for a home-rehabilitation service in Neuquén.",
+            '<link href="https://ramirocosa.is-a.dev/en/projects/home-rehabilitation-landing/" color="#136B5C">Case study</link>  |  '
+            '<link href="https://kinesiologiaadomicilio.vercel.app/" color="#136B5C">Live site</link>  |  '
+            '<link href="https://github.com/RadikeCosa/kinesiologiaadomicilio" color="#136B5C">Code</link>',
         ],
     ),
     Spacer(1, 2),
@@ -116,9 +126,9 @@ story = [
         [
             "Mobile-first social game with multi-device rooms, private roles, voting, and scoring.",
             "Authoritative state in PostgreSQL, RLS/RPCs, Realtime, session recovery, and testing.",
-            '<link href="https://ramirocosa.is-a.dev/en/projects/impostor/" color="#0066CC">Case study</link>  |  '
-            '<link href="https://juegos-familiares.vercel.app/" color="#0066CC">Live site</link>  |  '
-            '<link href="https://github.com/RadikeCosa/juegos-familiares" color="#0066CC">Code</link>',
+            '<link href="https://ramirocosa.is-a.dev/en/projects/impostor/" color="#136B5C">Case study</link>  |  '
+            '<link href="https://juegos-familiares.vercel.app/" color="#136B5C">Live site</link>  |  '
+            '<link href="https://github.com/RadikeCosa/juegos-familiares" color="#136B5C">Code</link>',
         ],
     ),
     Spacer(1, 2),
@@ -126,10 +136,10 @@ story = [
         "Fira Estudio",
         "Independent work | Next.js, TypeScript, Supabase, Playwright",
         [
-            "E-commerce with cart and certified Mercado Pago checkout, later adapted to a catalog as the business's operating capacity changed.",
-            '<link href="https://ramirocosa.is-a.dev/en/projects/fira-estudio/" color="#0066CC">Case study</link>  |  '
-            '<link href="https://fira-estudio-cyan.vercel.app/" color="#0066CC">Live site</link>  |  '
-            '<link href="https://github.com/RadikeCosa/fira-estudio" color="#0066CC">Code</link>',
+            "Web product shifted from e-commerce to a catalog when the business could not support online sales operations.",
+            '<link href="https://ramirocosa.is-a.dev/en/projects/fira-estudio/" color="#136B5C">Case study</link>  |  '
+            '<link href="https://fira-estudio-cyan.vercel.app/" color="#136B5C">Live site</link>  |  '
+            '<link href="https://github.com/RadikeCosa/fira-estudio" color="#136B5C">Code</link>',
         ],
     ),
     *section_title("Areas of work"),

@@ -1,16 +1,17 @@
 # Ramiro Nicolás Cosa — Professional Portfolio
 
-Bilingual professional portfolio focused on functional analysis, implementation, and digital product development.
+Bilingual professional portfolio for HealthTech, clinical systems implementation, functional analysis, and digital product development.
 
 Live site: [ramirocosa.is-a.dev](https://ramirocosa.is-a.dev/)
 
 ## Public content
 
 - professional profile, experience, and capabilities in Spanish and English;
-- case studies for a clinical platform, Juegos Familiares — Impostor, and Fira Estudio;
+- four case studies, in order: the private clinical application, its related public landing page, Juegos Familiares — Impostor, and Fira Estudio. Each opens with its problem, contribution, status, and key decision;
 - coordinated general CV downloads in Spanish and English;
 - light and dark themes with responsive and keyboard-accessible layouts;
-- a services surface for small businesses, professionals, and small teams.
+- a focused recruiting journey with the clinical application as its primary evidence and a prefilled portfolio email subject;
+- responsive editorial styling with self-hosted IBM Plex Sans and IBM Plex Mono fonts.
 
 ## Stack
 
@@ -41,7 +42,7 @@ npm run generate:cv
 
 Both PDFs are written to `public/cv/`.
 
-This checks all twelve public routes, language alternates, canonical URLs, heading hierarchy, structured data, text encoding, and social images.
+This checks all twelve public routes, bilingual case-summary field parity, project order and image assets, language alternates, canonical URLs, heading hierarchy, structured data, text encoding, redirects, and social images.
 
 ## Content principles
 
@@ -50,7 +51,7 @@ This checks all twelve public routes, language alternates, canonical URLs, headi
 - Project claims remain factual and linked to public evidence.
 - Public screenshots use fictional data and exclude identifiable clinical information.
 
-The current frozen baseline and its maintenance rules are documented in [`docs/portfolio-baseline-v1-2026-09.md`](docs/portfolio-baseline-v1-2026-09.md).
+The current positioning, public route inventory, visual system, and validation rules are documented in [`docs/portfolio-baseline-v2-2026-09.md`](docs/portfolio-baseline-v2-2026-09.md). The earlier v1 baseline is retained as historical context.
 
 ## Origin
 

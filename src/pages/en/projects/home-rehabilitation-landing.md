@@ -5,6 +5,10 @@ description: "A public site to guide inquiries for a home-rehabilitation service
 locale: "en"
 alternateUrl: "/proyectos/landing-kinesiologia/"
 role: "Digital product · Analysis and implementation"
+status: "Public site · Live"
+problem: "Guide inquiries for a home-rehabilitation service in Neuquén."
+contribution: "Analysis and implementation of the public website."
+decision: "Explain the service and guide inquiries with context."
 stack:
   - "Next.js 15"
   - "React 19"
@@ -28,7 +32,7 @@ The hero image sets the home-care context. The site and its content guide the ne
 
 <figure class="case-figure">
   <img
-    src="/case-studies/kinesiology-landing/home-visit.png"
+    src="/case-studies/kinesiology-landing/home-visit.webp"
     alt="Home-care scene: a physiotherapist supporting an older patient during a functional exercise."
     width="1536"
     height="1024"

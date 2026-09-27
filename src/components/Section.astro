@@ -14,7 +14,7 @@ const { title, id } = Astro.props
 
 <style>
   section {
-    max-width: 700px;
+    max-width: 960px;
     margin: 0 auto 48px;
   }
 
@@ -22,12 +22,13 @@ const { title, id } = Astro.props
     margin-bottom: 8px;
     font-weight: 700;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    letter-spacing: -0.025em;
   }
 
   @media (width <= 700px) {
     section {
-      margin-bottom: 38px;
+      margin-bottom: 42px;
     }
   }
 </style>

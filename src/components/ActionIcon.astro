@@ -1,6 +1,6 @@
 ---
 interface Props {
-  name: "about" | "back" | "download" | "email" | "external" | "github" | "projects" | "services" | "linkedin" | "phone";
+  name: "about" | "back" | "download" | "email" | "external" | "github" | "projects" | "linkedin" | "phone";
   size?: number;
 }
 
@@ -59,13 +59,6 @@ const isBrandIcon = name === "linkedin" || name === "github";
     <>
       <circle cx="12" cy="8" r="4"></circle>
       <path d="M4 21a8 8 0 0 1 16 0"></path>
-    </>
-  )}
-  {name === "services" && (
-    <>
-      <rect width="20" height="14" x="2" y="7" rx="2"></rect>
-      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-      <path d="M2 12h20"></path>
     </>
   )}
   {name === "linkedin" && (

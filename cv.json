@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Ramiro Nicolás Cosa",
-    "label": "Análisis funcional | Implementación | Producto digital",
+    "label": "HealthTech | Sistemas clínicos e implementación",
     "email": "ramirocosa@gmail.com",
     "phone": "+54 9 299 521-7189",
     "url": "https://ramirocosa.is-a.dev/",
@@ -262,10 +262,26 @@
   "references": [],
   "projects": [
     {
-      "name": "Landing para kinesiología domiciliaria",
+      "name": "Aplicación clínica para kinesiología domiciliaria",
       "featured": true,
+      "image": "/case-studies/clinical-platform/admin-dashboard.webp",
+    "badge": "Piloto local · Datos ficticios · Sin demo pública",
+    "description": "Aplicación privada para organizar pacientes, tratamientos, citas y visitas domiciliarias.",
+      "highlights": [
+        "Next.js 16",
+        "TypeScript",
+        "FHIR R4",
+        "Vitest",
+        "Playwright"
+      ],
+      "caseStudyUrl": "/proyectos/plataforma-clinica/"
+    },
+    {
+      "name": "Landing para kinesiología domiciliaria",
+      "featured": false,
+      "image": "/case-studies/kinesiology-landing/home-visit.webp",
       "badge": "Sitio público · En producción",
-      "description": "Landing para orientar consultas sobre un servicio de rehabilitación domiciliaria en Neuquén, con evaluación guiada y contacto por WhatsApp.",
+    "description": "Landing pública que orienta consultas para un servicio de rehabilitación domiciliaria en Neuquén.",
       "highlights": [
         "Next.js 15",
         "TypeScript",
@@ -277,23 +293,10 @@
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Aplicación clínica para kinesiología domiciliaria",
-      "featured": true,
-      "badge": "Aplicación privada · Piloto local",
-      "description": "Herramienta privada para organizar pacientes, tratamientos y visitas. El piloto usa datos ficticios y no tiene demo pública.",
-      "highlights": [
-        "Next.js 16",
-        "TypeScript",
-        "FHIR R4",
-        "Vitest",
-        "Playwright"
-      ],
-      "caseStudyUrl": "/proyectos/plataforma-clinica/"
-    },
-    {
       "name": "Juegos Familiares — Impostor",
       "featured": false,
-      "badge": "Producto en uso · 100+ partidas",
+      "image": "/case-studies/impostor/product-entry-production.webp",
+    "badge": "En uso · Más de 100 partidas familiares",
       "description": "Juego social mobile-first con salas multi-dispositivo, roles privados, votación y puntuación.",
       "highlights": [
         "Next.js",
@@ -308,8 +311,9 @@
     {
       "name": "Fira Estudio",
       "featured": false,
+      "image": "/case-studies/fira/catalog-production.webp",
       "badge": "Trabajo independiente",
-      "description": "E-commerce con Mercado Pago, adaptado a catálogo cuando la demanda superó la capacidad de producción.",
+    "description": "Catálogo web para presentar productos textiles según la capacidad operativa del emprendimiento.",
       "highlights": [
         "Next.js",
         "TypeScript",

@@ -5,6 +5,10 @@ description: "A web product for a textile business, adapted from e-commerce to a
 locale: "en"
 alternateUrl: "/proyectos/fira-estudio/"
 role: "Independent work · Product and implementation"
+status: "Web catalog · Public site"
+problem: "Present textile products in a way the business could operate."
+contribution: "Web product development and implementation."
+decision: "Shift from e-commerce to a catalog when the business could not support online sales operations."
 stack:
   - "Next.js"
   - "TypeScript"

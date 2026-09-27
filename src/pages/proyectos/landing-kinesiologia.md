@@ -5,6 +5,10 @@ description: "Sitio público para orientar consultas sobre un servicio de rehabi
 locale: "es"
 alternateUrl: "/en/projects/home-rehabilitation-landing/"
 role: "Producto digital · Análisis e implementación"
+status: "Sitio público · Publicado"
+problem: "Orientar consultas para un servicio de rehabilitación domiciliaria en Neuquén."
+contribution: "Análisis e implementación del sitio público."
+decision: "Informar sobre el servicio y guiar consultas con contexto."
 stack:
   - "Next.js 15"
   - "React 19"
@@ -28,7 +32,7 @@ La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio 
 
 <figure class="case-figure">
   <img
-    src="/case-studies/kinesiology-landing/home-visit.png"
+    src="/case-studies/kinesiology-landing/home-visit.webp"
     alt="Imagen de atención domiciliaria: un kinesiólogo acompaña a una paciente mayor durante un ejercicio funcional."
     width="1536"
     height="1024"

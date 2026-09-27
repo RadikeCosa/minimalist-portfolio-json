@@ -6,8 +6,6 @@ const pages = [
   "en/index.html",
   "sobre-mi/index.html",
   "en/about/index.html",
-  "servicios/index.html",
-  "en/services/index.html",
   "proyectos/plataforma-clinica/index.html",
   "en/projects/clinical-platform/index.html",
   "proyectos/landing-kinesiologia/index.html",
@@ -19,6 +17,81 @@ const pages = [
 ];
 
 const failures = [];
+
+const sitemap = await readFile(join("dist", "sitemap.xml"), "utf8");
+const sitemapUrls = [...sitemap.matchAll(/<loc>/g)].length;
+if (sitemapUrls !== pages.length) {
+  failures.push(`sitemap.xml: se esperaban ${pages.length} rutas, hay ${sitemapUrls}`);
+}
+if (/\/(?:en\/)?(?:servicios|services)\//i.test(sitemap)) {
+  failures.push("sitemap.xml: contiene una ruta de Servicios retirada");
+}
+
+const redirects = JSON.parse(await readFile("vercel.json", "utf8")).redirects || [];
+for (const expected of [
+  { source: "/servicios/:path*", destination: "/", statusCode: 307 },
+  { source: "/en/services/:path*", destination: "/en/", statusCode: 307 },
+]) {
+  if (!redirects.some((redirect) => Object.entries(expected).every(([key, value]) => redirect[key] === value))) {
+    failures.push(`vercel.json: falta la redirección ${expected.source} → ${expected.destination} (307)`);
+  }
+}
+
+for (const [file, expectedProjects] of [
+  ["cv.json", ["Aplicación clínica", "Landing para", "Juegos Familiares", "Fira Estudio"]],
+  ["cv-en.json", ["Clinical App", "Home Rehabilitation", "Juegos Familiares", "Fira Estudio"]],
+]) {
+  const data = JSON.parse(await readFile(file, "utf8"));
+  if (data.projects?.length !== expectedProjects.length) {
+    failures.push(`${file}: se esperaban cuatro casos en el CV`);
+  }
+  for (const [index, expected] of expectedProjects.entries()) {
+    if (!data.projects?.[index]?.name?.startsWith(expected)) {
+      failures.push(`${file}: el caso ${index + 1} debe ser ${expected}`);
+    }
+  }
+  for (const project of data.projects || []) {
+    if (project.image) {
+      try {
+        await stat(join("dist", project.image.replace(/^\//, "")));
+      } catch {
+        failures.push(`${file}: falta la imagen del proyecto ${project.name}`);
+      }
+    }
+  }
+}
+
+const casePairs = [
+  ["proyectos/plataforma-clinica/index.html", "en/projects/clinical-platform/index.html"],
+  ["proyectos/landing-kinesiologia/index.html", "en/projects/home-rehabilitation-landing/index.html"],
+  ["proyectos/impostor/index.html", "en/projects/impostor/index.html"],
+  ["proyectos/fira-estudio/index.html", "en/projects/fira-estudio/index.html"],
+];
+for (const pair of casePairs) {
+  const rendered = await Promise.all(pair.map((page) => readFile(join("dist", page), "utf8")));
+  for (const [index, html] of rendered.entries()) {
+    const labels = index === 0 ? ["Problema", "Aporte", "Decisión clave"] : ["Problem", "Contribution", "Key decision"];
+    if (!html.includes("case-summary") || !html.includes("case-status")) {
+      failures.push(`${pair[index]}: falta el resumen del caso o su estado`);
+    }
+    for (const label of labels) {
+      if (!new RegExp(`<dt\\b[^>]*>${label}</dt>`).test(html)) failures.push(`${pair[index]}: falta el campo ${label}`);
+    }
+  }
+  const fieldCounts = rendered.map((html) => (html.match(/<dt>/g) || []).length);
+  if (fieldCounts[0] !== fieldCounts[1]) failures.push(`${pair.join(" / ")}: los campos del resumen no tienen paridad`);
+}
+
+const homeChecks = [
+  ["index.html", "Conecto flujos clínicos con productos digitales.", "Ver caso clínico"],
+  ["en/index.html", "I connect clinical workflows with digital products.", "View clinical case"],
+];
+for (const [page, ...expected] of homeChecks) {
+  const html = await readFile(join("dist", page), "utf8");
+  for (const text of expected) {
+    if (!html.includes(text)) failures.push(`${page}: falta texto principal "${text}"`);
+  }
+}
 
 for (const page of pages) {
   const path = join("dist", page);

@@ -10,7 +10,7 @@ export const ui = {
     "section.experience": "Experiencia profesional",
     "section.experienceIntro":
       "Práctica independiente desde 2004 y desarrollo de productos digitales desde 2020.",
-    "section.projects": "Proyectos",
+    "section.projects": "Casos seleccionados",
     "section.skills": "Habilidades",
     "section.education": "Educación",
     "button.print": "Imprimir",
@@ -44,7 +44,7 @@ export const ui = {
     "section.experience": "Professional Experience",
     "section.experienceIntro":
       "Independent practice since 2004 and digital product development since 2020.",
-    "section.projects": "Projects",
+    "section.projects": "Selected work",
     "section.skills": "Skills",
     "section.education": "Education",
     "button.print": "Print",

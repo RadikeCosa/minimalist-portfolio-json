@@ -1,10 +1,14 @@
 ---
 layout: "../../layouts/ProjectCaseLayout.astro"
 title: "Aplicación clínica para kinesiología domiciliaria"
-description: "Aplicación privada para organizar pacientes, tratamientos y visitas domiciliarias mediante flujos clínicos basados en FHIR."
+description: "Aplicación privada para organizar pacientes, tratamientos, citas y visitas domiciliarias con flujos basados en FHIR. Piloto local con datos ficticios y sin demo pública."
 locale: "es"
 alternateUrl: "/en/projects/clinical-platform/"
 role: "Producto HealthTech · Análisis funcional e implementación"
+status: "Piloto local · Datos ficticios · Sin demo pública"
+problem: "Organizar pacientes, tratamientos, citas y visitas domiciliarias en flujos clínicos claros."
+contribution: "Análisis funcional e implementación de una aplicación privada con flujos basados en FHIR."
+decision: "Mantener el piloto local y con datos ficticios; no presentarlo como listo para historias clínicas reales."
 stack:
   - "Next.js 16"
   - "TypeScript"
@@ -21,7 +25,7 @@ En la atención domiciliaria, la agenda, los datos de cada paciente y el registr
 
 La pantalla de inicio reúne **Hoy**, **Agenda** y **Pacientes**. Desde allí se organizan tratamientos, citas y visitas; cada visita admite registro en vivo o diferido, evolución breve, intervención, próximo paso y evaluaciones opcionales.
 
-<figure class="case-figure case-figure--crop wide">
+<figure class="case-figure case-figure--screen">
   <div class="case-figure__media">
     <img
       src="/case-studies/clinical-app/today-fictional.png"

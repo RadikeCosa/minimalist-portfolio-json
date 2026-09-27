@@ -12,6 +12,10 @@ interface ProjectCaseFrontmatter {
   locale?: Language;
   alternateUrl?: string;
   role?: string;
+  status?: string;
+  problem?: string;
+  contribution?: string;
+  decision?: string;
   period?: string;
   stack?: string[];
   website?: string;
@@ -94,13 +98,25 @@ const externalLinks = [
         }
       </header>
 
+      {
+        (frontmatter.status || frontmatter.problem || frontmatter.contribution || frontmatter.decision) && (
+          <section class="case-summary" aria-label={isEnglish ? "Case summary" : "Resumen del caso"}>
+            {frontmatter.status && <p class="case-status">{frontmatter.status}</p>}
+            <dl>
+              {frontmatter.problem && <div><dt>{isEnglish ? "Problem" : "Problema"}</dt><dd>{frontmatter.problem}</dd></div>}
+              {frontmatter.contribution && <div><dt>{isEnglish ? "Contribution" : "Aporte"}</dt><dd>{frontmatter.contribution}</dd></div>}
+              {frontmatter.decision && <div><dt>{isEnglish ? "Key decision" : "Decisión clave"}</dt><dd>{frontmatter.decision}</dd></div>}
+            </dl>
+          </section>
+        )
+      }
+
       <div class="case-content">
         <slot />
       </div>
 
       <footer class="case-footer no-print">
         <nav aria-label={isEnglish ? "Next steps" : "Siguientes pasos"}>
-          <a href={isEnglish ? "/en/services/" : "/servicios/"}><ActionIcon name="services" />{isEnglish ? "Services" : "Servicios"}</a>
           <a href={isEnglish ? "/en/#contact" : "/#contact"}><ActionIcon name="email" />{isEnglish ? "Contact" : "Contacto"}</a>
           <a href={backHref}><ActionIcon name="back" />{isEnglish ? "Back to projects" : "Volver a proyectos"}</a>
         </nav>
@@ -122,11 +138,53 @@ const externalLinks = [
   .case-back,
   .case-article {
     margin-inline: auto;
-    max-width: 700px;
+    max-width: 800px;
   }
 
   .case-back {
     margin-bottom: 2.25rem;
+  }
+
+  .case-summary {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    margin: 1.5rem auto 2rem;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .case-status {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .case-summary dl {
+    display: grid;
+    gap: 1rem 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-summary dl > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .case-summary dt {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .case-summary dd {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
   }
 
   .case-back a,
@@ -170,14 +228,15 @@ const externalLinks = [
   }
 
   h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    letter-spacing: -0.04em;
+    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    letter-spacing: -0.05em;
     line-height: 1.1;
   }
 
   .case-description {
-    font-size: 1rem;
-    line-height: 1.6;
+    color: var(--text-primary);
+    font-size: 1.14rem;
+    line-height: 1.55;
   }
 
   .case-meta {
@@ -190,7 +249,7 @@ const externalLinks = [
     align-items: center;
     color: var(--text-muted);
     display: flex;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     gap: 7px;
   }
 
@@ -213,7 +272,7 @@ const externalLinks = [
     background: var(--bg-secondary);
     border-radius: 6px;
     color: var(--text-secondary);
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     font-weight: 500;
     line-height: 1.2;
     padding: 0.24rem 0.62rem;
@@ -230,6 +289,8 @@ const externalLinks = [
     align-items: center;
     display: inline-flex;
     flex-direction: row;
+    min-height: 44px;
+    padding-block: 8px;
     gap: 5px;
     white-space: nowrap;
   }
@@ -239,6 +300,8 @@ const externalLinks = [
     align-items: center;
     display: inline-flex;
     flex-direction: row;
+    min-height: 44px;
+    padding-block: 8px;
     gap: 6px;
     white-space: nowrap;
   }
@@ -281,8 +344,8 @@ const externalLinks = [
   .case-content :global(p),
   .case-content :global(li) {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .case-content :global(ul),
@@ -390,11 +453,23 @@ const externalLinks = [
     margin: 1.5rem 0 1.5rem 50%;
     max-width: none;
     transform: translateX(-50%);
-    width: min(900px, calc(100vw - 2rem));
+    width: min(1040px, calc(100vw - 2rem));
   }
 
   .case-content :global(.case-figure) {
     break-inside: avoid;
+  }
+
+  .case-content :global(.case-figure--screen) {
+    margin: 1.5rem auto;
+    max-width: 480px;
+    transform: none;
+    width: min(480px, calc(100vw - 2rem));
+  }
+
+  .case-content :global(.case-figure--screen .case-figure__media) {
+    max-height: none;
+    overflow: visible;
   }
 
   .case-content :global(.case-figure img) {
@@ -444,7 +519,7 @@ const externalLinks = [
   }
 
   .case-footer a {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   @media (width <= 700px) {
@@ -479,6 +554,18 @@ const externalLinks = [
 
     .case-content :global(.case-figure__media) {
       max-height: 560px;
+    }
+
+    .case-content :global(.case-figure--screen .case-figure__media) {
+      max-height: none;
+    }
+
+    .case-summary dl {
+      grid-template-columns: 1fr;
+    }
+
+    .case-summary dl > div:last-child {
+      grid-column: auto;
     }
 
     .case-content :global(.case-state-pair__grid) {
