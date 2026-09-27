@@ -46,6 +46,28 @@ Replanteamos el producto como una vidriera digital. El sitio vigente conserva ca
   <figcaption>Catálogo productivo: categorías y presentación de productos, con disponibilidad gestionada mediante consulta.</figcaption>
 </figure>
 
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/fira/home-cover-2026-09-27.webp"
+    alt="Portada rediseñada de Fira Estudio con una fotografía textil y acceso al catálogo."
+    width="1200"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/fira/product-detail-2026-09-27.webp"
+    alt="Ficha de Camino de Mesa Magnolia con fotografía, descripción, material y cuidados."
+    width="1200"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+
 ## Mi aporte
 
 Diseñé e implementé la experiencia, la estructura del catálogo, el flujo de compra original, la integración de pagos, la navegación responsive, accesibilidad, metadata, SEO y pruebas unitarias y E2E.

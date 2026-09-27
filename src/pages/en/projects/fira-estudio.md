@@ -46,6 +46,28 @@ We reframed the product as a digital showcase. The current site retains the cata
   <figcaption>Production catalog: categories and product presentation, with availability handled through inquiry.</figcaption>
 </figure>
 
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/fira/home-cover-2026-09-27.webp"
+    alt="Redesigned Fira Estudio homepage with a textile photograph and catalog link."
+    width="1200"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+
+<figure class="case-figure wide">
+  <img
+    src="/case-studies/fira/product-detail-2026-09-27.webp"
+    alt="Camino de Mesa Magnolia product page with photography, description, material, and care details."
+    width="1200"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  />
+</figure>
+
 ## My contribution
 
 I designed and implemented the experience, catalog structure, original purchasing flow, payment integration, responsive navigation, accessibility, metadata, SEO, and unit and E2E tests.
