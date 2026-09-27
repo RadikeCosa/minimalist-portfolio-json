@@ -74,12 +74,12 @@ doc = SimpleDocTemplate(
     bottomMargin=17 * mm,
     title="General résumé - Ramiro Nicolás Cosa",
     author="Ramiro Nicolás Cosa",
-    subject="HealthTech, clinical systems, and implementation",
+    subject="Digital product analysis, development, and implementation",
 )
 
 story = [
     Paragraph("Ramiro Nicolás Cosa", name),
-    Paragraph("HealthTech · Clinical Systems &amp; Implementation", headline),
+    Paragraph("Digital Product Analysis, Development &amp; Implementation", headline),
     Paragraph(
         'Neuquén, Argentina  |  +54 9 299 521-7189  |  '
         '<link href="mailto:ramirocosa@gmail.com" color="#136B5C">Email</link>  |  '
@@ -90,11 +90,10 @@ story = [
     ),
     *section_title("Profile"),
     Paragraph(
-        "I analyze processes, define workflows and business rules, and build web solutions. "
-        "Since 2020, I have worked on my own products and independent client work using Next.js, TypeScript, "
-        "PostgreSQL/Supabase, testing, and documentation. My experience in healthcare and coordination "
-        "brings operational judgment, communication, and an understanding of complex workflows, with a "
-        "particular advantage in HealthTech.",
+        "I analyze needs and develop digital products for real workflows. Since 2020, I have designed "
+        "and built web solutions focused on workflows, business rules, data, and quality. I bring more "
+        "than 20 years of healthcare experience in professional practice, coordination, and service "
+        "review to HealthTech projects.",
         body,
     ),
     *section_title("Selected projects"),

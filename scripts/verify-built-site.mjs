@@ -110,8 +110,8 @@ for (const [page, title] of [
 }
 
 const homeChecks = [
-  ["index.html", "Conecto flujos clínicos con productos digitales.", "Ver caso clínico"],
-  ["en/index.html", "I connect clinical workflows with digital products.", "View clinical case"],
+  ["index.html", "Analizo necesidades y construyo productos digitales.", "Ver proyectos"],
+  ["en/index.html", "I analyze needs and build digital products.", "View projects"],
 ];
 for (const [page, ...expected] of homeChecks) {
   const html = await readFile(join("dist", page), "utf8");

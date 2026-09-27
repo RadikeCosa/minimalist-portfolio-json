@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
   <title id="title">Portfolio profesional de Ramiro Nicolás Cosa</title>
-  <desc id="description">HealthTech, sistemas clínicos e implementación.</desc>
+  <desc id="description">Análisis, desarrollo e implementación de productos digitales.</desc>
   <rect width="1200" height="630" fill="#111916" />
   <circle cx="96" cy="98" r="10" fill="#72c7b5" />
   <text x="88" y="300" fill="#edf4f0" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">Ramiro Nicolás Cosa</text>
-  <text x="92" y="378" fill="#aebcb4" font-family="Arial, Helvetica, sans-serif" font-size="29" letter-spacing="0.5">HEALTHTECH · SISTEMAS CLÍNICOS E IMPLEMENTACIÓN</text>
+  <text x="92" y="378" fill="#aebcb4" font-family="Arial, Helvetica, sans-serif" font-size="29" letter-spacing="0.5">ANÁLISIS · DESARROLLO · IMPLEMENTACIÓN</text>
   <text x="92" y="540" fill="#72c7b5" font-family="Menlo, Monaco, Consolas, monospace" font-size="25">ramirocosa.is-a.dev</text>
 </svg>

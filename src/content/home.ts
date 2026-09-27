@@ -3,11 +3,11 @@ import type { Language } from "@/i18n/types";
 const content = {
   es: {
     hero: {
-      title: "Conecto flujos clínicos con productos digitales.",
+      title: "Analizo necesidades y construyo productos digitales.",
       description:
-        "Analizo necesidades de salud, defino flujos clínicos y reglas de negocio, e implemento software para HealthTech.",
+        "Analizo procesos, defino flujos y reglas de negocio, e implemento soluciones web para necesidades concretas. Mi experiencia en salud aporta una especialización en HealthTech.",
       context: "Experiencia en salud desde 2004 · Productos digitales desde 2020",
-      primaryAction: "Ver caso clínico",
+      primaryAction: "Ver proyectos",
       aboutAction: "Sobre mí",
       cvAction: "Descargar CV",
       secondaryAction: "Contacto",
@@ -31,7 +31,7 @@ const content = {
     },
     contact: {
       title: "Contacto",
-      description: "Busco oportunidades en implementación HealthTech, sistemas clínicos y análisis funcional.",
+      description: "Busco oportunidades en análisis, desarrollo e implementación de productos digitales, con especialización en HealthTech y experiencia en proyectos de otros sectores.",
       emailSubject: "Portfolio — oportunidad profesional",
       directTitle: "Contacto directo",
       profileTitle: "Perfil profesional",
@@ -43,10 +43,10 @@ const content = {
   },
   en: {
     hero: {
-      title: "I connect clinical workflows with digital products.",
-      description: "I analyze healthcare needs, define clinical workflows and business rules, and build software for HealthTech.",
+      title: "I analyze needs and build digital products.",
+      description: "I analyze processes, define workflows and business rules, and build web solutions for real needs. My healthcare experience brings a specialization in HealthTech.",
       context: "Healthcare experience since 2004 · Digital products since 2020",
-      primaryAction: "View clinical case",
+      primaryAction: "View projects",
       aboutAction: "About",
       cvAction: "Download CV",
       secondaryAction: "Contact",
@@ -70,7 +70,7 @@ const content = {
     },
     contact: {
       title: "Contact",
-      description: "I’m seeking opportunities in HealthTech implementation, clinical systems, and functional analysis.",
+      description: "I’m seeking opportunities in digital product analysis, development, and implementation, with a HealthTech specialization and experience across other industries.",
       emailSubject: "Portfolio — professional opportunity",
       directTitle: "Direct contact",
       profileTitle: "Professional profile",

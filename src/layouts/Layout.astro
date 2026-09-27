@@ -49,9 +49,9 @@ const personEntity = {
   url: siteUrl,
   jobTitle:
     currentLang === "en"
-      ? "Functional analysis, implementation, and digital products"
-      : "Análisis funcional, implementación y producto digital",
-  description: summary,
+      ? "Digital product analysis, development, and implementation"
+      : "Análisis, desarrollo e implementación de productos digitales",
+  description: isHome ? pageDescription : summary,
   sameAs: profiles.map(({ url }) => url),
   knowsAbout:
     currentLang === "en"
@@ -158,7 +158,7 @@ const structuredDataJson = structuredData
     <meta property="og:image" content={socialImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={currentLang === "en" ? `${name} professional portfolio` : `Portfolio profesional de ${name}`} />
+    <meta property="og:image:alt" content={currentLang === "en" ? `${name} portfolio: digital product analysis, development, and implementation` : `Portfolio de ${name}: análisis, desarrollo e implementación de productos digitales`} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={new URL(url).hostname} />
@@ -166,7 +166,7 @@ const structuredDataJson = structuredData
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={socialImage} />
-    <meta name="twitter:image:alt" content={currentLang === "en" ? `${name} professional portfolio` : `Portfolio profesional de ${name}`} />
+    <meta name="twitter:image:alt" content={currentLang === "en" ? `${name} portfolio: digital product analysis, development, and implementation` : `Portfolio de ${name}: análisis, desarrollo e implementación de productos digitales`} />
     {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson} />}
     <script is:inline>
       (function () {

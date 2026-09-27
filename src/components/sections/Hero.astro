@@ -18,7 +18,6 @@ const cvHref = currentLang === "en"
   ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf"
   : "/cv/CV_Ramiro_Nicolas_Cosa.pdf";
 const aboutHref = currentLang === "en" ? "/en/about/" : "/sobre-mi/";
-const clinicalCaseHref = currentLang === "en" ? "/en/projects/clinical-platform/" : "/proyectos/plataforma-clinica/";
 ---
 
 <Section id="top">
@@ -36,7 +35,7 @@ const clinicalCaseHref = currentLang === "en" ? "/en/projects/clinical-platform/
     </div>
 
     <nav class="hero-nav" aria-label={currentLang === "en" ? "Portfolio navigation" : "Navegación del portfolio"}>
-      <a class="primary-action" href={clinicalCaseHref}><ActionIcon name="projects" />{hero.primaryAction}</a>
+      <a class="primary-action" href="#projects"><ActionIcon name="projects" />{hero.primaryAction}</a>
       <div class="supporting-actions">
         <a href={cvHref} download><ActionIcon name="download" />{hero.cvAction}</a>
         <a href="#contact"><ActionIcon name="email" />{hero.secondaryAction}</a>

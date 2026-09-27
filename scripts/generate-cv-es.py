@@ -146,12 +146,12 @@ doc = SimpleDocTemplate(
     bottomMargin=17 * mm,
     title="CV general - Ramiro Nicolás Cosa",
     author="Ramiro Nicolás Cosa",
-    subject="HealthTech, sistemas clínicos e implementación",
+    subject="Análisis, desarrollo e implementación de productos digitales",
 )
 
 story = [
     Paragraph("Ramiro Nicolás Cosa", name),
-    Paragraph("HealthTech · Sistemas clínicos e implementación", headline),
+    Paragraph("Análisis, desarrollo e implementación de productos digitales", headline),
     Paragraph(
         'Neuquén, Argentina  |  +54 9 299 521-7189  |  '
         '<link href="mailto:ramirocosa@gmail.com" color="#136B5C">Email</link>  |  '
@@ -162,11 +162,10 @@ story = [
     ),
     *section_title("Perfil"),
     Paragraph(
-        "Analizo procesos, defino flujos y reglas de negocio, y desarrollo soluciones web. "
-        "Desde 2020 trabajo en productos propios e independientes con Next.js, TypeScript, "
-        "PostgreSQL/Supabase, testing y documentación. Mi experiencia en salud y coordinación "
-        "aporta criterio operativo, comunicación y comprensión de procesos complejos, con un "
-        "diferencial especialmente útil en HealthTech.",
+        "Analizo necesidades y desarrollo productos digitales para procesos reales. Desde 2020 "
+        "diseño e implemento soluciones web, con foco en flujos, reglas de negocio, datos y calidad. "
+        "Aporto más de 20 años de experiencia en salud, con práctica profesional, coordinación y auditoría, "
+        "como especialización para proyectos HealthTech.",
         body,
     ),
     *section_title("Proyectos seleccionados"),

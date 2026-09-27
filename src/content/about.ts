@@ -4,8 +4,8 @@ const aboutContent = {
   es: {
     title: "Sobre mí",
     intro: [
-      "Desde 2004 trabajo con personas, procesos y necesidades concretas. Mi recorrido reúne práctica en salud, coordinación de servicios y desarrollo de productos digitales.",
-      "Desde 2020 diseño y desarrollo soluciones web: analizo necesidades, ordeno flujos y reglas de negocio, defino alcance e implemento. HealthTech es una especialización; el método se aplica también a otros sectores.",
+      "Desde 2020 diseño y desarrollo productos web para necesidades reales. Trabajo desde el análisis del problema hasta la implementación: ordeno procesos, defino flujos y reglas de negocio, y valido decisiones con el uso.",
+      "Mi experiencia en salud —práctica profesional y coordinación de servicios— aporta conocimiento de procesos complejos y una especialización en HealthTech. También aplico este enfoque en proyectos de otros sectores.",
     ],
     methodTitle: "Cómo trabajo",
     method:
@@ -30,8 +30,8 @@ const aboutContent = {
   en: {
     title: "About",
     intro: [
-      "Since 2004, I have worked with people, processes, and concrete needs. My background brings together healthcare practice, service coordination, and digital product development.",
-      "Since 2020, I have designed and built web solutions: I analyze needs, organize workflows and business rules, define scope, and implement. HealthTech is a specialization; the method also applies to other industries.",
+      "Since 2020, I have designed and built web products for real needs. I work from problem analysis through implementation: organizing processes, defining workflows and business rules, and validating decisions through use.",
+      "My healthcare experience in professional practice and service coordination gives me an understanding of complex workflows and a HealthTech specialization. I apply the same approach to projects in other industries.",
     ],
     methodTitle: "How I work",
     method:
