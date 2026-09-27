@@ -10,8 +10,8 @@ const pages = [
   "en/projects/clinical-platform/index.html",
   "proyectos/landing-kinesiologia/index.html",
   "en/projects/home-rehabilitation-landing/index.html",
-  "proyectos/impostor/index.html",
-  "en/projects/impostor/index.html",
+  "proyectos/juegos-familiares/index.html",
+  "en/projects/family-games/index.html",
   "proyectos/fira-estudio/index.html",
   "en/projects/fira-estudio/index.html",
 ];
@@ -26,6 +26,12 @@ if (sitemapUrls !== pages.length) {
 if (/\/(?:en\/)?(?:servicios|services)\//i.test(sitemap)) {
   failures.push("sitemap.xml: contiene una ruta de Servicios retirada");
 }
+for (const route of ["/proyectos/juegos-familiares/", "/en/projects/family-games/"]) {
+  if (!sitemap.includes(route)) failures.push(`sitemap.xml: falta la ruta ${route}`);
+}
+if (/\/(?:en\/projects|proyectos)\/impostor\//.test(sitemap)) {
+  failures.push("sitemap.xml: contiene una ruta anterior de Juegos Familiares");
+}
 
 const redirects = JSON.parse(await readFile("vercel.json", "utf8")).redirects || [];
 for (const expected of [
@@ -35,9 +41,13 @@ for (const expected of [
   { source: "/en/services", destination: "/en/", statusCode: 307 },
   { source: "/en/services/", destination: "/en/", statusCode: 307 },
   { source: "/en/services/:path*", destination: "/en/", statusCode: 307 },
+  { source: "/proyectos/impostor", destination: "/proyectos/juegos-familiares/", statusCode: 301 },
+  { source: "/proyectos/impostor/", destination: "/proyectos/juegos-familiares/", statusCode: 301 },
+  { source: "/en/projects/impostor", destination: "/en/projects/family-games/", statusCode: 301 },
+  { source: "/en/projects/impostor/", destination: "/en/projects/family-games/", statusCode: 301 },
 ]) {
   if (!redirects.some((redirect) => Object.entries(expected).every(([key, value]) => redirect[key] === value))) {
-    failures.push(`vercel.json: falta la redirección ${expected.source} → ${expected.destination} (307)`);
+    failures.push(`vercel.json: falta la redirección ${expected.source} → ${expected.destination} (${expected.statusCode})`);
   }
 }
 
@@ -68,7 +78,7 @@ for (const [file, expectedProjects] of [
 const casePairs = [
   ["proyectos/plataforma-clinica/index.html", "en/projects/clinical-platform/index.html"],
   ["proyectos/landing-kinesiologia/index.html", "en/projects/home-rehabilitation-landing/index.html"],
-  ["proyectos/impostor/index.html", "en/projects/impostor/index.html"],
+  ["proyectos/juegos-familiares/index.html", "en/projects/family-games/index.html"],
   ["proyectos/fira-estudio/index.html", "en/projects/fira-estudio/index.html"],
 ];
 for (const pair of casePairs) {
@@ -84,6 +94,19 @@ for (const pair of casePairs) {
   }
   const fieldCounts = rendered.map((html) => (html.match(/<dt>/g) || []).length);
   if (fieldCounts[0] !== fieldCounts[1]) failures.push(`${pair.join(" / ")}: los campos del resumen no tienen paridad`);
+}
+
+for (const [page, title] of [
+  ["proyectos/juegos-familiares/index.html", "Juegos Familiares"],
+  ["en/projects/family-games/index.html", "Family Games"],
+]) {
+  const html = await readFile(join("dist", page), "utf8");
+  if (!html.includes(`<title>${title} | Ramiro Nicolás Cosa</title>`)) failures.push(`${page}: título de caso incorrecto`);
+  if (!html.includes(`property="og:title" content="${title} | Ramiro Nicolás Cosa"`)) failures.push(`${page}: título Open Graph incorrecto`);
+  if (!html.includes(`name="twitter:title" content="${title} | Ramiro Nicolás Cosa"`)) failures.push(`${page}: título Twitter incorrecto`);
+  if (!html.includes("Tutti Frutti")) failures.push(`${page}: falta Tutti Frutti`);
+  if (html.includes("Juegos Familiares — Impostor")) failures.push(`${page}: conserva el título anterior`);
+  if (!html.includes(`"name":"${title} | Ramiro Nicolás Cosa"`)) failures.push(`${page}: nombre JSON-LD incorrecto`);
 }
 
 const homeChecks = [

@@ -32,14 +32,14 @@ The hero image sets the home-care context. The site and its content guide the ne
 
 <figure class="case-figure">
   <img
-    src="/case-studies/kinesiology-landing/home-visit.webp"
-    alt="Home-care scene: a physiotherapist supporting an older patient during a functional exercise."
-    width="1536"
-    height="1024"
+    src="/case-studies/kinesiology-landing/cover-2026-09-27.webp"
+    alt="Homepage for Kinesiología a Domicilio in Neuquén, presenting the service and contact options."
+    width="1440"
+    height="1000"
     loading="lazy"
     decoding="async"
   />
-  <figcaption>Image used on the landing page to represent home care.</figcaption>
+  <figcaption>Public homepage captured on September 27, 2026.</figcaption>
 </figure>
 
 ## My contribution
@@ -56,10 +56,6 @@ The site explains who the service is for and what information helps assess an in
 
 The landing page aims for informed inquiries within the professional's capacity rather than maximizing contact volume.
 
-### Keep only acquisition public
-
-The landing page remains deployed as the public site. The application for managing patients, treatment, and visits is a separate private project; it is not presented as part of the site or as an online demo.
-
 ## Implementation and scope
 
-The site uses Next.js, TypeScript, and responsive components. It includes search metadata, analytics on public routes, and validation for orientation details. The private clinical application is documented separately in the [clinical app case study](./clinical-platform/).
+The site uses Next.js, TypeScript, and responsive components. It includes search metadata, analytics on public routes, and validation for orientation details.

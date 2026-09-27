@@ -21,6 +21,9 @@ interface ProjectCaseFrontmatter {
   website?: string;
   websiteLabel?: string;
   repository?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+  coverImageCaption?: string;
 }
 
 const frontmatter = (Astro.props.frontmatter ?? Astro.props) as ProjectCaseFrontmatter;
@@ -59,6 +62,12 @@ const externalLinks = [
     </nav>
 
     <article class="case-article">
+      {frontmatter.coverImage && (
+        <figure class="case-cover">
+          <img src={frontmatter.coverImage} alt={frontmatter.coverImageAlt || ""} loading="eager" decoding="async" />
+          {frontmatter.coverImageCaption && <figcaption>{frontmatter.coverImageCaption}</figcaption>}
+        </figure>
+      )}
       <header class="case-header">
         <h1>{frontmatter.title}</h1>
         {frontmatter.description && <p class="case-description">{frontmatter.description}</p>}
@@ -225,6 +234,25 @@ const externalLinks = [
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 1.5rem;
+  }
+
+  .case-cover {
+    margin: 0 0 0.5rem;
+  }
+
+  .case-cover img {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .case-cover figcaption {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-top: 0.55rem;
   }
 
   h1 {
@@ -507,6 +535,11 @@ const externalLinks = [
     max-width: 820px;
   }
 
+  .case-content :global(.case-state-pair__grid img) {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .case-footer {
     border-top: 1px solid var(--border-light);
     padding-top: 1.5rem;
@@ -525,6 +558,13 @@ const externalLinks = [
   @media (width <= 700px) {
     .case-page {
       padding: 2rem 1.25rem;
+    }
+
+    .case-content :global(figure),
+    .case-content :global(.wide) {
+      margin-left: 0;
+      transform: none;
+      width: 100%;
     }
 
     .case-back {
@@ -570,8 +610,12 @@ const externalLinks = [
 
     .case-content :global(.case-state-pair__grid) {
       gap: 0.75rem;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       max-width: 395px;
+    }
+
+    .case-content :global(.case-state-pair__grid img) {
+      min-width: 0;
     }
   }
 

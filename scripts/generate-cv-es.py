@@ -175,7 +175,7 @@ story = [
         "Producto a medida · HealthTech | 2020 - Actualidad | Next.js, TypeScript, FHIR, Vitest",
         [
             "Recepción estructurada de consultas y definición del flujo paciente - tratamiento - visita.",
-            "Gestión clínica privada/local con FHIR, reglas de negocio, validaciones, pruebas y documentación.",
+            "Flujos clínicos modelados localmente con FHIR, reglas de negocio, validaciones, pruebas y documentación.",
             '<link href="https://ramirocosa.is-a.dev/proyectos/plataforma-clinica/" color="#136B5C">Caso</link>  |  '
             '<link href="https://github.com/RadikeCosa/kinesiologiaadomicilio" color="#136B5C">Código</link>',
         ],
@@ -193,12 +193,12 @@ story = [
     ),
     Spacer(1, 2),
     item(
-        "Juegos Familiares - Impostor",
-        "Producto propio en uso | 100+ partidas | Next.js, TypeScript, Supabase, PostgreSQL",
+        "Juegos Familiares",
+        "Dos juegos publicados | Impostor: 100+ partidas | Next.js, TypeScript, Supabase, PostgreSQL",
         [
-            "Juego social mobile-first con salas multi-dispositivo, roles privados, votación y puntuación.",
-            "Estado autoritativo en PostgreSQL, RLS/RPCs, Realtime, recuperación de sesión y pruebas.",
-            '<link href="https://ramirocosa.is-a.dev/proyectos/impostor/" color="#136B5C">Caso</link>  |  '
+            "Plataforma mobile-first con Impostor y Tutti Frutti, salas multi-dispositivo y partidas sincronizadas.",
+            "Impostor: roles privados, votación, puntuación, PostgreSQL, RLS/RPCs, Realtime y pruebas.",
+            '<link href="https://ramirocosa.is-a.dev/proyectos/juegos-familiares/" color="#136B5C">Caso</link>  |  '
             '<link href="https://juegos-familiares.vercel.app/" color="#136B5C">Sitio</link>  |  '
             '<link href="https://github.com/RadikeCosa/juegos-familiares" color="#136B5C">Código</link>',
         ],

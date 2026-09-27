@@ -32,14 +32,14 @@ La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio 
 
 <figure class="case-figure">
   <img
-    src="/case-studies/kinesiology-landing/home-visit.webp"
-    alt="Imagen de atención domiciliaria: un kinesiólogo acompaña a una paciente mayor durante un ejercicio funcional."
-    width="1536"
-    height="1024"
+    src="/case-studies/kinesiology-landing/cover-2026-09-27.webp"
+    alt="Portada del sitio de Kinesiología a Domicilio en Neuquén, con presentación del servicio y opciones de contacto."
+    width="1440"
+    height="1000"
     loading="lazy"
     decoding="async"
   />
-  <figcaption>Imagen utilizada por la landing para representar la atención domiciliaria.</figcaption>
+  <figcaption>Portada pública del sitio, capturada el 27 de septiembre de 2026.</figcaption>
 </figure>
 
 ## Mi aporte
@@ -56,10 +56,6 @@ El sitio explica para quién es el servicio y qué información ayuda a evaluar 
 
 La landing busca consultas con contexto y dentro de la capacidad del profesional, en lugar de maximizar el volumen de contactos.
 
-### Mantener pública solo la experiencia de captación
-
-La landing permanece desplegada como sitio público. La aplicación para administrar pacientes, tratamientos y visitas es un proyecto separado con acceso privado; no se presenta como parte del sitio ni como una demo en línea.
-
 ## Implementación y alcance
 
-El sitio utiliza Next.js, TypeScript y componentes responsivos. Incluye metadatos para buscadores, analítica en las rutas públicas y validación de los datos de orientación. La aplicación clínica privada se documenta por separado en el caso de la [aplicación clínica](../plataforma-clinica/).
+El sitio utiliza Next.js, TypeScript y componentes responsivos. Incluye metadatos para buscadores, analítica en las rutas públicas y validación de los datos de orientación.

@@ -264,9 +264,9 @@
     {
       "name": "Aplicación clínica para kinesiología domiciliaria",
       "featured": true,
-      "image": "/case-studies/clinical-platform/admin-dashboard.webp",
+      "image": "/case-studies/clinical-app/today-card-fictional.webp",
     "badge": "Piloto local · Datos ficticios · Sin demo pública",
-    "description": "Aplicación privada para organizar pacientes, tratamientos, citas y visitas domiciliarias.",
+      "description": "Aplicación clínica para organizar pacientes, tratamientos, citas y visitas domiciliarias.",
       "highlights": [
         "Next.js 16",
         "TypeScript",
@@ -279,7 +279,7 @@
     {
       "name": "Landing para kinesiología domiciliaria",
       "featured": false,
-      "image": "/case-studies/kinesiology-landing/home-visit.webp",
+      "image": "/case-studies/kinesiology-landing/cover-2026-09-27.webp",
       "badge": "Sitio público · En producción",
     "description": "Landing pública que orienta consultas para un servicio de rehabilitación domiciliaria en Neuquén.",
       "highlights": [
@@ -293,11 +293,11 @@
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Juegos Familiares — Impostor",
+      "name": "Juegos Familiares",
       "featured": false,
-      "image": "/case-studies/impostor/product-entry-production.webp",
-    "badge": "En uso · Más de 100 partidas familiares",
-      "description": "Juego social mobile-first con salas multi-dispositivo, roles privados, votación y puntuación.",
+      "image": "/case-studies/juegos-familiares/cover-2026-09-27.webp",
+      "badge": "Impostor · Más de 100 partidas familiares | Tutti Frutti",
+      "description": "Plataforma de juegos presenciales con Impostor y Tutti Frutti, salas multi-dispositivo y partidas sincronizadas.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -305,7 +305,7 @@
         "PostgreSQL"
       ],
       "github": "https://github.com/RadikeCosa/juegos-familiares",
-      "caseStudyUrl": "/proyectos/impostor/",
+      "caseStudyUrl": "/proyectos/juegos-familiares/",
       "url": "https://juegos-familiares.vercel.app/"
     },
     {

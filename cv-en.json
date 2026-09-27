@@ -264,9 +264,9 @@
     {
       "name": "Clinical App for Home Rehabilitation",
       "featured": true,
-      "image": "/case-studies/clinical-platform/admin-dashboard.webp",
+      "image": "/case-studies/clinical-app/today-card-fictional.webp",
     "badge": "Local pilot · Fictional data · No public demo",
-    "description": "A private application for organizing patients, treatment, appointments, and home visits.",
+      "description": "A clinical application for organizing patients, treatment, appointments, and home visits.",
       "highlights": [
         "Next.js 16",
         "TypeScript",
@@ -279,7 +279,7 @@
     {
       "name": "Home Rehabilitation Landing Page",
       "featured": false,
-      "image": "/case-studies/kinesiology-landing/home-visit.webp",
+      "image": "/case-studies/kinesiology-landing/cover-2026-09-27.webp",
       "badge": "Public site · Live",
     "description": "A public landing page guiding inquiries for a home-rehabilitation service in Neuquén.",
       "highlights": [
@@ -293,11 +293,11 @@
       "url": "https://kinesiologiaadomicilio.vercel.app/"
     },
     {
-      "name": "Juegos Familiares — Impostor",
+      "name": "Juegos Familiares",
       "featured": false,
-      "image": "/case-studies/impostor/product-entry-production.webp",
-    "badge": "In use · More than 100 family games",
-      "description": "A mobile-first social game with multi-device rooms, private roles, voting, and scoring.",
+      "image": "/case-studies/juegos-familiares/cover-2026-09-27.webp",
+      "badge": "Impostor · 100+ family games | Tutti Frutti",
+      "description": "A platform for in-person games, with Impostor and Tutti Frutti, multi-device rooms, and synchronized play.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -305,7 +305,7 @@
         "PostgreSQL"
       ],
       "github": "https://github.com/RadikeCosa/juegos-familiares",
-      "caseStudyUrl": "/en/projects/impostor/",
+      "caseStudyUrl": "/en/projects/family-games/",
       "url": "https://juegos-familiares.vercel.app/"
     },
     {

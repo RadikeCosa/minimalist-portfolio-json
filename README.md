@@ -7,7 +7,7 @@ Live site: [ramirocosa.is-a.dev](https://ramirocosa.is-a.dev/)
 ## Public content
 
 - professional profile, experience, and capabilities in Spanish and English;
-- four case studies, in order: the private clinical application, its related public landing page, Juegos Familiares — Impostor, and Fira Estudio. Each opens with its problem, contribution, status, and key decision;
+- four case studies, in order: the clinical application, its public landing page, Juegos Familiares (Impostor and Tutti Frutti), and Fira Estudio. Each opens with its problem, contribution, status, and key decision;
 - coordinated general CV downloads in Spanish and English;
 - light and dark themes with responsive and keyboard-accessible layouts;
 - a focused recruiting journey with the clinical application as its primary evidence and a prefilled portfolio email subject;

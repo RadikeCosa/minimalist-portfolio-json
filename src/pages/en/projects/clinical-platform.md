@@ -1,13 +1,13 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
 title: "Clinical App for Home Rehabilitation"
-description: "A private application for organizing patients, treatment, appointments, and home visits through FHIR-based workflows. Local pilot using fictional data, with no public demo."
+description: "A clinical application for organizing patients, treatment, appointments, and home visits through FHIR-based workflows. Local pilot using fictional data, with no public demo."
 locale: "en"
 alternateUrl: "/proyectos/plataforma-clinica/"
 role: "HealthTech product · Functional analysis and implementation"
 status: "Local pilot · Fictional data · No public demo"
 problem: "Organize patients, treatment, appointments, and home visits into clear clinical workflows."
-contribution: "Functional analysis and implementation of a private application with FHIR-based workflows."
+contribution: "Functional analysis and implementation of clinical workflows modeled with FHIR."
 decision: "Keep the pilot local and use fictional data; do not present it as ready for real clinical records."
 stack:
   - "Next.js 16"
@@ -21,7 +21,7 @@ stack:
 
 In home care, schedules, patient information, and visit records can be scattered across messages, notes, and memory. This application explores how to organize that work so a professional can record a visit and continue follow-up from a phone.
 
-## Private application
+## Application overview
 
 The home screen brings together **Today**, **Schedule**, and **Patients**. From there, the professional organizes treatment, appointments, and visits. Visits can be recorded live or later, with a brief clinical note, intervention, next step, and optional assessments.
 

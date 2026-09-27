@@ -62,11 +62,11 @@ export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
     "/en/projects/home-rehabilitation-landing": {
       es: "/proyectos/landing-kinesiologia/",
     },
-    "/proyectos/impostor": {
-      en: "/en/projects/impostor/",
+    "/proyectos/juegos-familiares": {
+      en: "/en/projects/family-games/",
     },
-    "/en/projects/impostor": {
-      es: "/proyectos/impostor/",
+    "/en/projects/family-games": {
+      es: "/proyectos/juegos-familiares/",
     },
     "/proyectos/fira-estudio": {
       en: "/en/projects/fira-estudio/",
