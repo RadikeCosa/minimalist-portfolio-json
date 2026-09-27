@@ -29,7 +29,11 @@ if (/\/(?:en\/)?(?:servicios|services)\//i.test(sitemap)) {
 
 const redirects = JSON.parse(await readFile("vercel.json", "utf8")).redirects || [];
 for (const expected of [
+  { source: "/servicios", destination: "/", statusCode: 307 },
+  { source: "/servicios/", destination: "/", statusCode: 307 },
   { source: "/servicios/:path*", destination: "/", statusCode: 307 },
+  { source: "/en/services", destination: "/en/", statusCode: 307 },
+  { source: "/en/services/", destination: "/en/", statusCode: 307 },
   { source: "/en/services/:path*", destination: "/en/", statusCode: 307 },
 ]) {
   if (!redirects.some((redirect) => Object.entries(expected).every(([key, value]) => redirect[key] === value))) {
