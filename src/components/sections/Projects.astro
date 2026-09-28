@@ -25,7 +25,17 @@ const { projects } = cvData;
           return (
             <li class:list={["project-item", { featured }]}>
               <article>
-                {image && <img class="project-preview" src={image} alt="" loading="lazy" decoding="async" />}
+                {image && (caseStudyUrl ? (
+                  <a
+                    class="project-preview-link"
+                    href={caseStudyUrl}
+                    aria-label={`${t("project.caseStudyTitle")} ${name}`}
+                  >
+                    <img class="project-preview" src={image} alt="" loading="lazy" decoding="async" />
+                  </a>
+                ) : (
+                  <img class="project-preview" src={image} alt="" loading="lazy" decoding="async" />
+                ))}
                 <header>
                   {badge && <p class="project-badge">{badge}</p>}
                   <h3>{name}</h3>
@@ -112,14 +122,36 @@ const { projects } = cvData;
 
   .project-preview {
     background: var(--bg-secondary);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
     display: block;
     height: auto;
     max-height: 430px;
     object-fit: contain;
     object-position: top center;
     width: 100%;
+  }
+
+  .project-preview-link {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .project-preview-link:focus-visible {
+    border-radius: 8px;
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  .project-preview-link .project-preview {
+    transition: transform 180ms ease;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .project-preview-link:hover .project-preview {
+      transform: scale(1.025);
+    }
   }
 
   .project-item:not(.featured) .project-preview {
@@ -129,7 +161,8 @@ const { projects } = cvData;
 
   .featured article header { grid-column: 1; grid-row: 1; }
   .featured article footer { grid-column: 1; grid-row: 2; }
-  .featured article .project-preview { grid-column: 2; grid-row: 1 / 3; }
+  .featured article .project-preview-link,
+  .featured article > .project-preview { grid-column: 2; grid-row: 1 / 3; }
 
   article header {
     display: flex;

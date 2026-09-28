@@ -274,6 +274,7 @@
         "Vitest",
         "Playwright"
       ],
+      "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "caseStudyUrl": "/proyectos/plataforma-clinica/"
     },
     {
@@ -297,7 +298,7 @@
       "featured": false,
       "image": "/case-studies/juegos-familiares/cover-2026-09-27.webp",
       "badge": "Impostor · Más de 100 partidas familiares | Tutti Frutti",
-      "description": "Plataforma de juegos presenciales con Impostor y Tutti Frutti, salas multi-dispositivo y partidas sincronizadas.",
+      "description": "Plataforma mobile-first para jugar en grupo, con Impostor y Tutti Frutti, salas multi-dispositivo y soporte PWA; requiere conexión para jugar.",
       "highlights": [
         "Next.js",
         "TypeScript",

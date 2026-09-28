@@ -68,9 +68,21 @@ The full loop includes:
 
 Tutti Frutti adds a second in-person game to the platform. The group creates or opens a room, configures a game, answers categories for each letter, and reviews responses before comparing results.
 
+<figure class="case-figure case-figure--screen">
+  <img
+    src="/case-studies/juegos-familiares/tutti-frutti-round.png"
+    alt="Tutti Frutti round in a room, showing the round letter and fields for five categories."
+    width="1416"
+    height="4722"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Demo round: each participant fills in answers from their phone.</figcaption>
+</figure>
+
 ## My contribution
 
-I designed the rules, states, and flows for each game, and built their mobile-first experiences. Impostor includes identity, groups, rooms, privacy, synchronization, session recovery, and PWA support. Tutti Frutti has its own setup, answer, and review flow. The platform uses Next.js, Supabase, and PostgreSQL.
+I designed the rules, states, and flows for each game, and built their mobile-first experiences. The platform includes a manifest and service worker for installation and static asset caching; gameplay requires a connection and does not work offline. Impostor includes identity, groups, rooms, privacy, synchronization, and session recovery. Tutti Frutti has its own setup, answer, and review flow. The platform uses Next.js, Supabase, and PostgreSQL.
 
 ## Product and architecture decisions
 

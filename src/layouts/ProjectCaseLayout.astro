@@ -478,10 +478,9 @@ const externalLinks = [
 
   .case-content :global(figure),
   .case-content :global(.wide) {
-    margin: 1.5rem 0 1.5rem 50%;
+    margin: 1.5rem auto;
     max-width: none;
-    transform: translateX(-50%);
-    width: min(1040px, calc(100vw - 2rem));
+    width: min(760px, calc(100vw - 2rem));
   }
 
   .case-content :global(.case-figure) {
@@ -490,9 +489,9 @@ const externalLinks = [
 
   .case-content :global(.case-figure--screen) {
     margin: 1.5rem auto;
-    max-width: 480px;
+    max-width: 300px;
     transform: none;
-    width: min(480px, 100%);
+    width: min(300px, 100%);
   }
 
   .case-content :global(.case-figure--screen .case-figure__media) {

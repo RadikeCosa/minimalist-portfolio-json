@@ -4,6 +4,7 @@ title: "Aplicación clínica para kinesiología domiciliaria"
 description: "Aplicación clínica para organizar pacientes, tratamientos, citas y visitas domiciliarias con flujos basados en FHIR. Piloto local con datos ficticios y sin demo pública."
 locale: "es"
 alternateUrl: "/en/projects/clinical-platform/"
+repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 role: "Producto HealthTech · Análisis funcional e implementación"
 status: "Piloto local · Datos ficticios · Sin demo pública"
 problem: "Organizar pacientes, tratamientos, citas y visitas domiciliarias en flujos clínicos claros."
@@ -57,7 +58,7 @@ El registro habitual prioriza estado y respuesta e intervención realizada. Pró
 
 FHIR R4 modela los datos clínicos en el servidor. La interfaz trabaja con conceptos del producto; el adaptador traduce entre el modelo clínico y los flujos de la aplicación. Esto mantiene las dependencias y reglas de dominio fuera de las pantallas.
 
-<figure class="case-figure case-figure--crop wide">
+<figure class="case-figure case-figure--screen">
   <div class="case-figure__media">
     <img
       src="/case-studies/clinical-app/visit-fictional.png"

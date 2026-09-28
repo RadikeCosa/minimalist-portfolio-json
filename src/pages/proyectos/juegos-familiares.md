@@ -68,9 +68,21 @@ El ciclo incluye:
 
 Tutti Frutti suma un segundo juego presencial a la plataforma. El grupo crea o abre una sala, configura la partida, responde categorías por letra y revisa las respuestas antes de comparar resultados.
 
+<figure class="case-figure case-figure--screen">
+  <img
+    src="/case-studies/juegos-familiares/tutti-frutti-round.png"
+    alt="Partida de Tutti Frutti en una sala, con la letra de la ronda y campos para responder cinco categorías."
+    width="1416"
+    height="4722"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Partida de demostración: cada persona completa sus respuestas desde su teléfono.</figcaption>
+</figure>
+
 ## Mi aporte
 
-Diseñé las reglas, estados y recorridos de cada juego, y desarrollé sus experiencias mobile-first. Impostor incluye identidad, grupos, salas, privacidad, sincronización, recuperación de sesión y PWA. Tutti Frutti tiene su propio flujo de configuración, respuestas y revisión. La plataforma usa Next.js, Supabase y PostgreSQL.
+Diseñé las reglas, estados y recorridos de cada juego, y desarrollé sus experiencias mobile-first. La plataforma incluye un manifest y un service worker para instalarse y guardar recursos estáticos; las partidas requieren conexión y no funcionan offline. Impostor incluye identidad, grupos, salas, privacidad, sincronización y recuperación de sesión. Tutti Frutti tiene su propio flujo de configuración, respuestas y revisión. La plataforma usa Next.js, Supabase y PostgreSQL.
 
 ## Decisiones de producto y arquitectura
 

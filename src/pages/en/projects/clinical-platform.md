@@ -4,6 +4,7 @@ title: "Clinical App for Home Rehabilitation"
 description: "A clinical application for organizing patients, treatment, appointments, and home visits through FHIR-based workflows. Local pilot using fictional data, with no public demo."
 locale: "en"
 alternateUrl: "/proyectos/plataforma-clinica/"
+repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 role: "HealthTech product · Functional analysis and implementation"
 status: "Local pilot · Fictional data · No public demo"
 problem: "Organize patients, treatment, appointments, and home visits into clear clinical workflows."
@@ -57,7 +58,7 @@ The usual record prioritizes patient status and response, and the intervention p
 
 FHIR R4 models clinical data on the server. The interface works with product concepts, while an adapter translates between the clinical model and application workflows. This keeps domain rules and dependencies out of the screens.
 
-<figure class="case-figure case-figure--crop wide">
+<figure class="case-figure case-figure--screen">
   <div class="case-figure__media">
     <img
       src="/case-studies/clinical-app/visit-fictional.png"
