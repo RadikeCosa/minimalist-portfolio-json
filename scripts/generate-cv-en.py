@@ -90,19 +90,19 @@ story = [
     ),
     *section_title("Profile"),
     Paragraph(
-        "I analyze needs and develop digital products for real workflows. Since 2020, I have designed "
-        "and built web solutions focused on workflows, business rules, data, and quality. I bring more "
-        "than 20 years of healthcare experience in professional practice, coordination, and service "
-        "review to HealthTech projects.",
+        "I analyze needs and build digital products for real workflows. Since 2020, I have designed "
+        "and implemented my own web products and independent work with TypeScript, JavaScript, React, "
+        "and Next.js. I work from workflows and states through implementation and quality, bringing "
+        "more than 20 years of healthcare experience to HealthTech projects.",
         body,
     ),
     *section_title("Selected projects"),
     item(
         "Clinical platform for home rehabilitation",
-        "Tailored product · HealthTech | 2020 - Present | Next.js, TypeScript, FHIR, Vitest",
+        "In development since 2020 · Local pilot · Fictional data · No public demo | Next.js, TypeScript, HAPI FHIR R4, Vitest, Playwright",
         [
-            "Structured inquiry intake and definition of the patient - treatment - visit workflow.",
-            "Locally modeled clinical workflows with FHIR, business rules, validation, testing, and documentation.",
+            "Structured workflows for inquiries, patients, treatment plans, and visits, including forms, validation, and follow-up.",
+            "Modeled information with FHIR R4 and integrated HAPI FHIR locally, with automated tests and documentation.",
             '<link href="https://ramirocosa.is-a.dev/en/projects/clinical-platform/" color="#136B5C">Case study</link>  |  '
             '<link href="https://github.com/RadikeCosa/kinesiologiaadomicilio" color="#136B5C">Code</link>',
         ],
@@ -112,7 +112,7 @@ story = [
         "Home rehabilitation landing page",
         "Public site · Analysis and implementation | Next.js, TypeScript, Tailwind CSS",
         [
-            "A public website guiding inquiries for a home-rehabilitation service in Neuquén.",
+            "Responsive landing page for a home-rehabilitation service in Neuquén, with technical SEO, analytics, and WhatsApp contact.",
             '<link href="https://ramirocosa.is-a.dev/en/projects/home-rehabilitation-landing/" color="#136B5C">Case study</link>  |  '
             '<link href="https://kinesiologiaadomicilio.vercel.app/" color="#136B5C">Live site</link>  |  '
             '<link href="https://github.com/RadikeCosa/kinesiologiaadomicilio" color="#136B5C">Code</link>',
@@ -121,10 +121,11 @@ story = [
     Spacer(1, 2),
     item(
         "Family Games",
-        "Two games published | Impostor: 100+ games played | Next.js, TypeScript, Supabase, PostgreSQL",
+        "Two games published | Next.js, TypeScript, Supabase, PostgreSQL",
         [
-            "Mobile-first platform with Impostor and Tutti Frutti, multi-device rooms, and synchronized play.",
-            "Impostor: private roles, voting, scoring, PostgreSQL, RLS/RPCs, Realtime, and testing.",
+            "Designed mobile-first flows to set up and play Impostor and Tutti Frutti across multiple phones.",
+            "Impostor validates roles, voting, and scoring with PostgreSQL, RLS, and RPCs; Realtime syncs play and sessions recover after disconnections.",
+            "Impostor has been played in more than 100 family games; observing them helped refine copy and flows.",
             '<link href="https://ramirocosa.is-a.dev/en/projects/family-games/" color="#136B5C">Case study</link>  |  '
             '<link href="https://juegos-familiares.vercel.app/" color="#136B5C">Live site</link>  |  '
             '<link href="https://github.com/RadikeCosa/juegos-familiares" color="#136B5C">Code</link>',
@@ -135,7 +136,8 @@ story = [
         "Fira Estudio",
         "Independent work | Next.js, TypeScript, Supabase, Playwright",
         [
-            "Web product shifted from e-commerce to a catalog when the business could not support online sales operations.",
+            "Designed and built a responsive catalog, adapting the scope from e-commerce to fit the business's operating needs.",
+            "Worked on accessibility, SEO, metadata, and unit and E2E tests.",
             '<link href="https://ramirocosa.is-a.dev/en/projects/fira-estudio/" color="#136B5C">Case study</link>  |  '
             '<link href="https://fira-estudio-cyan.vercel.app/" color="#136B5C">Live site</link>  |  '
             '<link href="https://github.com/RadikeCosa/fira-estudio" color="#136B5C">Code</link>',
@@ -143,10 +145,9 @@ story = [
     ),
     *section_title("Areas of work"),
     Paragraph(
-        "<b>Processes and operations:</b> discovery, coordination, documentation, communication, and priorities.<br/>"
-        "<b>Analysis and product:</b> workflows, states, business rules, scope, and operational UX.<br/>"
-        "<b>Development and data:</b> Next.js, React, TypeScript, Node.js, PostgreSQL, Supabase, and FHIR R4.<br/>"
-        "<b>Quality:</b> unit and E2E testing, RLS/authorization, documentation, and maintenance.",
+        "<b>Product and UX:</b> discovery, workflows, states, business rules, scope, and operational experience.<br/>"
+        "<b>Frontend and data:</b> TypeScript, JavaScript, React, Next.js, HTML/CSS, PostgreSQL, and Supabase.<br/>"
+        "<b>Quality:</b> Vitest, Playwright, unit and E2E testing, RLS/authorization, Git, and documentation.",
         compact,
     ),
     PageBreak(),
@@ -154,10 +155,10 @@ story = [
     Paragraph("Healthcare experience since 2004 and digital products since 2020.", meta),
     item(
         "Digital product development",
-        "Own products and independent work | 2020 - Present",
+        "Own products and independent work · Alongside healthcare practice | 2020 - Present",
         [
-            "Needs analysis, workflow and rule definition, web implementation, and data modeling.",
-            "Testing, documentation, version control, deployment, and maintenance of products in use.",
+            "Needs analysis and workflow and business-rule definition; web development and data modeling.",
+            "Automated testing, documentation, version control, deployment, and maintenance.",
         ],
     ),
     Spacer(1, 7),
@@ -165,9 +166,8 @@ story = [
         "Healthcare service coordination, review, and processes",
         "Alegra Salud and other home care services | 2013 - 2024",
         [
-            "Coordination across patients, families, clinicians, and administrative teams.",
-            "Review of service delivery and identification of operational and documentation needs.",
-            "Contribution to process definition and the joint creation of a palliative care service area.",
+            "Coordinated patients, families, clinicians, and administrative teams; reviewed service delivery and documentation needs.",
+            "Took part in the joint creation of a palliative care service area.",
         ],
     ),
     Spacer(1, 7),
@@ -175,9 +175,8 @@ story = [
         "Clinical practice and rehabilitation",
         "Independent practice | 2004 - Present",
         [
-            "Functional assessment, treatment planning, follow-up, and documentation.",
-            "Worked with different teams and high-performance athletes on recovery and annual planning.",
-            "Clinic-based practice through 2013; continued practice outside clinics thereafter.",
+            "Functional assessment, treatment planning, and follow-up; clinic-based work through 2013, followed by practice outside clinic settings.",
+            "Clinical and sports rehabilitation with different teams and high-performance athletes.",
         ],
     ),
     *section_title("Education"),
