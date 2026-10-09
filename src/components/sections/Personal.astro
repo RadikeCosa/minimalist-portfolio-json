@@ -1,0 +1,15 @@
+---
+import Section from "@/components/Section.astro";
+import type { Language } from "@/i18n/types";
+interface Props { lang: Language }
+const { lang } = Astro.props;
+const en = lang === "en";
+---
+<Section id="about" title={en ? "A path into development" : "Un recorrido hacia el desarrollo"}>
+  <div class="personal-copy">
+    <p>{en ? "I came to web development through healthcare. Working with patients, families, and professional teams taught me to listen, organise complex processes, and make decisions within real constraints." : "Llegué al desarrollo web desde la salud. El trabajo con pacientes, familias y equipos profesionales me enseñó a escuchar, ordenar procesos complejos y tomar decisiones dentro de restricciones reales."}</p>
+    <p>{en ? "Since 2020, I have been building web products and studying how to make them work better. I bring that experience to healthcare projects, games, and independent work." : "Desde 2020 desarrollo productos web y me formo para entender cómo hacerlos funcionar mejor. Aplico ese recorrido en proyectos de salud, juegos y trabajos independientes."}</p>
+    <a class="text-link" href={en ? "/en/about/" : "/sobre-mi/"}>{en ? "More about my background" : "Más sobre mi recorrido"}</a>
+  </div>
+</Section>
+<style>.personal-copy { max-width: 65ch; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }</style>

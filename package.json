@@ -10,13 +10,19 @@
     "generate:cv": "python3 scripts/generate-cv-es.py && python3 scripts/generate-cv-en.py",
     "preview": "astro preview",
     "verify": "npm run build && node scripts/verify-built-site.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "verify:browser": "node scripts/verify-browser.mjs",
+    "generate:social": "node scripts/generate-social.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
-    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@astrojs/markdown-satteri": "^0.4.1",
+    "@fontsource-variable/archivo": "^5.3.0",
     "astro": "^7.3.2",
     "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.64.0"
   }
 }

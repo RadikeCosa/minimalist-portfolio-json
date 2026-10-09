@@ -3,9 +3,9 @@ import type { Language } from "@/i18n/types";
 const content = {
   es: {
     hero: {
-      title: "Analizo necesidades y construyo productos digitales.",
+      title: "Desarrollo web. Del problema al producto.",
       description:
-        "Analizo procesos, defino flujos y reglas de negocio, e implemento soluciones web para necesidades concretas. Mi experiencia en salud aporta una especialización en HealthTech.",
+        "Entiendo necesidades, defino flujos y desarrollo soluciones web. Combino implementación técnica y análisis de procesos, con experiencia en salud y proyectos de otros sectores.",
       context: "Experiencia en salud desde 2004 · Productos digitales desde 2020",
       primaryAction: "Ver proyectos",
       aboutAction: "Sobre mí",
@@ -13,11 +13,11 @@ const content = {
       secondaryAction: "Contacto",
     },
     differential: {
-      title: "Enfoque",
+      title: "Cómo trabajo",
       items: [
-        { title: "Procesos", description: "Actores, necesidades, restricciones y documentación." },
-        { title: "Análisis funcional", description: "Flujos, estados, reglas de negocio y alcance." },
-        { title: "Implementación", description: "Desarrollo web, datos, pruebas y mantenimiento." },
+        { title: "Entender el problema", description: "Escuchar, conocer a las personas y ordenar necesidades, prioridades y restricciones." },
+        { title: "Definir los flujos", description: "Traducir el problema a recorridos, estados, reglas de negocio y un alcance concreto." },
+        { title: "Implementar y validar", description: "Desarrollar por etapas, probar el comportamiento y revisar las decisiones con el uso." },
       ],
     },
     capabilities: {
@@ -31,7 +31,7 @@ const content = {
     },
     contact: {
       title: "Contacto",
-      description: "Busco oportunidades en análisis, desarrollo e implementación de productos digitales, con especialización en HealthTech y experiencia en proyectos de otros sectores.",
+      description: "Busco oportunidades laborales en desarrollo web donde pueda aportar también análisis y criterio de producto. Estoy disponible para conversar sobre proyectos independientes.",
       emailSubject: "Portfolio — oportunidad profesional",
       directTitle: "Contacto directo",
       profileTitle: "Perfil profesional",
@@ -43,8 +43,8 @@ const content = {
   },
   en: {
     hero: {
-      title: "I analyze needs and build digital products.",
-      description: "I analyze processes, define workflows and business rules, and build web solutions for real needs. My healthcare experience brings a specialization in HealthTech.",
+      title: "Web development. From problem to product.",
+      description: "I understand needs, define workflows, and build web solutions. I combine technical implementation with process analysis, drawing on healthcare experience and projects across other industries.",
       context: "Healthcare experience since 2004 · Digital products since 2020",
       primaryAction: "View projects",
       aboutAction: "About",
@@ -52,11 +52,11 @@ const content = {
       secondaryAction: "Contact",
     },
     differential: {
-      title: "Focus",
+      title: "How I work",
       items: [
-        { title: "Processes", description: "People, needs, constraints, and documentation." },
-        { title: "Functional analysis", description: "Workflows, states, business rules, and scope." },
-        { title: "Implementation", description: "Web development, data, testing, and maintenance." },
+        { title: "Understand the problem", description: "Listen, understand the people involved, and organise needs, priorities, and constraints." },
+        { title: "Define the flows", description: "Translate the problem into journeys, states, business rules, and a concrete scope." },
+        { title: "Build and validate", description: "Develop in stages, test behaviour, and revisit decisions through real use." },
       ],
     },
     capabilities: {
@@ -70,7 +70,7 @@ const content = {
     },
     contact: {
       title: "Contact",
-      description: "I’m seeking opportunities in digital product analysis, development, and implementation, with a HealthTech specialization and experience across other industries.",
+      description: "I’m looking for web development roles where I can also contribute process analysis and product thinking. I’m available to discuss independent projects too.",
       emailSubject: "Portfolio — professional opportunity",
       directTitle: "Direct contact",
       profileTitle: "Professional profile",

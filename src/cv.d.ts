@@ -130,7 +130,9 @@ type Language =
   | "Bengali"
   | string
 
-interface Projects {
+export interface Projects {
+  id: "clinical-app" | "rehabilitation-landing" | "family-games" | "fira-estudio"
+  image?: string
   name: string
   featured: boolean
   badge?: string
@@ -151,4 +153,4 @@ interface References {
   reference: string
 }
 
-type Highlight = Array<String>
+type Highlight = Array<string>

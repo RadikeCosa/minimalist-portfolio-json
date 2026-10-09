@@ -1,58 +1,52 @@
-# Ramiro Nicolás Cosa — Professional Portfolio
+# Ramiro Nicolás Cosa — Portfolio
 
-Bilingual professional portfolio for HealthTech, clinical systems implementation, functional analysis, and digital product development.
+Bilingual portfolio focused on web development, with functional analysis as a differentiator and healthcare experience as part of the professional background.
 
-Live site: [ramirocosa.is-a.dev](https://ramirocosa.is-a.dev/)
+[Live site](https://ramirocosa.is-a.dev/) · [Redesign review and release checklist](docs/bauhaus-review.md)
 
-## Public content
+## Design and content
 
-- professional profile, experience, and capabilities in Spanish and English;
-- four case studies, in order: the clinical application, its public landing page, Juegos Familiares (Impostor and Tutti Frutti), and Fira Estudio. Each opens with its problem, contribution, status, and key decision;
-- coordinated general CV downloads in Spanish and English;
-- light and dark themes with responsive and keyboard-accessible layouts;
-- a focused recruiting journey with the clinical application as its primary evidence and a prefilled portfolio email subject;
-- responsive editorial styling with self-hosted IBM Plex Sans and IBM Plex Mono fonts.
+- Bauhaus-inspired geometry, neutral backgrounds and three solid primary colours.
+- One locally hosted variable family: Archivo, WOFF2, normal weights 400–900, Latin and Latin Extended. Only Latin is preloaded.
+- Light theme throughout, shared navigation, keyboard focus, reduced-motion and print layouts.
+- Selected work: Juegos Familiares, Fira Estudio and the clinical application. The rehabilitation landing page is a secondary case.
+- Twelve routes: home, About and four cases, each in Spanish and English. Existing URLs and redirects remain stable.
+- Project `id` values link to the typed presentation map in `src/content/projects.ts`. Display order is independent of the unchanged CV project order.
+- Existing CV PDFs, screenshots, project status and limits remain factual. The clinical app has no public demo; Fira is a catalogue, without online purchases.
 
-## Stack
-
-- Astro;
-- TypeScript;
-- JSON-backed professional content;
-- static deployment on Vercel.
-
-## Local development
+## Development
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-Production validation:
+## Validation
 
 ```sh
 npm run verify
+npx playwright install chromium
+npm run preview -- --host 127.0.0.1 --port 4323
+npm run verify:browser
 ```
 
-Regenerate the coordinated Spanish and English CV downloads:
+The static check verifies twelve routes, local links and anchors, metadata, locale alternates, project selection, CV files and social-image dimensions. Browser checks cover every route at 360, 390, 768, 1024 and 1440 px; axe accessibility; title wrapping; font fallback and cold loading; keyboard; text enlargement; reduced motion; touch; and print. Reports and screenshots default to `/tmp/bauhaus-browser-qa`.
+
+Optional environment variables: `PORTFOLIO_URL` for another preview, `QA_OUTPUT` for artifacts and `CHROMIUM_PATH` for an existing Chromium executable. GitHub Actions runs both checks and uploads review artifacts.
+
+Regenerate the self-contained SVG and PNG social images:
+
+```sh
+npm run generate:social
+```
+
+Regenerate CVs separately when the underlying professional content changes:
 
 ```sh
 python3 -m pip install -r requirements-cv.txt
 npm run generate:cv
 ```
 
-Both PDFs are written to `public/cv/`.
-
-This checks all twelve public routes, bilingual case-summary field parity, project order and image assets, language alternates, canonical URLs, heading hierarchy, structured data, text encoding, redirects, and social images.
-
-## Content principles
-
-- HealthTech is an area of specialization, not a limit on the profile.
-- Healthcare experience is presented as current domain knowledge.
-- Project claims remain factual and linked to public evidence.
-- Public screenshots use fictional data and exclude identifiable clinical information.
-
-The current positioning, public route inventory, visual system, and validation rules are documented in [`docs/portfolio-baseline-v2-2026-09.md`](docs/portfolio-baseline-v2-2026-09.md). The earlier v1 baseline is retained as historical context.
-
 ## Origin
 
-The project started from [midudev/minimalist-portfolio-json](https://github.com/midudev/minimalist-portfolio-json) and has since been restructured around bilingual case studies, functional analysis, product implementation, and a coordinated CV system.
+Started from [midudev/minimalist-portfolio-json](https://github.com/midudev/minimalist-portfolio-json). The previous [September baseline](docs/portfolio-baseline-v2-2026-09.md) is retained as historical context; current presentation and review criteria are described above and in the release checklist.

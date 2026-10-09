@@ -1,58 +1,36 @@
 ---
-import Section from "../Section.astro";
-import { getLangFromUrl, getCV } from "@/i18n/utils";
-import type { Language } from "@/i18n/types";
+import Section from "@/components/Section.astro";
+import { getCV } from "@/i18n/utils";
 import { getHomeContent } from "@/content/home";
-import ActionIcon from "@/components/ActionIcon.astro";
-
-interface Props { lang?: Language; }
+import type { Language } from "@/i18n/types";
+interface Props { lang: Language }
 const { lang } = Astro.props;
-const currentLang = lang || getLangFromUrl(Astro.url);
-const { contact } = getHomeContent(currentLang);
-const { basics } = await getCV(currentLang);
-const linkedin = basics.profiles.find(({ network }) => network === "LinkedIn");
-const github = basics.profiles.find(({ network }) => network === "GitHub");
-const phoneHref = basics.phone.replace(/[^\d+]/g, "");
-const cvHref = currentLang === "en"
-  ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf"
-  : "/cv/CV_Ramiro_Nicolas_Cosa.pdf";
+const en = lang === "en";
+const { contact } = getHomeContent(lang);
+const { basics } = await getCV(lang);
+const cvHref = en ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf" : "/cv/CV_Ramiro_Nicolas_Cosa.pdf";
 const emailHref = `mailto:${basics.email}?subject=${encodeURIComponent(contact.emailSubject)}`;
+const profiles = ["LinkedIn", "GitHub"].map(network => basics.profiles.find(p => p.network === network)).filter(p => p !== undefined);
 ---
-
 <Section id="contact" title={contact.title}>
-  <div class="contact-copy">
+  <div class="contact-layout">
     <p>{contact.description}</p>
-  </div>
-  <div class="contact-groups">
-    <div class="contact-group">
-      <h3>{contact.directTitle}</h3>
-      <address class="contact-links">
-        <a href={emailHref}><ActionIcon name="email" />{contact.emailAction}</a>
-        <a href={`tel:${phoneHref}`}><ActionIcon name="phone" />{basics.phone}</a>
-      </address>
-    </div>
-    <div class="contact-group">
-      <h3>{contact.profileTitle}</h3>
-      <div class="contact-links">
-        <a href={cvHref} download><ActionIcon name="download" />{contact.cvAction}</a>
-        {linkedin && <a href={linkedin.url} target="_blank" rel="noopener noreferrer"><ActionIcon name="linkedin" />{contact.linkedinAction}</a>}
-        {github && <a href={github.url} target="_blank" rel="noopener noreferrer"><ActionIcon name="github" />{contact.githubAction}</a>}
-      </div>
+    <div class="contact-actions">
+      <a class="button button-primary" href={emailHref}>{contact.emailAction}</a>
+      <nav class="contact-links" aria-label={en ? "Professional profiles and CV" : "Perfiles profesionales y CV"}>
+        {profiles.map(profile => <a href={profile.url} target="_blank" rel="noopener noreferrer">{profile.network}<span class="sr-only">{en ? " (opens in a new tab)" : " (abre una pestaña nueva)"}</span></a>)}
+        <a href={cvHref} download>{contact.cvAction}</a>
+      </nav>
+      <address><a href={`tel:${basics.phone.replace(/[^\d+]/g, "")}`}>{basics.phone}</a></address>
     </div>
   </div>
 </Section>
-
 <style>
-  .contact-copy { margin-bottom: 22px; max-width: 64ch; }
-  .contact-groups { display: grid; gap: 20px 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contact-group { border-top: 1px solid var(--border); padding-top: 12px; }
-  .contact-group h3 { font-size: 0.96rem; margin-bottom: 12px; }
-  .contact-links { align-items: flex-start; display: flex; flex-direction: column; font-style: normal; gap: 10px; }
-  a { align-items: center; color: var(--text-primary); display: inline-flex; flex-direction: row; font-size: 0.9rem; font-weight: 650; gap: 8px; line-height: 1.4; min-height: 44px; text-decoration: none; white-space: nowrap; }
-  a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  a:focus-visible { border-radius: 4px; outline: 2px solid var(--accent); outline-offset: 3px; }
-  @media (width <= 700px) {
-    .contact-groups { grid-template-columns: 1fr; }
-    .contact-links { flex-direction: row; flex-wrap: wrap; gap: 10px 14px; }
-  }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; border-top: 2px solid var(--ink); padding-top: 32px; }
+  .contact-layout > p { max-width: 52ch; }
+  .contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .contact-links a,address a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; }
+  address { font-style: normal; }
+  @media (width < 768px) { .contact-layout { grid-template-columns: 1fr; gap: 24px; } }
 </style>

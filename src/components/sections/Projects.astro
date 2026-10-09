@@ -1,303 +1,78 @@
 ---
-import Section from "../Section.astro";
-import { getLangFromUrl, useTranslations, getCV } from "@/i18n/utils";
+import Section from "@/components/Section.astro";
+import { getCV } from "@/i18n/utils";
+import { presentProjects } from "@/content/projects";
 import type { Language } from "@/i18n/types";
-import ActionIcon from "@/components/ActionIcon.astro";
-
-interface Props {
-  lang?: Language;
-}
-
+import type { Projects } from "@/cv";
+interface Props { lang: Language }
 const { lang } = Astro.props;
-const currentLang = lang || getLangFromUrl(Astro.url);
-const t = useTranslations(currentLang);
-const cvData = await getCV(currentLang);
-
-// Usar los datos del CV según el idioma actual
-const { projects } = cvData;
+const en = lang === "en";
+const { projects } = await getCV(lang);
+const presented = presentProjects(projects as Projects[], lang);
+const featured = presented.filter(p => p.level === "featured");
+const secondary = presented.find(p => p.level === "secondary");
+const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical-app": [750,960], "rehabilitation-landing": [1440,1000] } as const;
 ---
-
-<Section id="projects" title={t("section.projects")}>
-  <ul class="project-list">
-    {
-      projects.map(
-        ({ url, description, highlights, name, featured, badge, github, caseStudyUrl, image }) => {
-          return (
-            <li class:list={["project-item", { featured }]}>
-              <article>
-                {image && (caseStudyUrl ? (
-                  <a
-                    class="project-preview-link"
-                    href={caseStudyUrl}
-                    aria-label={`${t("project.caseStudyTitle")} ${name}`}
-                  >
-                    <img class="project-preview" src={image} alt="" loading="lazy" decoding="async" />
-                  </a>
-                ) : (
-                  <img class="project-preview" src={image} alt="" loading="lazy" decoding="async" />
-                ))}
-                <header>
-                  {badge && <p class="project-badge">{badge}</p>}
-                  <h3>{name}</h3>
-                  <p>{description}</p>
-                </header>
-                <footer>
-                  <ul class="project-stack" aria-label={t("project.stackLabel")}>
-                    {highlights.map((highlight) => {
-                      return <li>{highlight}</li>;
-                    })}
-                  </ul>
-                  <nav class="project-actions" aria-label={name}>
-                    {caseStudyUrl && (
-                      <a
-                        class="project-case-link"
-                        href={caseStudyUrl}
-                        title={`${t("project.caseStudyTitle")} ${name}`}
-                      >
-                        {t("project.caseStudy")}
-                      </a>
-                    )}
-                    {(url || github) && <div class="project-links">
-                      {url && (
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`${t("project.visit")} ${name}`}
-                        >
-                          <ActionIcon name="external" size={13} />
-                          {t("project.visitLabel")}
-                        </a>
-                      )}
-                      {github && (
-                        <a
-                          href={github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={`${t("project.source")} ${name}`}
-                        >
-                          <ActionIcon name="github" size={13} />
-                          {t("project.sourceLabel")}
-                        </a>
-                      )}
-                    </div>}
-                  </nav>
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
-    }
+<Section id="projects" title={en ? "Selected projects" : "Proyectos seleccionados"}>
+  <ul class="project-grid">
+    {featured.map(project => (
+      <li>
+        <a class:list={["project-card", "pressable", `project-${project.color}`]} href={project.caseStudyUrl} aria-labelledby={`name-${project.id}`}>
+          <div class="project-heading">
+            <span class="eyebrow" aria-hidden="true">{String(project.order).padStart(2,"0")}</span>
+            <h3 id={`name-${project.id}`}>{project.name}</h3>
+          </div>
+          <div class="project-image">
+            <img src={project.image} alt="" width={sizes[project.id][0]} height={sizes[project.id][1]} loading="lazy" decoding="async" />
+          </div>
+          <div class="project-copy">
+            <p class="project-status">{project.badge}</p>
+            <p>{project.contribution}</p>
+            <ul class="project-stack" aria-label={en ? "Technologies" : "Tecnologías"}>{project.highlights.slice(0,4).map(item => <li>{item}</li>)}</ul>
+            <span class="project-cta">{en ? "View case study" : "Ver caso de estudio"}<span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </li>
+    ))}
   </ul>
+  {secondary && (
+    <article class="secondary-project">
+      <img src={secondary.image} alt={en ? "Home rehabilitation website" : "Sitio de rehabilitación domiciliaria"} width="1440" height="1000" loading="lazy" decoding="async" />
+      <div>
+        <p class="eyebrow">{en ? "Also built" : "También desarrollé"}</p>
+        <h3>{secondary.name}</h3>
+        <p>{secondary.contribution}</p>
+        <a class="text-link" href={secondary.caseStudyUrl}>{en ? "View case study" : "Ver caso de estudio"}</a>
+      </div>
+    </article>
+  )}
 </Section>
-
 <style>
-  .project-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.2rem, 3vw, 2.4rem);
-  }
-
-  .project-item.featured {
-    grid-column: 1 / -1;
-  }
-
-  article {
-    border-top: 1px solid var(--border);
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-    padding-top: 16px;
-    height: 100%;
-  }
-
-  .featured article {
-    display: grid;
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-    align-items: center;
-    column-gap: clamp(1.5rem, 4vw, 3.5rem);
-    padding-top: 20px;
-  }
-
-  .project-preview {
-    background: var(--bg-secondary);
-    display: block;
-    height: auto;
-    max-height: 430px;
-    object-fit: contain;
-    object-position: top center;
-    width: 100%;
-  }
-
-  .project-preview-link {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    display: block;
-    overflow: hidden;
-  }
-
-  .project-preview-link:focus-visible {
-    border-radius: 8px;
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-  }
-
-  .project-preview-link .project-preview {
-    transition: transform 180ms ease;
-  }
-
+  .project-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+  .project-grid > li { min-width: 0; display: flex; }
+  .project-card { --press-shadow: 8px; border: 4px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); display: flex; flex-direction: column; color: var(--ink); text-decoration: none; width: 100%; }
+  .project-heading { display: flex; flex-direction: column; gap: 20px; min-height: 176px; padding: 24px 20px; border-bottom: 4px solid var(--ink); }
+  .project-heading h3 { color: inherit; text-transform: uppercase; font-size: clamp(20px,1.8vw,25px); }
+  .project-red .project-heading { background: var(--red); color: var(--paper); }
+  .project-yellow .project-heading { background: var(--yellow); }
+  .project-blue .project-heading { background: var(--blue); color: var(--paper); }
+  .project-image { height: 220px; border-bottom: 2px solid var(--ink); padding: 16px; display: flex; justify-content: center; align-items: center; }
+  .project-image img { width: 100%; height: 100%; object-fit: contain; }
+  .project-copy { display: flex; flex-direction: column; flex: 1; gap: 18px; padding: 24px 20px; }
+  .project-copy p { font-size: 16px; }
+  .project-copy .project-status { font-size: 12px; font-weight: 600; }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: auto; }
+  .project-stack li { font-size: 12px; font-weight: 700; }
+  .project-cta { display: flex; justify-content: space-between; gap: 12px; align-items: center; border-top: 2px solid var(--ink); padding-top: 16px; font-size: 14px; font-weight: 700; }
+  .project-cta span { font-size: 22px; }
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .project-preview-link:hover .project-preview {
-      transform: scale(1.025);
-    }
+    .project-cta span { transition: transform 120ms ease-out; }
+    .project-card:hover .project-cta span { transform: translate(2px,-2px); }
   }
-
-  .project-item:not(.featured) .project-preview {
-    aspect-ratio: 16 / 9;
-    max-height: none;
-  }
-
-  .featured article header { grid-column: 1; grid-row: 1; }
-  .featured article footer { grid-column: 1; grid-row: 2; }
-  .featured article .project-preview-link,
-  .featured article > .project-preview { grid-column: 2; grid-row: 1 / 3; }
-
-  article header {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 7px;
-  }
-
-  .project-badge {
-    align-items: center;
-    color: var(--text-muted);
-    display: inline-flex;
-    font-size: 0.76rem;
-    font-weight: 600;
-    gap: 6px;
-    line-height: 1.2;
-    margin-bottom: 0;
-    padding: 0;
-  }
-
-  .project-badge::before {
-    background: var(--accent);
-    border-radius: 999px;
-    content: "";
-    height: 5px;
-    opacity: 1;
-    width: 5px;
-  }
-
-  article h3 {
-    font-size: clamp(1.3rem, 1.8vw, 1.8rem);
-    letter-spacing: -0.025em;
-    line-height: 1.2;
-  }
-
-  article a {
-    color: var(--text-primary);
-  }
-
-  article a:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  article a:focus-visible {
-    border-radius: 4px;
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-  }
-
-  article p {
-    font-size: 0.98rem;
-    line-height: 1.55;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .project-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-  }
-
-  .project-stack li {
-    border-radius: 6px;
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-    font-size: 0.74rem;
-    font-weight: 500;
-    line-height: 1.2;
-    padding: 0.28rem 0.62rem;
-  }
-
-  .project-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .project-case-link {
-    align-self: flex-start;
-    align-items: center;
-    display: inline-flex;
-    font-size: 0.9rem;
-    font-weight: 700;
-    line-height: 1.3;
-    min-height: 44px;
-    padding-block: 8px;
-  }
-
-  .project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  .project-links a {
-    align-items: center;
-    display: inline-flex;
-    flex-direction: row;
-    gap: 5px;
-    line-height: 1.3;
-    min-height: 44px;
-    padding-block: 8px;
-    white-space: nowrap;
-  }
-
-  @media (width <= 700px) {
-    .project-list {
-      gap: 2rem;
-      grid-template-columns: 1fr;
-    }
-
-    .featured article {
-      align-items: stretch;
-      display: flex;
-      flex-direction: column;
-      padding-top: 16px;
-    }
-
-    .project-preview { max-height: 280px; }
-    article { gap: 14px; }
-  }
-
-  @media print {
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      margin-inline: 0;
-    }
-  }
+  .secondary-project { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 32px; align-items: center; border-block: 2px solid var(--ink); padding-block: 32px; margin-top: 48px; }
+  .secondary-project img { border: 2px solid var(--ink); }
+  .secondary-project > div { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  @media (width < 1024px) { .project-grid { grid-template-columns: 1fr; gap: 32px; } .project-heading { min-height: 0; } .project-image { height: 280px; } }
+  @media (width < 768px) { .project-card { --press-shadow: 4px; box-shadow: 4px 4px 0 var(--ink); } .secondary-project { grid-template-columns: 1fr; gap: 24px; } .secondary-project img { max-width: 320px; } }
+  @media print { .project-heading { background: var(--paper) !important; color: var(--ink) !important; } .project-grid { grid-template-columns: 1fr; } .project-card { break-inside: avoid; } .project-image { height: 180px; } }
 </style>

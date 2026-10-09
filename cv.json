@@ -155,92 +155,162 @@
     {
       "name": "Flujos clínicos",
       "level": "Avanzado",
-      "keywords": ["Atención domiciliaria", "Coordinación clínica", "Auditoría"]
+      "keywords": [
+        "Atención domiciliaria",
+        "Coordinación clínica",
+        "Auditoría"
+      ]
     },
     {
       "name": "Análisis funcional",
       "level": "Intermedio",
-      "keywords": ["Relevamiento", "Reglas de negocio", "Producto"]
+      "keywords": [
+        "Relevamiento",
+        "Reglas de negocio",
+        "Producto"
+      ]
     },
     {
       "name": "Diseño de procesos",
       "level": "Avanzado",
-      "keywords": ["Operaciones", "Documentación", "Mejora continua"]
+      "keywords": [
+        "Operaciones",
+        "Documentación",
+        "Mejora continua"
+      ]
     },
     {
       "name": "UX operativa",
       "level": "Intermedio",
-      "keywords": ["Flujos de trabajo", "Usuarios internos", "Accesibilidad"]
+      "keywords": [
+        "Flujos de trabajo",
+        "Usuarios internos",
+        "Accesibilidad"
+      ]
     },
     {
       "name": "FHIR",
       "level": "Intermedio",
-      "keywords": ["HAPI FHIR", "Interoperabilidad", "HealthTech"]
+      "keywords": [
+        "HAPI FHIR",
+        "Interoperabilidad",
+        "HealthTech"
+      ]
     },
     {
       "name": "Testing",
       "level": "Intermedio",
-      "keywords": ["Vitest", "Testing manual", "Regresión"]
+      "keywords": [
+        "Vitest",
+        "Testing manual",
+        "Regresión"
+      ]
     },
     {
       "name": "Documentación",
       "level": "Avanzado",
-      "keywords": ["Decisiones técnicas", "Procesos", "Contratos"]
+      "keywords": [
+        "Decisiones técnicas",
+        "Procesos",
+        "Contratos"
+      ]
     },
     {
       "name": "Analytics",
       "level": "Intermedio",
-      "keywords": ["GA4", "Eventos", "Conversión"]
+      "keywords": [
+        "GA4",
+        "Eventos",
+        "Conversión"
+      ]
     },
     {
       "name": "Next.js",
       "level": "Intermedio",
-      "keywords": ["App Router", "Server Components", "Server Actions"]
+      "keywords": [
+        "App Router",
+        "Server Components",
+        "Server Actions"
+      ]
     },
     {
       "name": "React",
       "level": "Intermedio",
-      "keywords": ["UI", "Componentes", "Estado"]
+      "keywords": [
+        "UI",
+        "Componentes",
+        "Estado"
+      ]
     },
     {
       "name": "TypeScript",
       "level": "Intermedio",
-      "keywords": ["Tipado", "Modelado", "Frontend", "Backend"]
+      "keywords": [
+        "Tipado",
+        "Modelado",
+        "Frontend",
+        "Backend"
+      ]
     },
     {
       "name": "JavaScript",
       "level": "Intermedio",
-      "keywords": ["Frontend", "Backend"]
+      "keywords": [
+        "Frontend",
+        "Backend"
+      ]
     },
     {
       "name": "Node.js",
       "level": "Intermedio",
-      "keywords": ["Backend", "APIs", "Herramientas"]
+      "keywords": [
+        "Backend",
+        "APIs",
+        "Herramientas"
+      ]
     },
     {
       "name": "PostgreSQL",
       "level": "Intermedio",
-      "keywords": ["Datos relacionales", "Persistencia"]
+      "keywords": [
+        "Datos relacionales",
+        "Persistencia"
+      ]
     },
     {
       "name": "Prisma",
       "level": "Intermedio",
-      "keywords": ["ORM", "Migraciones", "Modelado de datos"]
+      "keywords": [
+        "ORM",
+        "Migraciones",
+        "Modelado de datos"
+      ]
     },
     {
       "name": "Supabase",
       "level": "Intermedio",
-      "keywords": ["PostgreSQL", "Realtime", "RLS"]
+      "keywords": [
+        "PostgreSQL",
+        "Realtime",
+        "RLS"
+      ]
     },
     {
       "name": "Git",
       "level": "Intermedio",
-      "keywords": ["Control de versiones", "Colaboración"]
+      "keywords": [
+        "Control de versiones",
+        "Colaboración"
+      ]
     },
     {
       "name": "Vercel",
       "level": "Intermedio",
-      "keywords": ["Despliegue", "Observabilidad", "Analytics"]
+      "keywords": [
+        "Despliegue",
+        "Observabilidad",
+        "Analytics"
+      ]
     }
   ],
   "languages": [
@@ -256,7 +326,11 @@
   "interests": [
     {
       "name": "Salud digital",
-      "keywords": ["HealthTech", "Interoperabilidad", "Procesos clínicos"]
+      "keywords": [
+        "HealthTech",
+        "Interoperabilidad",
+        "Procesos clínicos"
+      ]
     }
   ],
   "references": [],
@@ -265,7 +339,7 @@
       "name": "Aplicación clínica para kinesiología domiciliaria",
       "featured": true,
       "image": "/case-studies/clinical-app/today-card-fictional.webp",
-    "badge": "Piloto local · Datos ficticios · Sin demo pública",
+      "badge": "Piloto local · Datos ficticios · Sin demo pública",
       "description": "Aplicación clínica para organizar pacientes, tratamientos, citas y visitas domiciliarias.",
       "highlights": [
         "Next.js 16",
@@ -275,14 +349,15 @@
         "Playwright"
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
-      "caseStudyUrl": "/proyectos/plataforma-clinica/"
+      "caseStudyUrl": "/proyectos/plataforma-clinica/",
+      "id": "clinical-app"
     },
     {
       "name": "Landing para kinesiología domiciliaria",
       "featured": false,
       "image": "/case-studies/kinesiology-landing/cover-2026-09-27.webp",
       "badge": "Sitio público · En producción",
-    "description": "Landing pública que orienta consultas para un servicio de rehabilitación domiciliaria en Neuquén.",
+      "description": "Landing pública que orienta consultas para un servicio de rehabilitación domiciliaria en Neuquén.",
       "highlights": [
         "Next.js 15",
         "TypeScript",
@@ -291,7 +366,8 @@
       ],
       "github": "https://github.com/RadikeCosa/kinesiologiaadomicilio",
       "caseStudyUrl": "/proyectos/landing-kinesiologia/",
-      "url": "https://kinesiologiaadomicilio.vercel.app/"
+      "url": "https://kinesiologiaadomicilio.vercel.app/",
+      "id": "rehabilitation-landing"
     },
     {
       "name": "Juegos Familiares",
@@ -307,14 +383,15 @@
       ],
       "github": "https://github.com/RadikeCosa/juegos-familiares",
       "caseStudyUrl": "/proyectos/juegos-familiares/",
-      "url": "https://juegos-familiares.vercel.app/"
+      "url": "https://juegos-familiares.vercel.app/",
+      "id": "family-games"
     },
     {
       "name": "Fira Estudio",
       "featured": false,
       "image": "/case-studies/fira/catalog-production.webp",
       "badge": "Trabajo independiente",
-    "description": "Catálogo web para presentar productos textiles según la capacidad operativa del emprendimiento.",
+      "description": "Catálogo web para presentar productos textiles según la capacidad operativa del emprendimiento.",
       "highlights": [
         "Next.js",
         "TypeScript",
@@ -323,7 +400,8 @@
       ],
       "github": "https://github.com/RadikeCosa/fira-estudio",
       "caseStudyUrl": "/proyectos/fira-estudio/",
-      "url": "https://fira-estudio-cyan.vercel.app/"
+      "url": "https://fira-estudio-cyan.vercel.app/",
+      "id": "fira-estudio"
     }
   ]
 }

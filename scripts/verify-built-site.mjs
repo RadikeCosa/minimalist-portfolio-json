@@ -88,11 +88,12 @@ for (const pair of casePairs) {
     if (!html.includes("case-summary") || !html.includes("case-status")) {
       failures.push(`${pair[index]}: falta el resumen del caso o su estado`);
     }
+    const fieldLabels = [...html.matchAll(/<dt\b[^>]*>([\s\S]*?)<\/dt>/g)].map(match => match[1].replace(/<[^>]*>/g, "").trim());
     for (const label of labels) {
-      if (!new RegExp(`<dt\\b[^>]*>${label}</dt>`).test(html)) failures.push(`${pair[index]}: falta el campo ${label}`);
+      if (!fieldLabels.includes(label)) failures.push(`${pair[index]}: falta el campo ${label}`);
     }
   }
-  const fieldCounts = rendered.map((html) => (html.match(/<dt>/g) || []).length);
+  const fieldCounts = rendered.map((html) => (html.match(/<dt\b/g) || []).length);
   if (fieldCounts[0] !== fieldCounts[1]) failures.push(`${pair.join(" / ")}: los campos del resumen no tienen paridad`);
 }
 
@@ -109,14 +110,33 @@ for (const [page, title] of [
   if (!html.includes(`"name":"${title} | Ramiro Nicolás Cosa"`)) failures.push(`${page}: nombre JSON-LD incorrecto`);
 }
 
+for (const page of ["index.html", "en/index.html"]) {
+  const html = await readFile(join("dist", page), "utf8");
+  const order = ["name-family-games", "name-fira-estudio", "name-clinical-app"].map(id => html.indexOf(`id="${id}"`));
+  if (order.some(i => i < 0) || order.some((i,n) => n > 0 && i <= order[n-1])) failures.push(`${page}: orden de destacados incorrecto`);
+  for (const id of ["top", "projects", "approach", "about", "skills", "contact"]) {
+    if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta ancla ${id}`);
+  }
+  if (!html.includes("secondary-project")) failures.push(`${page}: falta proyecto complementario`);
+}
+for (const [page, intro] of [["sobre-mi/index.html", "Desarrollo productos web desde 2020."], ["en/about/index.html", "I have been building web products since 2020."]]) {
+  const html = await readFile(join("dist", page), "utf8");
+  if (!html.includes(intro)) failures.push(`${page}: falta presentación personal`);
+  for (const id of ["approach", "experience", "languages"]) if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta sección ${id}`);
+  if (!html.includes("Full Stack Open") || !html.includes("2004") || !html.includes("2024")) failures.push(`${page}: recorrido incompleto`);
+}
+for (const page of ["proyectos/plataforma-clinica/index.html", "en/projects/clinical-platform/index.html"]) {
+  const html = await readFile(join("dist", page), "utf8");
+  if (!html.includes("FHIR") || !html.includes("HAPI") || html.includes('class="case-links"><a href="https://kinesiologiaadomicilio.vercel.app')) failures.push(`${page}: límites del piloto clínico incorrectos`);
+}
 const homeChecks = [
-  ["index.html", "Analizo necesidades y construyo productos digitales.", "Ver proyectos"],
-  ["en/index.html", "I analyze needs and build digital products.", "View projects"],
+  ["index.html", "Desarrollo web. Del problema al producto.", "Ver proyectos"],
+  ["en/index.html", "Web development. From problem to product.", "View projects"],
 ];
 for (const [page, ...expected] of homeChecks) {
   const html = await readFile(join("dist", page), "utf8");
   for (const text of expected) {
-    if (!html.includes(text)) failures.push(`${page}: falta texto principal "${text}"`);
+    if (!html.replace(/<br\b[^>]*>/g, " ").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").includes(text)) failures.push(`${page}: falta texto principal "${text}"`);
   }
 }
 
@@ -130,12 +150,23 @@ for (const page of pages) {
     continue;
   }
 
+  if (!html.includes('class="site-header no-print"') || !html.includes('class="site-footer no-print"')) failures.push(`${page}: falta navegación compartida`);
+  if (html.includes('id="theme-toggle"') || html.includes('localStorage.getItem("theme")')) failures.push(`${page}: conserva lógica de tema oscuro`);
+  if (!/<link rel="preload"[^>]+as="font"/.test(html)) failures.push(`${page}: falta precarga de fuente`);
+  if (!html.includes('name="theme-color" content="#F0F0F0"')) failures.push(`${page}: theme-color incorrecto`);
+  for (const property of ['og:title', 'og:description', 'og:image', 'og:image:alt']) {
+    if (!new RegExp(`property="${property}" content="[^" ]`).test(html)) failures.push(`${page}: falta ${property}`);
+  }
+  for (const name of ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image', 'twitter:image:alt']) {
+    if (!new RegExp(`name="${name}" content="[^" ]`).test(html)) failures.push(`${page}: falta ${name}`);
+  }
+  for (const pdf of ["CV_Ramiro_Nicolas_Cosa.pdf", "CV_Ramiro_Nicolas_Cosa_EN.pdf"]) await stat(join("dist", "cv", pdf));
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) failures.push(`${page}: ${h1Count} títulos h1`);
   if (!/<link rel="canonical" href="https:\/\/ramirocosa\.is-a\.dev\//.test(html)) {
     failures.push(`${page}: canonical ausente o inválido`);
   }
-  if ((html.match(/hreflang=/g) || []).length !== 3) {
+  if ((html.match(/<link\b[^>]*hreflang=/g) || []).length !== 3) {
     failures.push(`${page}: alternates de idioma incompletos`);
   }
   if (!/og:image:width" content="1200"/.test(html) || !/og:image:height" content="630"/.test(html)) {
@@ -156,11 +187,26 @@ for (const image of ["portfolio-es.png", "portfolio-en.png"]) {
   try {
     const info = await stat(join("dist", "og", image));
     if (info.size === 0) failures.push(`${image}: imagen vacía`);
+    const bytes = await readFile(join("dist", "og", image));
+    if (bytes.readUInt32BE(16) !== 1200 || bytes.readUInt32BE(20) !== 630) failures.push(`${image}: dimensiones incorrectas`);
   } catch {
     failures.push(`${image}: imagen social faltante`);
   }
 }
 
+for (const page of pages) {
+  const html = await readFile(join("dist", page), "utf8");
+  for (const match of html.matchAll(/<a\b[^>]*href="([^" ]+)"/g)) {
+    const href = match[1];
+    if (/^(https?:|mailto:|tel:)/.test(href)) continue;
+    const url = new URL(href, `https://portfolio.test/${page.replace(/index.html$/, "")}`);
+    const target = url.pathname.endsWith('/') ? `${url.pathname}index.html` : url.pathname;
+    try {
+      const bytes = await readFile(join("dist", target.replace(/^\//, "")));
+      if (url.hash && !new RegExp(`id=["']${decodeURIComponent(url.hash.slice(1))}["']`).test(bytes.toString())) failures.push(`${page}: ancla inexistente ${href}`);
+    } catch { failures.push(`${page}: enlace local inexistente ${href}`); }
+  }
+}
 if (failures.length) {
   console.error(`Validación fallida:\n- ${failures.join("\n- ")}`);
   process.exit(1);
