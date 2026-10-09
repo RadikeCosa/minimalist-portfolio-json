@@ -34,7 +34,7 @@ body { margin: 32px; }
 .site-frame { max-width: 1280px; margin-inline: auto; border: 4px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); }
 main { padding: clamp(24px, 4vw, 56px); min-width: 0; }
 h1,h2,h3,h4,p,figure { margin: 0; }
-h1,h2,h3,h4 { color: var(--ink); }
+h1,h2,h3,h4 { color: var(--ink); text-wrap: balance; overflow-wrap: anywhere; }
 h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.1; font-weight: 800; text-transform: uppercase; }
 h3 { font-size: 22px; line-height: 1.2; font-weight: 800; }
 p,li,dd { font-size: 17px; line-height: 1.6; }
@@ -46,7 +46,7 @@ img { display: block; max-width: 100%; height: auto; }
 svg { flex-shrink: 0; }
 button,input,textarea,select { font: inherit; }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; box-shadow: 0 0 0 5px var(--paper); }
-a,button { -webkit-tap-highlight-color: var(--yellow); }
+a,button { touch-action: manipulation; -webkit-tap-highlight-color: var(--yellow); }
 .site-header { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 32px; padding: 20px 32px; border-bottom: 4px solid var(--ink); }
 .wordmark { display: inline-flex; align-items: center; min-height: 44px; width: fit-content; font-size: 24px; font-weight: 900; text-decoration: none; letter-spacing: -.04em; }
 .wordmark span { color: var(--red); }

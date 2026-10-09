@@ -29,7 +29,7 @@ const languages = content.languages.split(" · ");
   alternateUrl={alternateUrl}
   isProfile
 >
-  <main id="main-content" class="reading-page about-page">
+  <main tabindex="-1" id="main-content" class="reading-page about-page">
     <nav class="back no-print" aria-label={lang === "en" ? "Portfolio navigation" : "Navegación del portfolio"}>
       <a href={homeHref}>{content.back}</a>
     </nav>
