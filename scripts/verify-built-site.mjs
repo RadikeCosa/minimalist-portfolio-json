@@ -140,6 +140,23 @@ for (const [page, ...expected] of homeChecks) {
   }
 }
 
+for (const [page, title] of [
+  ["index.html", "Programador en Neuquén | Ramiro Nicolás Cosa"],
+  ["en/index.html", "Ramiro Nicolás Cosa | Web developer in Neuquén"],
+]) {
+  const html = await readFile(join("dist", page), "utf8");
+  if (!html.includes(`<title>${title}</title>`)) failures.push(`${page}: falta el título SEO local`);
+  const json = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+  const graph = json ? JSON.parse(json)["@graph"] : [];
+  const service = graph.find(entity => entity["@type"] === "Service");
+  if (service?.areaServed?.name !== "Neuquén" || service?.provider?.["@id"] !== "https://ramirocosa.is-a.dev/#person") {
+    failures.push(`${page}: datos del servicio local incompletos`);
+  }
+  if (service?.url !== `https://ramirocosa.is-a.dev/${page.startsWith("en/") ? "en/" : ""}`) {
+    failures.push(`${page}: el servicio debe apuntar a su página canónica`);
+  }
+}
+
 for (const page of pages) {
   const path = join("dist", page);
   let html;

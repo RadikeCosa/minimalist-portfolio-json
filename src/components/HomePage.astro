@@ -11,7 +11,7 @@ interface Props { lang: Language }
 const { lang } = Astro.props;
 const en = lang === "en";
 ---
-<Layout title={en ? "Ramiro Nicolás Cosa | Web development & functional analysis" : "Ramiro Nicolás Cosa | Desarrollo web y análisis funcional"} description={en ? "I build web products, from understanding the problem to implementation. Selected projects, functional analysis, and healthcare experience." : "Desarrollo productos web, desde entender el problema hasta la implementación. Proyectos seleccionados, análisis funcional y experiencia en salud."} lang={lang} alternateUrl={en ? "/" : "/en/"} isHome>
+<Layout title={en ? "Ramiro Nicolás Cosa | Web developer in Neuquén" : "Programador en Neuquén | Ramiro Nicolás Cosa"} description={en ? "Web developer based in Neuquén, Argentina. Websites, product catalogues and custom web applications, with functional analysis and healthcare experience." : "Soy Ramiro Cosa, programador en Neuquén. Desarrollo sitios web, catálogos y aplicaciones a medida. Conocé mis proyectos y contame qué necesitás."} lang={lang} alternateUrl={en ? "/" : "/en/"} isHome>
   <main tabindex="-1" id="main-content">
     <Hero lang={lang} />
     <Projects lang={lang} />

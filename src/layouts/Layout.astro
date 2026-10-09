@@ -51,8 +51,8 @@ const personEntity = {
   url: siteUrl,
   jobTitle:
     currentLang === "en"
-      ? "Web development and functional analysis"
-      : "Desarrollo web y análisis funcional",
+      ? "Web developer"
+      : "Programador web",
   description: isHome ? pageDescription : summary,
   sameAs: profiles.map(({ url }) => url),
   knowsAbout:
@@ -62,7 +62,7 @@ const personEntity = {
   address: {
     "@type": "PostalAddress",
     addressLocality: location.city,
-    addressRegion: location.city,
+    addressRegion: location.city === "Neuquén" ? "Neuquén" : location.region,
     addressCountry: location.countryCode,
   },
 };
@@ -101,6 +101,16 @@ const structuredData = isHome
           publisher: { "@id": `${siteUrl}#person` },
         },
         personEntity,
+        {
+          "@type": "Service",
+          "@id": `${siteUrl}#web-development`,
+          name: currentLang === "en" ? "Web development in Neuquén" : "Desarrollo web en Neuquén",
+          serviceType: currentLang === "en" ? "Websites, product catalogues and custom web applications" : "Sitios web, catálogos y aplicaciones web a medida",
+          description: pageDescription,
+          url: canonicalUrl,
+          provider: { "@id": `${siteUrl}#person` },
+          areaServed: { "@type": "City", name: "Neuquén", containedInPlace: { "@type": "Country", name: "Argentina" } },
+        },
       ],
     }
   : isProfile
