@@ -1,6 +1,10 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
 const font = await readFile(new URL('../node_modules/@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2',import.meta.url));
+const mark = await readFile(new URL('../public/brand-mark.svg',import.meta.url),'utf8');
+const markContent = mark.match(/<svg\b[^>]*>([\s\S]*)<\/svg>/)?.[1];
+if (!markContent) throw new Error('Invalid brand mark SVG');
+await writeFile(new URL('../public/favicon.svg',import.meta.url),mark);
 const browser = await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH} : {})});
 try {
   const page = await browser.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1});
@@ -20,10 +24,7 @@ try {
 <text x="72" y="196" font-size="18" font-weight="700" letter-spacing="2">${label}</text>
 <text x="66" y="306" font-size="76" font-weight="900" letter-spacing="-2">${first}</text>
 <text x="66" y="392" font-size="76" font-weight="900" letter-spacing="-2" fill="#1040C0">${second}</text>
-<circle cx="930" cy="249" r="86" fill="#D02020" stroke="#121212" stroke-width="4"/>
-<rect x="951" y="190" width="156" height="156" fill="#1040C0" stroke="#121212" stroke-width="4"/>
-<path d="M986 342 1055 462H917Z" fill="#F0C020" stroke="#121212" stroke-width="4"/>
-<path d="M844 368H1110" stroke="#121212" stroke-width="4"/>
+<svg x="844" y="166" width="266" height="296" viewBox="0 0 128 128">${markContent}</svg>
 <text x="72" y="535" font-size="24" font-weight="600">ramirocosa.is-a.dev</text>
 </svg>`;
     const target = new URL(`../public/og/portfolio-${lang}`,import.meta.url);

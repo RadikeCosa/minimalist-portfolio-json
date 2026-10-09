@@ -10,9 +10,13 @@
 <text x="72" y="196" font-size="18" font-weight="700" letter-spacing="2">DESARROLLO WEB</text>
 <text x="66" y="306" font-size="76" font-weight="900" letter-spacing="-2">DEL PROBLEMA</text>
 <text x="66" y="392" font-size="76" font-weight="900" letter-spacing="-2" fill="#1040C0">AL PRODUCTO.</text>
-<circle cx="930" cy="249" r="86" fill="#D02020" stroke="#121212" stroke-width="4"/>
-<rect x="951" y="190" width="156" height="156" fill="#1040C0" stroke="#121212" stroke-width="4"/>
-<path d="M986 342 1055 462H917Z" fill="#F0C020" stroke="#121212" stroke-width="4"/>
-<path d="M844 368H1110" stroke="#121212" stroke-width="4"/>
+<svg x="844" y="166" width="266" height="296" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#F0F0F0"/>
+  <circle cx="44" cy="44" r="36" fill="#D02020" stroke="#121212" stroke-width="4"/>
+  <path d="M44 44h76v76H44Z" fill="#1040C0"/>
+  <path d="M44 44h76l-76 76Z" fill="#F0C020"/>
+  <path d="m44 120 76-76" stroke="#121212" stroke-width="4"/>
+  <path d="M44 44h76v76H44Z" fill="none" stroke="#121212" stroke-width="4"/>
+</svg>
 <text x="72" y="535" font-size="24" font-weight="600">ramirocosa.is-a.dev</text>
 </svg>
