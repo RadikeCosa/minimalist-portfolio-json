@@ -118,6 +118,12 @@ for (const page of ["index.html", "en/index.html"]) {
   }
   if (!html.includes("secondary-project")) failures.push(`${page}: falta proyecto complementario`);
 }
+for (const [page, intro] of [["sobre-mi/index.html", "Desarrollo productos web desde 2020."], ["en/about/index.html", "I have been building web products since 2020."]]) {
+  const html = await readFile(join("dist", page), "utf8");
+  if (!html.includes(intro)) failures.push(`${page}: falta presentación personal`);
+  for (const id of ["approach", "experience", "languages"]) if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta sección ${id}`);
+  if (!html.includes("Full Stack Open") || !html.includes("2004") || !html.includes("2024")) failures.push(`${page}: recorrido incompleto`);
+}
 const homeChecks = [
   ["index.html", "Desarrollo web. Del problema al producto.", "Ver proyectos"],
   ["en/index.html", "Web development. From problem to product.", "View projects"],

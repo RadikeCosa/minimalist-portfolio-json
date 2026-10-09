@@ -103,3 +103,14 @@ a,button { -webkit-tap-highlight-color: var(--yellow); }
 }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.reading-page { --reading-width: 760px; }
+.reading-page .back { max-width: var(--reading-width); margin: 0 auto 40px; }
+.reading-page .back a { min-height: 44px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
+.reading-article { max-width: var(--reading-width); margin-inline: auto; display: flex; flex-direction: column; gap: 48px; }
+.reading-header { display: flex; flex-direction: column; gap: 24px; padding-bottom: 32px; border-bottom: 2px solid var(--ink); }
+.reading-header h1 { font-size: clamp(32px,4.5vw,56px); font-weight: 800; line-height: 1.12; letter-spacing: -.025em; }
+.reading-article > section { display: flex; flex-direction: column; gap: 24px; }
+.reading-article > section + section { padding-top: 32px; border-top: 2px solid var(--ink); }
+.copy { display: flex; flex-direction: column; gap: 20px; max-width: 65ch; }
+@media (width < 768px) { .reading-article { gap: 32px; } .reading-page .back { margin-bottom: 24px; } }

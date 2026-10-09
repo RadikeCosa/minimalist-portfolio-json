@@ -4,7 +4,7 @@ const aboutContent = {
   es: {
     title: "Sobre mí",
     intro: [
-      "Desde 2020 diseño y desarrollo productos web para necesidades reales. Trabajo desde el análisis del problema hasta la implementación: ordeno procesos, defino flujos y reglas de negocio, y valido decisiones con el uso.",
+      "Desarrollo productos web desde 2020. Me interesa entender qué necesita una persona antes de decidir qué construir: ordenar el problema, definir los flujos e implementar una solución que pueda probarse y revisarse.",
       "Mi experiencia en salud —práctica profesional y coordinación de servicios— aporta conocimiento de procesos complejos y una especialización en HealthTech. También aplico este enfoque en proyectos de otros sectores.",
     ],
     methodTitle: "Cómo trabajo",
@@ -30,7 +30,7 @@ const aboutContent = {
   en: {
     title: "About",
     intro: [
-      "Since 2020, I have designed and built web products for real needs. I work from problem analysis through implementation: organizing processes, defining workflows and business rules, and validating decisions through use.",
+      "I have been building web products since 2020. I want to understand what a person needs before deciding what to build: organising the problem, defining workflows, and implementing a solution that can be tested and revisited.",
       "My healthcare experience in professional practice and service coordination gives me an understanding of complex workflows and a HealthTech specialization. I apply the same approach to projects in other industries.",
     ],
     methodTitle: "How I work",
