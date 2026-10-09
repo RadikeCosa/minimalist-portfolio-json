@@ -1,9 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getLangFromUrl } from "@/i18n/utils";
+import { getCV, getLangFromUrl } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 import ActionIcon from "@/components/ActionIcon.astro";
 import { imageDimensions } from "@/content/image-dimensions";
+import { projectPresentation } from "@/content/projects";
+import type { Projects } from "@/cv";
 
 interface ProjectCaseFrontmatter {
   title: string;
@@ -29,6 +31,11 @@ const frontmatter = (Astro.props.frontmatter ?? Astro.props) as ProjectCaseFront
 const coverSize = frontmatter.coverImage ? imageDimensions[frontmatter.coverImage] : undefined;
 const currentLang = frontmatter.locale || getLangFromUrl(Astro.url);
 const isEnglish = currentLang === "en";
+const { projects } = await getCV(currentLang);
+const project = (projects as Projects[]).find(project => project.caseStudyUrl?.replace(/\/$/, "") === Astro.url.pathname.replace(/\/$/, ""));
+const presentation = project ? projectPresentation[project.id] : undefined;
+const accent = presentation?.color ?? "neutral";
+const accentColor = accent === "neutral" ? "ink" : accent;
 const pageTitle = isEnglish
   ? `${frontmatter.title} | Ramiro Nicolás Cosa`
   : `${frontmatter.title} | Ramiro Nicolás Cosa`;
@@ -56,14 +63,15 @@ const externalLinks = [
   alternateUrl={frontmatter.alternateUrl}
   isProject
 >
-  <main tabindex="-1" id="main-content" class="reading-page case-page">
+  <main tabindex="-1" id="main-content" class="reading-page case-page" style={`--case-accent: var(--${accentColor}); --case-heading: var(--${accent === "yellow" ? "ink" : accentColor}); --case-on-accent: var(--${accent === "yellow" ? "ink" : "paper"});`}>
     <nav class="back no-print" aria-label={isEnglish ? "Project navigation" : "Navegación de proyecto"}>
       <a href={backHref}><ActionIcon name="back" />{backLabel}</a>
     </nav>
 
     <article class="case-article">
       <header class="reading-header case-header">
-        <h1>{frontmatter.title}</h1>
+        {presentation && <p class="case-label"><span class="case-number" aria-hidden="true">{String(presentation.order).padStart(2,"0")}</span><span class="eyebrow">{isEnglish ? "Case study" : "Caso de estudio"}</span></p>}
+        <h1><span class="decorative-title">{frontmatter.title}</span></h1>
         {frontmatter.description && <p class="case-description">{frontmatter.description}</p>}
 
         {
@@ -82,7 +90,7 @@ const externalLinks = [
 
               {frontmatter.stack && frontmatter.stack.length > 0 && (
                 <ul class="case-stack" aria-label={isEnglish ? "Technologies" : "Tecnologías"}>
-                  {frontmatter.stack.map((item) => <li>{item}</li>)}
+                  {frontmatter.stack.map((item) => <li><span class="case-tech-marker" aria-hidden="true"></span><span class="decorative-title">{item}</span></li>)}
                 </ul>
               )}
 
@@ -106,9 +114,9 @@ const externalLinks = [
           <section class="case-summary" aria-label={isEnglish ? "Case summary" : "Resumen del caso"}>
             {frontmatter.status && <p class="case-status">{frontmatter.status}</p>}
             <dl>
-              {frontmatter.problem && <div><dt>{isEnglish ? "Problem" : "Problema"}</dt><dd>{frontmatter.problem}</dd></div>}
-              {frontmatter.contribution && <div><dt>{isEnglish ? "Contribution" : "Aporte"}</dt><dd>{frontmatter.contribution}</dd></div>}
-              {frontmatter.decision && <div><dt>{isEnglish ? "Key decision" : "Decisión clave"}</dt><dd>{frontmatter.decision}</dd></div>}
+              {frontmatter.problem && <div><dt class="summary-problem"><span class="decorative-title">{isEnglish ? "Problem" : "Problema"}</span></dt><dd>{frontmatter.problem}</dd></div>}
+              {frontmatter.contribution && <div><dt class="summary-contribution"><span class="decorative-title">{isEnglish ? "Contribution" : "Aporte"}</span></dt><dd>{frontmatter.contribution}</dd></div>}
+              {frontmatter.decision && <div><dt><span class="decorative-title">{isEnglish ? "Key decision" : "Decisión clave"}</span></dt><dd>{frontmatter.decision}</dd></div>}
             </dl>
           </section>
         )
@@ -140,24 +148,29 @@ const externalLinks = [
   .case-article { max-width: 1040px; margin-inline: auto; display: flex; flex-direction: column; gap: 40px; }
   .case-header,.case-summary,.case-footer { width: 100%; max-width: 760px; margin-inline: auto; }
   .case-description { font-size: 20px; line-height: 1.6; }
+  .case-label { display: flex; gap: 16px; align-items: center; }
+  .case-number { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 4px; background: var(--case-accent); color: var(--case-on-accent); font-size: 20px; font-weight: 800; }
   .case-meta { display: flex; flex-direction: column; gap: 16px; }
   .case-meta p { font-size: 14px; font-weight: 600; }
   .case-stack { display: flex; flex-wrap: wrap; gap: 8px 20px; }
-  .case-stack li { font-size: 13px; font-weight: 700; }
+  .case-stack li { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; }
+  .case-tech-marker { flex: 0 0 auto; width: 10px; height: 10px; border: 2px solid var(--ink); background: var(--case-accent); }
   .case-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
   .case-links a,.case-footer a { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; font-size: 14px; font-weight: 700; }
   .case-summary { border-block: 2px solid var(--ink); padding-block: 24px; }
-  .case-status { font-size: 14px; font-weight: 700; margin-bottom: 24px; }
+  .case-status { border-left: 4px solid var(--ink); padding-left: 12px; font-size: 14px; font-weight: 700; margin-bottom: 24px; }
   .case-summary dl { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 0; }
   .case-summary dl > div:last-child { grid-column: 1 / -1; }
   .case-summary dt { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
   .case-summary dd { margin: 0; }
+  .summary-problem { color: var(--red); }
+  .summary-contribution { color: var(--blue); }
   .case-cover { width: 100%; }
   .case-cover img { width: 100%; max-height: 640px; object-fit: contain; border: 2px solid var(--ink); }
   .case-cover figcaption { font-size: 14px; line-height: 1.6; margin-top: 12px; }
   .case-content { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
   .case-content > :global(*) { width: 100%; max-width: 760px; margin-inline: auto; }
-  .case-content :global(h2) { margin-top: 32px; padding-top: 24px; border-top: 2px solid var(--ink); }
+  .case-content :global(h2) { color: var(--case-heading); margin-top: 32px; padding-top: 24px; border-top: 2px solid var(--ink); }
   .case-content :global(h3) { margin-top: 12px; }
   .case-content :global(ul),.case-content :global(ol) { padding-left: 24px; list-style: disc; }
   .case-content :global(ol) { list-style: decimal; }
@@ -189,5 +202,10 @@ const externalLinks = [
     .case-content :global(.case-flow__steps li) { flex-direction: column; }
     .case-content :global(.case-flow__connector) { transform: rotate(90deg); align-self: flex-start; }
   }
-  @media print { .case-content :global(.case-figure--screen) { max-width: 220px; } .case-content :global(img) { max-height: 220mm; object-fit: contain; } }
+  @media print {
+    .case-content :global(.case-figure--screen) { max-width: 220px; }
+    .case-content :global(img) { max-height: 220mm; object-fit: contain; }
+    .case-number { background: var(--paper); color: var(--ink); }
+    .case-content :global(h2),.case-summary dt { color: var(--ink); }
+  }
 </style>

@@ -88,11 +88,12 @@ for (const pair of casePairs) {
     if (!html.includes("case-summary") || !html.includes("case-status")) {
       failures.push(`${pair[index]}: falta el resumen del caso o su estado`);
     }
+    const fieldLabels = [...html.matchAll(/<dt\b[^>]*>([\s\S]*?)<\/dt>/g)].map(match => match[1].replace(/<[^>]*>/g, "").trim());
     for (const label of labels) {
-      if (!new RegExp(`<dt\\b[^>]*>${label}</dt>`).test(html)) failures.push(`${pair[index]}: falta el campo ${label}`);
+      if (!fieldLabels.includes(label)) failures.push(`${pair[index]}: falta el campo ${label}`);
     }
   }
-  const fieldCounts = rendered.map((html) => (html.match(/<dt>/g) || []).length);
+  const fieldCounts = rendered.map((html) => (html.match(/<dt\b/g) || []).length);
   if (fieldCounts[0] !== fieldCounts[1]) failures.push(`${pair.join(" / ")}: los campos del resumen no tienen paridad`);
 }
 
