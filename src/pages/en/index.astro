@@ -1,7 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import LanguageToggle from "@/components/LanguageToggle.astro";
-import ThemeToggle from "@/components/ThemeToggle.astro";
 
 import Differential from "@/components/sections/Differential.astro";
 import Experience from "@/components/sections/Experience.astro";
@@ -33,8 +31,6 @@ const { name } = cvData.basics;
     <Contact lang={currentLang} />
   </main>
 
-  <LanguageToggle />
-  <ThemeToggle />
 </Layout>
 
 <style>

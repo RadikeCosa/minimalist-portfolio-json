@@ -1,7 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import LanguageToggle from "@/components/LanguageToggle.astro";
-import ThemeToggle from "@/components/ThemeToggle.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 import ActionIcon from "@/components/ActionIcon.astro";
@@ -133,8 +131,6 @@ const externalLinks = [
     </article>
   </main>
 
-  <LanguageToggle />
-  <ThemeToggle />
 </Layout>
 
 <style>

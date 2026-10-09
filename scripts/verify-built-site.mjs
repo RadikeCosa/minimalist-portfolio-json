@@ -110,8 +110,8 @@ for (const [page, title] of [
 }
 
 const homeChecks = [
-  ["index.html", "Analizo necesidades y construyo productos digitales.", "Ver proyectos"],
-  ["en/index.html", "I analyze needs and build digital products.", "View projects"],
+  ["index.html", "Desarrollo web. Del problema al producto.", "Ver proyectos"],
+  ["en/index.html", "Web development. From problem to product.", "View projects"],
 ];
 for (const [page, ...expected] of homeChecks) {
   const html = await readFile(join("dist", page), "utf8");
@@ -130,12 +130,15 @@ for (const page of pages) {
     continue;
   }
 
+  if (!html.includes('class="site-header no-print"') || !html.includes('class="site-footer no-print"')) failures.push(`${page}: falta navegación compartida`);
+  if (html.includes('id="theme-toggle"') || html.includes('localStorage.getItem("theme")')) failures.push(`${page}: conserva lógica de tema oscuro`);
+  if (!/<link rel="preload"[^>]+as="font"/.test(html)) failures.push(`${page}: falta precarga de fuente`);
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) failures.push(`${page}: ${h1Count} títulos h1`);
   if (!/<link rel="canonical" href="https:\/\/ramirocosa\.is-a\.dev\//.test(html)) {
     failures.push(`${page}: canonical ausente o inválido`);
   }
-  if ((html.match(/hreflang=/g) || []).length !== 3) {
+  if ((html.match(/<link\b[^>]*hreflang=/g) || []).length !== 3) {
     failures.push(`${page}: alternates de idioma incompletos`);
   }
   if (!/og:image:width" content="1200"/.test(html) || !/og:image:height" content="630"/.test(html)) {

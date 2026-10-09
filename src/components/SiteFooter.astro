@@ -1,0 +1,10 @@
+---
+import type { Language } from "@/i18n/types";
+interface Props { lang: Language }
+const { lang } = Astro.props;
+---
+<footer class="site-footer no-print">
+  <span>Ramiro Nicolás Cosa</span>
+  <span>{lang === "en" ? "Web development & functional analysis" : "Desarrollo web y análisis funcional"}</span>
+  <a href="#main-content">{lang === "en" ? "Back to top" : "Volver arriba"}</a>
+</footer>

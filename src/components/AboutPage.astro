@@ -1,6 +1,4 @@
 ---
-import LanguageToggle from "@/components/LanguageToggle.astro";
-import ThemeToggle from "@/components/ThemeToggle.astro";
 import { getAboutContent } from "@/content/about";
 import type { Language } from "@/i18n/types";
 import Layout from "@/layouts/Layout.astro";
@@ -74,8 +72,6 @@ const languages = content.languages.split(" · ");
     </article>
   </main>
 
-  <LanguageToggle />
-  <ThemeToggle />
 </Layout>
 
 <style>

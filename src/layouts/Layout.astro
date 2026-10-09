@@ -1,9 +1,11 @@
 ---
 import { getLangFromUrl, getCV } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
-import "@fontsource-variable/ibm-plex-sans/wght.css";
-import "@fontsource/ibm-plex-mono/400.css";
-import "@fontsource/ibm-plex-mono/600.css";
+import "@/styles/fonts.css";
+import archivoLatin from "@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url";
+import "@/styles/global.css";
+import SiteHeader from "@/components/SiteHeader.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
 
 interface Props {
   title: string;
@@ -133,6 +135,7 @@ const structuredDataJson = structuredData
 <html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin="anonymous" />
     <title>{title}</title>
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -168,161 +171,15 @@ const structuredDataJson = structuredData
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={currentLang === "en" ? `${name} portfolio: digital product analysis, development, and implementation` : `Portfolio de ${name}: análisis, desarrollo e implementación de productos digitales`} />
     {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson} />}
-    <script is:inline>
-      (function () {
-        const theme =
-          localStorage.getItem("theme") ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
-    <style is:global>
-    :root {
-      /* Light theme */
-      --bg-primary: #f8faf9;
-      --bg-secondary: #edf2ef;
-      --bg-hover: #e1eae5;
-      --text-primary: #16221e;
-      --text-secondary: #43534c;
-      --text-muted: #52625b;
-      --border: #cbd7d0;
-      --border-light: #dce5df;
-      --accent: #136b5c;
-      --accent-contrast: #ffffff;
-      --font-sans: "IBM Plex Sans Variable", "Noto Sans", sans-serif;
-      --font-mono: "IBM Plex Mono", "Noto Sans Mono", monospace;
-    }
-
-    [data-theme="dark"] {
-      --bg-primary: #111916;
-      --bg-secondary: #202b26;
-      --bg-hover: #2d3b34;
-      --text-primary: #edf4f0;
-      --text-secondary: #c1cdc6;
-      --text-muted: #aebcb4;
-      --border: #46564e;
-      --border-light: #34423b;
-      --accent: #72c7b5;
-      --accent-contrast: #111916;
-    }
-
-    html {
-      font-family: var(--font-sans);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body,
-    figure {
-      margin: 0;
-      padding: 0;
-    }
-
-    body { min-width: 320px; }
-
-    code, pre, kbd, samp,
-    .stage-meta, .case-meta, .project-badge, .project-stack,
-    .case-stack, .context, .language-toggle {
-      font-family: var(--font-mono);
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    .skip-link {
-      background: var(--bg-primary);
-      border: 2px solid var(--accent);
-      border-radius: 6px;
-      color: var(--text-primary);
-      font-size: 0.8rem;
-      font-weight: 700;
-      left: 1rem;
-      padding: 0.65rem 0.8rem;
-      position: fixed;
-      top: 1rem;
-      transform: translateY(-200%);
-      transition: transform 0.15s ease;
-      z-index: 2000;
-    }
-
-    .skip-link:focus {
-      outline: none;
-      transform: translateY(0);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      margin: 0;
-      font-family: var(--font-sans);
-      color: var(--text-primary);
-    }
-
-    p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.65;
-      margin: 0;
-      text-wrap: pretty;
-    }
-
-    .print {
-      display: none !important;
-    }
-
-    @media print {
-      .no-print {
-        display: none !important;
-      }
-
-      .print {
-        display: block !important;
-      }
-
-      astro-dev-toolbar {
-        display: none !important;
-      }
-
-      article {
-        break-inside: avoid;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    </style>
   </head>
   <body>
     <a class="skip-link no-print" href="#main-content">
       {currentLang === "en" ? "Skip to main content" : "Saltar al contenido principal"}
     </a>
-    <slot />
+    <div class="site-frame">
+      <SiteHeader lang={currentLang} />
+      <slot />
+      <SiteFooter lang={currentLang} />
+    </div>
   </body>
 </html>
