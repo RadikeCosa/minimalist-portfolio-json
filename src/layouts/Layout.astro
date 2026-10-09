@@ -41,7 +41,7 @@ const alternateHref = alternateUrl ? new URL(alternateUrl, baseUrl).toString() :
 const alternateLang = currentLang === "en" ? "es" : "en";
 const defaultHref = currentLang === "es" ? canonicalUrl : alternateHref;
 const socialImage = new URL(
-  currentLang === "en" ? "/og/portfolio-en.png?v=bauhaus-2" : "/og/portfolio-es.png?v=bauhaus-2",
+  currentLang === "en" ? "/og/portfolio-en.png?v=bauhaus-3" : "/og/portfolio-es.png?v=bauhaus-3",
   baseUrl,
 ).toString();
 const personEntity = {
@@ -140,7 +140,7 @@ const structuredDataJson = structuredData
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#F0F0F0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=bauhaus-2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=bauhaus-3" />
     <link rel="canonical" href={canonicalUrl} />
     {
       alternateHref && (

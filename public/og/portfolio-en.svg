@@ -12,9 +12,9 @@
 <text x="66" y="392" font-size="76" font-weight="900" letter-spacing="-2" fill="#1040C0">TO PRODUCT.</text>
 <svg x="844" y="166" width="266" height="296" viewBox="0 0 128 128">
   <rect width="128" height="128" fill="#F0F0F0"/>
-  <circle cx="44" cy="44" r="36" fill="#D02020" stroke="#121212" stroke-width="4"/>
-  <path d="M44 44h76v76H44Z" fill="#1040C0"/>
-  <path d="M44 44h76l-76 76Z" fill="#F0C020"/>
+  <circle cx="44" cy="44" r="36" fill="#1040C0" stroke="#121212" stroke-width="4"/>
+  <path d="M44 44h76v76H44Z" fill="#F0C020"/>
+  <path d="M44 44h76l-76 76Z" fill="#D02020"/>
   <path d="m44 120 76-76" stroke="#121212" stroke-width="4"/>
   <path d="M44 44h76v76H44Z" fill="none" stroke="#121212" stroke-width="4"/>
 </svg>
