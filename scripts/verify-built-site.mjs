@@ -124,6 +124,10 @@ for (const [page, intro] of [["sobre-mi/index.html", "Desarrollo productos web d
   for (const id of ["approach", "experience", "languages"]) if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta sección ${id}`);
   if (!html.includes("Full Stack Open") || !html.includes("2004") || !html.includes("2024")) failures.push(`${page}: recorrido incompleto`);
 }
+for (const page of ["proyectos/plataforma-clinica/index.html", "en/projects/clinical-platform/index.html"]) {
+  const html = await readFile(join("dist", page), "utf8");
+  if (!html.includes("FHIR") || !html.includes("HAPI") || html.includes('class="case-links"><a href="https://kinesiologiaadomicilio.vercel.app')) failures.push(`${page}: límites del piloto clínico incorrectos`);
+}
 const homeChecks = [
   ["index.html", "Desarrollo web. Del problema al producto.", "Ver proyectos"],
   ["en/index.html", "Web development. From problem to product.", "View projects"],
