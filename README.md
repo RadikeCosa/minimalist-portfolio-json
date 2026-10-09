@@ -14,6 +14,12 @@ Bilingual portfolio focused on web development, with functional analysis as a di
 - Project `id` values link to the typed presentation map in `src/content/projects.ts`. Display order is independent of the unchanged CV project order.
 - Existing CV PDFs, screenshots, project status and limits remain factual. The clinical app has no public demo; Fira is a catalogue, without online purchases.
 
+## Visual history
+
+Historical portfolio screenshots belong in `public/<version-name>/`, alongside a README and capture manifest. Keep each archived design in its own folder.
+
+[`public/editorial-plex/`](public/editorial-plex/README.md) contains 22 production screenshots of the previous IBM Plex design, in light and dark themes, on desktop and mobile. Its source is preserved in `archive/editorial-plex`; the Bauhaus redesign is preserved in `bauhaus`.
+
 ## Development
 
 ```sh

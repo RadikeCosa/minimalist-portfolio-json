@@ -1,0 +1,339 @@
+{
+  "source": "https://ramirocosa.is-a.dev",
+  "branch": "archive/editorial-plex",
+  "commit": "2ca2a3c4ba7889cc1d9f0a71eca91991ac3cd643",
+  "startedAt": "2026-10-09T07:08:58.740Z",
+  "captures": [
+    {
+      "file": "light/desktop-es-inicio-full.png",
+      "url": "https://ramirocosa.is-a.dev/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Analizo necesidades y construyo productos digitales.",
+      "background": "#f8faf9",
+      "bytes": 532714,
+      "sha256": "d9d5382c1ff4c9543175712af84e18d555fe1981a69da43b8c48465d64b1cf42",
+      "capturedAt": "2026-10-09T07:09:00.083Z"
+    },
+    {
+      "file": "light/desktop-es-inicio-viewport.png",
+      "url": "https://ramirocosa.is-a.dev/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "heading": "Analizo necesidades y construyo productos digitales.",
+      "background": "#f8faf9",
+      "bytes": 120505,
+      "sha256": "c7b4ddcc5701fcac948733cd99694c63739c6eaf7d93ffed2534119095a7fc99",
+      "capturedAt": "2026-10-09T07:09:00.130Z"
+    },
+    {
+      "file": "light/desktop-es-sobre-mi-full.png",
+      "url": "https://ramirocosa.is-a.dev/sobre-mi/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Sobre mí",
+      "background": "#f8faf9",
+      "bytes": 102519,
+      "sha256": "0ebb6c4000c6aab44216f475af54959db13246a9e14c1bca0ec01d399329a200",
+      "capturedAt": "2026-10-09T07:09:01.234Z"
+    },
+    {
+      "file": "light/desktop-es-aplicacion-clinica-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/plataforma-clinica/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Aplicación clínica para kinesiología domiciliaria",
+      "background": "#f8faf9",
+      "bytes": 443174,
+      "sha256": "a384eab3f5df9e0e01b92f2509ca6e7aedf0021f17935e0d676e14fbe63ab368",
+      "capturedAt": "2026-10-09T07:09:02.769Z"
+    },
+    {
+      "file": "light/desktop-es-landing-kinesiologia-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/landing-kinesiologia/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Landing para kinesiología domiciliaria",
+      "background": "#f8faf9",
+      "bytes": 315286,
+      "sha256": "47ba4ee4cef22d2b7f9af8e8f945403519502eadec09b1ef9fd1743caaaf8cf0",
+      "capturedAt": "2026-10-09T07:09:03.784Z"
+    },
+    {
+      "file": "light/desktop-es-juegos-familiares-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/juegos-familiares/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Juegos Familiares",
+      "background": "#f8faf9",
+      "bytes": 543856,
+      "sha256": "f1f431a9343712db19c1b4d48117c80f38a13bcbb0d1fac17f5f1ffd4dfdaf6b",
+      "capturedAt": "2026-10-09T07:09:05.144Z"
+    },
+    {
+      "file": "light/desktop-es-fira-estudio-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/fira-estudio/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Fira Estudio",
+      "background": "#f8faf9",
+      "bytes": 960809,
+      "sha256": "10f6348f63d52267c0fe49942f1e92cba7cfc271e38a60f45643648ce762944f",
+      "capturedAt": "2026-10-09T07:09:06.484Z"
+    },
+    {
+      "file": "light/desktop-en-home-full.png",
+      "url": "https://ramirocosa.is-a.dev/en/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "I analyze needs and build digital products.",
+      "background": "#f8faf9",
+      "bytes": 518596,
+      "sha256": "2e11b60e52d99d39c9a2ed6dc8828fbfaaab07095b4036f0177fe0a7a4b71b99",
+      "capturedAt": "2026-10-09T07:09:07.714Z"
+    },
+    {
+      "file": "light/desktop-en-about-full.png",
+      "url": "https://ramirocosa.is-a.dev/en/about/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "About",
+      "background": "#f8faf9",
+      "bytes": 104831,
+      "sha256": "64b1a039d6218f74d8eaf7d4c61b166e5ac57c632a77924dfdf4bd99eed3d4de",
+      "capturedAt": "2026-10-09T07:09:08.551Z"
+    },
+    {
+      "file": "light/mobile-es-inicio-full.png",
+      "url": "https://ramirocosa.is-a.dev/",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": true,
+      "heading": "Analizo necesidades y construyo productos digitales.",
+      "background": "#f8faf9",
+      "bytes": 405243,
+      "sha256": "fe23d6175151b5b9514aaf19d9ef0e4eb4c02bccccda46f9be2b465e997aef6a",
+      "capturedAt": "2026-10-09T07:09:09.439Z"
+    },
+    {
+      "file": "light/mobile-es-sobre-mi-full.png",
+      "url": "https://ramirocosa.is-a.dev/sobre-mi/",
+      "theme": "light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": true,
+      "heading": "Sobre mí",
+      "background": "#f8faf9",
+      "bytes": 90556,
+      "sha256": "b34a235f67ff7fcf6b18bf0bd9e65b030941e26cc6fa6e49235f7e767e2ef2c2",
+      "capturedAt": "2026-10-09T07:09:10.112Z"
+    },
+    {
+      "file": "dark/desktop-es-inicio-full.png",
+      "url": "https://ramirocosa.is-a.dev/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Analizo necesidades y construyo productos digitales.",
+      "background": "#111916",
+      "bytes": 531906,
+      "sha256": "26a657695dfa9f7c12bf0c141752fd951cae9d2fe67b8fccc8db6a24df9207d9",
+      "capturedAt": "2026-10-09T07:09:11.659Z"
+    },
+    {
+      "file": "dark/desktop-es-inicio-viewport.png",
+      "url": "https://ramirocosa.is-a.dev/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "heading": "Analizo necesidades y construyo productos digitales.",
+      "background": "#111916",
+      "bytes": 120354,
+      "sha256": "33b3344870faaad3a8cb819744060c4f71bbba42eb54a4a5aa8ae43e6f0728ab",
+      "capturedAt": "2026-10-09T07:09:11.714Z"
+    },
+    {
+      "file": "dark/desktop-es-sobre-mi-full.png",
+      "url": "https://ramirocosa.is-a.dev/sobre-mi/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Sobre mí",
+      "background": "#111916",
+      "bytes": 102312,
+      "sha256": "c5e83bf1b3516cec4b51429f56d4b2498804ec0ae1eb6c31747957101bfee532",
+      "capturedAt": "2026-10-09T07:09:12.483Z"
+    },
+    {
+      "file": "dark/desktop-es-aplicacion-clinica-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/plataforma-clinica/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Aplicación clínica para kinesiología domiciliaria",
+      "background": "#111916",
+      "bytes": 444958,
+      "sha256": "0d8fb1272556617a88b53c5b08c22adc0257f5da5e089590312b37c5b6cecaf5",
+      "capturedAt": "2026-10-09T07:09:13.554Z"
+    },
+    {
+      "file": "dark/desktop-es-landing-kinesiologia-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/landing-kinesiologia/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Landing para kinesiología domiciliaria",
+      "background": "#111916",
+      "bytes": 315910,
+      "sha256": "9992ccc1094915efc464cf653db9909fa775d4f503b7c5b90365580ef26b782c",
+      "capturedAt": "2026-10-09T07:09:14.416Z"
+    },
+    {
+      "file": "dark/desktop-es-juegos-familiares-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/juegos-familiares/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Juegos Familiares",
+      "background": "#111916",
+      "bytes": 545107,
+      "sha256": "40d172e2c17cfe376be2b04e0aba5d0e46439da0ea212157f3594ed3a605220b",
+      "capturedAt": "2026-10-09T07:09:15.457Z"
+    },
+    {
+      "file": "dark/desktop-es-fira-estudio-full.png",
+      "url": "https://ramirocosa.is-a.dev/proyectos/fira-estudio/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "Fira Estudio",
+      "background": "#111916",
+      "bytes": 961684,
+      "sha256": "19c02ab91eb6f13350bfc19be52db19c1b2670165dafebe687ec26972fd70027",
+      "capturedAt": "2026-10-09T07:09:16.417Z"
+    },
+    {
+      "file": "dark/desktop-en-home-full.png",
+      "url": "https://ramirocosa.is-a.dev/en/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "I analyze needs and build digital products.",
+      "background": "#111916",
+      "bytes": 516133,
+      "sha256": "11b366493709e7a8965ce80f91e63ec9673afbdc5580979350d7378359c2426c",
+      "capturedAt": "2026-10-09T07:09:17.316Z"
+    },
+    {
+      "file": "dark/desktop-en-about-full.png",
+      "url": "https://ramirocosa.is-a.dev/en/about/",
+      "theme": "dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": true,
+      "heading": "About",
+      "background": "#111916",
+      "bytes": 103750,
+      "sha256": "1e5c941458eb7a9ae860f4cacfc938b62b2ee479134c6177bd272973812a5908",
+      "capturedAt": "2026-10-09T07:09:18.000Z"
+    },
+    {
+      "file": "dark/mobile-es-inicio-full.png",
+      "url": "https://ramirocosa.is-a.dev/",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": true,
+      "heading": "Analizo necesidades y construyo productos digitales.",
+      "background": "#111916",
+      "bytes": 406974,
+      "sha256": "0face9a4edc0447b4805318e667d9923426ba86e84269161fd8e228647f34f21",
+      "capturedAt": "2026-10-09T07:09:18.889Z"
+    },
+    {
+      "file": "dark/mobile-es-sobre-mi-full.png",
+      "url": "https://ramirocosa.is-a.dev/sobre-mi/",
+      "theme": "dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": true,
+      "heading": "Sobre mí",
+      "background": "#111916",
+      "bytes": 91771,
+      "sha256": "d52385ec9f0023c0c387e71043179d39e96f9d9ab9c52a8ff4e0f05e823eaf9a",
+      "capturedAt": "2026-10-09T07:09:19.544Z"
+    }
+  ],
+  "completedAt": "2026-10-09T07:09:19.547Z"
+}
