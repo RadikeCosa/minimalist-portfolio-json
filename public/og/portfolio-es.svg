@@ -10,13 +10,14 @@
 <text x="72" y="196" font-size="18" font-weight="700" letter-spacing="2">DESARROLLO WEB</text>
 <text x="66" y="306" font-size="76" font-weight="900" letter-spacing="-2">DEL PROBLEMA</text>
 <text x="66" y="392" font-size="76" font-weight="900" letter-spacing="-2" fill="#1040C0">AL PRODUCTO.</text>
-<svg x="844" y="166" width="266" height="296" viewBox="0 0 128 128">
-  <rect width="128" height="128" fill="#F0F0F0"/>
-  <circle cx="44" cy="44" r="36" fill="#1040C0" stroke="#121212" stroke-width="4"/>
-  <path d="M44 44h76v76H44Z" fill="#F0C020"/>
-  <path d="M44 44h76l-76 76Z" fill="#D02020"/>
-  <path d="m44 120 76-76" stroke="#121212" stroke-width="4"/>
-  <path d="M44 44h76v76H44Z" fill="none" stroke="#121212" stroke-width="4"/>
+<svg x="844" y="236" width="266" height="144" viewBox="0 0 208 112">
+  <g fill="#121212">
+    <path d="M6 6h17v100H6z"/>
+    <path fill-rule="evenodd" d="M18 6h32a30 30 0 0 1 0 60H18V49h32a13 13 0 0 0 0-26H18z"/>
+    <path d="M40 57h20l29 49H69z"/>
+  </g>
+  <path class="brand-curve" d="M179.34 26.66a41.5 41.5 0 1 0 0 58.68" fill="none" stroke="#1040C0" stroke-width="17"/>
+  <path d="M185 89h14v14h-14z" fill="#D02020"/>
 </svg>
 <text x="72" y="535" font-size="24" font-weight="600">ramirocosa.is-a.dev</text>
 </svg>

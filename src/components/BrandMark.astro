@@ -1,0 +1,17 @@
+---
+import mark from "../../public/brand-mark.svg?raw";
+---
+<span class="brand-mark" aria-hidden="true" set:html={mark} />
+<style>
+  .brand-mark { display: inline-flex; flex-shrink: 0; width: 44px; }
+  .brand-mark :global(svg) { display: block; width: 100%; height: auto; overflow: visible; }
+  .brand-mark :global(.brand-curve) { transform-origin: 150px 56px; transition: transform 180ms ease-out; }
+  :global(.wordmark:focus-visible) .brand-mark :global(.brand-curve) { transform: rotate(-6deg); }
+  @media (hover: hover) and (pointer: fine) {
+    :global(.wordmark:hover) .brand-mark :global(.brand-curve) { transform: rotate(-6deg); }
+  }
+  @media (width < 768px) { .brand-mark { width: 37px; } }
+  @media (prefers-reduced-motion: reduce) {
+    .brand-mark :global(.brand-curve) { transform: none !important; transition: none; }
+  }
+</style>

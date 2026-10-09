@@ -1,4 +1,5 @@
 ---
+import BrandMark from "./BrandMark.astro";
 import { getAlternateUrl } from "@/i18n/utils";
 import type { Language } from "@/i18n/types";
 interface Props { lang: Language; isProject?: boolean }
@@ -10,7 +11,7 @@ const aboutHref = en ? "/en/about/" : "/sobre-mi/";
 const isAbout = Astro.url.pathname.replace(/\/$/, "") === aboutHref.replace(/\/$/, "");
 ---
 <header class="site-header no-print">
-  <a class="wordmark" translate="no" href={home} aria-label={en ? "Ramiro Cosa, home" : "Ramiro Cosa, inicio"}>Ramiro Cosa<span aria-hidden="true">.</span></a>
+  <a class="wordmark" translate="no" href={home} aria-label={en ? "Ramiro Cosa, home" : "Ramiro Cosa, inicio"}><BrandMark /><span class="brand-name">Ramiro Cosa<span class="brand-stop" aria-hidden="true">.</span></span></a>
   <nav class="site-nav" aria-label={en ? "Main navigation" : "Navegación principal"}>
     <a href={`${home}#projects`} class:list={[{ "section-current": isProject }]}>{en ? "Projects" : "Proyectos"}</a>
     <a href={aboutHref} aria-current={isAbout ? "page" : undefined}>{en ? "About" : "Sobre mí"}</a>

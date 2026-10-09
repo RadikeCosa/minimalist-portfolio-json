@@ -4,7 +4,7 @@ const font = await readFile(new URL('../node_modules/@fontsource-variable/archiv
 const mark = await readFile(new URL('../public/brand-mark.svg',import.meta.url),'utf8');
 const markContent = mark.match(/<svg\b[^>]*>([\s\S]*)<\/svg>/)?.[1];
 if (!markContent) throw new Error('Invalid brand mark SVG');
-await writeFile(new URL('../public/favicon.svg',import.meta.url),mark);
+// The small monochrome favicon has its own optically adjusted drawing.
 const browser = await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH ? {executablePath:process.env.CHROMIUM_PATH} : {})});
 try {
   const page = await browser.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1});
@@ -24,7 +24,7 @@ try {
 <text x="72" y="196" font-size="18" font-weight="700" letter-spacing="2">${label}</text>
 <text x="66" y="306" font-size="76" font-weight="900" letter-spacing="-2">${first}</text>
 <text x="66" y="392" font-size="76" font-weight="900" letter-spacing="-2" fill="#1040C0">${second}</text>
-<svg x="844" y="166" width="266" height="296" viewBox="0 0 128 128">${markContent}</svg>
+<svg x="844" y="236" width="266" height="144" viewBox="0 0 208 112">${markContent}</svg>
 <text x="72" y="535" font-size="24" font-weight="600">ramirocosa.is-a.dev</text>
 </svg>`;
     const target = new URL(`../public/og/portfolio-${lang}`,import.meta.url);
