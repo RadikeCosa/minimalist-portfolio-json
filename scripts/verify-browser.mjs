@@ -1,4 +1,4 @@
-import { chromium } from '@playwright/test';
+import { chromium, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -65,6 +65,8 @@ try {
         await page.evaluate(async () => {
           await Promise.all([...document.images].map(async img => { img.loading='eager'; try { await img.decode(); } catch {} }));
         });
+        const broken = await page.locator('img').evaluateAll(images => images.filter(img => !img.complete || img.naturalWidth===0).map(img => img.src));
+        if(broken.length) failures.push(`${path}: broken images ${broken.join(', ')}`);
         await page.screenshot({ path: join(output, `${path.replaceAll('/','_') || 'home'}-${width}.png`), fullPage: true });
       }
     }
@@ -111,13 +113,26 @@ try {
   await page.emulateMedia({media:'print'});
   if (await page.locator('.site-header').isVisible()) failures.push('print: header should be hidden');
   if (await page.locator('.site-frame').evaluate(el=>getComputedStyle(el).boxShadow) !== 'none') failures.push('print: frame shadow remains');
-  await page.pdf({path:join(output,'home-print.pdf'),format:'A4',printBackground:true});
+  if (await page.locator('.project-heading').first().evaluate(el=>getComputedStyle(el).color) !== 'rgb(18, 18, 18)') failures.push('print: project headings need dark text without backgrounds');
+  await page.pdf({path:join(output,'home-print.pdf'),format:'A4',printBackground:false});
   // Touch devices should never acquire a hover transform after tapping and releasing.
   const touch = await browser.newContext({hasTouch:true,isMobile:true,viewport:{width:390,height:844}});
   const touchPage = await touch.newPage(); await touchPage.goto(baseURL);
   await touchPage.locator('.button').first().tap();
-  if (await touchPage.locator('.button').first().evaluate(el=>getComputedStyle(el).transform) !== 'none') failures.push('touch: sticky hover transform');
+  try { await expect(touchPage.locator('.button').first()).toHaveCSS('transform', 'none', {timeout:1000}); } catch { failures.push('touch: sticky hover transform after active transition'); }
   await touch.close();
+  const cold = await browser.newContext({ viewport: { width:360, height:900 } });
+  const coldPage = await cold.newPage();
+  await coldPage.addInitScript(() => {
+    window.fontLayoutShift = 0;
+    new PerformanceObserver(list => { for(const entry of list.getEntries()) if(!entry.hadRecentInput) window.fontLayoutShift += entry.value; }).observe({type:'layout-shift',buffered:true});
+  });
+  await coldPage.route('**/*.woff2', async route => { await new Promise(resolve=>setTimeout(resolve,500)); await route.continue(); });
+  await coldPage.goto(baseURL); await coldPage.evaluate(()=>document.fonts.ready);
+  const cls = await coldPage.evaluate(()=>window.fontLayoutShift);
+  results.push({label:'Cold mobile font load', layoutShift:cls});
+  if(cls>0.1) failures.push(`cold font load: CLS ${cls} exceeds 0.1`);
+  await cold.close();
 } finally {
   await writeFile(join(output,'report.json'),JSON.stringify({baseURL,results,failures},null,2));
   await browser.close();

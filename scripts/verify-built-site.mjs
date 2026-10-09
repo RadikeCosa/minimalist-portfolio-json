@@ -152,6 +152,14 @@ for (const page of pages) {
   if (!html.includes('class="site-header no-print"') || !html.includes('class="site-footer no-print"')) failures.push(`${page}: falta navegación compartida`);
   if (html.includes('id="theme-toggle"') || html.includes('localStorage.getItem("theme")')) failures.push(`${page}: conserva lógica de tema oscuro`);
   if (!/<link rel="preload"[^>]+as="font"/.test(html)) failures.push(`${page}: falta precarga de fuente`);
+  if (!html.includes('name="theme-color" content="#F0F0F0"')) failures.push(`${page}: theme-color incorrecto`);
+  for (const property of ['og:title', 'og:description', 'og:image', 'og:image:alt']) {
+    if (!new RegExp(`property="${property}" content="[^" ]`).test(html)) failures.push(`${page}: falta ${property}`);
+  }
+  for (const name of ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image', 'twitter:image:alt']) {
+    if (!new RegExp(`name="${name}" content="[^" ]`).test(html)) failures.push(`${page}: falta ${name}`);
+  }
+  for (const pdf of ["CV_Ramiro_Nicolas_Cosa.pdf", "CV_Ramiro_Nicolas_Cosa_EN.pdf"]) await stat(join("dist", "cv", pdf));
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) failures.push(`${page}: ${h1Count} títulos h1`);
   if (!/<link rel="canonical" href="https:\/\/ramirocosa\.is-a\.dev\//.test(html)) {
@@ -178,11 +186,26 @@ for (const image of ["portfolio-es.png", "portfolio-en.png"]) {
   try {
     const info = await stat(join("dist", "og", image));
     if (info.size === 0) failures.push(`${image}: imagen vacía`);
+    const bytes = await readFile(join("dist", "og", image));
+    if (bytes.readUInt32BE(16) !== 1200 || bytes.readUInt32BE(20) !== 630) failures.push(`${image}: dimensiones incorrectas`);
   } catch {
     failures.push(`${image}: imagen social faltante`);
   }
 }
 
+for (const page of pages) {
+  const html = await readFile(join("dist", page), "utf8");
+  for (const match of html.matchAll(/<a\b[^>]*href="([^" ]+)"/g)) {
+    const href = match[1];
+    if (/^(https?:|mailto:|tel:)/.test(href)) continue;
+    const url = new URL(href, `https://portfolio.test/${page.replace(/index.html$/, "")}`);
+    const target = url.pathname.endsWith('/') ? `${url.pathname}index.html` : url.pathname;
+    try {
+      const bytes = await readFile(join("dist", target.replace(/^\//, "")));
+      if (url.hash && !new RegExp(`id=["']${decodeURIComponent(url.hash.slice(1))}["']`).test(bytes.toString())) failures.push(`${page}: ancla inexistente ${href}`);
+    } catch { failures.push(`${page}: enlace local inexistente ${href}`); }
+  }
+}
 if (failures.length) {
   console.error(`Validación fallida:\n- ${failures.join("\n- ")}`);
   process.exit(1);

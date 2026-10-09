@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "verify": "npm run build && node scripts/verify-built-site.mjs",
     "astro": "astro",
-    "verify:browser": "node scripts/verify-browser.mjs"
+    "verify:browser": "node scripts/verify-browser.mjs",
+    "generate:social": "node scripts/generate-social.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

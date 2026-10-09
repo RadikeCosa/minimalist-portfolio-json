@@ -70,5 +70,5 @@ const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical
   .secondary-project > div { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
   @media (width < 1024px) { .project-grid { grid-template-columns: 1fr; gap: 32px; } .project-heading { min-height: 0; } .project-image { height: 280px; } }
   @media (width < 768px) { .project-card { --press-shadow: 4px; box-shadow: 4px 4px 0 var(--ink); } .secondary-project { grid-template-columns: 1fr; gap: 24px; } .secondary-project img { max-width: 320px; } }
-  @media print { .project-grid { grid-template-columns: 1fr; } .project-card { break-inside: avoid; } .project-image { height: 180px; } }
+  @media print { .project-heading { background: var(--paper) !important; color: var(--ink) !important; } .project-grid { grid-template-columns: 1fr; } .project-card { break-inside: avoid; } .project-image { height: 180px; } }
 </style>
