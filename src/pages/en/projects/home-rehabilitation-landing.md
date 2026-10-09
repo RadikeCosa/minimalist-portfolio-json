@@ -28,8 +28,6 @@ An independent home-rehabilitation service in Neuquén needed a digital presence
 
 The landing page presents the service and offers an initial guided orientation through **Evaluate**. The flow helps people prepare an inquiry and provides WhatsApp contact with prefilled opening messages.
 
-The hero image sets the home-care context. The site and its content guide the next step without promising clinical outcomes.
-
 <figure class="case-figure">
   <img
     src="/case-studies/kinesiology-landing/cover-2026-09-27.webp"
@@ -41,6 +39,8 @@ The hero image sets the home-care context. The site and its content guide the ne
   />
   <figcaption>Public homepage captured on September 27, 2026.</figcaption>
 </figure>
+
+The hero image sets the home-care context. The site and its content guide the next step without promising clinical outcomes.
 
 ## My contribution
 

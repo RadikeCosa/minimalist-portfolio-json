@@ -28,8 +28,6 @@ Un servicio independiente de kinesiología domiciliaria en Neuquén necesitaba u
 
 La landing presenta el servicio y permite iniciar una orientación previa mediante **Evaluar**. El recorrido prepara a la persona para consultar y ofrece contacto por WhatsApp con mensajes iniciales estructurados.
 
-La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio y su contenido orientan el siguiente paso sin prometer resultados clínicos.
-
 <figure class="case-figure">
   <img
     src="/case-studies/kinesiology-landing/cover-2026-09-27.webp"
@@ -41,6 +39,8 @@ La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio 
   />
   <figcaption>Portada pública del sitio, capturada el 27 de septiembre de 2026.</figcaption>
 </figure>
+
+La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio y su contenido orientan el siguiente paso sin prometer resultados clínicos.
 
 ## Mi aporte
 

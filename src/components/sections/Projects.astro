@@ -29,7 +29,7 @@ const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical
             <p class="project-status">{project.badge}</p>
             <p>{project.contribution}</p>
             <ul class="project-stack" aria-label={en ? "Technologies" : "Tecnologías"}>{project.highlights.slice(0,4).map(item => <li>{item}</li>)}</ul>
-            <span class="project-cta">{en ? "View case study" : "Ver caso de estudio"}<span aria-hidden="true">↗</span></span>
+            <span class="project-cta">{en ? "View case study" : "Ver caso de estudio"}<span aria-hidden="true">→</span></span>
           </div>
         </a>
       </li>
@@ -72,7 +72,13 @@ const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical
   .secondary-project { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 32px; align-items: center; border-block: 2px solid var(--ink); padding-block: 32px; margin-top: 48px; }
   .secondary-project img { border: 2px solid var(--ink); }
   .secondary-project > div { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-  @media (width < 1024px) { .project-grid { grid-template-columns: 1fr; gap: 32px; } .project-heading { min-height: 0; } .project-image { height: 280px; } }
-  @media (width < 768px) { .project-card { --press-shadow: 4px; box-shadow: 4px 4px 0 var(--ink); } .secondary-project { grid-template-columns: 1fr; gap: 24px; } .secondary-project img { max-width: 320px; } }
+  @media (width < 1100px) and (width >= 768px) {
+    .project-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 24px; }
+    .project-grid > li:last-child { grid-column: 1 / -1; width: calc(50% - 12px); justify-self: center; }
+    .project-heading { min-height: 150px; padding: 20px 18px; gap: 14px; }
+    .project-heading h3 { font-size: 21px; }
+    .project-image { height: 220px; }
+  }
+  @media (width < 768px) { .project-card { --press-shadow: 4px; box-shadow: 4px 4px 0 var(--ink); } .project-image { height: 220px; } .secondary-project { grid-template-columns: 1fr; gap: 24px; } .secondary-project img { max-width: 320px; } }
   @media print { .project-heading { background: var(--paper) !important; color: var(--ink) !important; } .project-grid { grid-template-columns: 1fr; } .project-card { break-inside: avoid; } .project-image { height: 180px; } }
 </style>

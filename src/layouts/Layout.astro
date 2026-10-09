@@ -188,7 +188,7 @@ const structuredDataJson = structuredData
       {currentLang === "en" ? "Skip to main content" : "Saltar al contenido principal"}
     </a>
     <div class="site-frame">
-      <SiteHeader lang={currentLang} />
+      <SiteHeader lang={currentLang} isProject={isProject} />
       <slot />
       <SiteFooter lang={currentLang} />
     </div>

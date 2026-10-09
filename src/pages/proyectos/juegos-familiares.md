@@ -68,15 +68,17 @@ El ciclo incluye:
 
 Tutti Frutti suma un segundo juego presencial a la plataforma. El grupo crea o abre una sala, configura la partida, responde categorías por letra y revisa las respuestas antes de comparar resultados.
 
-<figure class="case-figure case-figure--screen">
-  <img
-    src="/case-studies/juegos-familiares/tutti-frutti-round.png"
-    alt="Partida de Tutti Frutti en una sala, con la letra de la ronda y campos para responder cinco categorías."
-    width="1416"
-    height="4722"
-    loading="lazy"
-    decoding="async"
-  />
+<figure class="case-figure case-figure--screen case-figure--preview">
+  <a href="/case-studies/juegos-familiares/tutti-frutti-round.png">
+    <img
+      src="/case-studies/juegos-familiares/tutti-frutti-round.png"
+      alt="Partida de Tutti Frutti en una sala, con la letra de la ronda y campos para responder cinco categorías."
+      width="1416"
+      height="4722"
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
   <figcaption>Partida de demostración: cada persona completa sus respuestas desde su teléfono.</figcaption>
 </figure>
 

@@ -52,7 +52,7 @@ a,button { touch-action: manipulation; -webkit-tap-highlight-color: var(--yellow
 .wordmark span { color: var(--red); }
 .site-nav,.language-nav { display: flex; align-items: center; gap: 24px; }
 .site-nav a,.language-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; font-size: 14px; font-weight: 700; text-transform: uppercase; text-decoration: none; }
-.site-nav a[aria-current="page"] { color: var(--blue); }
+.site-nav a[aria-current="page"],.site-nav a.section-current { color: var(--blue); }
 .language-nav { gap: 8px; font-size: 14px; font-weight: 700; }
 .language-nav a { min-width: 44px; }
 .site-footer { border-top: 2px solid var(--ink); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; }
@@ -62,11 +62,7 @@ a,button { touch-action: manipulation; -webkit-tap-highlight-color: var(--yellow
 .section:last-child { margin-bottom: 0; }
 .section-title-blue { color: var(--blue); }
 .section-title-red { color: var(--red); }
-.decorative-title { box-decoration-break: clone; -webkit-box-decoration-break: clone; cursor: text; }
-@media (hover: hover) {
-  .decorative-title { transition: box-shadow 120ms ease-out; }
-  .decorative-title:hover { color: var(--ink); box-shadow: inset 0 -.35em 0 var(--yellow); }
-}
+.decorative-title { box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 48px; padding: 12px 18px; border: 4px solid var(--ink); background: var(--paper); color: var(--ink); box-shadow: var(--press-shadow) var(--press-shadow) 0 var(--ink); font-size: 14px; font-weight: 700; text-decoration: none; }
 .button-primary { background: var(--red); color: var(--paper); }
 .button,.pressable { transition: transform 120ms ease, box-shadow 120ms ease; }
@@ -82,7 +78,7 @@ a,button { touch-action: manipulation; -webkit-tap-highlight-color: var(--yellow
 :where(.text-link,.reading-page .back a,.contact-links a,.case-links a,.case-footer a,.site-footer a)::after { transform: scaleX(.25); }
 :is(.site-nav a,.language-nav a,.text-link,.reading-page .back a,.contact-links a,.case-links a,.case-footer a,.site-footer a):focus-visible { text-decoration: none; }
 :where(.site-nav a,.language-nav a,.text-link,.reading-page .back a,.contact-links a,.case-links a,.case-footer a,.site-footer a):focus-visible::after,
-.site-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.site-nav a[aria-current="page"]::after,.site-nav a.section-current::after { transform: scaleX(1); }
 @media (hover: hover) {
   :is(.site-nav a,.language-nav a,.text-link,.reading-page .back a,.contact-links a,.case-links a,.case-footer a,.site-footer a):hover { text-decoration: none; }
   :where(.site-nav a,.language-nav a,.text-link,.reading-page .back a,.contact-links a,.case-links a,.case-footer a,.site-footer a):hover::after { transform: scaleX(1); }

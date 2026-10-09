@@ -22,10 +22,6 @@ stack:
 
 En la atención domiciliaria, la agenda, los datos de cada paciente y el registro de las visitas pueden quedar repartidos entre mensajes, notas y memoria. La aplicación explora cómo ordenar ese trabajo para que el profesional pueda registrar una atención y retomar su seguimiento desde el teléfono.
 
-## La aplicación
-
-La pantalla de inicio reúne **Hoy**, **Agenda** y **Pacientes**. Desde allí se organizan tratamientos, citas y visitas; cada visita admite registro en vivo o diferido, evolución breve, intervención, próximo paso y evaluaciones opcionales.
-
 <figure class="case-figure case-figure--screen">
   <div class="case-figure__media">
     <img
@@ -39,6 +35,10 @@ La pantalla de inicio reúne **Hoy**, **Agenda** y **Pacientes**. Desde allí se
   </div>
   <figcaption>Piloto local con datos ficticios: la vista Hoy ayuda a priorizar visitas pendientes y previstas.</figcaption>
 </figure>
+
+## La aplicación
+
+La pantalla de inicio reúne **Hoy**, **Agenda** y **Pacientes**. Desde allí se organizan tratamientos, citas y visitas; cada visita admite registro en vivo o diferido, evolución breve, intervención, próximo paso y evaluaciones opcionales.
 
 ## Mi aporte
 

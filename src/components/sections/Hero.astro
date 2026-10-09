@@ -36,8 +36,9 @@ const cvHref = en ? "/cv/CV_Ramiro_Nicolas_Cosa_EN.pdf" : "/cv/CV_Ramiro_Nicolas
     h1,h1.english { font-size: clamp(36px,7.5vw,72px); }
   }
   @media (width < 768px) {
-    .hero { gap: 24px; padding-block: 0; }
+    .hero { grid-template-columns: minmax(0,1fr) 72px; gap: 24px; padding-block: 0; }
     .hero-copy { gap: 24px; }
+    .emblem { width: 72px; height: 72px; }
     h1,h1.english { font-size: clamp(36px,8.5vw,56px); }
     h1.english .hero-long-word { letter-spacing: -.07em; }
     .hero-description { font-size: 17px; }

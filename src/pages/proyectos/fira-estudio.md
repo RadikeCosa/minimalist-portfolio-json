@@ -22,18 +22,6 @@ repository: "https://github.com/RadikeCosa/fira-estudio"
 
 Fira Estudio necesitaba presentar y vender sus textiles online mediante un producto ajustado a su forma de trabajo.
 
-## Primera versión
-
-La primera versión incluyó home, categorías, catálogo, fichas de producto, variantes, carrito, checkout e integración certificada con Mercado Pago.
-
-El flujo incluía pagos, pedidos, webhooks y emails transaccionales.
-
-## Cambio de operación
-
-La demanda superó la capacidad de producción del emprendimiento. Mantener compras automáticas permitía aceptar pedidos que después podían resultar difíciles de cumplir.
-
-Replanteamos el producto como una vidriera digital. El sitio vigente conserva catálogo, variantes, materiales, cuidados y precios de referencia, pero los pedidos se consultan y confirman por teléfono según disponibilidad.
-
 <figure class="case-figure wide">
   <img
     src="/case-studies/fira/catalog-production.webp"
@@ -45,6 +33,18 @@ Replanteamos el producto como una vidriera digital. El sitio vigente conserva ca
   />
   <figcaption>Catálogo productivo: categorías y presentación de productos, con disponibilidad gestionada mediante consulta.</figcaption>
 </figure>
+
+## Primera versión
+
+La primera versión incluyó home, categorías, catálogo, fichas de producto, variantes, carrito, checkout e integración certificada con Mercado Pago.
+
+El flujo incluía pagos, pedidos, webhooks y emails transaccionales.
+
+## Cambio de operación
+
+La demanda superó la capacidad de producción del emprendimiento. Mantener compras automáticas permitía aceptar pedidos que después podían resultar difíciles de cumplir.
+
+Replanteamos el producto como una vidriera digital. El sitio vigente conserva catálogo, variantes, materiales, cuidados y precios de referencia, pero los pedidos se consultan y confirman por teléfono según disponibilidad.
 
 <figure class="case-figure wide">
   <img

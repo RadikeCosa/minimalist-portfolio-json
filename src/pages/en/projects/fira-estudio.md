@@ -22,18 +22,6 @@ repository: "https://github.com/RadikeCosa/fira-estudio"
 
 Fira Estudio needed to present and sell its textiles online through a product aligned with the way the business operates.
 
-## First version
-
-The first version included a home page, categories, catalog, product pages, variants, a cart, checkout, and a certified Mercado Pago integration.
-
-The flow included payments, orders, webhooks, and transactional emails.
-
-## Operational change
-
-Demand exceeded the business's production capacity. Keeping automated purchases would have allowed orders that could later prove difficult to fulfill.
-
-We reframed the product as a digital showcase. The current site retains the catalog, variants, materials, care information, and reference pricing, while orders are discussed and confirmed by phone according to availability.
-
 <figure class="case-figure wide">
   <img
     src="/case-studies/fira/catalog-production.webp"
@@ -45,6 +33,18 @@ We reframed the product as a digital showcase. The current site retains the cata
   />
   <figcaption>Production catalog: categories and product presentation, with availability handled through inquiry.</figcaption>
 </figure>
+
+## First version
+
+The first version included a home page, categories, catalog, product pages, variants, a cart, checkout, and a certified Mercado Pago integration.
+
+The flow included payments, orders, webhooks, and transactional emails.
+
+## Operational change
+
+Demand exceeded the business's production capacity. Keeping automated purchases would have allowed orders that could later prove difficult to fulfill.
+
+We reframed the product as a digital showcase. The current site retains the catalog, variants, materials, care information, and reference pricing, while orders are discussed and confirmed by phone according to availability.
 
 <figure class="case-figure wide">
   <img

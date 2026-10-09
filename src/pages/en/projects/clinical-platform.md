@@ -22,10 +22,6 @@ stack:
 
 In home care, schedules, patient information, and visit records can be scattered across messages, notes, and memory. This application explores how to organize that work so a professional can record a visit and continue follow-up from a phone.
 
-## Application overview
-
-The home screen brings together **Today**, **Schedule**, and **Patients**. From there, the professional organizes treatment, appointments, and visits. Visits can be recorded live or later, with a brief clinical note, intervention, next step, and optional assessments.
-
 <figure class="case-figure case-figure--screen">
   <div class="case-figure__media">
     <img
@@ -39,6 +35,10 @@ The home screen brings together **Today**, **Schedule**, and **Patients**. From 
   </div>
   <figcaption>Local pilot with fictional data: the Today view helps prioritize pending and scheduled visits.</figcaption>
 </figure>
+
+## Application overview
+
+The home screen brings together **Today**, **Schedule**, and **Patients**. From there, the professional organizes treatment, appointments, and visits. Visits can be recorded live or later, with a brief clinical note, intervention, next step, and optional assessments.
 
 ## My contribution
 
