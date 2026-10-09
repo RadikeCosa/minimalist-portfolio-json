@@ -109,6 +109,15 @@ for (const [page, title] of [
   if (!html.includes(`"name":"${title} | Ramiro Nicolás Cosa"`)) failures.push(`${page}: nombre JSON-LD incorrecto`);
 }
 
+for (const page of ["index.html", "en/index.html"]) {
+  const html = await readFile(join("dist", page), "utf8");
+  const order = ["name-family-games", "name-fira-estudio", "name-clinical-app"].map(id => html.indexOf(`id="${id}"`));
+  if (order.some(i => i < 0) || order.some((i,n) => n > 0 && i <= order[n-1])) failures.push(`${page}: orden de destacados incorrecto`);
+  for (const id of ["top", "projects", "approach", "about", "skills", "contact"]) {
+    if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta ancla ${id}`);
+  }
+  if (!html.includes("secondary-project")) failures.push(`${page}: falta proyecto complementario`);
+}
 const homeChecks = [
   ["index.html", "Desarrollo web. Del problema al producto.", "Ver proyectos"],
   ["en/index.html", "Web development. From problem to product.", "View projects"],
@@ -116,7 +125,7 @@ const homeChecks = [
 for (const [page, ...expected] of homeChecks) {
   const html = await readFile(join("dist", page), "utf8");
   for (const text of expected) {
-    if (!html.includes(text)) failures.push(`${page}: falta texto principal "${text}"`);
+    if (!html.replace(/<br\b[^>]*>/g, " ").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").includes(text)) failures.push(`${page}: falta texto principal "${text}"`);
   }
 }
 

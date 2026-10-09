@@ -1,59 +1,14 @@
 ---
-import Section from "../Section.astro";
-import { getLangFromUrl } from "@/i18n/utils";
+import Section from "@/components/Section.astro";
 import type { Language } from "@/i18n/types";
-import { getHomeContent } from "@/content/home";
-
-interface Props {
-  lang?: Language;
-}
-
+interface Props { lang: Language }
 const { lang } = Astro.props;
-const currentLang = lang || getLangFromUrl(Astro.url);
-const { capabilities } = getHomeContent(currentLang);
+const technologies = ["TypeScript", "React", "Next.js", "PostgreSQL", "Supabase", "Vitest", "Playwright"];
 ---
-
-<Section id="capabilities" title={capabilities.title}>
-  <div class="groups">
-    {capabilities.groups.map((group) => (
-      <section class="group">
-        <h3>{group.title}</h3>
-        <ul>{group.items.map((item) => <li>{item}</li>)}</ul>
-      </section>
-    ))}
-  </div>
+<Section id="skills" title={lang === "en" ? "Technologies" : "Tecnologías"}>
+  <ul class="technology-list">{technologies.map(technology => <li>{technology}</li>)}</ul>
 </Section>
-
 <style>
-  .groups { display: grid; gap: 24px 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .group { border-top: 1px solid var(--border); padding-top: 12px; }
-  h3 {
-    align-items: center;
-    display: flex;
-    font-size: 1.02rem;
-    gap: 7px;
-    margin-bottom: 10px;
-  }
-  h3::before {
-    background: var(--accent);
-    border-radius: 999px;
-    content: "";
-    flex: 0 0 auto;
-    height: 5px;
-    width: 5px;
-  }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  li {
-    background: var(--bg-secondary);
-    border-radius: 6px;
-    color: var(--text-secondary);
-    font-size: 0.82rem;
-    font-weight: 550;
-    padding: 0.34rem 0.64rem;
-  }
-  @media (width <= 560px) { .groups { grid-template-columns: 1fr; } }
+  .technology-list { display: flex; flex-wrap: wrap; gap: 16px 28px; padding-block: 24px; border-block: 2px solid var(--ink); }
+  li { font-size: 15px; font-weight: 700; letter-spacing: .04em; }
 </style>
