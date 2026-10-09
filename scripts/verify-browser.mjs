@@ -105,9 +105,17 @@ try {
   if (await page.locator(':focus').getAttribute('href') !== '#main-content') failures.push('skip link is not first keyboard target');
   await page.keyboard.press('Enter');
   if (!await page.locator('#main-content').evaluate(el => el === document.activeElement)) failures.push('skip link does not move focus to main');
+  const navLink = page.locator('.site-nav a').first();
+  await navLink.hover();
+  try {
+    await expect.poll(() => navLink.evaluate(el => getComputedStyle(el,'::after').transform)).toBe('matrix(1, 0, 0, 1, 0, 0)');
+  } catch { failures.push('navigation: hover underline does not become visible'); }
+  if (await navLink.evaluate(el => getComputedStyle(el).textDecorationLine) !== 'none') failures.push('navigation: duplicate underline on hover');
   const card = page.locator('.project-card').first();
   await page.emulateMedia({reducedMotion:'reduce'}); await card.hover();
   if (await card.evaluate(el=>getComputedStyle(el).transform) !== 'none') failures.push('reduced motion: project card still moves');
+  if (await card.locator('.project-cta span').evaluate(el=>getComputedStyle(el).transform) !== 'none') failures.push('reduced motion: project arrow still moves');
+  if (await navLink.evaluate(el=>getComputedStyle(el,'::after').transitionDuration) !== '0s') failures.push('reduced motion: navigation underline still animates');
   const focus = page.locator('.button').first(); await focus.focus();
   if (await focus.evaluate(el => getComputedStyle(el).outlineStyle) === 'none') failures.push('missing keyboard focus outline');
   await page.emulateMedia({media:'print'});

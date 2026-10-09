@@ -6,12 +6,14 @@ const { lang } = Astro.props;
 const en = lang === "en";
 const home = en ? "/en/" : "/";
 const alternate = getAlternateUrl(Astro.url, en ? "es" : "en");
+const aboutHref = en ? "/en/about/" : "/sobre-mi/";
+const isAbout = Astro.url.pathname.replace(/\/$/, "") === aboutHref.replace(/\/$/, "");
 ---
 <header class="site-header no-print">
   <a class="wordmark" translate="no" href={home} aria-label={en ? "Ramiro Cosa, home" : "Ramiro Cosa, inicio"}>Ramiro Cosa<span aria-hidden="true">.</span></a>
   <nav class="site-nav" aria-label={en ? "Main navigation" : "Navegación principal"}>
     <a href={`${home}#projects`}>{en ? "Projects" : "Proyectos"}</a>
-    <a href={en ? "/en/about/" : "/sobre-mi/"}>{en ? "About" : "Sobre mí"}</a>
+    <a href={aboutHref} aria-current={isAbout ? "page" : undefined}>{en ? "About" : "Sobre mí"}</a>
     <a href={`${home}#contact`}>{en ? "Contact" : "Contacto"}</a>
   </nav>
   <nav class="language-nav" aria-label={en ? "Language" : "Idioma"}>

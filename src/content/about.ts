@@ -3,6 +3,9 @@ import type { Language } from "@/i18n/types";
 const aboutContent = {
   es: {
     title: "Sobre mí",
+    profile: "Desarrollo web · Análisis funcional",
+    aiTitle: "IA como herramienta",
+    periods: ["Desde 2004", "2013—2024", "Desde 2020"],
     intro: [
       "Desarrollo productos web desde 2020. Me interesa entender qué necesita una persona antes de decidir qué construir: ordenar el problema, definir los flujos e implementar una solución que pueda probarse y revisarse.",
       "Mi experiencia en salud —práctica profesional y coordinación de servicios— aporta conocimiento de procesos complejos y una especialización en HealthTech. También aplico este enfoque en proyectos de otros sectores.",
@@ -29,6 +32,9 @@ const aboutContent = {
   },
   en: {
     title: "About",
+    profile: "Web development · Functional analysis",
+    aiTitle: "AI as a tool",
+    periods: ["Since 2004", "2013—2024", "Since 2020"],
     intro: [
       "I have been building web products since 2020. I want to understand what a person needs before deciding what to build: organising the problem, defining workflows, and implementing a solution that can be tested and revisited.",
       "My healthcare experience in professional practice and service coordination gives me an understanding of complex workflows and a HealthTech specialization. I apply the same approach to projects in other industries.",
