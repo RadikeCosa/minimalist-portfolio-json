@@ -1,8 +1,8 @@
 ---
-interface Props { title?: string; id?: string; class?: string }
-const { title, id, class: className } = Astro.props;
+interface Props { title?: string; id?: string; class?: string; decorativeTitle?: boolean; accent?: "red" | "blue" }
+const { title, id, class: className, decorativeTitle = false, accent } = Astro.props;
 ---
 <section id={id} class:list={["section", className]}>
-  {title && <h2>{title}</h2>}
+  {title && <h2 class:list={[accent && `section-title-${accent}`]}>{decorativeTitle ? <span class="decorative-title">{title}</span> : title}</h2>}
   <slot />
 </section>

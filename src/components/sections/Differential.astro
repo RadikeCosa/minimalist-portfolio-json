@@ -6,17 +6,20 @@ interface Props { lang: Language }
 const { lang } = Astro.props;
 const { differential } = getHomeContent(lang);
 ---
-<Section id="approach" title={differential.title}>
+<Section id="approach" title={differential.title} accent="blue" decorativeTitle>
   <ol class="method-list">
-    {differential.items.map((item,i) => <li><span aria-hidden="true">{String(i+1).padStart(2,"0")}</span><div><h3>{item.title}</h3><p>{item.description}</p></div></li>)}
+    {differential.items.map((item,i) => <li><span class:list={["method-step", `step-${i+1}`]} aria-hidden="true">{String(i+1).padStart(2,"0")}</span><div><h3><span class="decorative-title">{item.title}</span></h3><p>{item.description}</p></div></li>)}
   </ol>
 </Section>
 <style>
   .method-list { padding: 0; list-style: none; counter-reset: step; }
-  li { display: grid; grid-template-columns: 60px 1fr; gap: 24px; border-top: 2px solid var(--ink); padding: 24px 0; }
+  li { display: grid; grid-template-columns: max-content minmax(0,1fr); gap: 24px; border-top: 2px solid var(--ink); padding: 24px 0; }
   li:last-child { border-bottom: 2px solid var(--ink); }
-  li > span { font-size: 32px; font-weight: 800; }
+  .method-step { display: grid; place-items: center; min-width: 52px; width: max-content; min-height: 52px; padding: 4px; aspect-ratio: 1; align-self: start; font-size: 26px; font-weight: 800; background: var(--red); color: var(--paper); }
+  .step-2 { background: var(--blue); }
+  .step-3 { background: var(--yellow); color: var(--ink); }
   li > div { display: grid; grid-template-columns: minmax(180px,1fr) minmax(0,2fr); gap: 24px; }
   p { max-width: 60ch; }
-  @media (width < 768px) { li { grid-template-columns: 32px 1fr; gap: 16px; } li > span { font-size: 24px; } li > div { grid-template-columns: 1fr; gap: 12px; } }
+  @media (width < 768px) { li { gap: 16px; } .method-step { min-width: 32px; min-height: 32px; font-size: 18px; } li > div { grid-template-columns: 1fr; gap: 12px; } }
+  @media print { .method-step { background: var(--paper); color: var(--ink); } }
 </style>

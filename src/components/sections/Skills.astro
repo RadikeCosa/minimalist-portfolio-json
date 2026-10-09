@@ -5,10 +5,13 @@ interface Props { lang: Language }
 const { lang } = Astro.props;
 const technologies = ["TypeScript", "React", "Next.js", "PostgreSQL", "Supabase", "Vitest", "Playwright"];
 ---
-<Section id="skills" title={lang === "en" ? "Technologies" : "Tecnologías"}>
-  <ul class="technology-list">{technologies.map(technology => <li translate="no">{technology}</li>)}</ul>
+<Section id="skills" title={lang === "en" ? "Technologies" : "Tecnologías"} accent="red" decorativeTitle>
+  <ul class="technology-list">{technologies.map(technology => <li translate="no"><span class="tech-marker" aria-hidden="true"></span><span class="decorative-title">{technology}</span></li>)}</ul>
 </Section>
 <style>
   .technology-list { display: flex; flex-wrap: wrap; gap: 16px 28px; padding-block: 24px; border-block: 2px solid var(--ink); }
-  li { font-size: 15px; font-weight: 700; letter-spacing: .04em; }
+  li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; letter-spacing: .04em; }
+  .tech-marker { width: 10px; height: 10px; flex: 0 0 auto; border: 2px solid var(--ink); background: var(--red); }
+  li:nth-child(3n+2) .tech-marker { background: var(--blue); }
+  li:nth-child(3n) .tech-marker { background: var(--yellow); }
 </style>
