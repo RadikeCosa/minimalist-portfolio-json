@@ -69,17 +69,16 @@ The full loop includes:
 Tutti Frutti adds a second in-person game to the platform. The group creates or opens a room, configures a game, answers categories for each letter, and reviews responses before comparing results.
 
 <figure class="case-figure case-figure--screen case-figure--preview">
-  <a href="/case-studies/juegos-familiares/tutti-frutti-round.png">
-    <img
-      src="/case-studies/juegos-familiares/tutti-frutti-round.png"
-      alt="Tutti Frutti round in a room, showing the round letter and fields for five categories."
-      width="1416"
-      height="4722"
-      loading="lazy"
-      decoding="async"
-    />
-  </a>
+  <img
+    src="/case-studies/juegos-familiares/tutti-frutti-round.png"
+    alt="Tutti Frutti round in a room, showing the round letter and fields for five categories."
+    width="1416"
+    height="4722"
+    loading="lazy"
+    decoding="async"
+  />
   <figcaption>Demo round: each participant fills in answers from their phone.</figcaption>
+  <a class="text-link capture-link" href="/case-studies/juegos-familiares/tutti-frutti-round.png">View full screenshot</a>
 </figure>
 
 ## My contribution

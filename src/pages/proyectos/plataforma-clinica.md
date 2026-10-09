@@ -10,6 +10,11 @@ status: "Piloto local · Datos ficticios · Sin demo pública"
 problem: "Organizar pacientes, tratamientos, citas y visitas domiciliarias en flujos clínicos claros."
 contribution: "Análisis funcional e implementación de flujos clínicos basados en FHIR."
 decision: "Mantener el piloto local y con datos ficticios; no presentarlo como listo para historias clínicas reales."
+coverImage: "/case-studies/clinical-app/today-card-fictional.webp"
+coverImageAlt: "Vista Hoy de la aplicación clínica con agenda y visitas de demostración ficticias."
+coverImageCaption: "Piloto local con datos ficticios: la vista Hoy ayuda a priorizar visitas pendientes y previstas."
+coverImageOriginal: "/case-studies/clinical-app/today-fictional.png"
+coverImageFormat: "screen"
 stack:
   - "Next.js 16"
   - "TypeScript"
@@ -21,20 +26,6 @@ stack:
 ## Problema
 
 En la atención domiciliaria, la agenda, los datos de cada paciente y el registro de las visitas pueden quedar repartidos entre mensajes, notas y memoria. La aplicación explora cómo ordenar ese trabajo para que el profesional pueda registrar una atención y retomar su seguimiento desde el teléfono.
-
-<figure class="case-figure case-figure--screen">
-  <div class="case-figure__media">
-    <img
-      src="/case-studies/clinical-app/today-fictional.png"
-      alt="Vista Hoy de la aplicación clínica con agenda y visitas de demostración ficticias."
-      width="750"
-      height="2726"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <figcaption>Piloto local con datos ficticios: la vista Hoy ayuda a priorizar visitas pendientes y previstas.</figcaption>
-</figure>
 
 ## La aplicación
 
@@ -58,7 +49,7 @@ El registro habitual prioriza estado y respuesta e intervención realizada. Pró
 
 FHIR R4 modela los datos clínicos en el servidor. La interfaz trabaja con conceptos del producto; el adaptador traduce entre el modelo clínico y los flujos de la aplicación. Esto mantiene las dependencias y reglas de dominio fuera de las pantallas.
 
-<figure class="case-figure case-figure--screen">
+<figure class="case-figure case-figure--screen case-figure--preview">
   <div class="case-figure__media">
     <img
       src="/case-studies/clinical-app/visit-fictional.png"
@@ -70,6 +61,7 @@ FHIR R4 modela los datos clínicos en el servidor. La interfaz trabaja con conce
     />
   </div>
   <figcaption>Registro de una visita de demostración. Las capturas utilizan exclusivamente pacientes y datos inventados.</figcaption>
+  <a class="text-link capture-link" href="/case-studies/clinical-app/visit-fictional.png">Ver captura completa</a>
 </figure>
 
 ## Estado, privacidad y límites

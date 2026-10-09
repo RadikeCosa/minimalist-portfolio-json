@@ -9,6 +9,9 @@ status: "Public site · Live"
 problem: "Guide inquiries for a home-rehabilitation service in Neuquén."
 contribution: "Analysis and implementation of the public website."
 decision: "Explain the service and guide inquiries with context."
+coverImage: "/case-studies/kinesiology-landing/cover-2026-09-27.webp"
+coverImageAlt: "Homepage for Kinesiología a Domicilio in Neuquén, presenting the service and contact options."
+coverImageCaption: "Public homepage captured on September 27, 2026."
 stack:
   - "Next.js 15"
   - "React 19"
@@ -27,18 +30,6 @@ An independent home-rehabilitation service in Neuquén needed a digital presence
 ## Public site
 
 The landing page presents the service and offers an initial guided orientation through **Evaluate**. The flow helps people prepare an inquiry and provides WhatsApp contact with prefilled opening messages.
-
-<figure class="case-figure">
-  <img
-    src="/case-studies/kinesiology-landing/cover-2026-09-27.webp"
-    alt="Homepage for Kinesiología a Domicilio in Neuquén, presenting the service and contact options."
-    width="1440"
-    height="1000"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Public homepage captured on September 27, 2026.</figcaption>
-</figure>
 
 The hero image sets the home-care context. The site and its content guide the next step without promising clinical outcomes.
 

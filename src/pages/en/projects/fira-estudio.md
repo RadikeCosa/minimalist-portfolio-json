@@ -9,6 +9,9 @@ status: "Web catalog · Public site"
 problem: "Present textile products in a way the business could operate."
 contribution: "Web product development and implementation."
 decision: "Shift from e-commerce to a catalog when the business could not support online sales operations."
+coverImage: "/case-studies/fira/catalog-production.webp"
+coverImageAlt: "Fira Estudio's production catalog showing categories and featured textile products."
+coverImageCaption: "Production catalog: categories and product presentation, with availability handled through inquiry."
 stack:
   - "Next.js"
   - "TypeScript"
@@ -21,18 +24,6 @@ repository: "https://github.com/RadikeCosa/fira-estudio"
 ## Need
 
 Fira Estudio needed to present and sell its textiles online through a product aligned with the way the business operates.
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/fira/catalog-production.webp"
-    alt="Fira Estudio's production catalog showing categories and featured textile products."
-    width="1200"
-    height="800"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Production catalog: categories and product presentation, with availability handled through inquiry.</figcaption>
-</figure>
 
 ## First version
 

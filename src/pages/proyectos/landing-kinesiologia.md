@@ -9,6 +9,9 @@ status: "Sitio público · Publicado"
 problem: "Orientar consultas para un servicio de rehabilitación domiciliaria en Neuquén."
 contribution: "Análisis e implementación del sitio público."
 decision: "Informar sobre el servicio y guiar consultas con contexto."
+coverImage: "/case-studies/kinesiology-landing/cover-2026-09-27.webp"
+coverImageAlt: "Portada del sitio de Kinesiología a Domicilio en Neuquén, con presentación del servicio y opciones de contacto."
+coverImageCaption: "Portada pública del sitio, capturada el 27 de septiembre de 2026."
 stack:
   - "Next.js 15"
   - "React 19"
@@ -27,18 +30,6 @@ Un servicio independiente de kinesiología domiciliaria en Neuquén necesitaba u
 ## Sitio público
 
 La landing presenta el servicio y permite iniciar una orientación previa mediante **Evaluar**. El recorrido prepara a la persona para consultar y ofrece contacto por WhatsApp con mensajes iniciales estructurados.
-
-<figure class="case-figure">
-  <img
-    src="/case-studies/kinesiology-landing/cover-2026-09-27.webp"
-    alt="Portada del sitio de Kinesiología a Domicilio en Neuquén, con presentación del servicio y opciones de contacto."
-    width="1440"
-    height="1000"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Portada pública del sitio, capturada el 27 de septiembre de 2026.</figcaption>
-</figure>
 
 La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio y su contenido orientan el siguiente paso sin prometer resultados clínicos.
 

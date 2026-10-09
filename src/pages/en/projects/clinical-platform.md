@@ -10,6 +10,11 @@ status: "Local pilot · Fictional data · No public demo"
 problem: "Organize patients, treatment, appointments, and home visits into clear clinical workflows."
 contribution: "Functional analysis and implementation of clinical workflows modeled with FHIR."
 decision: "Keep the pilot local and use fictional data; do not present it as ready for real clinical records."
+coverImage: "/case-studies/clinical-app/today-card-fictional.webp"
+coverImageAlt: "Today view in the clinical application with fictional demo appointments and visits."
+coverImageCaption: "Local pilot with fictional data: the Today view helps prioritize pending and scheduled visits."
+coverImageOriginal: "/case-studies/clinical-app/today-fictional.png"
+coverImageFormat: "screen"
 stack:
   - "Next.js 16"
   - "TypeScript"
@@ -21,20 +26,6 @@ stack:
 ## Problem
 
 In home care, schedules, patient information, and visit records can be scattered across messages, notes, and memory. This application explores how to organize that work so a professional can record a visit and continue follow-up from a phone.
-
-<figure class="case-figure case-figure--screen">
-  <div class="case-figure__media">
-    <img
-      src="/case-studies/clinical-app/today-fictional.png"
-      alt="Today view in the clinical application with fictional demo appointments and visits."
-      width="750"
-      height="2726"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <figcaption>Local pilot with fictional data: the Today view helps prioritize pending and scheduled visits.</figcaption>
-</figure>
 
 ## Application overview
 
@@ -58,7 +49,7 @@ The usual record prioritizes patient status and response, and the intervention p
 
 FHIR R4 models clinical data on the server. The interface works with product concepts, while an adapter translates between the clinical model and application workflows. This keeps domain rules and dependencies out of the screens.
 
-<figure class="case-figure case-figure--screen">
+<figure class="case-figure case-figure--screen case-figure--preview">
   <div class="case-figure__media">
     <img
       src="/case-studies/clinical-app/visit-fictional.png"
@@ -70,6 +61,7 @@ FHIR R4 models clinical data on the server. The interface works with product con
     />
   </div>
   <figcaption>Recording a demonstration visit. These screenshots use fictional patients and data only.</figcaption>
+  <a class="text-link capture-link" href="/case-studies/clinical-app/visit-fictional.png">View full screenshot</a>
 </figure>
 
 ## Status, privacy, and boundaries

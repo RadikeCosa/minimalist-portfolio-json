@@ -9,6 +9,9 @@ status: "Catálogo web · Sitio público"
 problem: "Presentar los productos textiles de acuerdo con la capacidad operativa del emprendimiento."
 contribution: "Desarrollo del producto web y su implementación."
 decision: "Pasar de e-commerce a catálogo cuando la operación no podía sostener las ventas online."
+coverImage: "/case-studies/fira/catalog-production.webp"
+coverImageAlt: "Catálogo productivo de Fira Estudio con categorías y productos textiles destacados."
+coverImageCaption: "Catálogo productivo: categorías y presentación de productos, con disponibilidad gestionada mediante consulta."
 stack:
   - "Next.js"
   - "TypeScript"
@@ -21,18 +24,6 @@ repository: "https://github.com/RadikeCosa/fira-estudio"
 ## Necesidad
 
 Fira Estudio necesitaba presentar y vender sus textiles online mediante un producto ajustado a su forma de trabajo.
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/fira/catalog-production.webp"
-    alt="Catálogo productivo de Fira Estudio con categorías y productos textiles destacados."
-    width="1200"
-    height="800"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Catálogo productivo: categorías y presentación de productos, con disponibilidad gestionada mediante consulta.</figcaption>
-</figure>
 
 ## Primera versión
 
