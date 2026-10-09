@@ -116,7 +116,7 @@ const languages = content.languages.split(" · ");
   .languages { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
   .languages li { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
   .language-name { font-size: 18px; font-weight: 800; }
-  .language-level { font-size: 14px; line-height: 1.6; border-bottom: 4px solid var(--yellow); }
+  .language-level { font-size: 14px; line-height: 1.6; }
   .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; border-top: 4px solid var(--ink); padding-top: 32px; }
   .actions .text-link { gap: 8px; font-size: 14px; }
   @media (width < 1024px) {
@@ -138,6 +138,5 @@ const languages = content.languages.split(" · ");
     .profile-label { background: var(--paper); }
     h2,.period { color: var(--ink) !important; }
     .ai-note { border-color: var(--ink); }
-    .language-level { border-color: var(--ink); }
   }
 </style>
