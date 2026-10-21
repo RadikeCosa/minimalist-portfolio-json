@@ -86,14 +86,17 @@ for (const pair of casePairs) {
   for (const [index, html] of rendered.entries()) {
     const isFamilyGames = pair[index].includes("juegos-familiares/") || pair[index].includes("family-games/");
     const isFira = pair[index].includes("fira-estudio/");
-    if (isFamilyGames || isFira) {
+    const isClinical = pair[index].includes("plataforma-clinica/") || pair[index].includes("clinical-platform/");
+    if (isFamilyGames || isFira || isClinical) {
       if (!/<main\b[^>]*class="[^"]*\bcase-product\b/.test(html) || !/<p\b[^>]*class="[^"]*\bproduct-status\b/.test(html)) {
         failures.push(`${pair[index]}: falta la presentación de producto o su estado`);
       }
       if (/<section\b[^>]*class="case-summary"/.test(html) || /<dt\b/.test(html)) {
         failures.push(`${pair[index]}: conserva el resumen anterior`);
       }
-      const expected = isFamilyGames ? (index === 0
+      const expected = isClinical ? (index === 0
+        ? ["práctica cotidiana", "buenas prácticas de registro", "FHIR", "todavía no se han implementado integraciones", "25.326", "26.529", "passkeys", "comenzando a trabajar con datos reales", "evaluando dónde desplegar", "pacientes y datos ficticios"]
+        : ["everyday practice", "record-keeping practices", "FHIR", "integrations with other systems have not yet been implemented", "25.326", "26.529", "passkeys", "beginning to work with real data", "evaluating where to deploy", "fictional patients and data"]) : isFamilyGames ? (index === 0
         ? ["Dos juegos para compartir", "El desafío técnico", "Desarrollado y probado en uso", "más de 100 partidas familiares", "requieren conexión"]
         : ["Two games to share", "The technical challenge", "Built and tested through use", "more than 100 family games", "require an internet connection"]) : (index === 0
         ? ["identidad visual que aportó el cliente", "De tienda online a catálogo", "Mercado Pago", "pedidos por WhatsApp", "antes de cobrarlo"]
@@ -146,7 +149,12 @@ for (const [page, intro] of [["sobre-mi/index.html", "Desarrollo productos web d
 }
 for (const page of ["proyectos/plataforma-clinica/index.html", "en/projects/clinical-platform/index.html"]) {
   const html = await readFile(join("dist", page), "utf8");
-  if (!html.includes("FHIR") || !html.includes("HAPI") || html.includes('class="case-links"><a href="https://kinesiologiaadomicilio.vercel.app')) failures.push(`${page}: límites del piloto clínico incorrectos`);
+  const plainText = html.replace(/<[^>]*>/g, "");
+  const noDemo = page.startsWith("en/") ? "The application has no public demo." : "La aplicación no tiene una demo pública.";
+  if (!html.includes("FHIR R4") || !plainText.includes(noDemo) || /<a\b[^>]*href="https:\/\/kinesiologiaadomicilio\.vercel\.app/.test(html)) failures.push(`${page}: estado clínico o límites de acceso incorrectos`);
+  for (const url of ["https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion", "https://www.argentina.gob.ar/normativa/nacional/160432/actualizacion"]) {
+    if (!html.includes(`href="${url}"`)) failures.push(`${page}: falta fuente normativa ${url}`);
+  }
 }
 const homeChecks = [
   ["index.html", "Desarrollo web. Del problema al producto.", "Ver proyectos"],

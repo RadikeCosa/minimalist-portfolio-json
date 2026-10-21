@@ -1,20 +1,13 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Clinical App for Home Rehabilitation"
-description: "A clinical application for organizing patients, treatment, appointments, and home visits through FHIR-based workflows. Local pilot using fictional data, with no public demo."
+description: "An application designed around professional practice to support everyday home physiotherapy, with clinical data modelled using FHIR."
 locale: "en"
 alternateUrl: "/proyectos/plataforma-clinica/"
 repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 role: "HealthTech product · Functional analysis and implementation"
-status: "Local pilot · Fictional data · No public demo"
-problem: "Organize patients, treatment, appointments, and home visits into clear clinical workflows."
-contribution: "Functional analysis and implementation of clinical workflows modeled with FHIR."
-decision: "Keep the pilot local and use fictional data; do not present it as ready for real clinical records."
-coverImage: "/case-studies/clinical-app/today-card-fictional.webp"
-coverImageAlt: "Today view in the clinical application with fictional demo appointments and visits."
-coverImageCaption: "Local pilot with fictional data: the Today view helps prioritize pending and scheduled visits."
-coverImageOriginal: "/case-studies/clinical-app/today-fictional.png"
-coverImageFormat: "screen"
+status: "In development and evaluation · No public demo"
 stack:
   - "Next.js 16"
   - "TypeScript"
@@ -23,49 +16,39 @@ stack:
   - "Playwright"
 ---
 
-## Problem
+## An app designed around everyday practice
 
-In home care, schedules, patient information, and visit records can be scattered across messages, notes, and memory. This application explores how to organize that work so a professional can record a visit and continue follow-up from a phone.
+The application aims to make everyday home physiotherapy work easier. Its design starts with understanding how care is organised in practice and adapting the tool to that way of working: planning visits, reviewing patient history, recording progress, and sharing reports from a phone.
 
-## Application overview
+<h2 class="clinical-design-title">Making clinical records easier to complete and more useful</h2>
 
-The home screen brings together **Today**, **Schedule**, and **Patients**. From there, the professional organizes treatment, appointments, and visits. Visits can be recorded live or later, with a brief clinical note, intervention, next step, and optional assessments.
+The challenge is to make recording care quick and useful for the professional. Forms are designed around everyday use, with a clear information hierarchy, understandable fields, and validation that supports good record-keeping practices and patient follow-up.
 
-## My contribution
+<div class="clinical-gallery wide">
+  <figure>
+    <a href="/case-studies/clinical-app/today-fictional.png"><img src="/case-studies/clinical-app/today-fictional.png" alt="Open the full screenshot of the Today view, showing a schedule and visits for fictional patients." width="750" height="2726" loading="lazy" decoding="async" /></a>
+    <figcaption>Organising the day's visits. Demonstration screenshot using fictional data.</figcaption>
+  </figure>
+  <figure>
+    <a href="/case-studies/clinical-app/visit-fictional.png"><img src="/case-studies/clinical-app/visit-fictional.png" alt="Open the full screenshot of the mobile visit-recording form, using fictional data." width="750" height="3778" loading="lazy" decoding="async" /></a>
+    <figcaption>Recording care from a phone. Demonstration screenshot using fictional data.</figcaption>
+  </figure>
+</div>
 
-I translate home-care processes into workflows, rules, and information models. I contribute to functional analysis, architecture, and implementation, supported by documentation and tests.
+<h2 class="clinical-standard-title">Building on existing standards</h2>
 
-## Decisions
+Clinical data modelling builds on FHIR to use an established, recognised structure, avoid creating a custom model where the standard already meets the need, and prepare a foundation for future integrations.
 
-### Organize the day around visits
+This decision reflects the working approach: study available solutions, adapt them to the context, and build on them. Interoperability is a design goal; integrations with other systems have not yet been implemented.
 
-Today brings together ongoing, pending, and scheduled visits; Schedule supports date-based planning, and Patients provides access to each record and treatment. Appointments and clinical visits are distinct concepts, so an appointment can be rescheduled or cancelled without creating a clinical record.
+## Privacy and data protection
 
-### Keep visit records brief and reviewable
+Development takes Argentina's [Law 25.326 on Personal Data Protection](https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion) and [Law 26.529 on Patient Rights, Clinical Records, and Informed Consent](https://www.argentina.gob.ar/normativa/nacional/160432/actualizacion) as references. Confidentiality, authorised access, and safeguarding clinical information inform design and deployment decisions.
 
-The usual record prioritizes patient status and response, and the intervention performed. A next step, assessment, or procedure can be added when it supports follow-up. A confirmed visit can be corrected with a reason or voided with justification.
+## In development and evaluation
 
-### Keep FHIR out of the interface
+<aside class="clinical-progress">
+  <p>We are currently improving the recording forms, beginning to work with real data, and evaluating where to deploy the clinical server. Authentication is planned around passkeys and is being implemented.</p>
+</aside>
 
-FHIR R4 models clinical data on the server. The interface works with product concepts, while an adapter translates between the clinical model and application workflows. This keeps domain rules and dependencies out of the screens.
-
-<figure class="case-figure case-figure--screen case-figure--preview">
-  <div class="case-figure__media">
-    <img
-      src="/case-studies/clinical-app/visit-fictional.png"
-      alt="Mobile visit-recording form in the local pilot, using fictional data."
-      width="750"
-      height="3778"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <figcaption>Recording a demonstration visit. These screenshots use fictional patients and data only.</figcaption>
-  <a class="text-link capture-link" href="/case-studies/clinical-app/visit-fictional.png">View full screenshot</a>
-</figure>
-
-## Status, privacy, and boundaries
-
-The online clinical pilot is enabled only locally against a disposable HAPI FHIR server with fictional data. Clinical routes and writes are blocked on Vercel, and there is no public demo. Passkey access is implemented for one provisioned professional account; full mobile validation, recovery, and revocation still need validation.
-
-The application is not ready for real clinical data. PWA, offline work, later synchronization, and exportable reports are not implemented yet. Screenshots on this page come from the local fictional-data environment and contain no real patient information.
+<p class="clinical-demo-note">Public screenshots use fictional patients and data only. The application has no public demo.</p>

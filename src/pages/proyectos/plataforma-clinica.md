@@ -1,20 +1,13 @@
 ---
 layout: "../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Aplicación clínica para kinesiología domiciliaria"
-description: "Aplicación clínica para organizar pacientes, tratamientos, citas y visitas domiciliarias con flujos basados en FHIR. Piloto local con datos ficticios y sin demo pública."
+description: "Una aplicación para facilitar el trabajo cotidiano en kinesiología domiciliaria, diseñada desde la práctica profesional y con datos clínicos modelados en FHIR."
 locale: "es"
 alternateUrl: "/en/projects/clinical-platform/"
 repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 role: "Producto HealthTech · Análisis funcional e implementación"
-status: "Piloto local · Datos ficticios · Sin demo pública"
-problem: "Organizar pacientes, tratamientos, citas y visitas domiciliarias en flujos clínicos claros."
-contribution: "Análisis funcional e implementación de flujos clínicos basados en FHIR."
-decision: "Mantener el piloto local y con datos ficticios; no presentarlo como listo para historias clínicas reales."
-coverImage: "/case-studies/clinical-app/today-card-fictional.webp"
-coverImageAlt: "Vista Hoy de la aplicación clínica con agenda y visitas de demostración ficticias."
-coverImageCaption: "Piloto local con datos ficticios: la vista Hoy ayuda a priorizar visitas pendientes y previstas."
-coverImageOriginal: "/case-studies/clinical-app/today-fictional.png"
-coverImageFormat: "screen"
+status: "En desarrollo y evaluación · Sin demo pública"
 stack:
   - "Next.js 16"
   - "TypeScript"
@@ -23,49 +16,39 @@ stack:
   - "Playwright"
 ---
 
-## Problema
+## Una app pensada desde la práctica cotidiana
 
-En la atención domiciliaria, la agenda, los datos de cada paciente y el registro de las visitas pueden quedar repartidos entre mensajes, notas y memoria. La aplicación explora cómo ordenar ese trabajo para que el profesional pueda registrar una atención y retomar su seguimiento desde el teléfono.
+La aplicación busca facilitar el trabajo diario en kinesiología domiciliaria. Su diseño parte de entender cómo se organiza la atención en la práctica y adaptar la herramienta a esa forma de trabajar: planificar visitas, consultar antecedentes, registrar la evolución y compartir reportes desde el teléfono.
 
-## La aplicación
+<h2 class="clinical-design-title">Facilitar el registro y cuidar su calidad</h2>
 
-La pantalla de inicio reúne **Hoy**, **Agenda** y **Pacientes**. Desde allí se organizan tratamientos, citas y visitas; cada visita admite registro en vivo o diferido, evolución breve, intervención, próximo paso y evaluaciones opcionales.
+El desafío es hacer que registrar una atención resulte ágil y útil para el profesional. Los formularios se diseñan a partir del uso cotidiano, con información jerarquizada, campos claros y validaciones que acompañen buenas prácticas de registro y faciliten el seguimiento de cada paciente.
 
-## Mi aporte
+<div class="clinical-gallery wide">
+  <figure>
+    <a href="/case-studies/clinical-app/today-fictional.png"><img src="/case-studies/clinical-app/today-fictional.png" alt="Abrir captura completa de la vista Hoy, con agenda y visitas de pacientes ficticios." width="750" height="2726" loading="lazy" decoding="async" /></a>
+    <figcaption>Organización de las visitas del día. Captura de demostración con datos ficticios.</figcaption>
+  </figure>
+  <figure>
+    <a href="/case-studies/clinical-app/visit-fictional.png"><img src="/case-studies/clinical-app/visit-fictional.png" alt="Abrir captura completa del formulario móvil de registro de una visita, con datos ficticios." width="750" height="3778" loading="lazy" decoding="async" /></a>
+    <figcaption>Registro de una atención desde el teléfono. Captura de demostración con datos ficticios.</figcaption>
+  </figure>
+</div>
 
-Traduzco procesos de atención domiciliaria a flujos, reglas y modelos de información. Participo en el análisis funcional, la arquitectura y la implementación, con documentación y pruebas para sostener las decisiones del producto.
+<h2 class="clinical-standard-title">Partir de estándares existentes</h2>
 
-## Decisiones
+El modelado de los datos clínicos se apoya en FHIR para aprovechar una estructura existente y reconocida, evitar desarrollar un modelo propio cuando el estándar ya resuelve esa necesidad y preparar una base para futuras integraciones.
 
-### Organizar el día alrededor de las visitas
+Esta decisión forma parte del enfoque de trabajo: estudiar las soluciones disponibles, adaptarlas al contexto y construir sobre ellas. La interoperabilidad es un objetivo del diseño; todavía no se han implementado integraciones con otros sistemas.
 
-Hoy reúne visitas en curso, pendientes y previstas; Agenda permite revisar fechas, y Pacientes ofrece acceso a la ficha y al tratamiento. Las citas y las atenciones son conceptos distintos, por lo que una cita puede reprogramarse o cancelarse sin crear un registro clínico.
+## Privacidad y protección de datos
 
-### Mantener la atención breve y revisable
+El desarrollo toma como referencia la [Ley 25.326 de Protección de los Datos Personales](https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion) y la [Ley 26.529 de Derechos del Paciente, Historia Clínica y Consentimiento Informado](https://www.argentina.gob.ar/normativa/nacional/160432/actualizacion). La confidencialidad, el acceso autorizado y el resguardo de la información clínica forman parte de las decisiones de diseño y despliegue.
 
-El registro habitual prioriza estado y respuesta e intervención realizada. Próximo paso, evaluaciones y procedimientos se agregan cuando aportan información al seguimiento. Una visita confirmada puede corregirse con motivo o anularse de forma justificada.
+## En desarrollo y evaluación
 
-### Aislar FHIR de la interfaz
+<aside class="clinical-progress">
+  <p>Actualmente estamos mejorando los formularios de registro, comenzando a trabajar con datos reales y evaluando dónde desplegar el servidor clínico. La autenticación está planteada con passkeys y se encuentra en proceso de implementación.</p>
+</aside>
 
-FHIR R4 modela los datos clínicos en el servidor. La interfaz trabaja con conceptos del producto; el adaptador traduce entre el modelo clínico y los flujos de la aplicación. Esto mantiene las dependencias y reglas de dominio fuera de las pantallas.
-
-<figure class="case-figure case-figure--screen case-figure--preview">
-  <div class="case-figure__media">
-    <img
-      src="/case-studies/clinical-app/visit-fictional.png"
-      alt="Formulario móvil para registrar una visita en el piloto local con datos ficticios."
-      width="750"
-      height="3778"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <figcaption>Registro de una visita de demostración. Las capturas utilizan exclusivamente pacientes y datos inventados.</figcaption>
-  <a class="text-link capture-link" href="/case-studies/clinical-app/visit-fictional.png">Ver captura completa</a>
-</figure>
-
-## Estado, privacidad y límites
-
-El piloto clínico online solo se habilita localmente contra un servidor HAPI FHIR descartable con datos ficticios. Las rutas y escrituras clínicas están bloqueadas en Vercel, y no existe una demo pública. El acceso con passkeys está implementado para una cuenta profesional provisionada; la validación completa en móvil, recuperación y revocación sigue pendiente.
-
-La aplicación no está lista para datos clínicos reales. PWA, trabajo offline, sincronización posterior e informes exportables todavía no están implementados. Las capturas de esta página son del entorno local ficticio y no incluyen datos de pacientes reales.
+<p class="clinical-demo-note">Las capturas públicas utilizan exclusivamente pacientes y datos ficticios. La aplicación no tiene una demo pública.</p>
