@@ -1,52 +1,49 @@
 ---
 layout: "../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Landing para kinesiología domiciliaria"
-description: "Sitio público para orientar consultas sobre un servicio de rehabilitación domiciliaria en Neuquén."
+description: "Una web pensada para facilitar la primera consulta de kinesiología a domicilio en Neuquén, con orientación previa, SEO local y contacto por WhatsApp."
 locale: "es"
 alternateUrl: "/en/projects/home-rehabilitation-landing/"
-role: "Producto digital · Análisis e implementación"
+role: "Diseño, contenido e implementación web"
 status: "Sitio público · Publicado"
-problem: "Orientar consultas para un servicio de rehabilitación domiciliaria en Neuquén."
-contribution: "Análisis e implementación del sitio público."
-decision: "Informar sobre el servicio y guiar consultas con contexto."
-coverImage: "/case-studies/kinesiology-landing/cover-2026-09-27.webp"
-coverImageAlt: "Portada del sitio de Kinesiología a Domicilio en Neuquén, con presentación del servicio y opciones de contacto."
-coverImageCaption: "Portada pública del sitio, capturada el 27 de septiembre de 2026."
 stack:
   - "Next.js 15"
   - "React 19"
   - "TypeScript"
   - "Tailwind CSS 4"
-  - "Zod"
 website: "https://kinesiologiaadomicilio.vercel.app/"
-websiteLabel: "Sitio público"
+websiteLabel: "Ver sitio"
 repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 ---
 
-## Contexto
+## Una web pensada para facilitar la primera consulta
 
-Un servicio independiente de kinesiología domiciliaria en Neuquén necesitaba una presencia digital que explicara la atención, orientara a las personas y facilitara un primer contacto con información suficiente.
+Diseñé e implementé la landing a partir del conocimiento del servicio y de las dudas que suelen aparecer antes de una primera consulta. La presentación del profesional, la ubicación y las situaciones atendidas ayudan a entender qué ofrece la atención domiciliaria y si tiene sentido consultar por el caso propio o de un familiar.
 
-## Sitio público
+<figure class="case-figure wide">
+  <a href="/case-studies/kinesiology-landing/cover-2026-09-27.webp"><img src="/case-studies/kinesiology-landing/cover-2026-09-27.webp" alt="Abrir captura de la landing de kinesiología domiciliaria en Neuquén, con presentación del profesional y opciones de contacto." width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Presentación del servicio y del profesional. Captura pública de septiembre de 2026; se puede ampliar.</figcaption>
+</figure>
 
-La landing presenta el servicio y permite iniciar una orientación previa mediante **Evaluar**. El recorrido prepara a la persona para consultar y ofrece contacto por WhatsApp con mensajes iniciales estructurados.
+<h2 class="landing-guidance-title">Orientar y contactar con contexto</h2>
 
-La imagen de cabecera acompaña el contexto de atención domiciliaria; el sitio y su contenido orientan el siguiente paso sin prometer resultados clínicos.
+El recorrido **Evaluar** permite elegir una situación, leer una orientación y abrir WhatsApp con un mensaje preparado para esa consulta. Es una selección de opciones: acompaña el primer contacto sin automatizar una evaluación clínica.
 
-## Mi aporte
+Los mensajes también se adaptan al punto de entrada, como una consulta para un familiar o por un servicio específico. El objetivo es facilitar el inicio de la conversación y dar contexto al profesional.
 
-Diseñé e implementé la experiencia pública a partir del conocimiento del servicio y de las preguntas que suelen surgir antes de una primera consulta. También estructuré el recorrido de orientación y los canales de contacto.
+<h2 class="landing-quality-title">SEO local, experiencia móvil y medición</h2>
 
-## Decisiones
+Las páginas de inicio, servicios y orientación tienen títulos y descripciones propios, URLs canónicas y metadatos para compartir enlaces. El sitemap y los datos estructurados describen el servicio y su ubicación en Neuquén.
 
-### Orientar antes de iniciar una conversación
+La implementación utiliza imágenes adaptadas al tamaño de pantalla, carga prioritaria de la imagen principal, botones con tamaño táctil, foco visible y un enlace para saltar al contenido. Hay pruebas de los metadatos, sitemap, mensajes y eventos de analítica.
 
-El sitio explica para quién es el servicio y qué información ayuda a evaluar una consulta. El recorrido **Evaluar** y los mensajes preparados de WhatsApp reducen el intercambio inicial sin automatizar decisiones clínicas.
+La medición registra desde qué botón se inicia el contacto y la profundidad de lectura. El evento `whatsapp_intent` representa intención de contacto: un clic no confirma que se haya concretado una consulta. Antes de enviar el destino a analítica, se eliminan los parámetros con el mensaje precargado para no incluir su contenido.
 
-### Ajustar la captación al servicio
+## Alcance actual y próximos pasos
 
-La landing busca consultas con contexto y dentro de la capacidad del profesional, en lugar de maximizar el volumen de contactos.
+<aside class="landing-scope">
+  <p>El contacto continúa por WhatsApp para conversar sobre el caso y la disponibilidad. La web no confirma si ese clic terminó en una consulta o un turno. Una posible evolución sería llevar un seguimiento de consultas en una herramienta separada, sin enviar información clínica a la analítica.</p>
+</aside>
 
-## Implementación y alcance
-
-El sitio utiliza Next.js, TypeScript y componentes responsivos. Incluye metadatos para buscadores, analítica en las rutas públicas y validación de los datos de orientación.
+El rendimiento móvil también requiere seguimiento. Una auditoría de septiembre detectó margen de mejora en inicio y servicios; la interfaz se modificó después. El siguiente paso de evaluación es repetir las mediciones sobre la versión vigente antes de atribuir mejoras de velocidad o resultados de captación.
