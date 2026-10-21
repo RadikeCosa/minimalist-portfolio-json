@@ -8,6 +8,7 @@ import { projectPresentation } from "@/content/projects";
 import type { Projects } from "@/cv";
 
 interface ProjectCaseFrontmatter {
+  presentation?: "product";
   title: string;
   description?: string;
   locale?: Language;
@@ -30,6 +31,7 @@ interface ProjectCaseFrontmatter {
 }
 
 const frontmatter = (Astro.props.frontmatter ?? Astro.props) as ProjectCaseFrontmatter;
+const isProduct = frontmatter.presentation === "product";
 const coverSize = frontmatter.coverImage ? imageDimensions[frontmatter.coverImage] : undefined;
 const currentLang = frontmatter.locale || getLangFromUrl(Astro.url);
 const isEnglish = currentLang === "en";
@@ -65,7 +67,7 @@ const externalLinks = [
   alternateUrl={frontmatter.alternateUrl}
   isProject
 >
-  <main tabindex="-1" id="main-content" class="reading-page case-page" style={`--case-accent: var(--${accentColor}); --case-heading: var(--${accent === "yellow" ? "ink" : accentColor}); --case-on-accent: var(--${accent === "yellow" ? "ink" : "paper"});`}>
+  <main tabindex="-1" id="main-content" class:list={["reading-page", "case-page", { "case-product": isProduct }]} style={`--case-accent: var(--${accentColor}); --case-heading: var(--${accent === "yellow" ? "ink" : accentColor}); --case-on-accent: var(--${accent === "yellow" ? "ink" : "paper"});`}>
     <nav class="back no-print" aria-label={isEnglish ? "Project navigation" : "Navegación de proyecto"}>
       <a href={backHref}><ActionIcon name="back" />{backLabel}</a>
     </nav>
@@ -75,6 +77,7 @@ const externalLinks = [
         {presentation && <p class="case-label"><span class="case-number" aria-hidden="true">{String(presentation.order).padStart(2,"0")}</span><span class="eyebrow">{isEnglish ? "Case study" : "Caso de estudio"}</span></p>}
         <h1><span class="decorative-title">{frontmatter.title}</span></h1>
         {frontmatter.description && <p class="case-description">{frontmatter.description}</p>}
+        {isProduct && frontmatter.status && <p class="case-status product-status">{frontmatter.status}</p>}
 
         {
           (metaItems.length > 0 || frontmatter.stack?.length || externalLinks.length > 0) && (
@@ -112,7 +115,7 @@ const externalLinks = [
       </header>
 
       {
-        (frontmatter.status || frontmatter.problem || frontmatter.contribution || frontmatter.decision) && (
+        !isProduct && (frontmatter.status || frontmatter.problem || frontmatter.contribution || frontmatter.decision) && (
           <section class="case-summary" aria-label={isEnglish ? "Case summary" : "Resumen del caso"}>
             {frontmatter.status && <p class="case-status">{frontmatter.status}</p>}
             <dl>
@@ -203,7 +206,38 @@ const externalLinks = [
   .case-content :global(.case-decision p + p) { margin-top: 16px; }
   .case-footer { border-top: 2px solid var(--ink); padding-top: 24px; }
   .case-footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+  .case-product .product-status { border-left-color: var(--blue); margin-bottom: 0; }
+  .case-product .case-stack li:nth-child(3n + 1) .case-tech-marker { background: var(--red); }
+  .case-product .case-stack li:nth-child(3n + 2) .case-tech-marker { background: var(--blue); }
+  .case-product .case-stack li:nth-child(3n) .case-tech-marker { background: var(--yellow); }
+  .case-product .case-links { gap: 16px; }
+  .case-product .case-links a { padding: 8px 16px; border: 2px solid var(--ink); }
+  .case-product .case-links a:first-child { background: var(--red); color: var(--paper); }
+  .case-product .case-content :global(h2) { color: var(--ink); }
+  .case-product .case-content :global(.game-technical-title) { color: var(--blue); }
+  .case-product .case-content :global(.game-grid) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-block: 0; }
+  .case-product .case-content :global(.game-showcase) { display: flex; flex-direction: column; gap: 20px; min-width: 0; padding-top: 20px; border-top: 6px solid var(--red); }
+  .case-product .case-content :global(.game-showcase--blue) { border-top-color: var(--blue); }
+  .case-product .case-content :global(.game-showcase h3) { margin: 0; }
+  .case-product .case-content :global(.game-showcase--red h3) { color: var(--red); }
+  .case-product .case-content :global(.game-showcase--blue h3) { color: var(--blue); }
+  .case-product .case-content :global(.game-showcase figure) { margin: auto 0 0; }
+  .case-product .case-content :global(.game-screens) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .case-product .case-content :global(.game-screens img) { width: 100%; max-height: 320px; object-fit: contain; }
+  .case-product .case-content :global(.game-round) { display: block; max-width: 240px; margin-inline: auto; }
+  .case-product .case-content :global(.game-round img) { width: 100%; height: 320px; object-fit: cover; object-position: top; }
+  .case-product .case-content :global(.game-technical) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-block: 0; }
+  .case-product .case-content :global(.game-technical section) { min-width: 0; border-left: 4px solid var(--blue); padding-left: 20px; }
+  .case-product .case-content :global(.game-technical h3) { font-size: 20px; color: var(--blue); margin: 0 0 16px; }
+  .case-product .case-content :global(.game-usage) { background: var(--yellow); color: var(--ink); padding: 24px; }
+  .case-product .case-content :global(.game-usage__lead) { font-size: 22px; line-height: 1.3; font-weight: 800; margin-bottom: 12px; }
+  .case-product .case-content :global(.game-note) { font-size: 14px; border-top: 2px solid var(--ink); padding-top: 20px; }
+  @media (width < 1024px) {
+    .case-product .case-content :global(.game-technical) { grid-template-columns: 1fr; gap: 24px; }
+  }
   @media (width < 768px) {
+    .case-product .case-content :global(.game-grid) { grid-template-columns: 1fr; gap: 32px; }
+    .case-product .case-content :global(.game-showcase figure) { margin-top: 0; }
     .case-article { gap: 32px; }
     .case-summary dl { grid-template-columns: 1fr; }
     .case-summary dl > div:last-child { grid-column: auto; }
@@ -213,6 +247,8 @@ const externalLinks = [
     .case-content :global(.case-flow__connector) { transform: rotate(90deg); align-self: flex-start; }
   }
   @media print {
+    .case-product .case-links a:first-child,.case-product .case-content :global(.game-usage) { background: var(--paper); color: var(--ink); }
+    .case-product .case-content :global(.game-grid),.case-product .case-content :global(.game-technical) { grid-template-columns: 1fr; }
     .case-content :global(.case-figure--screen) { max-width: 220px; }
     .case-content :global(img) { max-height: 220mm; object-fit: contain; }
     .case-content :global(.case-figure--preview img) { aspect-ratio: auto; }
