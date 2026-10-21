@@ -1,110 +1,72 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Family Games"
-description: "A platform for in-person group games, with Impostor and Tutti Frutti."
+description: "Two games, one shared idea: make it easier to get together and play in person. Impostor and Tutti Frutti bring the group into a game; each player uses their phone while the conversation happens face to face."
 locale: "en"
 alternateUrl: "/proyectos/juegos-familiares/"
 role: "Product, architecture, and full-stack implementation"
-status: "Two games published · Impostor: 100+ family games played"
-problem: "Support in-person games where every participant uses a phone to play with the group."
-contribution: "Designed and built Impostor and Tutti Frutti as mobile-first web experiences."
-decision: "Keep each game's rules and states independent while sharing platform capabilities where appropriate."
-coverImage: "/case-studies/juegos-familiares/cover-2026-09-27.webp"
-coverImageAlt: "Juegos Familiares homepage with Impostor and Tutti Frutti game entries."
-coverImageCaption: "Public homepage captured on September 27, 2026."
+status: "Two games published"
 stack:
   - "Next.js"
   - "TypeScript"
   - "Supabase"
   - "PostgreSQL"
 website: "https://juegos-familiares.vercel.app/"
+websiteLabel: "Play"
 repository: "https://github.com/RadikeCosa/juegos-familiares"
 ---
 
-## The platform
+## Two games to share
 
-Juegos Familiares brings together in-person experiences for small groups. Each person participates from a phone while sharing the conversation face to face.
+<div class="game-grid wide">
+  <section class="game-showcase game-showcase--red" aria-labelledby="impostor">
+    <h3 id="impostor">Impostor</h3>
+    <p>Words, clues, and secret voting to discover who has a different role. Each player receives private information on their phone; clues and conversation are shared in person.</p>
+    <figure>
+      <div class="game-screens">
+        <a href="/case-studies/impostor/private-role-local.webp"><img src="/case-studies/impostor/private-role-local.webp" alt="Open Impostor screenshot: a test participant's private word and role." width="395" height="581" loading="lazy" decoding="async" /></a>
+        <a href="/case-studies/impostor/voting-local.webp"><img src="/case-studies/impostor/voting-local.webp" alt="Open Impostor screenshot: secret voting in a test room." width="395" height="581" loading="lazy" decoding="async" /></a>
+      </div>
+      <figcaption>Private information and voting from independent sessions. Select a screenshot to enlarge it.</figcaption>
+    </figure>
+  </section>
+  <section class="game-showcase game-showcase--blue" aria-labelledby="tutti-frutti">
+    <h3 id="tutti-frutti">Tutti Frutti</h3>
+    <p>One letter, several categories, and answers to compare as a group. Each player completes the round on their phone, then everyone reviews the answers before seeing the results.</p>
+    <figure>
+      <a class="game-round" href="/case-studies/juegos-familiares/tutti-frutti-round.png"><img src="/case-studies/juegos-familiares/tutti-frutti-round.png" alt="Open the full screenshot of a Tutti Frutti demo round with a letter and five categories." width="1416" height="4722" loading="lazy" decoding="async" /></a>
+      <figcaption>The same round, with answers from each phone. Select the screenshot to view it in full.</figcaption>
+    </figure>
+  </section>
+</div>
 
-The homepage offers two games: **Impostor**, built around roles and secret voting, and **Tutti Frutti**, built around categories and answers in rounds. In both, people join a group and connect to a room to play.
+<h2 class="game-technical-title">The technical challenge: keeping the game in sync</h2>
 
-## Impostor
+<div class="game-technical wide">
+  <section aria-labelledby="realtime">
+    <h3 id="realtime">Real-time updates</h3>
+    <p>Supabase Realtime notifies connected devices of changes to the game, so each player can follow what is happening.</p>
+  </section>
+  <section aria-labelledby="rules">
+    <h3 id="rules">Rules validated in PostgreSQL</h3>
+    <p>In Impostor, protected actions validate identity, permissions, and game state in the backend or database. Roles, votes, and results do not depend on what the browser claims.</p>
+  </section>
+  <section aria-labelledby="reconnection">
+    <h3 id="reconnection">Session recovery</h3>
+    <p>After a disconnection, the Impostor client queries persisted, authorized state to rebuild the session. Real-time notifications support that state rather than replace it.</p>
+  </section>
+</div>
 
-Each participant privately receives a word or role, discusses clues, votes, and sees the result. One person creates a temporary room and shares a code or link. The session keeps its rounds, used words, and score.
+## Built and tested through use
 
-The full loop includes:
+I designed the flows, rules, and states for each game and implemented the platform with Next.js, TypeScript, Supabase, and PostgreSQL. Each game keeps its own logic while sharing access to groups and rooms.
 
-1. creating or joining a room;
-2. privately revealing a word or role;
-3. discussing clues in person;
-4. casting a secret vote;
-5. resolving a tie when needed;
-6. giving a discovered impostor a final guess;
-7. displaying the result and score;
-8. starting another round or ending the session.
+<aside class="game-usage">
+  <p class="game-usage__lead">Impostor: more than 100 family games played</p>
+  <p>Real use informed improvements to wording, flows, and behaviour across devices. Tutti Frutti was added later and has its own usage history.</p>
+</aside>
 
-<figure class="case-state-pair wide">
-  <div class="case-state-pair__grid">
-    <img
-      src="/case-studies/impostor/private-role-local.webp"
-      alt="Private Impostor screen showing the assigned word and the control used to hide it."
-      width="395"
-      height="581"
-      loading="lazy"
-      decoding="async"
-    />
-    <img
-      src="/case-studies/impostor/voting-local.webp"
-      alt="Impostor voting screen in a local session with test participants."
-      width="395"
-      height="581"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <figcaption>A round across separate browsers: each participant receives private information and votes from their own session.</figcaption>
-</figure>
+Impostor includes unit and database tests, permission and protected-operation validation (RLS/RPCs), and basic synchronization checks.
 
-## Tutti Frutti
-
-Tutti Frutti adds a second in-person game to the platform. The group creates or opens a room, configures a game, answers categories for each letter, and reviews responses before comparing results.
-
-<figure class="case-figure case-figure--screen case-figure--preview">
-  <img
-    src="/case-studies/juegos-familiares/tutti-frutti-round.png"
-    alt="Tutti Frutti round in a room, showing the round letter and fields for five categories."
-    width="1416"
-    height="4722"
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>Demo round: each participant fills in answers from their phone.</figcaption>
-  <a class="text-link capture-link" href="/case-studies/juegos-familiares/tutti-frutti-round.png">View full screenshot</a>
-</figure>
-
-## My contribution
-
-I designed the rules, states, and flows for each game, and built their mobile-first experiences. The platform includes a manifest and service worker for installation and static asset caching; gameplay requires a connection and does not work offline. Impostor includes identity, groups, rooms, privacy, synchronization, and session recovery. Tutti Frutti has its own setup, answer, and review flow. The platform uses Next.js, Supabase, and PostgreSQL.
-
-## Product and architecture decisions
-
-### Authority in Postgres
-
-The browser does not certify roles, votes, results, or sensitive transitions. Protected operations validate identity, permissions, and prior state in the backend or database.
-
-### Realtime notifies; it does not authorize
-
-Realtime and Presence notify clients of changes but do not replace persisted state. After reconnection, the client queries an authorized view and rebuilds the session.
-
-### Each game keeps its own rules
-
-Impostor and Tutti Frutti keep their own rules, states, and game loops. The platform shares group and room entry without turning their differences into a generic engine.
-
-### In-person interaction
-
-Phones handle setup, participation, and results. Conversation happens among the people gathered together.
-
-## Use, quality, and boundaries
-
-Impostor has been played in more than 100 games with family groups. Those sessions informed changes to wording, flows, and multi-device behavior. Tutti Frutti was added later as a second game; the same usage history does not apply to it.
-
-Impostor includes unit and database tests, RLS/RPC validation, and basic synchronization tests. The games require connectivity. The platform prioritizes small groups who know each other; it does not offer matchmaking, chat, public profiles, global rankings, or remote games.
+<p class="game-note">Designed for small groups gathering in person. Games require an internet connection.</p>
