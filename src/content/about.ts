@@ -4,23 +4,19 @@ const aboutContent = {
   es: {
     title: "Sobre mí",
     profile: "Desarrollo web · Análisis funcional",
-    aiTitle: "IA como herramienta",
-    periods: ["Desde 2004", "2013—2024", "Desde 2020"],
     intro: [
-      "Desarrollo productos web desde 2020. Me interesa entender qué necesita una persona antes de decidir qué construir: ordenar el problema, definir los flujos e implementar una solución que pueda probarse y revisarse.",
-      "Mi experiencia en salud —práctica profesional y coordinación de servicios— aporta conocimiento de procesos complejos y una especialización en HealthTech. También aplico este enfoque en proyectos de otros sectores.",
+      "Soy desarrollador web y Licenciado en Kinesiología y Fisioterapia. Siempre me interesó el desarrollo: disfruto entender un problema y usar la tecnología para encontrar una solución que facilite una tarea cotidiana.",
+      "Al construir una aplicación, me interesa conocer cómo trabajan las personas que van a usarla. Entender qué necesitan, qué les cuesta y qué pasos se pueden simplificar me ayuda a tomar decisiones sobre los flujos, las interfaces y los datos.",
     ],
-    methodTitle: "Cómo trabajo",
-    method:
-      "Entiendo el problema y su contexto. Ordeno actores, datos, prioridades y restricciones. Trabajo por etapas, valido con uso real y documento lo necesario.",
-    methodAi:
-      "Integro herramientas de IA para investigar, contrastar alternativas, implementar y revisar. Amplían mi alcance y aceleran el trabajo; el criterio y la validación siguen formando parte del proceso.",
-    backgroundTitle: "Recorrido",
-    background: [
-      "Soy Licenciado en Kinesiología y Fisioterapia. Mantengo práctica independiente desde 2004; trabajé en consultorios hasta 2013 y luego continué fuera de ese ámbito.",
-      "Entre 2013 y 2024 coordiné y audité servicios de internación domiciliaria, articulando pacientes, familias, profesionales y equipos internos. Participé en la creación conjunta de un área de cuidados paliativos. Ese trabajo consolidó capacidades para escuchar, establecer prioridades y comunicar información difícil con precisión.",
-      "Desde 2020 me formo en desarrollo web full stack, testing y arquitectura de aplicaciones. Actualmente continúo mi formación con Full Stack Open, de la Universidad de Helsinki. Hoy combino ambos recorridos en productos propios y trabajos independientes.",
-    ],
+    backgroundTitle: "La experiencia que aporto",
+    background:
+      "Mi experiencia en salud aporta mucho a esa mirada. Desde 2004 mantengo mi práctica profesional y, entre 2013 y 2024, también coordiné y audité servicios de atención domiciliaria. Trabajar con pacientes, familias y equipos me enseñó a escuchar necesidades distintas, ordenar prioridades y adaptar los procesos a lo que sucede en la práctica.",
+    currentTitle: "Qué construyo hoy",
+    current:
+      "Desde 2020 me formo en desarrollo web y construyo proyectos propios y para clientes. Trabajo en aplicaciones y sitios con necesidades diferentes: herramientas para la atención domiciliaria, catálogos de productos y juegos para compartir en persona. En cada proyecto busco que las decisiones técnicas tengan sentido para su uso.",
+    aiTitle: "IA como herramienta",
+    ai:
+      "También incorporo herramientas de IA para investigar, explorar alternativas, implementar y revisar, contrastando los resultados con el código y el comportamiento de la aplicación.",
     languagesTitle: "Idiomas",
     languages:
       "Español — nativo · English — C1 · Português — em progresso · Français — débutant · Русский — начинающий",
@@ -33,23 +29,19 @@ const aboutContent = {
   en: {
     title: "About",
     profile: "Web development · Functional analysis",
-    aiTitle: "AI as a tool",
-    periods: ["Since 2004", "2013—2024", "Since 2020"],
     intro: [
-      "I have been building web products since 2020. I want to understand what a person needs before deciding what to build: organising the problem, defining workflows, and implementing a solution that can be tested and revisited.",
-      "My healthcare experience in professional practice and service coordination gives me an understanding of complex workflows and a HealthTech specialization. I apply the same approach to projects in other industries.",
+      "I am a web developer with a degree in Kinesiology and Physiotherapy. I have always been interested in software development: I enjoy understanding a problem and using technology to find a solution that makes an everyday task easier.",
+      "When building an application, I want to understand how the people who will use it work. Knowing what they need, what they find difficult, and which steps can be simplified helps me make decisions about workflows, interfaces, and data.",
     ],
-    methodTitle: "How I work",
-    method:
-      "I understand the problem and its context. I organize stakeholders, data, priorities, and constraints. I work in stages, validate through real use, and document what is needed.",
-    methodAi:
-      "I use AI tools to research, compare alternatives, implement, and review. They extend my range and accelerate the work; judgment and validation remain part of the process.",
-    backgroundTitle: "Background",
-    background: [
-      "I hold a Bachelor's Degree in Kinesiology and Physiotherapy. I have maintained an independent practice since 2004; I worked in clinic settings through 2013 and later continued outside them.",
-      "From 2013 to 2024, I coordinated and reviewed home care services, working across patients, families, professionals, and internal teams. I took part in the joint creation of a palliative care unit. That work strengthened my ability to listen, set priorities, and communicate difficult information precisely.",
-      "Since 2020, I have trained in full-stack web development, software testing, and application architecture. I am currently working through Full Stack Open, offered by the University of Helsinki. Today I combine both backgrounds in my own products and independent work.",
-    ],
+    backgroundTitle: "The experience I bring",
+    background:
+      "My healthcare experience has shaped this perspective. I have maintained my professional practice since 2004 and, from 2013 to 2024, I also coordinated and reviewed home care services. Working with patients, families, and teams taught me to listen to different needs, set priorities, and adapt processes to what happens in practice.",
+    currentTitle: "What I build today",
+    current:
+      "Since 2020, I have been studying web development and building projects of my own and for clients. I work on applications and websites that address different needs: tools for home care, product catalogues, and games to share in person. In each project, I want technical decisions to make sense for how it will be used.",
+    aiTitle: "AI as a tool",
+    ai:
+      "I also use AI tools to research, explore alternatives, implement, and review, checking the results against the code and the application's behaviour.",
     languagesTitle: "Languages",
     languages:
       "Español — nativo · English — C1 · Português — em progresso · Français — débutant · Русский — начинающий",
