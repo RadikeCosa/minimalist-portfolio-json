@@ -37,3 +37,9 @@ La primera versión funcionaba como tienda online con pagos mediante Mercado Pag
 <aside class="fira-outcome">
   <p>Por eso, adapté el sitio a un catálogo con consultas y pedidos por WhatsApp, para que el emprendimiento pudiera acordar cada encargo antes de cobrarlo.</p>
 </aside>
+
+## Imágenes y crecimiento del catálogo
+
+Las imágenes se mantienen junto al sitio, una solución sencilla para un catálogo pequeño y con cambios poco frecuentes. Su limitación es que agregar o reemplazar archivos requiere actualizar y publicar el proyecto.
+
+Si el catálogo crece, la evolución prevista es trasladar las imágenes a Supabase Storage y sumar un panel para gestionar productos y fotografías sin nuevos despliegues, con validación de archivos y optimización de tamaños.

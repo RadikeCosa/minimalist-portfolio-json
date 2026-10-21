@@ -37,3 +37,9 @@ The first version operated as an online store with Mercado Pago payments. Handma
 <aside class="fira-outcome">
   <p>I therefore adapted the site into a catalogue with enquiries and orders via WhatsApp, so the business could agree on each order before taking payment.</p>
 </aside>
+
+## Images and catalogue growth
+
+Images are kept alongside the site, a simple approach for a small catalogue that changes infrequently. The limitation is that adding or replacing files requires updating and redeploying the project.
+
+If the catalogue grows, the planned next step is to move images to Supabase Storage and add an admin panel to manage products and photographs without new deployments, with file validation and image size optimisation.
