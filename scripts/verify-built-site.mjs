@@ -84,16 +84,21 @@ const casePairs = [
 for (const pair of casePairs) {
   const rendered = await Promise.all(pair.map((page) => readFile(join("dist", page), "utf8")));
   for (const [index, html] of rendered.entries()) {
-    if (pair[index].includes("juegos-familiares/") || pair[index].includes("family-games/")) {
+    const isFamilyGames = pair[index].includes("juegos-familiares/") || pair[index].includes("family-games/");
+    const isFira = pair[index].includes("fira-estudio/");
+    if (isFamilyGames || isFira) {
       if (!/<main\b[^>]*class="[^"]*\bcase-product\b/.test(html) || !/<p\b[^>]*class="[^"]*\bproduct-status\b/.test(html)) {
         failures.push(`${pair[index]}: falta la presentación de producto o su estado`);
       }
       if (/<section\b[^>]*class="case-summary"/.test(html) || /<dt\b/.test(html)) {
         failures.push(`${pair[index]}: conserva el resumen anterior`);
       }
-      for (const text of index === 0
+      const expected = isFamilyGames ? (index === 0
         ? ["Dos juegos para compartir", "El desafío técnico", "Desarrollado y probado en uso", "más de 100 partidas familiares", "requieren conexión"]
-        : ["Two games to share", "The technical challenge", "Built and tested through use", "more than 100 family games", "require an internet connection"]) {
+        : ["Two games to share", "The technical challenge", "Built and tested through use", "more than 100 family games", "require an internet connection"]) : (index === 0
+        ? ["identidad visual que aportó el cliente", "De tienda online a catálogo", "Mercado Pago", "pedidos por WhatsApp", "antes de cobrarlo"]
+        : ["visual identity supplied by the client", "From online store to catalogue", "Mercado Pago", "orders via WhatsApp", "before taking payment"]);
+      for (const text of expected) {
         if (!html.includes(text)) failures.push(`${pair[index]}: falta ${text}`);
       }
       continue;
