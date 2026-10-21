@@ -38,6 +38,14 @@ La primera versión funcionaba como tienda online con pagos mediante Mercado Pag
   <p>Por eso, adapté el sitio a un catálogo con consultas y pedidos por WhatsApp, para que el emprendimiento pudiera acordar cada encargo antes de cobrarlo.</p>
 </aside>
 
+## SEO, rendimiento y calidad
+
+El sitio incluye metadatos por página y producto, URLs canónicas, sitemap y datos estructurados adaptados a un catálogo sin compra online. Las etiquetas Open Graph preparan su presentación al compartir enlaces, y las reglas de indexación evitan multiplicar páginas de filtros y paginación en buscadores.
+
+Para cuidar la carga, utiliza imágenes adaptadas al tamaño de pantalla, carga diferida y caché con revalidación del catálogo. La experiencia contempla diseño responsive, textos alternativos y navegación por teclado.
+
+La consulta por WhatsApp conserva el producto y la variante elegidos para facilitar la conversación. Las pruebas unitarias y de navegador cubren estos recorridos, la selección de variantes y la navegación en distintos dispositivos.
+
 ## Imágenes y crecimiento del catálogo
 
 Las imágenes se mantienen junto al sitio, una solución sencilla para un catálogo pequeño y con cambios poco frecuentes. Su limitación es que agregar o reemplazar archivos requiere actualizar y publicar el proyecto.
