@@ -1,52 +1,49 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Home Rehabilitation Landing Page"
-description: "A public site to guide inquiries for a home-rehabilitation service in Neuquén, Argentina."
+description: "A website designed to make the first home physiotherapy enquiry easier in Neuquén, with initial guidance, local SEO, and WhatsApp contact."
 locale: "en"
 alternateUrl: "/proyectos/landing-kinesiologia/"
-role: "Digital product · Analysis and implementation"
+role: "Web design, content, and implementation"
 status: "Public site · Live"
-problem: "Guide inquiries for a home-rehabilitation service in Neuquén."
-contribution: "Analysis and implementation of the public website."
-decision: "Explain the service and guide inquiries with context."
-coverImage: "/case-studies/kinesiology-landing/cover-2026-09-27.webp"
-coverImageAlt: "Homepage for Kinesiología a Domicilio in Neuquén, presenting the service and contact options."
-coverImageCaption: "Public homepage captured on September 27, 2026."
 stack:
   - "Next.js 15"
   - "React 19"
   - "TypeScript"
   - "Tailwind CSS 4"
-  - "Zod"
 website: "https://kinesiologiaadomicilio.vercel.app/"
-websiteLabel: "Public site"
+websiteLabel: "View site"
 repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
 ---
 
-## Context
+## A website designed to make the first enquiry easier
 
-An independent home-rehabilitation service in Neuquén needed a digital presence to explain the care offered, guide prospective patients, and make it easier to start a conversation with enough context.
+I designed and implemented the landing page around the service and the questions people often have before a first enquiry. Introducing the professional, location, and situations addressed helps visitors understand what home care offers and whether it makes sense to ask about their own case or a family member's.
 
-## Public site
+<figure class="case-figure wide">
+  <a href="/case-studies/kinesiology-landing/cover-2026-09-27.webp"><img src="/case-studies/kinesiology-landing/cover-2026-09-27.webp" alt="Open a screenshot of the home physiotherapy landing page in Neuquén, introducing the professional and contact options." width="1440" height="1000" loading="lazy" decoding="async" /></a>
+  <figcaption>Introducing the service and professional. Public screenshot from September 2026; select to enlarge.</figcaption>
+</figure>
 
-The landing page presents the service and offers an initial guided orientation through **Evaluate**. The flow helps people prepare an inquiry and provides WhatsApp contact with prefilled opening messages.
+<h2 class="landing-guidance-title">Guidance and contact with context</h2>
 
-The hero image sets the home-care context. The site and its content guide the next step without promising clinical outcomes.
+The **Evaluate** flow lets visitors select a situation, read initial guidance, and open WhatsApp with a message prepared for that enquiry. It is an option-based flow that supports first contact without automating a clinical assessment.
 
-## My contribution
+Messages also reflect the entry point, such as an enquiry for a family member or a specific service. The aim is to make the conversation easier to start and give the professional context.
 
-I designed and implemented the public experience based on the service and the questions people often have before an initial inquiry. I also structured the orientation flow and contact channels.
+<h2 class="landing-quality-title">Local SEO, mobile experience, and measurement</h2>
 
-## Decisions
+The home, services, and guidance pages have their own titles and descriptions, canonical URLs, and link-sharing metadata. The sitemap and structured data describe the service and its location in Neuquén.
 
-### Guide people before they start a conversation
+The implementation uses images sized for the screen, priority loading for the main image, touch-sized buttons, visible focus, and a skip-to-content link. Tests cover metadata, the sitemap, messages, and analytics events.
 
-The site explains who the service is for and what information helps assess an inquiry. The **Evaluate** flow and prefilled WhatsApp messages reduce initial back-and-forth without automating clinical decisions.
+Measurement records which button starts a contact attempt and how far visitors scroll. The `whatsapp_intent` event represents contact intent: a click does not confirm a completed enquiry. Before sending the destination to analytics, parameters containing the prefilled message are removed so its content is not included.
 
-### Fit acquisition to the service
+## Current scope and next steps
 
-The landing page aims for informed inquiries within the professional's capacity rather than maximizing contact volume.
+<aside class="landing-scope">
+  <p>Contact continues on WhatsApp to discuss the case and availability. The website does not confirm whether a click led to an enquiry or appointment. One possible next step would be to track enquiries in a separate tool, without sending clinical information to analytics.</p>
+</aside>
 
-## Implementation and scope
-
-The site uses Next.js, TypeScript, and responsive components. It includes search metadata, analytics on public routes, and validation for orientation details.
+Mobile performance also needs follow-up. A September audit identified room for improvement on the home and services pages; the interface was subsequently updated. The next evaluation step is to repeat measurements on the current version before attributing improvements in speed or patient acquisition.

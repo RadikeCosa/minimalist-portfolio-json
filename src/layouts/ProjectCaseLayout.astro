@@ -244,6 +244,9 @@ const externalLinks = [
   .case-product .case-content :global(.clinical-gallery img) { width: 100%; height: auto; aspect-ratio: 3 / 5; object-fit: cover; object-position: top; }
   .case-product .case-content :global(.clinical-progress) { background: var(--yellow); color: var(--ink); padding: 24px; }
   .case-product .case-content :global(.clinical-demo-note) { font-size: 14px; border-top: 2px solid var(--ink); padding-top: 20px; }
+  .case-product .case-content :global(.landing-guidance-title) { color: var(--blue); }
+  .case-product .case-content :global(.landing-quality-title) { color: var(--red); }
+  .case-product .case-content :global(.landing-scope) { background: var(--yellow); color: var(--ink); padding: 24px; }
   @media (width < 1024px) {
     .case-product .case-content :global(.game-technical) { grid-template-columns: 1fr; gap: 24px; }
   }
@@ -261,6 +264,8 @@ const externalLinks = [
     .case-content :global(.case-flow__connector) { transform: rotate(90deg); align-self: flex-start; }
   }
   @media print {
+    .case-product .case-content :global(.landing-scope) { background: var(--paper); color: var(--ink); }
+    .case-product .case-content :global(.landing-guidance-title),.case-product .case-content :global(.landing-quality-title) { color: var(--ink); }
     .case-product .case-content :global(.clinical-progress) { background: var(--paper); color: var(--ink); }
     .case-product .case-content :global(.clinical-design-title),.case-product .case-content :global(.clinical-standard-title) { color: var(--ink); }
     .case-product .case-content :global(.fira-outcome) { background: var(--paper); color: var(--ink); }
