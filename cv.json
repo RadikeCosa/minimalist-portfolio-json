@@ -339,7 +339,7 @@
       "name": "Aplicación clínica para kinesiología domiciliaria",
       "featured": true,
       "image": "/case-studies/clinical-app/today-card-fictional.webp",
-      "badge": "Piloto local · Datos ficticios · Sin demo pública",
+      "badge": "En desarrollo · Sin demo pública",
       "description": "Aplicación clínica para organizar pacientes, tratamientos, citas y visitas domiciliarias.",
       "highlights": [
         "Next.js 16",
