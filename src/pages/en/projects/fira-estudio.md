@@ -1,76 +1,39 @@
 ---
 layout: "../../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Fira Estudio"
-description: "A web product for a textile business, adapted from e-commerce to a catalog as its operational capacity changed."
+description: "Fira Estudio is a web catalogue of handmade textile products, designed around the visual identity supplied by the client."
 locale: "en"
 alternateUrl: "/proyectos/fira-estudio/"
-role: "Independent work · Product and implementation"
-status: "Web catalog · Public site"
-problem: "Present textile products in a way the business could operate."
-contribution: "Web product development and implementation."
-decision: "Shift from e-commerce to a catalog when the business could not support online sales operations."
-coverImage: "/case-studies/fira/catalog-production.webp"
-coverImageAlt: "Fira Estudio's production catalog showing categories and featured textile products."
-coverImageCaption: "Production catalog: categories and product presentation, with availability handled through inquiry."
+role: "Independent work · Web design and implementation"
+status: "Web catalogue · Enquiries and orders via WhatsApp"
 stack:
   - "Next.js"
   - "TypeScript"
   - "Supabase"
   - "Playwright"
 website: "https://fira-estudio-cyan.vercel.app/"
+websiteLabel: "View catalogue"
 repository: "https://github.com/RadikeCosa/fira-estudio"
 ---
 
-## Need
+## Visual identity and catalogue
 
-Fira Estudio needed to present and sell its textiles online through a product aligned with the way the business operates.
+<div class="fira-gallery wide">
+  <figure>
+    <a href="/case-studies/fira/home-cover-2026-09-27.webp"><img src="/case-studies/fira/home-cover-2026-09-27.webp" alt="Open a screenshot of the Fira Estudio homepage, with textile photography and a catalogue link." width="1200" height="800" loading="lazy" decoding="async" /></a>
+    <figcaption>The business's visual identity, brought to the web.</figcaption>
+  </figure>
+  <figure>
+    <a href="/case-studies/fira/product-detail-2026-09-27.webp"><img src="/case-studies/fira/product-detail-2026-09-27.webp" alt="Open a screenshot of the Camino de Mesa Magnolia product page, with its description, material, and care instructions." width="1200" height="800" loading="lazy" decoding="async" /></a>
+    <figcaption>Products with their details, materials, and care instructions.</figcaption>
+  </figure>
+</div>
 
-## First version
+<h2 class="fira-story-title">From online store to catalogue</h2>
 
-The first version included a home page, categories, catalog, product pages, variants, a cart, checkout, and a certified Mercado Pago integration.
+The first version operated as an online store with Mercado Pago payments. Handmade production meant confirming availability and whether each order could be fulfilled before accepting payment.
 
-The flow included payments, orders, webhooks, and transactional emails.
-
-## Operational change
-
-Demand exceeded the business's production capacity. Keeping automated purchases would have allowed orders that could later prove difficult to fulfill.
-
-We reframed the product as a digital showcase. The current site retains the catalog, variants, materials, care information, and reference pricing, while orders are discussed and confirmed by phone according to availability.
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/fira/home-cover-2026-09-27.webp"
-    alt="Redesigned Fira Estudio homepage with a textile photograph and catalog link."
-    width="1200"
-    height="800"
-    loading="lazy"
-    decoding="async"
-  />
-</figure>
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/fira/product-detail-2026-09-27.webp"
-    alt="Camino de Mesa Magnolia product page with photography, description, material, and care details."
-    width="1200"
-    height="800"
-    loading="lazy"
-    decoding="async"
-  />
-</figure>
-
-## My contribution
-
-I designed and implemented the experience, catalog structure, original purchasing flow, payment integration, responsive navigation, accessibility, metadata, SEO, and unit and E2E tests.
-
-## Decision
-
-We removed the cart, checkout, Mercado Pago, webhooks, orders, and transactional emails when they stopped matching the real operational capacity.
-
-The site then supported inquiry and prior confirmation instead of accepting orders the business needed to review first.
-
-## Quality and boundaries
-
-The site includes responsive navigation, metadata, sitemap, robots, and basic SEO structure. Catalog data comes from Supabase.
-
-The current version does not include online purchases or payments. Pricing supports the initial inquiry, and availability is confirmed before each order is accepted.
+<aside class="fira-outcome">
+  <p>I therefore adapted the site into a catalogue with enquiries and orders via WhatsApp, so the business could agree on each order before taking payment.</p>
+</aside>

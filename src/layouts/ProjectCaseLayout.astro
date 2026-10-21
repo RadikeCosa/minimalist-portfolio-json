@@ -232,10 +232,16 @@ const externalLinks = [
   .case-product .case-content :global(.game-usage) { background: var(--yellow); color: var(--ink); padding: 24px; }
   .case-product .case-content :global(.game-usage__lead) { font-size: 22px; line-height: 1.3; font-weight: 800; margin-bottom: 12px; }
   .case-product .case-content :global(.game-note) { font-size: 14px; border-top: 2px solid var(--ink); padding-top: 20px; }
+  .case-product .case-content :global(.fira-gallery) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-block: 0; }
+  .case-product .case-content :global(.fira-gallery figure) { min-width: 0; margin: 0; }
+  .case-product .case-content :global(.fira-gallery img) { width: 100%; }
+  .case-product .case-content :global(.fira-story-title) { color: var(--blue); }
+  .case-product .case-content :global(.fira-outcome) { background: var(--yellow); color: var(--ink); padding: 24px; }
   @media (width < 1024px) {
     .case-product .case-content :global(.game-technical) { grid-template-columns: 1fr; gap: 24px; }
   }
   @media (width < 768px) {
+    .case-product .case-content :global(.fira-gallery) { grid-template-columns: 1fr; gap: 24px; }
     .case-product .case-content :global(.game-grid) { grid-template-columns: 1fr; gap: 32px; }
     .case-product .case-content :global(.game-showcase figure) { margin-top: 0; }
     .case-article { gap: 32px; }
@@ -247,6 +253,8 @@ const externalLinks = [
     .case-content :global(.case-flow__connector) { transform: rotate(90deg); align-self: flex-start; }
   }
   @media print {
+    .case-product .case-content :global(.fira-outcome) { background: var(--paper); color: var(--ink); }
+    .case-product .case-content :global(.fira-story-title) { color: var(--ink); }
     .case-product .case-links a:first-child,.case-product .case-content :global(.game-usage) { background: var(--paper); color: var(--ink); }
     .case-product .case-content :global(.game-grid),.case-product .case-content :global(.game-technical) { grid-template-columns: 1fr; }
     .case-content :global(.case-figure--screen) { max-width: 220px; }

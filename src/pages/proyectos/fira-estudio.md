@@ -1,76 +1,39 @@
 ---
 layout: "../../layouts/ProjectCaseLayout.astro"
+presentation: "product"
 title: "Fira Estudio"
-description: "Producto web para un emprendimiento textil, adaptado de e-commerce a catálogo según su capacidad operativa."
+description: "Fira Estudio es un catálogo web de productos textiles artesanales, diseñado a partir de la identidad visual que aportó el cliente."
 locale: "es"
 alternateUrl: "/en/projects/fira-estudio/"
-role: "Trabajo independiente · Producto e implementación"
-status: "Catálogo web · Sitio público"
-problem: "Presentar los productos textiles de acuerdo con la capacidad operativa del emprendimiento."
-contribution: "Desarrollo del producto web y su implementación."
-decision: "Pasar de e-commerce a catálogo cuando la operación no podía sostener las ventas online."
-coverImage: "/case-studies/fira/catalog-production.webp"
-coverImageAlt: "Catálogo productivo de Fira Estudio con categorías y productos textiles destacados."
-coverImageCaption: "Catálogo productivo: categorías y presentación de productos, con disponibilidad gestionada mediante consulta."
+role: "Trabajo independiente · Diseño e implementación web"
+status: "Catálogo web · Consultas y pedidos por WhatsApp"
 stack:
   - "Next.js"
   - "TypeScript"
   - "Supabase"
   - "Playwright"
 website: "https://fira-estudio-cyan.vercel.app/"
+websiteLabel: "Ver catálogo"
 repository: "https://github.com/RadikeCosa/fira-estudio"
 ---
 
-## Necesidad
+## Identidad visual y catálogo
 
-Fira Estudio necesitaba presentar y vender sus textiles online mediante un producto ajustado a su forma de trabajo.
+<div class="fira-gallery wide">
+  <figure>
+    <a href="/case-studies/fira/home-cover-2026-09-27.webp"><img src="/case-studies/fira/home-cover-2026-09-27.webp" alt="Abrir captura de la portada de Fira Estudio, con fotografía textil y acceso al catálogo." width="1200" height="800" loading="lazy" decoding="async" /></a>
+    <figcaption>La identidad del emprendimiento, trasladada a la web.</figcaption>
+  </figure>
+  <figure>
+    <a href="/case-studies/fira/product-detail-2026-09-27.webp"><img src="/case-studies/fira/product-detail-2026-09-27.webp" alt="Abrir captura de la ficha del Camino de Mesa Magnolia, con descripción, material y cuidados." width="1200" height="800" loading="lazy" decoding="async" /></a>
+    <figcaption>Productos con sus detalles, materiales y cuidados.</figcaption>
+  </figure>
+</div>
 
-## Primera versión
+<h2 class="fira-story-title">De tienda online a catálogo</h2>
 
-La primera versión incluyó home, categorías, catálogo, fichas de producto, variantes, carrito, checkout e integración certificada con Mercado Pago.
+La primera versión funcionaba como tienda online con pagos mediante Mercado Pago. La confección artesanal requería confirmar la disponibilidad y la posibilidad de realizar cada pedido antes de aceptar el pago.
 
-El flujo incluía pagos, pedidos, webhooks y emails transaccionales.
-
-## Cambio de operación
-
-La demanda superó la capacidad de producción del emprendimiento. Mantener compras automáticas permitía aceptar pedidos que después podían resultar difíciles de cumplir.
-
-Replanteamos el producto como una vidriera digital. El sitio vigente conserva catálogo, variantes, materiales, cuidados y precios de referencia, pero los pedidos se consultan y confirman por teléfono según disponibilidad.
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/fira/home-cover-2026-09-27.webp"
-    alt="Portada rediseñada de Fira Estudio con una fotografía textil y acceso al catálogo."
-    width="1200"
-    height="800"
-    loading="lazy"
-    decoding="async"
-  />
-</figure>
-
-<figure class="case-figure wide">
-  <img
-    src="/case-studies/fira/product-detail-2026-09-27.webp"
-    alt="Ficha de Camino de Mesa Magnolia con fotografía, descripción, material y cuidados."
-    width="1200"
-    height="800"
-    loading="lazy"
-    decoding="async"
-  />
-</figure>
-
-## Mi aporte
-
-Diseñé e implementé la experiencia, la estructura del catálogo, el flujo de compra original, la integración de pagos, la navegación responsive, accesibilidad, metadata, SEO y pruebas unitarias y E2E.
-
-## Decisión
-
-Retiramos carrito, checkout, Mercado Pago, webhooks, pedidos y emails transaccionales cuando dejaron de responder a la capacidad operativa real.
-
-Así, el sitio pasó a acompañar una consulta y confirmación previa, en lugar de aceptar pedidos que el negocio necesitaba revisar antes.
-
-## Calidad y límites
-
-El sitio incluye navegación responsive, metadata, sitemap, robots y estructura SEO básica. El catálogo se obtiene desde Supabase.
-
-La versión actual no incluye compras ni pagos online. Los precios orientan la consulta y la disponibilidad se confirma antes de tomar cada pedido.
+<aside class="fira-outcome">
+  <p>Por eso, adapté el sitio a un catálogo con consultas y pedidos por WhatsApp, para que el emprendimiento pudiera acordar cada encargo antes de cobrarlo.</p>
+</aside>
