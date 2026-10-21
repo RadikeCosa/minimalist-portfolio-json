@@ -87,14 +87,17 @@ for (const pair of casePairs) {
     const isFamilyGames = pair[index].includes("juegos-familiares/") || pair[index].includes("family-games/");
     const isFira = pair[index].includes("fira-estudio/");
     const isClinical = pair[index].includes("plataforma-clinica/") || pair[index].includes("clinical-platform/");
-    if (isFamilyGames || isFira || isClinical) {
+    const isLanding = pair[index].includes("landing-kinesiologia/") || pair[index].includes("home-rehabilitation-landing/");
+    if (isFamilyGames || isFira || isClinical || isLanding) {
       if (!/<main\b[^>]*class="[^"]*\bcase-product\b/.test(html) || !/<p\b[^>]*class="[^"]*\bproduct-status\b/.test(html)) {
         failures.push(`${pair[index]}: falta la presentación de producto o su estado`);
       }
       if (/<section\b[^>]*class="case-summary"/.test(html) || /<dt\b/.test(html)) {
         failures.push(`${pair[index]}: conserva el resumen anterior`);
       }
-      const expected = isClinical ? (index === 0
+      const expected = isLanding ? (index === 0
+        ? ["primera consulta", "Orientar y contactar con contexto", "SEO local", "whatsapp_intent", "Una posible evolución", "repetir las mediciones"]
+        : ["first enquiry", "Guidance and contact with context", "Local SEO", "whatsapp_intent", "One possible next step", "repeat measurements"]) : isClinical ? (index === 0
         ? ["práctica cotidiana", "buenas prácticas de registro", "FHIR", "todavía no se han implementado integraciones", "25.326", "26.529", "passkeys", "comenzando a trabajar con datos reales", "evaluando dónde desplegar", "pacientes y datos ficticios"]
         : ["everyday practice", "record-keeping practices", "FHIR", "integrations with other systems have not yet been implemented", "25.326", "26.529", "passkeys", "beginning to work with real data", "evaluating where to deploy", "fictional patients and data"]) : isFamilyGames ? (index === 0
         ? ["Dos juegos para compartir", "El desafío técnico", "Desarrollado y probado en uso", "más de 100 partidas familiares", "requieren conexión"]
