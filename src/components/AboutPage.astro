@@ -45,27 +45,22 @@ const languages = content.languages.split(" · ");
         </div>
       </header>
 
-      <section class="about-section method-section" id="approach">
-        <h2><span class="decorative-title">{content.methodTitle}</span></h2>
+      <section class="about-section experience-section" id="experience">
+        <h2><span class="decorative-title">{content.backgroundTitle}</span></h2>
         <div class="copy">
-          <p>{content.method}</p>
-          <aside class="ai-note" aria-labelledby="ai-title">
-            <h3 id="ai-title"><span class="decorative-title">{content.aiTitle}</span></h3>
-            <p>{content.methodAi}</p>
-          </aside>
+          <p>{content.background}</p>
         </div>
       </section>
 
-      <section class="about-section experience-section" id="experience">
-        <h2><span class="decorative-title">{content.backgroundTitle}</span></h2>
-        <ul class="background-list">
-          {content.background.map((paragraph, index) => (
-            <li>
-              <p class="period">{content.periods[index]}</p>
-              <p>{paragraph}</p>
-            </li>
-          ))}
-        </ul>
+      <section class="about-section current-section" id="current">
+        <h2><span class="decorative-title">{content.currentTitle}</span></h2>
+        <div class="copy">
+          <p>{content.current}</p>
+          <aside class="ai-note" aria-labelledby="ai-title">
+            <h3 id="ai-title"><span class="decorative-title">{content.aiTitle}</span></h3>
+            <p>{content.ai}</p>
+          </aside>
+        </div>
       </section>
 
       <section class="about-section languages-section" id="languages">
@@ -100,14 +95,10 @@ const languages = content.languages.split(" · ");
   .intro p:first-child { font-size: clamp(20px,1.65vw,24px); line-height: 1.55; font-weight: 600; }
   .about-article > .about-section { display: grid; grid-template-columns: minmax(0,3fr) minmax(0,8fr); gap: 48px; }
   .about-section h2 { font-size: clamp(28px,2.6vw,36px); }
-  .method-section h2 { color: var(--blue); }
+  .current-section h2 { color: var(--blue); }
   .experience-section h2 { color: var(--red); }
   .ai-note { border-left: 4px solid var(--blue); padding: 4px 0 4px 24px; margin-top: 12px; }
   .ai-note h3 { font-size: 17px; margin-bottom: 12px; }
-  .background-list { display: flex; flex-direction: column; gap: 28px; max-width: 65ch; }
-  .background-list li { display: grid; grid-template-columns: 116px minmax(0,1fr); gap: 24px; }
-  .background-list li + li { border-top: 2px solid var(--ink); padding-top: 28px; }
-  .period { font-size: 14px; font-weight: 800; color: var(--blue); }
   .languages { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
   .languages li { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
   .language-name { font-size: 18px; font-weight: 800; }
@@ -121,7 +112,6 @@ const languages = content.languages.split(" · ");
   }
   @media (width < 768px) {
     .about-article { gap: 40px; }
-    .background-list li { grid-template-columns: 1fr; gap: 12px; }
     .languages { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 20px; }
     .ai-note { padding-left: 16px; }
   }
@@ -131,7 +121,7 @@ const languages = content.languages.split(" · ");
     .about-article { gap: 32px; }
     h1 { font-size: 48px; }
     .profile-label { background: var(--paper); }
-    h2,.period { color: var(--ink) !important; }
+    h2 { color: var(--ink) !important; }
     .ai-note { border-color: var(--ink); }
   }
 </style>

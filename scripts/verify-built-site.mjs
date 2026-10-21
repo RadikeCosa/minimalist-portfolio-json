@@ -144,11 +144,11 @@ for (const page of ["index.html", "en/index.html"]) {
   }
   if (!html.includes("secondary-project")) failures.push(`${page}: falta proyecto complementario`);
 }
-for (const [page, intro] of [["sobre-mi/index.html", "Desarrollo productos web desde 2020."], ["en/about/index.html", "I have been building web products since 2020."]]) {
+for (const [page, intro] of [["sobre-mi/index.html", "Soy desarrollador web y Licenciado en Kinesiología y Fisioterapia."], ["en/about/index.html", "I am a web developer with a degree in Kinesiology and Physiotherapy."]]) {
   const html = await readFile(join("dist", page), "utf8");
   if (!html.includes(intro)) failures.push(`${page}: falta presentación personal`);
-  for (const id of ["approach", "experience", "languages"]) if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta sección ${id}`);
-  if (!html.includes("Full Stack Open") || !html.includes("2004") || !html.includes("2024")) failures.push(`${page}: recorrido incompleto`);
+  for (const id of ["experience", "current", "languages"]) if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta sección ${id}`);
+  if (!["2004", "2013", "2020", "2024"].every(year => html.includes(year))) failures.push(`${page}: recorrido incompleto`);
 }
 for (const page of ["proyectos/plataforma-clinica/index.html", "en/projects/clinical-platform/index.html"]) {
   const html = await readFile(join("dist", page), "utf8");
