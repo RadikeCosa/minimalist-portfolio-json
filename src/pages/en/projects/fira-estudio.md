@@ -38,6 +38,14 @@ The first version operated as an online store with Mercado Pago payments. Handma
   <p>I therefore adapted the site into a catalogue with enquiries and orders via WhatsApp, so the business could agree on each order before taking payment.</p>
 </aside>
 
+## SEO, performance, and quality
+
+The site includes page- and product-specific metadata, canonical URLs, a sitemap, and structured data tailored to a catalogue without online purchases. Open Graph tags prepare link previews, while indexing rules prevent filter and pagination pages from multiplying in search results.
+
+To support efficient loading, it uses images sized for the screen, lazy loading, and caching with catalogue revalidation. The experience includes responsive design, alternative text, and keyboard navigation.
+
+WhatsApp enquiries retain the selected product and variant to make the conversation easier. Unit and browser tests cover these flows, variant selection, and navigation across devices.
+
 ## Images and catalogue growth
 
 Images are kept alongside the site, a simple approach for a small catalogue that changes infrequently. The limitation is that adding or replacing files requires updating and redeploying the project.
