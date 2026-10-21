@@ -16,7 +16,7 @@ const content = {
       title: "Cómo trabajo",
       items: [
         { title: "Entender el problema", description: "Escuchar, conocer a las personas y ordenar necesidades, prioridades y restricciones." },
-        { title: "Definir los flujos", description: "Traducir el problema a recorridos, estados, reglas de negocio y un alcance concreto." },
+        { title: "Planificar la solución", description: "Definir prioridades, organizar las etapas y acordar el alcance antes de empezar a desarrollar." },
         { title: "Implementar y validar", description: "Desarrollar por etapas, probar el comportamiento y revisar las decisiones con el uso." },
       ],
     },
@@ -55,7 +55,7 @@ const content = {
       title: "How I work",
       items: [
         { title: "Understand the problem", description: "Listen, understand the people involved, and organise needs, priorities, and constraints." },
-        { title: "Define the flows", description: "Translate the problem into journeys, states, business rules, and a concrete scope." },
+        { title: "Plan the solution", description: "Set priorities, organise the stages, and agree on the scope before development begins." },
         { title: "Build and validate", description: "Develop in stages, test behaviour, and revisit decisions through real use." },
       ],
     },
