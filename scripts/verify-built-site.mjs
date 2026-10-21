@@ -98,8 +98,8 @@ for (const pair of casePairs) {
       const expected = isLanding ? (index === 0
         ? ["primera consulta", "Orientar y contactar con contexto", "SEO local", "whatsapp_intent", "Una posible evolución", "repetir las mediciones"]
         : ["first enquiry", "Guidance and contact with context", "Local SEO", "whatsapp_intent", "One possible next step", "repeat measurements"]) : isClinical ? (index === 0
-        ? ["práctica cotidiana", "buenas prácticas de registro", "FHIR", "todavía no se han implementado integraciones", "25.326", "26.529", "passkeys", "comenzando a trabajar con datos reales", "evaluando dónde desplegar", "pacientes y datos ficticios"]
-        : ["everyday practice", "record-keeping practices", "FHIR", "integrations with other systems have not yet been implemented", "25.326", "26.529", "passkeys", "beginning to work with real data", "evaluating where to deploy", "fictional patients and data"]) : isFamilyGames ? (index === 0
+        ? ["práctica cotidiana", "buenas prácticas de registro", "FHIR", "todavía no hay integraciones", "25.326", "26.529", "passkeys", "preparando el comienzo del uso con datos reales", "validaciones operativas pendientes", "datos ficticios", "A mediano plazo", "IA para asistir", "revisar, corregir y validar"]
+        : ["everyday practice", "record-keeping practices", "FHIR", "no integrations with other systems yet", "25.326", "26.529", "passkey", "preparing to begin using real data", "remaining operational validations", "fictional data", "In the medium term", "AI assistance is planned", "review, correct, and validate"]) : isFamilyGames ? (index === 0
         ? ["Dos juegos para compartir", "El desafío técnico", "Desarrollado y probado en uso", "más de 100 partidas familiares", "requieren conexión"]
         : ["Two games to share", "The technical challenge", "Built and tested through use", "more than 100 family games", "require an internet connection"]) : (index === 0
         ? ["identidad visual que aportó el cliente", "De tienda online a catálogo", "Mercado Pago", "pedidos por WhatsApp", "antes de cobrarlo"]
@@ -155,6 +155,8 @@ for (const page of ["proyectos/plataforma-clinica/index.html", "en/projects/clin
   const plainText = html.replace(/<[^>]*>/g, "");
   const noDemo = page.startsWith("en/") ? "The application has no public demo." : "La aplicación no tiene una demo pública.";
   if (!html.includes("FHIR R4") || !plainText.includes(noDemo) || /<a\b[^>]*href="https:\/\/kinesiologiaadomicilio\.vercel\.app/.test(html)) failures.push(`${page}: estado clínico o límites de acceso incorrectos`);
+  if (!html.includes('href="https://github.com/RadikeCosa/kinesiologia-clinica"')) failures.push(`${page}: falta el repositorio clínico actual`);
+  if (/comenzando a trabajar con datos reales|beginning to work with real data/.test(plainText)) failures.push(`${page}: afirma uso real que todavía se está preparando`);
   for (const url of ["https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion", "https://www.argentina.gob.ar/normativa/nacional/160432/actualizacion"]) {
     if (!html.includes(`href="${url}"`)) failures.push(`${page}: falta fuente normativa ${url}`);
   }

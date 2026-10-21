@@ -5,7 +5,7 @@ title: "Clinical App for Home Rehabilitation"
 description: "An application designed around professional practice to support everyday home physiotherapy, with clinical data modelled using FHIR."
 locale: "en"
 alternateUrl: "/proyectos/plataforma-clinica/"
-repository: "https://github.com/RadikeCosa/kinesiologiaadomicilio"
+repository: "https://github.com/RadikeCosa/kinesiologia-clinica"
 role: "HealthTech product · Functional analysis and implementation"
 status: "In development and evaluation · No public demo"
 stack:
@@ -18,11 +18,13 @@ stack:
 
 ## An app designed around everyday practice
 
-The application aims to make everyday home physiotherapy work easier. Its design starts with understanding how care is organised in practice and adapting the tool to that way of working: planning visits, reviewing patient history, recording progress, and sharing reports from a phone.
+The application aims to make an independent home physiotherapy professional's work easier. Its design starts with understanding how care happens in practice: from the initial enquiry and coordinating visits through to record-keeping, follow-up, and reports.
 
-<h2 class="clinical-design-title">Making clinical records easier to complete and more useful</h2>
+<h2 class="clinical-design-title">Better records, with less effort</h2>
 
-The challenge is to make recording care quick and useful for the professional. Forms are designed around everyday use, with a clear information hierarchy, understandable fields, and validation that supports good record-keeping practices and patient follow-up.
+Current work focuses on aligning the flows with that reality and identifying which parts of the forms can be simplified. The priority is clear, useful information for continuing care, with a clear field hierarchy and validation that supports good record-keeping practices.
+
+Corrections and annulments retain their reasons. Reports can be reviewed before saving and downloaded as PDFs; replacements preserve a history.
 
 <div class="clinical-gallery wide">
   <figure>
@@ -37,18 +39,24 @@ The challenge is to make recording care quick and useful for the professional. F
 
 <h2 class="clinical-standard-title">Building on existing standards</h2>
 
-Clinical data modelling builds on FHIR to use an established, recognised structure, avoid creating a custom model where the standard already meets the need, and prepare a foundation for future integrations.
+Clinical data is modelled using FHIR to build on an established structure and avoid creating a custom model where the standard already meets the need. The clinical model is kept separate from the screens so the experience can be adapted to the professional.
 
-This decision reflects the working approach: study available solutions, adapt them to the context, and build on them. Interoperability is a design goal; integrations with other systems have not yet been implemented.
+Interoperability is a design goal; there are no integrations with other systems yet.
 
-## Privacy and data protection
+## Access and privacy by design
 
-Development takes Argentina's [Law 25.326 on Personal Data Protection](https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion) and [Law 26.529 on Patient Rights, Clinical Records, and Informed Consent](https://www.argentina.gob.ar/normativa/nacional/160432/actualizacion) as references. Confidentiality, authorised access, and safeguarding clinical information inform design and deployment decisions.
+The application implements passkey access, per-device sessions, and revocation and recovery mechanisms. Validation with an independent authenticator and of the complete recovery flow remains pending.
 
-## In development and evaluation
+Design and deployment decisions take Argentina's [Law 25.326 on Personal Data Protection](https://www.argentina.gob.ar/normativa/nacional/64790/actualizacion) and [Law 26.529 on Patient Rights, Clinical Records, and Informed Consent](https://www.argentina.gob.ar/normativa/nacional/160432/actualizacion) as references, considering confidentiality, authorised access, and safeguarding clinical information.
+
+## Current status and evolution
 
 <aside class="clinical-progress">
-  <p>We are currently improving the recording forms, beginning to work with real data, and evaluating where to deploy the clinical server. Authentication is planned around passkeys and is being implemented.</p>
+  <p>We are preparing to begin using real data, refining the workflows and simplifying the recording forms. Preparation includes evaluating server deployment and completing the remaining operational validations.</p>
 </aside>
 
-<p class="clinical-demo-note">Public screenshots use fictional patients and data only. The application has no public demo.</p>
+The application requires a connection. Offline work and draft backup are planned areas of development.
+
+In the medium term, AI assistance is planned to help draft reports from the available clinical records. The proposal is to generate drafts for the professional to review, correct, and validate before issuing them, taking data privacy into account and without introducing information unsupported by the records.
+
+<p class="clinical-demo-note">Public screenshots use fictional data only. The application has no public demo.</p>
