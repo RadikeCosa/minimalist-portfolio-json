@@ -339,7 +339,7 @@
       "name": "Clinical App for Home Rehabilitation",
       "featured": true,
       "image": "/case-studies/clinical-app/today-card-fictional.webp",
-      "badge": "Local pilot · Fictional data · No public demo",
+      "badge": "In development · No public demo",
       "description": "A clinical application for organizing patients, treatment, appointments, and home visits.",
       "highlights": [
         "Next.js 16",
