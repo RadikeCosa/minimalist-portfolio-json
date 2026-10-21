@@ -84,6 +84,20 @@ const casePairs = [
 for (const pair of casePairs) {
   const rendered = await Promise.all(pair.map((page) => readFile(join("dist", page), "utf8")));
   for (const [index, html] of rendered.entries()) {
+    if (pair[index].includes("juegos-familiares/") || pair[index].includes("family-games/")) {
+      if (!/<main\b[^>]*class="[^"]*\bcase-product\b/.test(html) || !/<p\b[^>]*class="[^"]*\bproduct-status\b/.test(html)) {
+        failures.push(`${pair[index]}: falta la presentación de producto o su estado`);
+      }
+      if (/<section\b[^>]*class="case-summary"/.test(html) || /<dt\b/.test(html)) {
+        failures.push(`${pair[index]}: conserva el resumen anterior`);
+      }
+      for (const text of index === 0
+        ? ["Dos juegos para compartir", "El desafío técnico", "Desarrollado y probado en uso", "más de 100 partidas familiares", "requieren conexión"]
+        : ["Two games to share", "The technical challenge", "Built and tested through use", "more than 100 family games", "require an internet connection"]) {
+        if (!html.includes(text)) failures.push(`${pair[index]}: falta ${text}`);
+      }
+      continue;
+    }
     const labels = index === 0 ? ["Problema", "Aporte", "Decisión clave"] : ["Problem", "Contribution", "Key decision"];
     if (!html.includes("case-summary") || !html.includes("case-status")) {
       failures.push(`${pair[index]}: falta el resumen del caso o su estado`);
