@@ -11,7 +11,7 @@ const { projects } = await getCV(lang);
 const presented = presentProjects(projects as Projects[], lang);
 const featured = presented.filter(p => p.level === "featured");
 const secondary = presented.find(p => p.level === "secondary");
-const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical-app": [750,960], "rehabilitation-landing": [1440,1000] } as const;
+const sizes = { "family-games": [840,780], "family-utils": [840,780], "fira-estudio": [1200,800], "clinical-app": [750,960], "rehabilitation-landing": [1440,1000] } as const;
 ---
 <Section id="projects" title={en ? "Selected projects" : "Proyectos seleccionados"}>
   <ul class="project-grid">
@@ -48,7 +48,7 @@ const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical
   )}
 </Section>
 <style>
-  .project-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+  .project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 24px; }
   .project-grid > li { min-width: 0; display: flex; }
   .project-card { --press-shadow: 6px; border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); display: flex; flex-direction: column; color: var(--ink); text-decoration: none; width: 100%; }
   .project-heading { display: flex; flex-direction: column; gap: 12px; min-height: 160px; padding: 20px; border-bottom: 2px solid var(--ink); }
@@ -74,7 +74,6 @@ const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical
   .secondary-project > div { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
   @media (width < 1100px) and (width >= 768px) {
     .project-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 24px; }
-    .project-grid > li:last-child { grid-column: 1 / -1; width: calc(50% - 12px); justify-self: center; }
     .project-heading { min-height: 150px; padding: 20px 18px; gap: 14px; }
     .project-heading h3 { font-size: 21px; }
     .project-image { height: 220px; }
@@ -91,7 +90,6 @@ const sizes = { "family-games": [840,780], "fira-estudio": [1200,800], "clinical
   @media print {
     .project-heading { background: var(--paper) !important; color: var(--ink) !important; min-height: 0; }
     .project-grid { grid-template-columns: 1fr; }
-    .project-grid > li:last-child { grid-column: auto; width: 100%; }
     .project-card { break-inside: avoid; }
     .project-image { height: 180px; }
   }

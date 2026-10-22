@@ -68,6 +68,12 @@ export function getAlternateUrl(currentUrl: URL, targetLang: Language): string {
     "/en/projects/family-games": {
       es: "/proyectos/juegos-familiares/",
     },
+    "/proyectos/family-utils": {
+      en: "/en/projects/family-utils/",
+    },
+    "/en/projects/family-utils": {
+      es: "/proyectos/family-utils/",
+    },
     "/proyectos/fira-estudio": {
       en: "/en/projects/fira-estudio/",
     },

@@ -131,7 +131,7 @@ type Language =
   | string
 
 export interface Projects {
-  id: "clinical-app" | "rehabilitation-landing" | "family-games" | "fira-estudio"
+  id: "clinical-app" | "rehabilitation-landing" | "family-games" | "family-utils" | "fira-estudio"
   image?: string
   name: string
   featured: boolean
