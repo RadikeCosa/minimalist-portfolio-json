@@ -6,7 +6,7 @@ import { join } from 'node:path';
 const baseURL = process.env.PORTFOLIO_URL || 'http://127.0.0.1:4323';
 const output = process.env.QA_OUTPUT || '/tmp/bauhaus-browser-qa';
 const browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}) });
-const paths = ['/', '/en/', '/sobre-mi/', '/en/about/', '/proyectos/plataforma-clinica/', '/en/projects/clinical-platform/', '/proyectos/landing-kinesiologia/', '/en/projects/home-rehabilitation-landing/', '/proyectos/juegos-familiares/', '/en/projects/family-games/', '/proyectos/fira-estudio/', '/en/projects/fira-estudio/'];
+const paths = ['/', '/en/', '/sobre-mi/', '/en/about/', '/proyectos/plataforma-clinica/', '/en/projects/clinical-platform/', '/proyectos/landing-kinesiologia/', '/en/projects/home-rehabilitation-landing/', '/proyectos/juegos-familiares/', '/en/projects/family-games/', '/proyectos/fira-estudio/', '/en/projects/fira-estudio/', '/proyectos/family-utils/', '/en/projects/family-utils/'];
 const widths = [360, 390, 768, 1024, 1440];
 const failures = [];
 const results = [];

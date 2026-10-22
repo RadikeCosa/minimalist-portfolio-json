@@ -10,7 +10,7 @@ Bilingual portfolio focused on web development, with functional analysis as a di
 - One locally hosted variable family: Archivo, WOFF2, normal weights 400–900, Latin and Latin Extended. Only Latin is preloaded.
 - Light theme throughout, shared navigation, keyboard focus, reduced-motion and print layouts.
 - Selected work: Juegos Familiares, Fira Estudio and the clinical application. The rehabilitation landing page is a secondary case.
-- Twelve routes: home, About and four cases, each in Spanish and English. Existing URLs and redirects remain stable.
+- Fourteen routes: home, About and five cases, each in Spanish and English. Existing URLs and redirects remain stable.
 - Project `id` values link to the typed presentation map in `src/content/projects.ts`. Display order is independent of the unchanged CV project order.
 - Existing CV PDFs, screenshots, project status and limits remain factual. The clinical app has no public demo; Fira is a catalogue, without online purchases.
 
@@ -36,7 +36,7 @@ npm run preview -- --host 127.0.0.1 --port 4323
 npm run verify:browser
 ```
 
-The static check verifies twelve routes, local links and anchors, metadata, locale alternates, project selection, CV files and social-image dimensions. Browser checks cover every route at 360, 390, 768, 1024 and 1440 px; axe accessibility; title wrapping; font fallback and cold loading; keyboard; text enlargement; reduced motion; touch; and print. Reports and screenshots default to `/tmp/bauhaus-browser-qa`.
+The static check verifies fourteen routes, local links and anchors, metadata, locale alternates, project selection, CV files and social-image dimensions. Browser checks cover every route at 360, 390, 768, 1024 and 1440 px; axe accessibility; title wrapping; font fallback and cold loading; keyboard; text enlargement; reduced motion; touch; and print. Reports and screenshots default to `/tmp/bauhaus-browser-qa`.
 
 Optional environment variables: `PORTFOLIO_URL` for another preview, `QA_OUTPUT` for artifacts and `CHROMIUM_PATH` for an existing Chromium executable. GitHub Actions runs both checks and uploads review artifacts.
 
