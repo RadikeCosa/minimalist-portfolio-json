@@ -62,5 +62,17 @@ export const imageDimensions: Record<string, readonly [number, number]> = {
   "/case-studies/juegos-familiares/tutti-frutti-round.png": [
     1416,
     4722
-  ]
+  ],
+  "/case-studies/family-utils/cover.webp": [840, 780],
+  "/case-studies/family-utils/home-desktop.webp": [1200, 800],
+  "/case-studies/family-utils/tasks-mobile.webp": [390, 844],
+  "/case-studies/family-utils/menus-mobile.webp": [390, 2135],
+  "/case-studies/family-utils/shopping-mobile.webp": [390, 913],
+  "/case-studies/family-utils/library-mobile.webp": [390, 967],
+  "/case-studies/family-utils/kitchen-mobile.webp": [390, 1334],
+  "/case-studies/family-utils/sports-river-mobile.webp": [390, 2189],
+  "/case-studies/family-utils/sports-ufc-mobile.webp": [390, 2692],
+  "/case-studies/family-utils/sports-champions-mobile.webp": [390, 2286],
+  "/case-studies/family-utils/training-mobile.webp": [390, 844],
+  "/case-studies/family-utils/family-mobile.webp": [390, 1381]
 };

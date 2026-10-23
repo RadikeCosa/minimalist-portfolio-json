@@ -11,6 +11,8 @@ const routes = [
   "/en/projects/home-rehabilitation-landing/",
   "/proyectos/juegos-familiares/",
   "/en/projects/family-games/",
+  "/proyectos/family-utils/",
+  "/en/projects/family-utils/",
   "/proyectos/fira-estudio/",
   "/en/projects/fira-estudio/",
 ];

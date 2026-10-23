@@ -402,6 +402,22 @@
       "caseStudyUrl": "/proyectos/fira-estudio/",
       "url": "https://fira-estudio-cyan.vercel.app/",
       "id": "fira-estudio"
+    },
+    {
+      "name": "Family Utils",
+      "featured": true,
+      "image": "/case-studies/family-utils/cover.webp",
+      "badge": "Siete apps familiares · PWA en producción",
+      "description": "Herramientas compartidas para organizar tareas, comidas, compras y actividades familiares.",
+      "highlights": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Drizzle"
+      ],
+      "caseStudyUrl": "/proyectos/family-utils/",
+      "url": "https://family-utils-umber.vercel.app/",
+      "id": "family-utils"
     }
   ]
 }

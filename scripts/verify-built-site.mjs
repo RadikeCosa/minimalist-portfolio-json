@@ -14,6 +14,8 @@ const pages = [
   "en/projects/family-games/index.html",
   "proyectos/fira-estudio/index.html",
   "en/projects/fira-estudio/index.html",
+  "proyectos/family-utils/index.html",
+  "en/projects/family-utils/index.html",
 ];
 
 const failures = [];
@@ -52,12 +54,12 @@ for (const expected of [
 }
 
 for (const [file, expectedProjects] of [
-  ["cv.json", ["Aplicación clínica", "Landing para", "Juegos Familiares", "Fira Estudio"]],
-  ["cv-en.json", ["Clinical App", "Home Rehabilitation", "Juegos Familiares", "Fira Estudio"]],
+  ["cv.json", ["Aplicación clínica", "Landing para", "Juegos Familiares", "Fira Estudio", "Family Utils"]],
+  ["cv-en.json", ["Clinical App", "Home Rehabilitation", "Juegos Familiares", "Fira Estudio", "Family Utils"]],
 ]) {
   const data = JSON.parse(await readFile(file, "utf8"));
   if (data.projects?.length !== expectedProjects.length) {
-    failures.push(`${file}: se esperaban cuatro casos en el CV`);
+    failures.push(`${file}: se esperaban cinco casos en el CV`);
   }
   for (const [index, expected] of expectedProjects.entries()) {
     if (!data.projects?.[index]?.name?.startsWith(expected)) {
@@ -80,6 +82,7 @@ const casePairs = [
   ["proyectos/landing-kinesiologia/index.html", "en/projects/home-rehabilitation-landing/index.html"],
   ["proyectos/juegos-familiares/index.html", "en/projects/family-games/index.html"],
   ["proyectos/fira-estudio/index.html", "en/projects/fira-estudio/index.html"],
+  ["proyectos/family-utils/index.html", "en/projects/family-utils/index.html"],
 ];
 for (const pair of casePairs) {
   const rendered = await Promise.all(pair.map((page) => readFile(join("dist", page), "utf8")));
@@ -88,14 +91,18 @@ for (const pair of casePairs) {
     const isFira = pair[index].includes("fira-estudio/");
     const isClinical = pair[index].includes("plataforma-clinica/") || pair[index].includes("clinical-platform/");
     const isLanding = pair[index].includes("landing-kinesiologia/") || pair[index].includes("home-rehabilitation-landing/");
-    if (isFamilyGames || isFira || isClinical || isLanding) {
+    const isFamilyUtils = pair[index].includes("family-utils/");
+    if (isFamilyGames || isFira || isClinical || isLanding || isFamilyUtils) {
       if (!/<main\b[^>]*class="[^"]*\bcase-product\b/.test(html) || !/<p\b[^>]*class="[^"]*\bproduct-status\b/.test(html)) {
         failures.push(`${pair[index]}: falta la presentación de producto o su estado`);
       }
       if (/<section\b[^>]*class="case-summary"/.test(html) || /<dt\b/.test(html)) {
         failures.push(`${pair[index]}: conserva el resumen anterior`);
       }
-      const expected = isLanding ? (index === 0
+      const expected = isFamilyUtils ? (index === 0
+        ? ["Siete aplicaciones", "Tareas y rutinas", "Menús", "Compras", "Biblioteca", "Cocina", "Deportes", "Entrenamiento", "PostgreSQL 18", "ETags", "datos ficticios"]
+        : ["Seven apps", "Chores and routines", "Menus", "Shopping", "Library", "Kitchen", "Sports", "Training", "PostgreSQL 18", "ETags", "fictional data"])
+        : isLanding ? (index === 0
         ? ["primera consulta", "Orientar y contactar con contexto", "SEO local", "whatsapp_intent", "Una posible evolución", "repetir las mediciones"]
         : ["first enquiry", "Guidance and contact with context", "Local SEO", "whatsapp_intent", "One possible next step", "repeat measurements"]) : isClinical ? (index === 0
         ? ["práctica cotidiana", "buenas prácticas de registro", "FHIR", "todavía no hay integraciones", "25.326", "26.529", "passkeys", "preparando el comienzo del uso con datos reales", "validaciones operativas pendientes", "datos ficticios", "A mediano plazo", "IA para asistir", "revisar, corregir y validar"]
@@ -137,7 +144,7 @@ for (const [page, title] of [
 
 for (const page of ["index.html", "en/index.html"]) {
   const html = await readFile(join("dist", page), "utf8");
-  const order = ["name-family-games", "name-fira-estudio", "name-clinical-app"].map(id => html.indexOf(`id="${id}"`));
+  const order = ["name-family-games", "name-family-utils", "name-fira-estudio", "name-clinical-app"].map(id => html.indexOf(`id="${id}"`));
   if (order.some(i => i < 0) || order.some((i,n) => n > 0 && i <= order[n-1])) failures.push(`${page}: orden de destacados incorrecto`);
   for (const id of ["top", "projects", "approach", "about", "skills", "contact"]) {
     if (!html.includes(`id="${id}"`)) failures.push(`${page}: falta ancla ${id}`);
